@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0 0 10px 0 ;
+    box-sizing: border-box;
+    user-select: none;
+}
+
 body{
     flex-direction: column;
     display: flex;
     margin: 0;
     background: url(https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e);
+        background-size: auto;
+        background-repeat: repeat;
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
@@ -17,10 +26,12 @@ body{
 }
 .center{
     position: absolute;
+    vertical-align: middle;
     width: 400px;
 }
 
 .center .header{
+    position: relative;
     font-size: 25px;
     font-weight: bold; 
     color: #000;
