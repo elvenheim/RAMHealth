@@ -102,13 +102,13 @@
     height: 35px;
     width: 40%;
     display: flex;
-    
   }
   
 .button span{
-    color: #222;
-    width: 40px;
+    color: #000;
+    width: 1000px;
     line-height: 45px;
+
   }
   
 .button input[type="submit"]{

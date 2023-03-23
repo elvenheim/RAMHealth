@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>APC RAM Health</title>
+      <link rel="stylesheet" href="new_login.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+   </head>
+   <body>
+        <div class="center">
+            <div class="header">
+                <div class=""><img src="https://signin.apc.edu.ph/images/logo.png" width="120px"></div>
+                <div class=""><h3>APC Ram Health</h3></div>
+                <div class=""><h5>Login with your <img src="https://signin.apc.edu.ph/images/office-365-logo.png" width="82"> Account</h5></div>
+            </div>
+            <form>
+                <input type="text" placeholder="Email">
+                <i class="far fa-envelope"></i>
+                <input id="pswrd" type="password" placeholder="Password">
+                <i class="fas fa-eye" onclick="show()"></i>
+                <input type="submit" value="Sign in">
+            </form>
+        </div>
+      <script>
+         function show(){
+          var pswrd = document.getElementById('pswrd');
+          var icon = document.querySelector('.fas');
+          if (pswrd.type === "password") {
+           pswrd.type = "text";
+           pswrd.style.marginTop = "20px";
+           icon.style.color = "#293A82";
+          }else{
+           pswrd.type = "password";
+           icon.style.color = "grey";
+          }
+         }
+      </script>
+   </body>
+</html>

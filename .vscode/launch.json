@@ -7,6 +7,14 @@
         {
             "type": "firefox",
             "request": "launch",
+            "reAttach": true,
+            "name": "Launch new_login.html",
+            "file": "C:\\Users\\richc\\Documents\\GitHub\\RAMHealth\\RAMHealth\\Login\\new_login.html"
+        },
+
+        {
+            "type": "firefox",
+            "request": "launch",
             "name": "Open login.html",
             "file": "c:\\Users\\richc\\Documents\\GitHub\\RAMHealth\\RAMHealth\\Login\\login.html"
         }
