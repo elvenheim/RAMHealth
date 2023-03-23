@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.login-page{
+    background: url(https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.login-header{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 32px;
+    height: 250px;
+    width: 400px;
+    transform: translate(-50%,-50%);
+    background: #E7AE41;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.login-body {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 32px;
+    height: fit-content;
+    width: 400px;
+    transform: translate(-50%,-50%);
+    background: #FFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.field{
+  position: relative;
+  border: 0.75px solid #343A40;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255,255,255,0.94);
+}
+.field span{
+  color: #222;
+  width: 40px;
+  line-height: 40px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Nunito',sans-serif;
+}
+
+.space{
+  margin-top: 16px;
+}
+.show{
+  position: absolute;
+  right: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  display: none;
+  cursor: pointer;
+  font-family: 'Nunito',sans-serif;
+}
+.pass-key:valid ~ .show{
+  display: block;
+}
+.pass{
+  text-align: left;
+  margin: 10px 0;
+}
+.pass a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Nunito',sans-serif;
+}
+.pass:hover a{
+  text-decoration: underline;
+}
+
+.button{
+    left: 60%;
+    position: relative;
+    height: 35px;
+    width: 40%;
+    display: flex;
+    
+  }
+  
+.button span{
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+  }
+  
+.button input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    background: #293A82;
+    border: 2px solid #007BFF;
+    border-radius: 2px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    cursor: pointer;
+    font-family: 'Nunito',sans-serif;
+}
+
+.button input[type="submit"]:hover{
+  background: #a6b5f8;
+}
+
+.login{
+  color: white;
+  margin: 20px 0;
+  font-family: 'Nunito',sans-serif;
+}
+
+i span{
+  margin-left: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: 'Nunito',sans-serif;
+}

@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testing</title>
-</head>
-<body>
-    <h1>Wa ha ha ha ha ha
-    </h1>
-    <h1></h1>
-</body>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="login.css">
+      <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <title>RAMHealth</title>
+   </head>
+
+   <body class = "login-page">
+      <div class="bg-img">
+      </div>
+      <div class="login-header space">
+        <div class=""><img src="https://signin.apc.edu.ph/images/logo.png" width="120px"></div>
+        <div class=""><h3><b></b>APC RAM Health</b></h3></div> 
+        <div class=""><h5>Login with your <img src="https://signin.apc.edu.ph/images/office-365-logo.png" width="80"> Account </h5> </div>
+      </div>
+      <div class="login-body space">
+            <form action="#">
+              <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" required placeholder="Email">
+              </div>
+              <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="pass-key" required placeholder="Password">
+                <span class="show">SHOW</span>
+              </div>
+               <div class="button space">
+                <input type="submit" value="Sign in">
+               </div>
+            </form>
+      </div>
+      <script>
+        const pass_field = document.querySelector('.pass-key');
+        const showBtn = document.querySelector('.show');
+        showBtn.addEventListener('click', function(){
+         if(pass_field.type === "password"){
+           pass_field.type = "text";
+           showBtn.textContent = "HIDE";
+           showBtn.style.color = "#3498db";
+         }else{
+           pass_field.type = "password";
+           showBtn.textContent = "SHOW";
+           showBtn.style.color = "#222";
+         }
+        });
+</script>
+   </body>
 </html>
