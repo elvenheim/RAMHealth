@@ -111,7 +111,7 @@ i.fa-eye{
 }
 
 i.fa-sign-in-alt{
-    margin: 123px 0 0 -95px;
+    margin: 120px 0 0 -95px;
     color: #fff;
 }
 
@@ -122,13 +122,14 @@ form input[type="submit"]{
     align-items: center;
     text-align: right;
     width: 110px;
-    height: 45px;
+    height: 40px;
     color: white;
     cursor: pointer;
-    line-height: 40px;
     border-radius: 5px;
+    line-height: 0px;
     background: #293A82;
     font-size-adjust: 0.58;
+    vertical-align: middle;
 }
 form input[type="submit"]:hover{
     background: #8a9fff;
