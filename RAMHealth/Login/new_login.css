@@ -7,21 +7,28 @@
 }
 
 body{
-    flex-direction: column;
-    display: flex;
-    margin: 0; 
-    align-items: center;
-    display: flex;
-    background-image: url("https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e");
+    overflow: auto;
+    margin: 0 auto;
+    width: fit-content;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: left;
+}
+html{
+    overflow: hidden;
+}
+.login-page{
+    min-height: 482.333px;
+    background-image: url(https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 482.333px;
-    border: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     justify-content: center;
-    text-rendering: optimizeLegibility;
-    font-family: 'Nunito Sans', sans-serif;
-    overflow: visible;
 }
 .d-flex{
     display: flex !important;
@@ -56,8 +63,8 @@ h5{
 
 .center{
     position: absolute;
-    top: 200px;
-    vertical-align: middle;
+    top: 250px;
+    align-items: center;
     width: 400px;
 }
 .center .header{
@@ -71,7 +78,7 @@ h5{
     border-radius: 10px 10px 0 0;
     text-align: center;
     justify-content: center;
-    box-shadow: 5px 9px 8px 5px rgba(0,0,0,0.2);
+    box-shadow: 15px 5px 10px 5px rgba(0,0,0,0.1);
 }
 .center form{
     position: absolute;
@@ -80,7 +87,7 @@ h5{
     padding: 30px 15px 0px 30px;
     box-sizing: border-box;
     border-radius: 0 0 5px 5px;
-    box-shadow: 5px 9px 8px 5px rgba(0,0,0,0.2);
+    box-shadow: 15px 16px 10px 5px rgba(0,0,0,0.1);
 }
 form input{
     height: 45px;
@@ -125,7 +132,7 @@ form input[type="submit"]{
     text-align: right;
     color: white;
     cursor: pointer;
-    border: 2px solid #007BFF;
+    border: 1px solid #007BFF transparent;
     border-radius: 5px;
     line-height: 0px;
     background: #293A82;
