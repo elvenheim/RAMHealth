@@ -5,6 +5,7 @@
   box-sizing: border-box;
   user-select: none;
 }
+
 .login-page{
     background: url(https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e);
     background-size: cover;
@@ -26,6 +27,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: 'Nunito', sans-serif;
+    box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.4);
 }
 
 .login-body {
@@ -41,6 +43,7 @@
     background: #FFFF;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.4);
 }
 
 .field{
