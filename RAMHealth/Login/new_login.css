@@ -21,7 +21,7 @@ body{
     justify-content: center;
     text-rendering: optimizeLegibility;
     font-family: 'Nunito Sans', sans-serif;
-    overflow: hidden;
+    overflow: visible;
 }
 .d-flex{
     display: flex !important;
@@ -125,6 +125,7 @@ form input[type="submit"]{
     height: 40px;
     color: white;
     cursor: pointer;
+    border: 1px solid #007BFF;
     border-radius: 5px;
     line-height: 0px;
     background: #293A82;
