@@ -7,10 +7,10 @@ function show(){
            icon.style.color = "#293A82";
           }else{
            pswrd.type = "password";
-           icon.style.color = "grey";
+           icon.style.color = "#343A40";
           }
 }
 
 function housekeeper(){
-            location.href="/Housekeeper/housekeeper.html";
+            location.href="./Housekeeper/housekeeper.html";
 }

@@ -66,33 +66,29 @@ h5{
     font-size: 25px; 
     color: #000;
     padding: 0 0 10px 0;
-    border: 1px solid #000;
-    border-bottom: 1px solid #000;
     background: #E7AE41;
+    border-bottom: 1px solid #000;
     border-radius: 10px 10px 0 0;
     text-align: center;
     justify-content: center;
-    box-shadow: 0px 0px 8px 5px rgba(231,174,65,0.2);
+    box-shadow: 5px 9px 8px 5px rgba(0,0,0,0.2);
 }
 .center form{
     position: absolute;
     background: #fff;
     width: 100%;
-    border: 1px solid #000;
-    border-top: 0px;
-    border-bottom: 1px solid #000;
-    padding: 50px 15px 0px 30px;
+    padding: 30px 15px 0px 30px;
     box-sizing: border-box;
     border-radius: 0 0 5px 5px;
-    box-shadow: 0px 5px 8px 5px rgba(231,174,65,0.2);
+    box-shadow: 5px 9px 8px 5px rgba(0,0,0,0.2);
 }
 form input{
- height: 50px;
+ height: 45px;
  width: 95%;
  padding: 0px 10px;
- border-radius: 3px;
+ border-radius: 5px;
  border: 1px solid #343A40;
- font-size: 18px;
+ font-size: 1rem;
  outline: none;
 }
 form input[type="password"]{
@@ -104,35 +100,35 @@ form i{
  color: #343A40;
 }
 i.fa-envelope{
-    margin: 15px 0 0 -40px;
+    margin: 12px 0 0 -40px;
 }
 i.fa-eye{
-    margin: 35px 0 0 -41px;
+    margin: 32px 0 0 -41px;
 }
 
 i.fa-sign-in-alt{
-    margin: 120px 0 0 -95px;
+    margin: 103px 0 0 -98px;
+    font-weight: 900;
     color: #fff;
+    font-size: 1.2rem;
 }
 
 form input[type="submit"]{
-    margin-top: 40px;
+    margin-top: 25px;
     margin-bottom: 40px;
     margin-left: 225px;
-    align-items: center;
-    text-align: right;
     width: 110px;
-    height: 40px;
+    height: 45px;
+    text-align: right;
     color: white;
     cursor: pointer;
     border: 1px solid #007BFF;
     border-radius: 5px;
     line-height: 0px;
     background: #293A82;
-    font-size-adjust: 0.58;
-    vertical-align: middle;
+    font-size: 1.2rem;
 }
 form input[type="submit"]:hover{
-    background: #8a9fff;
+    background: #007BFF;
     transition: .5s;
 }
