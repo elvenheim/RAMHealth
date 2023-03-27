@@ -4,12 +4,14 @@ function show_password(){
     if (password.type === "password") {
     password.type = "text";
     password.style.marginTop = "20px"; 
-    icon.style.color = "#293A82";
+    icon.style.color = "#E7AE41";
     }   else{
         password.type = "password";
         icon.style.color = "#343A40";
     }
 }
+
+// Sample Functions for the submit button (will replace later)
 
 function housekeeper(){
     document.location.href="../Housekeeper/housekeeper.html";

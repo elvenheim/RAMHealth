@@ -5,10 +5,9 @@
     box-sizing: border-box;
     user-select: none;
 }
-
 body{
     overflow: auto;
-    margin: 0 auto;
+    margin: auto;
     width: fit-content;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 0.9rem;
@@ -17,6 +16,8 @@ body{
     text-align: left;
 }
 html{
+    height:100%;
+    width: 100%;
     overflow: hidden;
 }
 .login-page{
@@ -36,7 +37,6 @@ html{
 .justify-content-center{
     justify-content: center !important;
 }
-
 h3{
     margin-top: 0;
     margin-bottom: 0.5rem;
