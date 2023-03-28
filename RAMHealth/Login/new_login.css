@@ -90,12 +90,12 @@ h5{
     box-shadow: 15px 16px 10px 5px rgba(0,0,0,0.1);
 }
 form input{
-    height: 45px;
+    height: 40px;
     width: 95%;
     padding: 0px 10px;
     border-radius: 5px;
     border: 1px solid #343A40;
-    font-size: 1rem;
+    font-size: 0.9rem;
     outline: none;
 }
 form input:focus{
@@ -112,10 +112,10 @@ form i{
     color: #343A40;
 }
 i.fa-envelope{
-    margin: 12px 0 0 -40px;
+    margin: 10px 0 0 -40px;
 }
 i.fa-eye{
-    margin: 32px 0 0 -41px;
+    margin: 30px 0 0 -41px;
 }
 .fas{
     font-weight: 900;
