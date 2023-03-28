@@ -11,7 +11,7 @@ function show_password(){
     }
 }
 
-// Sample Functions for the submit button (will replace later)
+// Sample Functions for the submit or login button (will replace later)
 
 function housekeeper(){
     document.location.href="../Housekeeper/housekeeper.html";
