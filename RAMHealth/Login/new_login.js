@@ -1,5 +1,5 @@
 function show_password(){
-    var password = document.getElementById('password');
+    var password = document.getElementById('password_field');
     var icon = document.querySelector('.fa-eye');
     if (password.type === "password") {
     password.type = "text";

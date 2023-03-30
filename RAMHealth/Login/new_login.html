@@ -21,12 +21,12 @@
             </div>
          </div>  
             <!-- LOGIN FORM TO BE EDITED WHEN THERE'S NOW A DATABASE -->
-            <form action ="../Housekeeper/housekeeper.html">
-               <input id="email" type="text" placeholder="Email" autofocus="autofocus">
+            <form action ="new_login.php" method="post">
+               <input id="email_field" name="email" type="email" placeholder="Email" autofocus="autofocus">
                <i class="fas fa-envelope"></i>
-               <input id="password" type="password" placeholder="Password">
+               <input id="password_field" name="password" type="password" placeholder="Password">
                <i class="fas fa-eye" onclick="show_password()"></i>
-               <button class="signin-button button" type="submit">
+               <button type="submit" class="signin-button button">
                   <span class="fas fa-sign-in-alt"></span>
                   Sign In
                </button>
