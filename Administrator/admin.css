@@ -57,5 +57,21 @@ body{
 }
 .admin-main{
     background-color: #C2C7D0;
-
+}
+.card{
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    height: 93vh;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
