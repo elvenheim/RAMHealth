@@ -19,9 +19,9 @@
             </div>
             <div class="d-flex justify-content-center"><h5>Login with <img id="o365logo" src="https://signin.apc.edu.ph/images/office-365-logo.png" width="90"/> Account</h5>
             </div>
-         </div>  
+         </div> 
             <!-- LOGIN FORM TO BE EDITED WHEN THERE'S NOW A DATABASE -->
-            <form action ="new_login.php" method="post">
+            <form action ="authentication.php" name="signin-form" onsubmit="return validation()" method="POST" >
                <input id="email_field" name="email" type="email" placeholder="Email" autofocus="autofocus">
                <i class="fas fa-envelope"></i>
                <input id="password_field" name="password" type="password" placeholder="Password">

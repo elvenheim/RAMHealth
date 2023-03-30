@@ -11,6 +11,27 @@ function show_password(){
     }
 }
 
+function validation() {
+    var email=document.signin-form.email.value;
+    var ps=document.signin-form.password.value;
+        if(email.length=="" && ps.length=="") 
+        {
+            alert("Email and Password fields are empty");
+            return false;
+        } else{
+            if(email.length=="") 
+                {
+                    alert("Email is empty");
+                    return false;
+                }
+                    if (ps.length=="") 
+                {
+                    alert("Password field is empty");
+                    return false;
+                }
+            }
+}
+
 // Sample Functions for the submit or login button (will replace later)
 
 function housekeeper(){

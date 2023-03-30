@@ -13,7 +13,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "file": "C:\\Users\\richc\\Documents\\GitHub\\RAMHealth\\RAMHealth\\Login\\new_login.html"
+            "file": "C:\\xampp\\htdocs\\RAMHealth\\RAMHealth\\Login\\new_login.html"
         },
         {
             // insert launcher configuration here for the debugger
