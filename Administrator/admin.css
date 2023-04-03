@@ -13,19 +13,31 @@ body{
     height: 5vh;
     display: flex;
 }
-.navbar-gray, .nav-link{
+.navbar-gray{
     color: #fff;
     background-color: #343A40;
 }
-.navbar-expand, .nav-link{
-    padding-right: 1rem;
-    padding-left: 1rem;
+.navbar-expand{
+    padding-right: 0.5rem;
+    padding-left: 0;
+    flex-flow: row nowrap;
+    justify-content: right;
+}
+.nav-link{
+    color: #fff;
+    background-color: #343A40;
+    text-decoration: none;
     flex-flow: row nowrap;
     justify-content: center;
 }
+.navbar-nav{
+    list-style: none;
+}
+
 .dropdown-toggle{
     white-space: nowraps;
 }
+
 .dropdown-menu{
     position: absolute;
     float: none;
@@ -40,10 +52,10 @@ body{
     text-align: left;
     list-style: none;
 }
-/* wz   logout button display on click */
-/* .dropdown-menu.show{
-    display: block;
-} */
+.show{
+    display: none;
+}
+
 .dropdown-menu-lg{
     max-width: 300px;
     min-width: 280px;

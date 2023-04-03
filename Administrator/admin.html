@@ -13,23 +13,21 @@
             <ul class="navbar-nav ml-auto">
                 <!-- FOR LOG OUT -->
                 <li class="nav-item dropdown user-menu">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    <a id="user_full_name"class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                         <span>
                             RICH DIAMOND POLANCOS CUSTODIO
                         </span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0 px;">
+                    <ul id="btn_logout" class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <form name="logout-form" method="post" action="../Login/new_login.html">
-                            <button class="signin-button button" type="submit">
+                            <button  class="signin-button button" type="submit">
                                 <span class="fas fa-sign-in-alt"></span>
                                 Logout
-                             </button>
+                            </button>
                         </form>
                     </ul>
-                    
                 </li>
             </ul>
-            
         </nav>
     </div>
     <div class="content">
@@ -39,5 +37,6 @@
             </div>
         </div>
     </div>
+    <script src="../Administrator/admin.js"></script>
 </body>
 </html>
