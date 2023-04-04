@@ -13,6 +13,9 @@
             <div class="apc-logo">
                 <img src="https://signin.apc.edu.ph/images/logo.png" width="55px"/>
             </div>
+            <div class="ram-health-title">
+                RAM Health
+            </div>
             <ul class="navbar-nav ml-auto">
                 <!-- FOR LOG OUT -->
                 <li class="nav-item dropdown user-menu">
@@ -21,15 +24,15 @@
                             RICH DIAMOND POLANCOS CUSTODIO
                         </span>
                     </a>
-                    <ul id="btn_logout" class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <form name="logout-form" method="post" action="../Login/new_login.html">
-                            <button  class="signin-button button" type="submit">
-                                <span class="fas fa-sign-in-alt"></span>
-                                Logout
-                            </button>
-                        </form>
-                    </ul>
                 </li>
+            </ul>
+            <ul id="btn_logout" class="log-out">
+                <form name="logout-form" method="post" action="../Login/new_login.html">
+                    <button  class="logout-button" type="submit">
+                        <span class="fas fa-sign-in-alt"></span>
+                        Logout
+                    </button>
+                </form>
             </ul>
         </nav>
     </div>
@@ -38,9 +41,13 @@
             <div class="interface-wrapper">
                 <table>
                     <tr>
-                      <th>Header 1</th>
-                      <th>Header 2</th>
-                      <th>Header 3</th>
+                      <th>User ID</th>
+                      <th>Full Name</th>
+                      <th>Email Address</th>
+                      <th>Password</th>
+                      <th>Creation Date</th>
+                      <th>Update Date</th>
+                      <th>Status</th>
                     </tr>
                     <tr>
                       <td>Sample 1</td>
@@ -50,7 +57,7 @@
                     <tr>
                       <td>Sample 2</td>
                       <td>Sample 2B</td>
-                      <td>Sample 3B</td>
+                      <td>Sample 2B </td>
                     </tr>
                 </table> 
             </div>

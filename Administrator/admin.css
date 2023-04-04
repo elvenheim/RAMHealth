@@ -34,11 +34,44 @@ body{
 }
 
 .apc-logo{
-    position: relative;
+    position: absolute;
     padding-top: 0.6vh;
     padding-left: 0vh;
-    padding-right: 159vh;
+    padding-right: 195vh;
 }
+
+.ram-health-title{
+    position: absolute;
+    color:#E7AE41;
+    font-weight: bolder;
+    white-space: nowrap;
+    font-size: 35px;
+    padding-top: 1.5vh;
+    padding-right: 173vh;
+}
+
+.log-out{
+    position: absolute;
+    padding-top: vh;
+    display: block;
+}
+
+.logout-button[type="submit"]{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 226px;
+    width: 110px;
+    height: 35px;
+    text-align: center;
+    font-size:1rem;
+    padding:0.375rem 0.75rem;
+    color: #343A40;
+    cursor: pointer;
+    border: transparent;
+    line-height: 1;
+    background: #fff;
+}
+
 
 .dropdown-toggle{
     white-space: nowraps;
@@ -92,4 +125,5 @@ body{
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
+    align-items: center;
 }
