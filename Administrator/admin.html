@@ -19,17 +19,17 @@
             <ul class="navbar-nav ml-auto">
                 <!-- FOR LOG OUT -->
                 <li class="nav-item dropdown user-menu">
-                    <a id="user_full_name" name="full_name" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    <a id="user_full_name" name="full_name" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" onclick="show_Logout()">
                         <span>
                         RICH DIAMOND POLANCOS CUSTODIO
                         </span>
                     </a>
                 </li>
             </ul>
-            <ul id="btn_logout" class="log-out">
+            <ul id="btn_logout" class="log-out show">
                 <form name="logout-form" method="post" action="../Login/new_login.html">
-                    <button  class="logout-button" type="submit">
-                        <span class="fas fa-sign-in-alt"></span>
+                    <button class="logout-button " type="submit">
+                        <span class="fas fa-sign-in-alt "></span>
                         Logout
                     </button>
                 </form>
@@ -38,7 +38,7 @@
     </div>
     <div class="content">
         <div class="card">
-            <div class="interface-wrapper">
+            <div class="table-wrapper">
                 <table>
                     <tr>
                       <th>User ID</th>

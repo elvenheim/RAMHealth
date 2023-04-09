@@ -37,17 +37,17 @@ body{
     position: absolute;
     padding-top: 0.6vh;
     padding-left: 0vh;
-    padding-right: 195vh;
+    padding-right: 192vh;
 }
 
 .ram-health-title{
-    position: absolute;
+    position: relative;
     color:#E7AE41;
     font-weight: bolder;
     white-space: nowrap;
     font-size: 35px;
     padding-top: 1.5vh;
-    padding-right: 173vh;
+    padding-right: 135vh;
 }
 
 .log-out{
@@ -92,7 +92,7 @@ body{
     list-style: none;
 }
 .show{
-    display: none;
+    display: block;
 }
 
 .dropdown-menu-lg{
@@ -125,5 +125,20 @@ body{
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
-    align-items: center;
+
 }
+
+/* table part */
+
+.table-wrapper{
+    position: relative;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    height: 100%;
+    width: 100%;
+}
+
+.table-wrapper[align='center']{
+    margin: 0 auto;
+}
+
