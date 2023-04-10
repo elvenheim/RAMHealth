@@ -1,0 +1,5 @@
+/* Hide the second table column */
+td:nth-child(2) {
+    display: none;
+  }
+  

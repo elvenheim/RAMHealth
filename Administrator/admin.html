@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Administrator</title>
     <link rel="stylesheet" href="admin.css">
     <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
@@ -38,27 +39,49 @@
     </div>
     <div class="content">
         <div class="card">
-            <div class="table-wrapper">
-                <table>
-                    <tr>
-                      <th>User ID</th>
-                      <th>Full Name</th>
-                      <th>Email Address</th>
-                      <th>Password</th>
-                      <th>Creation Date</th>
-                      <th>Update Date</th>
-                      <th>Status</th>
-                    </tr>
-                    <tr>
-                      <td>Sample 1</td>
-                      <td>Sample 1A</td>
-                      <td>Sample 1B</td>
-                    </tr>
-                    <tr>
-                      <td>Sample 2</td>
-                      <td>Sample 2B</td>
-                      <td>Sample 2B </td>
-                    </tr>
+            <nav class="card-header">
+                <a class = "card-title">
+                    <span>
+                        Users & Accessibility
+                    </span>
+                </a>
+            </nav>
+                <button onclick="toggleColumn()">Show Password Column</button>
+                <table class = "admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Role ID</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Password</th>
+                            <th>Creation Date</th>
+                            <th>Update Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-140618</td>
+                            <td>Administrator</td>
+                            <td>Rich Diamond Polancos Custodio</td>
+                            <td>rpcustodio@student.apc.edu.ph</td>
+                            <td>testingpassword5050</td>
+                            <td>2023-03-30</td>
+                            <td>2023-03-30</td>
+                            <td>Enabled</td>
+                        </tr>
+                        <tr>
+                            <td>2021-140618</td>
+                            <td>Administrator</td>
+                            <td>Rich Diamond Polancos Custodio</td>
+                            <td>rpcustodio@student.apc.edu.ph</td>
+                            <td>testingpassword5050</td>
+                            <td>2023-03-30</td>
+                            <td>2023-03-30</td>
+                            <td>Disabled</td>
+                        </tr>
+                    </tbody>
                 </table> 
             </div>
         </div>
