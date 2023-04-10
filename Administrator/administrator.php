@@ -15,5 +15,5 @@
     // Handle the case where the user's full name could not be retrieved
     echo "Error: Unable to retrieve user's full name";
   }
-
+  $conn->close();
 ?>
