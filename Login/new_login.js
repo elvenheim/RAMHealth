@@ -9,4 +9,4 @@ function show_password(){
         password.type = "password";
         icon.style.color = "#343A40";
     }
-}
+};

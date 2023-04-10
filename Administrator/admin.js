@@ -1,25 +1,24 @@
 function collapse_logout(){
-    var user_name = document.getElementById("user_full_name");
-    if (logout.style.display !== "block"){
-        logout.style.display = "none";
-    } else{
-        logout.style.display = "block";
+    var fullName = document.getElementById("user_full_name")
+    var logoutBtn = document.getElementById("btn_logout");
+
+    if (logoutBtn.style.display === "none") {
+      logoutBtn.style.display = "block";
+      user_full_name.style.color = "#E7AE41"
+    } else {
+      logoutBtn.style.display = "none";
+      user_full_name.style.color ="#FFF"
     }
 }
 
-function show_Logout(){
-    var logout = document.getElementById("btn_logout");
-    if (logout.style.display !== "block"){
-        logout.style.display = "none";
-    } else{
-        logout.style.display = "block";
-    }
+function logout(){
+    alert("You have been logged out!");
 }
 
-//function for show or hide a column
-function toggleColumn() {
-    var th = document.querySelectorAll('th:nth-child(2)');
-    var td = document.querySelectorAll('td:nth-child(2)');
+// Define the toggleColumn function
+function toggle_Column() {
+    var th = document.querySelectorAll('th:nth-child(5)');
+    var td = document.querySelectorAll('td:nth-child(5)');
     
     if (th[0].style.display == '' || th[0].style.display == 'table-cell') {
       // Hide the column and its header
@@ -38,4 +37,4 @@ function toggleColumn() {
         td[i].style.display = 'table-cell';
       }
     }
-}
+};
