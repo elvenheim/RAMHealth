@@ -24,13 +24,13 @@
                 header('Location:../Housekeeper/housekeeper.html');
                 break;
             case "air technician":
-                //header here
+                header('Location:../Air Quality Technician/air_technician.html');
                 break;
             case "energy technician":
-                //header here
+                header('Location:../Energy Consumption Technician/energy_technician.html');
                 break;
             case "building head":
-                //header here
+                header('Location:../Building Management Head/building_head.html');
                 break;
             default:
                 echo '<script type="text/javascript">alert("Incorrect Email or Password");window.location.href="new_login.html"</script>';
