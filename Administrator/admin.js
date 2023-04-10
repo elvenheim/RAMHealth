@@ -4,10 +4,10 @@ function collapse_logout(){
 
     if (logoutBtn.style.display === "none") {
       logoutBtn.style.display = "block";
-      user_full_name.style.color = "#E7AE41"
+      fullName.style.color = "#E7AE41"
     } else {
       logoutBtn.style.display = "none";
-      user_full_name.style.color ="#FFF"
+      fullName.style.color ="#FFF"
     }
 }
 
