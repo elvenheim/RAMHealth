@@ -50,6 +50,7 @@ body{
 
 .log-out-name{
     position: absolute;
+    text-transform: uppercase;
     z-index: 2;
     margin-top: 2vh;
     margin-right: 0.5vh;
@@ -120,6 +121,7 @@ body{
 
 table{
     border-collapse: collapse;
+    
 }
 
 th, td{
@@ -138,19 +140,10 @@ td{
 .admin-table{
     overflow: hidden;
     position: relative;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
     height: fit-content;
     width: 90%;
 }
-
-/* display password column */
-td:nth-child(5),
-th:nth-child(5) {
-  display: none;
-}
-
-
-

@@ -62,12 +62,6 @@ h5{
     vertical-align: middle;
 }
 
-.center{
-    position: absolute;
-    top: 250px;
-    align-items: center;
-    width: 400px;
-}
 .center .header{
     position: relative;
     width: 100%;
@@ -81,8 +75,15 @@ h5{
     justify-content: center;
     box-shadow: 15px 5px 10px 5px rgba(0,0,0,0.1);
 }
+
+.center{
+    top: 250px;
+    align-items: center;
+    width: 400px;
+}
+
 .center form{
-    position: absolute;
+    position: relative;
     background: #fff;
     width: 100%;
     padding: 30px 15px 0px 30px;
@@ -90,6 +91,7 @@ h5{
     border-radius: 0 0 5px 5px;
     box-shadow: 15px 16px 10px 5px rgba(0,0,0,0.1);
 }
+
 form input{
     height: 40px;
     width: 95%;

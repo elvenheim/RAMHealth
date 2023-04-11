@@ -20,7 +20,7 @@
                 <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    SAMPLE USER
+                    Sample User
                 </span>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post" action="../Login/new_login.html">
@@ -32,6 +32,7 @@
                 </ul>
             </nav>
         </div>
+        <!-- For the Main Interface Contents -->
         <div class="content">
             <div class="card">
                 <nav class="card-header">
@@ -41,7 +42,6 @@
                         </span>
                     </a>
                 </nav>
-                    <button onclick="toggle_Column()">Show Password</button>
                     <table class = "admin-table">
                         <thead>
                             <tr>
@@ -49,33 +49,13 @@
                                 <th>Role ID</th>
                                 <th>Full Name</th>
                                 <th>Email Address</th>
-                                <th>Password</th>
                                 <th>Creation Date</th>
                                 <th>Update Date</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>2021-140618</td>
-                                <td>Administrator</td>
-                                <td>Rich Diamond Polancos Custodio</td>
-                                <td>rpcustodio@student.apc.edu.ph</td>
-                                <td>testingpassword5050</td>
-                                <td>2023-03-30</td>
-                                <td>2023-03-30</td>
-                                <td>Enabled</td>
-                            </tr>
-                            <tr>
-                                <td>2021-140618</td>
-                                <td>Administrator</td>
-                                <td>Rich Diamond Polancos Custodio</td>
-                                <td>rpcustodio@student.apc.edu.ph</td>
-                                <td>testingpassword5050</td>
-                                <td>2023-03-30</td>
-                                <td>2023-03-30</td>
-                                <td>Disabled</td>
-                            </tr>
+                        <tbody id = "table-body">
+                            <?php include 'admin_table.php'; ?>
                         </tbody>
                     </table> 
                 </div>

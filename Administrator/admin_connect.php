@@ -4,7 +4,7 @@
    $password = "";
    $db_name = "ramhealth";
    
-   $conn = mysqli_connect($host , $user , $password , $db_name) 
+   $con = mysqli_connect($host , $user , $password , $db_name) 
    or 
    die("Failed to connect with MySQL: " . mysqli_connect_error());
 ?>
