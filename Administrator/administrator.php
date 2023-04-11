@@ -1,19 +1,22 @@
 <?php
-  require_once('admin_connect.php');
+  session_start();
+  include('admin_connect.php');
+  if (isset($_SESSION['user_email'])) {
+      $user_email = $_SESSION['user_email'];
+    
+      $sql = "SELECT user_fullname FROM user WHERE user_email = '$user_email'";
+      $result = mysqli_query($con, $sql);
 
-  // Get the user's full name from the database
-  $userId = 'user_id'; // Replace with the ID of the current user
-  $query = "SELECT user_fullname FROM user WHERE user_id = $userId";
-  $result = mysqli_query($conn, $query);
-
-  if ($result && mysqli_num_rows($result) > 0) {
-    // Set the full name as the text for the span element
-    $row = mysqli_fetch_assoc($result);
-    $fullName = $row['user_fullname'];
-    echo "<script>document.getElementById('user_full_name').innerHTML = '$fullName';</script>";
-  } else {
-    // Handle the case where the user's full name could not be retrieved
-    echo "Error: Unable to retrieve user's full name";
-  }
-  $conn->close();
+      if ($result) {
+          $row = mysqli_fetch_assoc($result);
+          $fullname = $row['user_fullname'];
+      } 
+      else {
+        $error_message = mysqli_error($conn);
+      }
+  } 
+  else {
+    header('Location: login.php');
+    exit;
+  } echo $fullname;
 ?>

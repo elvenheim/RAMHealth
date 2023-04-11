@@ -1,8 +1,10 @@
 <?php
-    require_once('new_login.php');
-
+    session_start();
+    require('new_login.php');
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    $_SESSION['user_email'] = $email;
 
     $stmt = $con->prepare("SELECT * FROM user WHERE user_email = ? AND user_password = ?");
     $stmt->bind_param("ss", $email, $password);
@@ -13,7 +15,7 @@
         $row = $result->fetch_assoc();
         $roles = array(
             "Administrator" => "../Administrator/admin.php",
-            "Housekeeper" => "../Housekeeper/housekeeper.html",
+            "Housekeeper" => "../Housekeeper/housekeeper.php",
             "Air Technician" => "../Air Quality Technician/air_technician.html",
             "Energy Technician" => "../Energy Consumption Technician/energy_technician.html",
             "Building Head" => "../Building Management Head/building_head.html"
@@ -27,5 +29,4 @@
     echo '<script type="text/javascript">alert("Incorrect Email or Password");
     window.location.href="new_login.html"</script>';
     exit;
-    $conn->close();
 ?>

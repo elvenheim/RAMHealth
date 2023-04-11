@@ -20,8 +20,9 @@
                 <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    Sample User
+                    <?php include 'administrator.php';?>
                 </span>
+                </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post" action="../Login/new_login.html">
                         <button class="logout-button " type="submit" onclick="logout()">
