@@ -14,9 +14,5 @@
       else {
         $error_message = mysqli_error($con);
       }
-  } 
-  else {
-    header('Location: login.php');
-    exit;
   } echo $fullname;
 ?>
