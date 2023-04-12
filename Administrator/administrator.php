@@ -12,7 +12,7 @@
           $fullname = $row['user_fullname'];
       } 
       else {
-        $error_message = mysqli_error($conn);
+        $error_message = mysqli_error($con);
       }
   } 
   else {
