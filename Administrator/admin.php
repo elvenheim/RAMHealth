@@ -14,7 +14,6 @@
         <strong>Alert:</strong> 
         This is a custom alert message.
     </div> -->
-    
     <body class="admin-main">
         <div class="wrapper">
             <nav class="main-header navbar navbar-expand navbar-gray">
@@ -32,8 +31,8 @@
                 </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post" action="../Login/new_login.html">
-                        <button class="logout-button " type="submit" onclick="showAlert()">
-                            <span class="fas fa-sign-in-alt "></span>
+                        <button class="logout-button " type="submit" onclick="logout()">
+                            <span class="fas fa-power-off"></span>
                             Logout
                         </button>
                     </form>
@@ -41,6 +40,7 @@
             </nav>
         </div>
         <!-- For the Main Interface Contents -->
+        <!-- Admin Table -->
         <div class="content">
             <div class="card">
                 <nav class="card-header">
