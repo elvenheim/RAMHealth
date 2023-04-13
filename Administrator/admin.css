@@ -44,7 +44,7 @@ body{
 
 .log-out{
     position: absolute;
-    top: 4%;
+    top: 2%;
     padding-left: 89.5%;
     z-index: 3;
     display: none;
@@ -54,10 +54,21 @@ body{
     position: absolute;
     text-transform: uppercase;
     z-index: 2;
-    margin-top: 2vh;
-    margin-right: 0.5vh;
+    margin-top: 1vh;
+    margin-right: 0vh;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.role-type{
+    position: absolute;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 3.5vh;
+    margin-right: 0vh;
+    font-size: 1.5rem;
+    color: #C2C7D0;
+    cursor: default;
 }
 
 .logout-button[type="submit"]{
@@ -74,8 +85,6 @@ body{
     line-height: 1;
     background: #fff;
 }
-
-
 
 .user-footer{
     background-color: #f8f9fa;

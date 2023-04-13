@@ -12,7 +12,6 @@
         echo "<td>" . $row['user_fullname'] . "</td>";
         echo "<td>" . $row['user_email'] . "</td>";
         echo "<td>" . $row['user_create_at'] . "</td>";
-        echo "<td>" . $row['user_update_at'] . "</td>";
         echo "<td>" . ($row['user_status'] == 1 ? "Active" : "Deactive") . "</td>";
         echo "</tr>";
     }

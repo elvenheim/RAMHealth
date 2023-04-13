@@ -26,7 +26,10 @@
                 <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    <?php include 'administrator.php';?>
+                    <?php include 'admin_name.php';?>
+                </span>
+                <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
+                    <?php include 'admin_role.php';?>
                 </span>
                 </div>
                 <ul id="btn_logout" class="log-out">
@@ -58,7 +61,6 @@
                                 <th>Full Name</th>
                                 <th>Email Address</th>
                                 <th>Creation Date</th>
-                                <th>Update Date</th>
                                 <th>Status</th>
                             </tr>
                         </thead>

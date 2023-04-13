@@ -1,7 +1,7 @@
 function openNewPage() {
-    window.open("../Login/new_login.html", "_blank");
+    window.open("your page here", "_blank");
   }
 
 function leadNewPage(){
-    window.location.href="../Login/new_login.html";
+    window.location.href="your page here";
 }
