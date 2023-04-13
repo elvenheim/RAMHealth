@@ -16,8 +16,8 @@
         $roles = array(
             "Administrator" => "../Administrator/admin.php",
             "Housekeeper" => "../Housekeeper/housekeeper.php",
-            "Air Technician" => "../Air Quality Technician/air_technician.html",
-            "Energy Technician" => "../Energy Consumption Technician/energy_technician.html",
+            "Air Technician" => "../Air Quality Technician/air_technician.php",
+            "Energy Technician" => "../Energy Consumption Technician/energy_technician.php",
             "Building Head" => "../Building Management Head/building_head.html"
         );
         $role = $row['user_role'];
