@@ -57,7 +57,7 @@
                         <thead>
                             <tr>
                                 <th>User ID</th>
-                                <th>Role ID</th>
+                                <th>Role</th>
                                 <th>Full Name</th>
                                 <th>Email Address</th>
                                 <th>Creation Date</th>
