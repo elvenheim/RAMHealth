@@ -11,6 +11,15 @@ function collapse_logout(){
     }
 }
 
+function showAlert() {
+  document.getElementById("myAlert").style.display = "block";
+}
+
+function closeAlert() {
+  document.getElementById("myAlert").style.display = "none";
+}
+
+
 function logout(){
     alert("You have been logged out!");
 }
