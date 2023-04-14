@@ -36,7 +36,7 @@
         </nav>
     </div>
     <!-- For the Main Interface Contents -->
-    <!-- Admin Table -->
+    <!-- Housekeeper Table -->
     <div class="content">
         <div class="card">
             <nav class="card-header">

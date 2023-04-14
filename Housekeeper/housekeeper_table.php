@@ -49,8 +49,22 @@
         echo "</td>";        
         echo "<td>" . $row['room_num'] . "</td>";
         echo "<td>" . $row['room_name'] . "</td>";
-        echo "<td>" . ($row['room_type'] == 3 ? "Laboratory" : 
-          ($row['room_type'] == 2 ? "Classroom" : "Faculty")) . "</td>";
+        echo "<td>";
+        switch ($row['room_type']){
+            case 3:
+                echo "Laboratory";
+                break;
+            case 2:
+                echo "Classroom";
+                break;
+            case 1:
+                echo "Faculty";
+                break;
+            default:
+                echo " ";
+                break;
+        }
+        echo "</td>";
         echo "<td>" . $row['room_added_at'] . "</td>";
         echo "</tr>";
     }

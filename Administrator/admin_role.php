@@ -8,7 +8,7 @@
 
       if ($role_result) {
           $row = mysqli_fetch_assoc($role_result);
-          $roletype = ($row['user_role'] == 1 ? "Administrator" : " ");
+          $roletype = $row['user_role'];
       } 
       else {
         $error_message = mysqli_error($con);
