@@ -34,7 +34,7 @@
                 </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post" action="../Login/new_login.html">
-                        <button class="logout-button " type="submit" onclick="logout()">
+                        <button class="logout-button" type="submit" onclick="logout()">
                             <span class="fas fa-power-off"></span>
                             Logout
                         </button>
@@ -46,31 +46,45 @@
         <!-- Admin Table -->
         <div class="content">
             <div class="card">
-                <nav class="card-header">
-                    <a class = "card-title">
-                        <span>
-                            Users & Accessibility
-                        </span>
-                    </a>
-                </nav>
-                    <table class = "admin-table">
-                        <thead>
-                            <tr>
-                                <th>User ID</th>
-                                <th>Role</th>
-                                <th>Full Name</th>
-                                <th>Email Address</th>
-                                <th>Creation Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id = "table-body">
-                            <?php include 'admin_table.php'; ?>
-                        </tbody>
-                    </table> 
+                <!-- <nav class="card-header">
+                </nav> -->
+                <a class = "card-title">
+                    <span>
+                         Users & Accessibility
+                    </span>
+                </a>
+                <div class = "table-button">
+                    <button class="add-user" type="submit">
+                        <span class="fas fa-plus"></span>
+                        Add User
+                    </button>
+                    <button class="refresh-table" type="submit">
+                        <span class="fas fa-arrows-rotate"></span>
+                        Refresh
+                    </button>
+                    <button class="edit-table" type="submit">
+                        <span class="fas fa-pen-to-square"></span>
+                        Edit Table
+                    </button>
                 </div>
+                <table class = "admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Role</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Creation Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "table-body">
+                        <?php include 'admin_table.php'; ?>
+                    </tbody>
+                </table> 
             </div>
         </div>
-        <script src="../Administrator/admin.js"></script>
+    </div>
+    <script src="../Administrator/admin.js"></script>
     </body>
 </html>

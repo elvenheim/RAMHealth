@@ -14,11 +14,11 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $roles = array(
-            "Administrator" => "../Administrator/admin.php",
-            "Housekeeper" => "../Housekeeper/housekeeper.php",
-            "Air Technician" => "../Air Quality Technician/air_technician.php",
-            "Energy Technician" => "../Energy Consumption Technician/energy_technician.php",
-            "Building Head" => "../Building Management Head/building_head.html"
+            "1" => "../Administrator/admin.php",
+            "2" => "../Housekeeper/housekeeper.php",
+            "3" => "../Air Quality Technician/air_technician.php",
+            "4" => "../Energy Consumption Technician/energy_technician.php",
+            "5" => "../Building Management Head/building_head.html"
         );
         $role = $row['user_role'];
         if (array_key_exists($role, $roles)) {
