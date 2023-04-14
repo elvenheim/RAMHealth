@@ -5,6 +5,7 @@ Development for the project entitled "Development of Web-Based Application for I
 The team is under the supervision of Engr. Stanley Glenn E. Brucal,
 
 Members of the Team:
+
 Rich Diamond P. Custodio
 
 Nicole G. Palenzuela
