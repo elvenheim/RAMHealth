@@ -1,7 +1,7 @@
 <?php
     //LOGIN IS NOW SOFTCODED
     session_start();
-    require('new_login.php');
+    require('new_login_connect.php');
     $email = $_POST['email'];
     $password = $_POST['password'];
 
