@@ -11,14 +11,8 @@ function collapse_logout(){
   }
 }
 
-function showAlert() {
-document.getElementById("myAlert").style.display = "block";
-}
-
-function closeAlert() {
-document.getElementById("myAlert").style.display = "none";
-}
-
 function logout(){
-  alert("You have been logged out!");
+  if (confirm("Are you sure you want to log out?")) {
+    window.location.href = "../Login/new_login.html";
+  }
 }

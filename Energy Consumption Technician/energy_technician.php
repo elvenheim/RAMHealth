@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Energy Consumption Technician</title>
-    <link rel="stylesheet" href="air_technician.css">
+    <link rel="stylesheet" href="energy_technician.css">
     <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
@@ -26,15 +26,15 @@
                 <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    <!-- <?php include 'admin_name.php';?> -->
+                    <?php include 'energy_technician_name.php';?>
                 </span>
                 <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
-                    <!-- <?php include 'admin_role.php';?> -->
+                    <?php include 'energy_technician_role.php';?>
                 </span>
                 </div>
                 <ul id="btn_logout" class="log-out">
-                    <form name="logout-form" method="post" action="../Login/new_login.html">
-                        <button class="logout-button" type="submit" onclick="logout()">
+                    <form name="logout-form" method="post">
+                        <button class="logout-button" type="button" onclick="logout()">
                             <span class="fas fa-power-off"></span>
                             Logout
                         </button>

@@ -70,7 +70,7 @@ body{
     cursor: default;
 }
 
-.logout-button[type="submit"]{
+.logout-button[type="button"]{
     padding-top: 0;
     margin-right: 100px;
     width: 100%;

@@ -28,7 +28,7 @@
                 </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post">
-                        <button class="logout-button" type="submit" onclick="logout()">
+                        <button class="logout-button" type="button" onclick="logout()">
                             <span class="fas fa-power-off"></span>
                             Logout
                         </button>
