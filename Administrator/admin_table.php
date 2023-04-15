@@ -14,7 +14,7 @@
         echo "<td>" . $row['user_create_at'] . "</td>";
         echo "<td>";
         switch ($row['user_status']){
-            case 2:
+            case 2:     
                 echo "Active";
                 break;
             case 1:

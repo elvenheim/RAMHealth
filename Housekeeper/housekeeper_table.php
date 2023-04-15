@@ -8,44 +8,12 @@
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         echo "<td>";
-        switch ($row['bldg_floor']) {
-            case 12:
-                echo "12th";
-                break;
-            case 11:
-                echo "11th";
-                break;
-            case 10:
-                echo "10th";
-                break;
-            case 9:
-                echo "9th";
-                break;
-            case 8:
-                echo "8th";
-                break;
-            case 7:
-                echo "7th";
-                break;
-            case 6:
-                echo "6th";
-                break;
-            case 5:
-                echo "5th";
-                break;
-            case 4:
-                echo "4th";
-                break;
-            case 3:
-                echo "3rd";
-                break;
-            case 2:
-                echo "2nd";
-                break;
-            default:
-                echo "1st";
-                break;
-        }
+        $floor_names = array(
+            "1" => "1st", "2" => "2nd", "3" => "3rd", "4" => "4th", "5" => "5th",
+            "6" => "6th", "7" => "7th", "8" => "8th", "9" => "9th","10" => "10th",
+            "11" => "11th", "12" => "12th"
+        );
+        echo $floor_names[$row['bldg_floor']];
         echo "</td>";        
         echo "<td>" . $row['room_num'] . "</td>";
         echo "<td>" . $row['room_name'] . "</td>";
