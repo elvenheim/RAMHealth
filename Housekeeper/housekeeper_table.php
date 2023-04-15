@@ -7,31 +7,32 @@
     // Loop through the data and create table rows
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
+
+        // Building Floor
         echo "<td>";
-        $floor_names = array(
-            "1" => "1st", "2" => "2nd", "3" => "3rd", "4" => "4th", "5" => "5th",
-            "6" => "6th", "7" => "7th", "8" => "8th", "9" => "9th","10" => "10th",
-            "11" => "11th", "12" => "12th"
-        );
+        
+        $floor_names = array();
+        // Initialize the floor names array with 1st, 2nd, and 3rd floors
+        $floor_names = [1 => '1st',2 => '2nd', 3 => '3rd'];
+
+        // Loop through floors 4-12 and add them to the array
+        for ($i = 4; $i <= 12; $i++) {
+            $floor_names[$i] = $i . 'th';
+        }
+
+        // Add new floors dynamically by checking if they exist in the array
+        if (!isset($floor_names[$row['bldg_floor']])) {
+            $floor_names[$row['bldg_floor']] = $row['bldg_floor'] . 'th';
+        }
+
+        // Output the floor name for the current row
         echo $floor_names[$row['bldg_floor']];
-        echo "</td>";        
+        echo "</td>";     
+        
+        //Other table contents
         echo "<td>" . $row['room_num'] . "</td>";
         echo "<td>" . $row['room_name'] . "</td>";
-        echo "<td>";
-        switch ($row['room_type']){
-            case 3:
-                echo "Laboratory";
-                break;
-            case 2:
-                echo "Classroom";
-                break;
-            case 1:
-                echo "Faculty";
-                break;
-            default:
-                echo " ";
-                break;
-        }
+        echo "<td>" . $row['room_type'] . "</td>";
         echo "</td>";
         echo "<td>" . $row['room_added_at'] . "</td>";
         echo "</tr>";

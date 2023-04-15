@@ -8,12 +8,6 @@
     <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
-    <!-- this is for custom alert on logout -->
-    <!-- <div id="myAlert" class="alert">
-        <span class="closebtn" onclick="closeAlert()">&times;</span>
-        <strong>Alert:</strong> 
-        This is a custom alert message.
-    </div> -->
     <body class="admin-main">
         <div class="wrapper">
             <nav class="main-header navbar navbar-expand navbar-gray">
@@ -33,7 +27,7 @@
                 </span>
                 </div>
                 <ul id="btn_logout" class="log-out">
-                    <form name="logout-form" method="post" action="../Login/new_login.html">
+                    <form name="logout-form" method="post">
                         <button class="logout-button" type="submit" onclick="logout()">
                             <span class="fas fa-power-off"></span>
                             Logout
