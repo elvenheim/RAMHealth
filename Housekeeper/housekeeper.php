@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Housekeeper</title>
     <link rel="stylesheet" href="housekeeper.css">
-    <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
+    <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 <body class="housekeeper-main">

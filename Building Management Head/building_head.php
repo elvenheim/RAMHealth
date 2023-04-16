@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Building Management Head</title>
     <link rel="stylesheet" href="building_head.css">
-    <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
+    <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 <body class="admin-main">
@@ -37,7 +37,7 @@
             </nav>
         </div>
         <!-- For the Main Interface Contents -->
-        <!-- Admin Table -->
+        <!-- Building Head Table -->
         <div class="content">
             <div class="card">
                 <!-- <nav class="card-header">

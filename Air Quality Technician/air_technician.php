@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Air Quality Technician</title>
     <link rel="stylesheet" href="air_technician.css">
-    <link rel="shortcut icon" href="https://signin.apc.edu.ph/favicons/favicon.ico"/>
+    <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
-    <!-- this is for custom alert on logout -->
-    <!-- <div id="myAlert" class="alert">
-        <span class="closebtn" onclick="closeAlert()">&times;</span>
-        <strong>Alert:</strong> 
-        This is a custom alert message.
-    </div> -->
     <body class="admin-main">
         <div class="wrapper">
             <nav class="main-header navbar navbar-expand navbar-gray">
@@ -43,7 +37,7 @@
             </nav>
         </div>
         <!-- For the Main Interface Contents -->
-        <!-- Admin Table -->
+        <!-- Air Technician Table -->
         <div class="content">
             <div class="card">
                 <!-- <nav class="card-header">
