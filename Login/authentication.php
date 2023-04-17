@@ -23,6 +23,6 @@
         }
     }
     echo '<script type="text/javascript">alert("Incorrect Email or Password");
-    window.location.href="new_login.html"</script>';
+    window.location.href="new_login.php"</script>';
     exit;
 ?>
