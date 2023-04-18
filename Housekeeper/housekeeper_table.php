@@ -1,5 +1,5 @@
 <?php
-    require('housekeep_connect.php');
+    require_once('housekeep_connect.php');
     // Fetch data from the database
     $sql = "SELECT * FROM room_number";
     $result_table = mysqli_query($con, $sql);

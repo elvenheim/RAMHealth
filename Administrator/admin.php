@@ -40,8 +40,6 @@
         <!-- Admin Table -->
         <div class="content">
             <div class="card">
-                <!-- <nav class="card-header">
-                </nav> -->
                 <a class = "card-title">
                     <span>
                          Users & Accessibility
@@ -52,7 +50,7 @@
                         <span class="fas fa-plus"></span>
                         Add User
                     </button>
-                    <button class="refresh-table" type="submit">
+                    <button class="refresh-table" onclick="location.reload()">
                         <span class="fas fa-arrows-rotate"></span>
                         Refresh
                     </button>
@@ -64,6 +62,7 @@
                 <table class = "admin-table">
                     <thead>
                         <tr>
+                            <th class = "delete-column"></th>
                             <th>User ID</th>
                             <th>Role</th>
                             <th>Full Name</th>

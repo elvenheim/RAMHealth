@@ -1,5 +1,5 @@
 <?php
-  include('admin_connect.php');
+  require_once('admin_connect.php');
 
   if (isset($_SESSION['user_email'])) {
       $user_email = $_SESSION['user_email'];

@@ -1,6 +1,5 @@
 <?php
-  session_start();
-  include('housekeep_connect.php');
+  require_once('housekeep_connect.php');
   if (isset($_SESSION['user_email'])) {
       $user_email = $_SESSION['user_email'];
     

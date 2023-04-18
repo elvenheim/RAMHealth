@@ -126,7 +126,7 @@ body{
 .card-title{
     position: relative;
     width: fit-content;
-    padding-top: 2%;
+    padding-top: 1%;
     padding-left: 5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 2rem;
@@ -143,9 +143,9 @@ body{
 .add-user{
     position: relative;
     top: 100%;
-    left: -37.7%;
+    left: -36.8%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -158,9 +158,9 @@ body{
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 36.7%;
+    left: 38.5%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -173,9 +173,9 @@ body{
 .edit-table{
     position: relative;
     top: 100%;
-    left: 37.7%;
+    left: 39.5%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -202,21 +202,92 @@ th{
     background-color: #e0e3e7;
 }
 
-td{
-    background-color: #ececec;
+tr.disabled td:not(.delete-button-row){
+    background-color: #ccc;
 }
 
 .admin-table{
     overflow: hidden;
     position: relative;
-    margin-top: 2%;
+    margin-top: 2.5%;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
     height: fit-content;
-    width: 90%;
+    width: 95%;
 }
 
+.delete-column{
+    background-color: transparent;
+    border: none;
+}
+
+.delete-button-row{
+    position: absolute;
+    margin-top: -0.3%;
+    background: transparent;
+    border: none;
+}
+
+.delete-button[type="button"]{
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.delete-button:active{
+    background-color: #E7AE41;
+}
+
+/* user status */
+
+.status-form select {
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+}
+  
+/* table pagination */
+
+.pagination {
+    position: absolute;
+    margin-left: 87%;
+    margin-bottom: 4.5%;
+    bottom: 0;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+  
+.pagination a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.pagination a:hover {
+    background-color: #eee;
+}
+  
+.pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .disabled {
+    color: gray;
+    pointer-events: none;
+}
+
+  
 /* alert log out */
 
 .alert {

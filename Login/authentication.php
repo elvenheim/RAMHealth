@@ -17,6 +17,12 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $role_url = $row['role_url'];
+        if ($row['user_status'] == 0) {
+            // User is deactive, prevent login
+            echo '<script type="text/javascript">alert("Account is deactive. Please contact the administrator.");
+            window.location.href="new_login.php"</script>';
+            exit;
+        }
         if (!empty($role_url)) {
             header("Location: " . $role_url);
             exit;
