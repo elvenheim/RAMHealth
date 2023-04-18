@@ -2,7 +2,7 @@
 html{
     height: auto;
     width: auto;
-    overflow: show;
+    overflow: hidden;
 }
 body{
     text-align: center;
@@ -128,7 +128,7 @@ body{
 .table-button{
     position: relative;
     width: 100%;
-    padding-top: 2%;
+    padding-top: 0%;
 } 
 
 .add-user{

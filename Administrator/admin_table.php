@@ -26,18 +26,18 @@ $(document).ready(function() {
 });
 
 function deleteRow(userId) {
-    if (confirm("Are you sure you want to delete this user?")) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "admin_delete_user.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                alert("User has been deleted successfully.");
-                window.location.reload();
-            }
-        };
-        xhr.send("user_id=" + userId);
-    }
+  if (confirm("Are you sure you want to delete this user?")) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "admin_delete_user.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              alert("User has been deleted successfully.");
+              window.location.reload();
+          }
+      };
+      xhr.send("user_id=" + userId);
+  }
 }
 </script>
 
