@@ -12,7 +12,7 @@ $(document).ready(function() {
         if (response.status === 'success') {
           var statusSelect = form.find('select[name="user_status"]');
           if (response.user_status == 1) {
-            statusSelect.css('background-color', '#e0e3e7');
+            statusSelect.css('background-color', '#646467');
           } else {
             statusSelect.css('background-color', '#ccc');
           }
@@ -24,7 +24,23 @@ $(document).ready(function() {
     });
   });
 });
+
+function deleteRow(userId) {
+    if (confirm("Are you sure you want to delete this user?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "admin_delete_user.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert("User has been deleted successfully.");
+                window.location.reload();
+            }
+        };
+        xhr.send("user_id=" + userId);
+    }
+}
 </script>
+
 
 <?php 
     require_once('admin_connect.php');
@@ -53,7 +69,7 @@ $(document).ready(function() {
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr" . ($row['user_status'] == 0 ? ' class="disabled"' : '') . ">";
         echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button"> 
+        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['user_id'] . ')"> 
             <i class="fas fa-trash"></i> 
             </button>';
         echo "</td>";
@@ -76,13 +92,28 @@ $(document).ready(function() {
     
     echo "<div class='pagination'>";
     if ($total_pages > 1) {
+        $start_page = max(1, $page - 2);
+        $end_page = min($total_pages, $start_page + 4);
+        if ($end_page - $start_page < 4 && $start_page > 1) {
+            $start_page = max(1, $end_page - 4);
+        }
         echo "<a href='?page=" . max(1, $page - 1) . "'" . 
             ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
-        echo "<a href='?page=" . $page . "' class='active'>$page</a>";
+        for ($i = $start_page; $i <= $end_page; $i++) {
+            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
+        }
         echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
             ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
     }
     echo "</div>";
 
-    mysqli_close($con);
+    // echo "<div class='pagination'>";
+    // if ($total_pages > 1) {
+    //     echo "<a href='?page=" . max(1, $page - 1) . "'" . 
+    //         ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
+    //     echo "<a href='?page=" . $page . "' class='active'>$page</a>";
+    //     echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
+    //         ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+    // }
+    // echo "</div>";
 ?>

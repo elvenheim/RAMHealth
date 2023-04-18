@@ -45,8 +45,37 @@
                          Users & Accessibility
                     </span>
                 </a>
+                <div id="adduser-popup" class = "popup">
+                    <span class = "add-title"> 
+                        Add User
+                    </span>
+                    <span class = "close-popup"> 
+                        <i id="close-btn"class= "fas fa-x fa-xl close-btn"></i>
+                    </span>
+                    <div class = "popup-line">
+                    </div>
+                    <form id="add_user" method="POST" class="user-input" action="admin_fetch_input.php">
+                    <label for="user_id">User ID:</label>
+                    <input type="text" id="user_id" name="user_id" required><br>
+
+                    <?php include 'input_role.php'?>
+
+                    <label for="user_fullname">Full Name:</label>
+                    <input type="text" id="user_fullname" name="user_fullname" required><br>
+
+                    <label for="user_email">Email Address:</label>
+                    <input type="email" id="user_email" name="user_email" required><br>
+
+                    <label for="user_password">Password:</label>
+                    <input type="password" id="user_password" name="user_password" required><br>
+
+                    <button class="save-details" type="submit">Save User Data</button>
+                    </form>
+                </div>
+                <div id="adduser-popup-bg" class = "popup-bg">
+                </div>  
                 <div class = "table-button">
-                    <button class="add-user" type="submit">
+                    <button id="adduser-btn" class="add-user" onclick="adduser_popup()">
                         <span class="fas fa-plus"></span>
                         Add User
                     </button>
@@ -54,10 +83,13 @@
                         <span class="fas fa-arrows-rotate"></span>
                         Refresh
                     </button>
-                    <button class="edit-table" type="submit">
-                        <span class="fas fa-pen-to-square"></span>
-                        Edit Table
-                    </button>
+                    <form class="import-table" method="POST" enctype="multipart/form-data">
+                        <label class="import-btn">
+                        <span class="fas fa-file-import"></span>
+                        Import
+                        <input type="file" name="csv_file" style="display: none;" required accept=".csv">
+                        </label>
+                    </form>
                 </div>
                 <table class = "admin-table">
                     <thead>

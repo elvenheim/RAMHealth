@@ -1,15 +1,14 @@
 <?php
     //LOGIN IS NOW SOFTCODED
-    session_start();
-    require('new_login_connect.php');
+    require_once('new_login_connect.php');
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     $_SESSION['user_email'] = $email;
 
     $stmt = $con->prepare("SELECT user.*, role_type.role_url FROM user 
-        JOIN role_type ON user.user_role = role_type.role_id 
-        WHERE user.user_email = ? AND user.user_password = ?");
+            JOIN role_type ON user.user_role = role_type.role_id 
+            WHERE user.user_email = ? AND user.user_password = ?");
     $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
