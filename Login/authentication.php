@@ -17,7 +17,7 @@
         $row = $result->fetch_assoc();
         $role_url = $row['role_url'];
         if ($row['user_status'] == 0) {
-            echo '<script type="text/javascript">alert("Account is deactive. Please contact the administrator.");
+            echo '<script type="text/javascript">alert("Account is disabled. Please contact the administrator.");
             window.location.href="new_login.php"</script>';
             exit;
         }
