@@ -40,24 +40,25 @@
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         // Building Floor
+
         echo "<td>";
-        $floor_names = array();
-        // Initialize the floor names array with 1st, 2nd, and 3rd floors
-        $floor_names = [1 => '1st',2 => '2nd', 3 => '3rd'];
-        // Loop through floors 4-12 and add them to the array
-        for ($i = 4; $i <= 12; $i++) {
-            $floor_names[$i] = $i . 'th';
+        $floor_names = [
+            1 => 'Ground Floor',
+            2 => '2nd',
+            3 => '3rd',
+        ];
+    
+        $floor = $row['bldg_floor'];
+    
+        if ($floor > 3) {
+            $floor_names[$floor] = "{$floor}th";
+        } elseif ($floor < 0) {
+            $positive_floor = abs($floor);
+            $floor_names[$floor] = "B{$positive_floor}";
         }
+        echo $floor_names[$floor];
+        echo "</td>";
 
-        // Add new floors dynamically by checking if they exist in the array
-        if (!isset($floor_names[$row['bldg_floor']])) {
-            $floor_names[$row['bldg_floor']] = $row['bldg_floor'] . 'th';
-        }
-
-        // Output the floor name for the current row
-        echo $floor_names[$row['bldg_floor']];
-        echo "</td>";     
-        
         //Other table contents
         echo "<td>" . $row['room_num'] . "</td>";
         echo "<td>" . $row['room_name'] . "</td>";
