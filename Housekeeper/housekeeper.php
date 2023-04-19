@@ -49,6 +49,7 @@
                 <table class = "housekeeper-table">
                     <thead>
                         <tr>
+                            <th class = "delete-column"></th>
                             <th>Building Floor</th>
                             <th>Room Number</th>
                             <th>Room Name</th>

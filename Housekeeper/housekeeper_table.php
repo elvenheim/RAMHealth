@@ -7,7 +7,7 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert("User has been deleted successfully.");
+                    alert("Room has been deleted successfully.");
                     window.location.reload();
                 }
             };
@@ -39,6 +39,11 @@
     // Loop through the data and create table rows
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
+        echo '<td class="delete-button-row">';
+        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['room_num'] . ')"> 
+            <i class="fas fa-trash"></i> 
+            </button>';
+        echo "</td>";
         // Building Floor
 
         echo "<td>";
@@ -67,6 +72,7 @@
         echo "<td>" . $row['room_added_at'] . "</td>";
         echo "</tr>";
     }
+    
     echo "<div class='pagination'>";
     if ($total_pages > 1) {
         $start_page = max(1, $page - 2);

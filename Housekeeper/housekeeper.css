@@ -162,27 +162,65 @@ td{
     width: 90%;
 }
 
-/* alert log out */
+/* table delete buttons */
 
-.alert {
-    padding: 20px;
+.delete-column{
+    background-color: transparent;
+    border: none;
+}
+
+.delete-button-row{
+    position: absolute;
+    margin-top: -0.3%;
+    background: transparent;
+    border: none;
+}
+
+.delete-button[type="button"]{
+    box-shadow: none;
+    border: 1px solid #000;
     background-color: #f44336;
-    color: white;
-    display: block;
-  }
-  
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    transition: 0.3s;
+}
+
+.delete-button:active{
+    background-color: #E7AE41;
+}
+
+/* table pagination */
+
+.pagination {
+    position: absolute;
+    margin-left: 0%;
+    margin-bottom: 3%;
+    bottom: 0;
+    justify-content: flex-end;
+    margin-top: 20px;
 }
   
-.closebtn:hover {
-    color: black;
+.pagination a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
   
+.pagination a:hover {
+    background-color: #eee;
+}
+  
+.pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .disabled {
+    color: gray;
+    pointer-events: none;
+}

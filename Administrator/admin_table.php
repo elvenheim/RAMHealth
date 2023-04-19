@@ -98,7 +98,7 @@ function deleteRow(userId) {
             $start_page = max(1, $end_page - 4);
         }
         echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
+            ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
         for ($i = $start_page; $i <= $end_page; $i++) {
             echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
@@ -107,13 +107,4 @@ function deleteRow(userId) {
     }
     echo "</div>";
 
-    // echo "<div class='pagination'>";
-    // if ($total_pages > 1) {
-    //     echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-    //         ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
-    //     echo "<a href='?page=" . $page . "' class='active'>$page</a>";
-    //     echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-    //         ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
-    // }
-    // echo "</div>";
 ?>
