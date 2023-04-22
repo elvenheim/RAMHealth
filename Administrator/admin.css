@@ -192,7 +192,7 @@ body{
 .popup-bg{
     position: absolute;
     z-index: 1;
-    background-color: rgba(0,0,0,.125);
+    background-color: rgba(0,0,0,0.5);
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -305,10 +305,10 @@ form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
   
-
 /* table part */
 
 table{
+    width: 95%;
     border-collapse: collapse;
 }
 
@@ -334,8 +334,9 @@ tr.disabled td:not(.delete-button-row){
     margin-right: auto;
     margin-left: auto;
     text-align: left;
-    width: 95%;
 }
+
+/* table delete buttons */
 
 .delete-column{
     background-color: transparent;

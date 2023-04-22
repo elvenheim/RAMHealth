@@ -32,7 +32,7 @@ function deleteRow(userId) {
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
-              alert("User has been deleted successfully.");
+              alert("User has been successfully deleted.");
               window.location.reload();
           }
       };

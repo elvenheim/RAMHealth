@@ -1,19 +1,19 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>    
     function deleteRow(roomNum) {
-        if (confirm("Are you sure you want to delete this room?")) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "housekeeper_delete_room.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert("Room has been deleted successfully.");
-                    window.location.reload();
-                }
-            };
-            xhr.send("room_num=" + roomNum);
-        }
+    if (confirm("Are you sure you want to delete this room?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "housekeep_delete_room.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert("Room has been successfully deleted.");
+                window.location.reload();
+            }
+        };
+        xhr.send("room_num=" + roomNum);
     }
+}
 </script>
 
 <?php
@@ -33,14 +33,14 @@
     $total_pages = ceil($total_rows / $rows_per_page);
 
     // Fetch data from the database
-    $sql = "SELECT * FROM room_number";
+    $sql = "SELECT * FROM room_number LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
         
     // Loop through the data and create table rows
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['room_num'] . ')"> 
+        echo '<button class="delete-button" type="button" onclick="deleteRow(\'' . $row['room_num'] . '\')"> 
             <i class="fas fa-trash"></i> 
             </button>';
         echo "</td>";

@@ -39,13 +39,43 @@
     <!-- Housekeeper Table -->
     <div class="content">
         <div class="card">
-            <nav class="card-header">
-                <a class = "card-title">
-                    <span>
-                        Building Management
-                    </span>
-                </a>
-            </nav>
+                <a class = "card-title"> Building Management </a>
+                <div id="addroom-popup" class = "popup">
+                        <span class = "add-title"> 
+                            Building Management
+                        </span>
+                        <div class = "popup-line">
+                        </div>
+                        <form id="add_room" method="POST" class="user-input" action="housekeep_fetch_input.php">
+                        
+                        <label for="room_number">Room Number:</label>
+                        <input type="text" id="room_number" name="room_number" required><br>
+                        
+                        <label for="building_floor">Building Floor:</label>
+                        <input type="number" id="building_floor" name="building_floor" required><br>
+
+                        <label for="room_name">Room Name:</label>
+                        <input type="text" id="room_name" name="room_name" required><br>
+
+                        <label for="room_type">Room Type:</label>
+                        <input type="text" id="room_type" name="room_type" required><br>
+
+                        <button class="save-details" type="submit">Add Room</button>
+                        </form>
+                </div>
+                <div class = "table-button">
+                    <button class="refresh-table" onclick="location.reload()">
+                        <span class="fas fa-arrows-rotate"></span>
+                        Refresh
+                    </button>
+                    <form class="import-table" method="POST" enctype="multipart/form-data">
+                        <label class="import-btn">
+                        <span class="fas fa-file-import"></span>
+                        Import
+                        <input type="file" name="csv_file" style="display: none;" required accept=".csv">
+                        </label>
+                    </form>
+                </div>
                 <table class = "housekeeper-table">
                     <thead>
                         <tr>
