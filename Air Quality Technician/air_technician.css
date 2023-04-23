@@ -116,22 +116,39 @@ body{
 }
 
 /* interface navigation menu */
-/* .card-header{
+.card-header{
     position: relative;
-    height: 40px;
+    height: 6%;
     width: 100%;
     border-bottom: 1px solid;
-} */
+}
 
 .card-title{
     position: relative;
     width: fit-content;
-    padding-top: 2%;
-    padding-left: 5px;
+    right: 40.5%;
+    top: -4%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
+
+.card-title-second{
+    position: relative;
+    width: fit-content;
+    right: 25%;
+    top: -7.65%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.building-floor-dropdown{
+    position: relative;
+    top: -5%;
+    right: 39.3%;
+}
+
 
 /* Table Buttons */
 .table-button{
@@ -140,27 +157,29 @@ body{
     padding-top: 2%;
 } 
 
-.add-user{
+.download-table{
     position: relative;
     top: 100%;
-    left: -37.7%;
+    left: -39.7%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    width:fit-content;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-.add-user:active{
+.download-table:active{
     color: #E7AE41;
 }
 
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 36.7%;
+    left: 33%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    width:fit-content;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -170,18 +189,19 @@ body{
     color: #E7AE41;
 }
 
-.edit-table{
+.import-table{
     position: relative;
-    top: 100%;
-    left: 37.7%;
+    top: 50%;
+    left: 91%;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    width:fit-content;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-.edit-table:active{
+.import-table:active{
     color: #E7AE41;
 }
 
@@ -206,7 +226,7 @@ td{
     background-color: #ececec;
 }
 
-.admin-table{
+.air-quality-table{
     overflow: hidden;
     position: relative;
     margin-top: 2%;

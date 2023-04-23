@@ -40,36 +40,56 @@
         <!-- Air Technician Table -->
         <div class="content">
             <div class="card">
-                <!-- <nav class="card-header">
-                </nav> -->
+                <nav class="card-header">
+                </nav>
                 <a class = "card-title">
                     <span>
-                         Users & Accessibility
+                        Air Quality Table
                     </span>
                 </a>
+                <a class = "card-title-second">
+                    <span>
+                        Air Quality Sensors
+                    </span>
+                </a>
+                <!-- Selection of Building Floor -->
+                <form class="building-floor-dropdown">
+                    <span>
+                        Building Floor:
+                    </span>
+                <input type="hidden" name="user_id">
+                <select name="user_status" onchange="updateStatus(this.form)">
+                    <option value="1">Sample Floor 1</option>
+                    <option value="0">Sample Floor 2</option>
+                </select>
+                </form>
+                <!-- Selection of Building Floor -->
+                
                 <div class = "table-button">
-                    <button class="add-user" type="submit">
-                        <span class="fas fa-plus"></span>
-                        Add User
+                    <button id="download-table" class="download-table" onclick="adduser_popup()">
+                        <span class="fas fa-download"></span>
+                        Download
                     </button>
-                    <button class="refresh-table" type="submit">
+                    <button class="refresh-table" onclick="location.reload()">
                         <span class="fas fa-arrows-rotate"></span>
                         Refresh
                     </button>
-                    <button class="edit-table" type="submit">
-                        <span class="fas fa-pen-to-square"></span>
-                        Edit Table
-                    </button>
+                    <form class="import-table" method="POST" enctype="multipart/form-data">
+                        <label class="import-btn">
+                        <span class="fas fa-file-import"></span>
+                        Import
+                        <input type="file" name="csv_file" style="display: none;" required accept=".csv">
+                        </label>
+                    </form>
                 </div>
-                <table class = "admin-table">
+                <table class = "air-quality-table">
                     <thead>
                         <tr>
-                            <th>User ID</th>
-                            <th>Role</th>
-                            <th>Full Name</th>
-                            <th>Email Address</th>
-                            <th>Creation Date</th>
-                            <th>Status</th>
+                            <th>Room Number</th>
+                            <th>Sensor ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Electric Current &#40;A&#41;</th>
                         </tr>
                     </thead>
                     <tbody id = "table-body">
