@@ -40,6 +40,10 @@
         <!-- Air Technician Table -->
         <div class="content">
             <div class="card">
+                <nav class="card-header-indicator">
+                </nav>
+                <nav class="card-header-indicator-second">
+                </nav>
                 <nav class="card-header">
                 </nav>
                 <a class = "card-title">
@@ -57,11 +61,12 @@
                     <span>
                         Building Floor:
                     </span>
-                <input type="hidden" name="user_id">
-                <select name="user_status" onchange="updateStatus(this.form)">
-                    <option value="1">Sample Floor 1</option>
-                    <option value="0">Sample Floor 2</option>
-                </select>
+                    <input type="hidden" name="user_id">
+                        <select name="user_status" onchange="updateStatus(this.form)">
+                            <option value="1">Sample Floor 1</option>
+                            <option value="0">Sample Floor 2</option>
+                        </select>
+                    </input>
                 </form>
                 <!-- Selection of Building Floor -->
                 
@@ -85,6 +90,7 @@
                 <table class = "air-quality-table">
                     <thead>
                         <tr>
+                            <th class = "delete-column"> </th>
                             <th>Room Number</th>
                             <th>Sensor ID</th>
                             <th>Date</th>
@@ -98,7 +104,7 @@
                         </tr>
                     </thead>
                     <tbody id = "table-body">
-                        <!-- <?php include 'admin_table.php'; ?> -->
+                        <?php include 'air_technician_parameter_table.php'; ?>
                     </tbody>
                 </table> 
             </div>

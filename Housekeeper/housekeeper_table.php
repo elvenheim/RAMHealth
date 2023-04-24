@@ -25,7 +25,7 @@
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM user";
+    $count_query = "SELECT COUNT(*) as count FROM room_number";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
@@ -40,9 +40,12 @@
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button" onclick="deleteRow(\'' . $row['room_num'] . '\')"> 
-            <i class="fas fa-trash"></i> 
-            </button>';
+        echo '<a href="housekeeper.php">
+            <button class="delete-button" type="button"
+            onclick="deleteRow(\'' . $row['room_num'] . '\')"> 
+            <i class="fas fa-trash"></i>
+            </button>
+            </a>';
         echo "</td>";
         // Building Floor
 

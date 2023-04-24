@@ -69,9 +69,12 @@ function deleteRow(userId) {
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr" . ($row['user_status'] == 0 ? ' class="disabled"' : '') . ">";
         echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['user_id'] . ')"> 
-            <i class="fas fa-trash"></i> 
-            </button>';
+        echo '<a href="admin.php">
+          <button class="delete-button" type="button" 
+          onclick="deleteRow(' . $row['user_id'] . ')"> 
+          <i class="fas fa-trash"></i> 
+          </button>
+          </a>';
         echo "</td>";
         echo "<td>" . $row['user_id'] . "</td>";
         echo "<td>" . $row['role_name'] . "</td>";
