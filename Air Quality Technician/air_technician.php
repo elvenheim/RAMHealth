@@ -89,7 +89,12 @@
                             <th>Sensor ID</th>
                             <th>Date</th>
                             <th>Time</th>
-                            <th>Electric Current &#40;A&#41;</th>
+                            <th>Indoor Temperature</th>
+                            <th>Outdoor Temperature</th>
+                            <th>Particulate Matter 10</th>
+                            <th>Particulate Matter 2.5</th>
+                            <th>Particulate Matter 0.1</th>
+                            <th>Carbon Dioxide Level</th>
                         </tr>
                     </thead>
                     <tbody id = "table-body">
