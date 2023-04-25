@@ -24,12 +24,14 @@
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['air_quality_id'] . ')"> 
-            <i class="fas fa-trash"></i> 
-            </button>';
-        echo "</td>";
-        echo "<td>" . $row['air_quality_id'] . "</td>";
+        // For sensors table
+        // echo '<td class="delete-button-row">';
+        // echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['air_quality_id'] . ')"> 
+        //     <i class="fas fa-trash"></i> 
+        //     </button>';
+        // echo "</td>";
+
+        // echo "<td>" . $row['air_quality_id'] . "</td>";
         echo "<td>" . $row['air_quality_date'] . "</td>";
         echo "<td>" . $row['air_quality_time'] . "</td>";
         echo "<td>" . $row['temperature_indoor'] . "</td>";

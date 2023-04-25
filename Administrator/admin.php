@@ -83,13 +83,6 @@
                         <span class="fas fa-arrows-rotate"></span>
                         Refresh
                     </button>
-                    <form class="import-table" method="POST" enctype="multipart/form-data">
-                        <label class="import-btn">
-                        <span class="fas fa-file-import"></span>
-                        Import
-                        <input type="file" name="csv_file" style="display: none;" required accept=".csv">
-                        </label>
-                    </form>
                 </div>
                 <table class = "admin-table">
                     <thead>

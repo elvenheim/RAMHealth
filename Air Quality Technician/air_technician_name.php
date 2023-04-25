@@ -1,20 +1,16 @@
 <?php
-  session_start();
-  include('air_technician_connect.php');
-  if (isset($_SESSION['user_email'])) {
-      $user_email = $_SESSION['user_email'];
+    require_once('air_technician_connect.php');
     
-      $fullname_sql = "SELECT user_fullname FROM user WHERE user_email = '$user_email'";
-      $role_sql = "SELECT user_role FROM user WHERE user_email = '$user_email'";
-      $name_result = mysqli_query($con, $fullname_sql);
-      $role_result = mysqli_query($con, $role_sql);
+    if (isset($_SESSION['user_id'])) {
+      $stmt = $con->prepare("SELECT user_fullname FROM user WHERE user_id = ?");
+      $stmt->bind_param("i", $_SESSION['user_id']);
+      $stmt->execute();
+      $result = $stmt->get_result();
 
-      if ($name_result) {
-          $row = mysqli_fetch_assoc($name_result);
-          $fullname = $row['user_fullname'];
-      } 
-      else {
-        $error_message = mysqli_error($con);
+      if ($result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          $_SESSION['user_fullname'] = $row['user_fullname'];
       }
-  } echo $fullname;
+  }
+  echo $_SESSION['user_fullname'];
 ?>

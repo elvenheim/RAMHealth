@@ -4,24 +4,26 @@ $(document).ready(function() {
   $('select[name="user_status"]').change(function() {
     var form = $(this).parent('form');
     var formData = form.serialize();
-    $.ajax({
-      url: 'update_status.php',
-      type: 'POST',
-      data: formData,
-      success: function(response) {
-        if (response.status === 'success') {
-          var statusSelect = form.find('select[name="user_status"]');
-          if (response.user_status == 1) {
-            statusSelect.css('background-color', '#646467');
-          } else {
-            statusSelect.css('background-color', '#ccc');
-          }
+    if (confirm("Are you sure you want to update the user status?")) {
+      $.ajax({
+        url: 'update_status.php',
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+          if (response.status === 'success') {
+            var statusSelect = form.find('select[name="user_status"]');
+            if (response.user_status == 1) {
+              statusSelect.css('background-color', '#646467');
+            } else {
+              statusSelect.css('background-color', '#ccc');
+            }
+          }location.reload();
+        },
+        error: function(xhr, status, error) {
+          console.log('Error: ' + error);
         }
-      },
-      error: function(xhr, status, error) {
-        console.log('Error: ' + error);
-      }
-    });
+      });
+    }
   });
 });
 
@@ -84,7 +86,7 @@ function deleteRow(userId) {
         echo "<td>";
         echo '<form class="status-form">';
         echo '<input type="hidden" name="user_id" value="' . $row['user_id'] . '">';
-        echo '<select name="user_status" onchange="updateStatus(this.form)">';
+        echo '<select name="user_status" onchange="updateStatus(this.form);">';
         echo '<option value="1"' . ($row['user_status'] == 1 ? ' selected' : '') . '>Enabled</option>';
         echo '<option value="0"' . ($row['user_status'] == 0 ? ' selected' : '') . '>Disabled</option>';
         echo '</select>';
@@ -109,5 +111,4 @@ function deleteRow(userId) {
             ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
     }
     echo "</div>";
-
 ?>

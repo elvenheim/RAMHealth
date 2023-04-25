@@ -154,7 +154,7 @@ body{
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 36%;
+    left: 42.5%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -166,26 +166,6 @@ body{
     color: #E7AE41;
 }
 
-.import-table{
-    position: relative;
-    top: 50%;
-    left: 93.5%;
-    bottom: 1%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.import-btn{
-    position: inherit;
-    cursor: pointer;
-}
-
-.import-table:active{
-    color: #E7AE41;
-}
 
 /* add user popup */
 

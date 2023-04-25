@@ -1,10 +1,7 @@
 <?php
-    //LOGIN IS NOW SOFTCODED
     require_once('new_login_connect.php');
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $_SESSION['user_email'] = $email;
 
     $stmt = $con->prepare("SELECT user.*, role_type.role_url FROM user 
             JOIN role_type ON user.user_role = role_type.role_id 
@@ -21,12 +18,9 @@
             window.location.href="new_login.php"</script>';
             exit;
         }
-        if (!empty($role_url)) {
-            header("Location: " . $role_url);
-            exit;
-        }
+        $_SESSION['user_id'] = $row['user_id']; // Store user's id in session
+        $_SESSION['session_id'] = uniqid(); // Generate a unique session ID
+        header("Location: " . $role_url);
+        exit;
     }
-    echo '<script type="text/javascript">alert("Incorrect Email or Password");
-    window.location.href="new_login.php"</script>';
-    exit;
 ?>
