@@ -4,6 +4,7 @@ $(document).ready(function() {
   $('select[name="user_status"]').change(function() {
     var form = $(this).parent('form');
     var formData = form.serialize();
+    var originalStatus = $(this).data('original-status');
     if (confirm("Are you sure you want to update the user status?")) {
       $.ajax({
         url: 'update_status.php',
@@ -17,15 +18,20 @@ $(document).ready(function() {
             } else {
               statusSelect.css('background-color', '#ccc');
             }
-          }location.reload();
+            statusSelect.data('original-status', response.user_status);
+          }
+          location.reload();
         },
         error: function(xhr, status, error) {
           console.log('Error: ' + error);
         }
       });
+    } else {
+      location.reload();
     }
   });
 });
+
 
 function deleteRow(userId) {
   if (confirm("Are you sure you want to delete this user?")) {
