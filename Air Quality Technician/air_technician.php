@@ -116,19 +116,19 @@
                         </span>
                         <div class = "popup-line">
                         </div>
-                        <form id="add_room" method="POST" class="user-input" action="housekeep_fetch_input.php">
+                        <form id="add-room" method="POST" class="user-input" action="housekeep_fetch_input.php">
                         
                         <label for="building_floor">Building Floor:</label>
-                        <input type="number" id="building_floor" name="building_floor" required><br>
+                        <input type="number" id="building-floor" name="building-floor" required><br>
 
-                        <label for="room_number">Room Number:</label>
-                        <input type="text" id="room_number" name="room_number" required><br>
+                        <label for="room-number">Room Number:</label>
+                        <input type="text" id="room-number" name="room-number" required><br>
                     
-                        <label for="room_name">Sensor Type:</label>
-                        <input type="text" id="room_name" name="room_name" required><br>
+                        <label for="room-name">Sensor Type:</label>
+                        <input type="text" id="room-name" name="room-name" required><br>
 
-                        <label for="room_type">Sensor Name:</label>
-                        <input type="text" id="room_type" name="room_type" required><br>
+                        <label for="room-type">Sensor Name:</label>
+                        <input type="text" id="room-type" name="room-type" required><br>
 
                         <button class="save-details" type="submit">Add Room</button>
                         </form>

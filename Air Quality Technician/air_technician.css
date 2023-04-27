@@ -174,6 +174,7 @@ body{
     right: 39.3%;
 }
 
+
 /* add user popup */
 .popup{
     z-index: 2;
@@ -184,7 +185,7 @@ body{
     opacity: 1; 
     border: 1px solid rgba(127,127,127);
     bottom: 30%;
-    width: 25%;
+    width: 20%;
     height: 55%;
     border-radius: 4px;
 }
@@ -252,7 +253,8 @@ form input[type="text"] {
 .save-details[type="submit"] {
     position: relative;
     top: 12%;
-    width: 95%;
+    left: 33%;
+    width: fit-content;
     align-items: center;
     background-color: #293a82;
     color: #fff;
