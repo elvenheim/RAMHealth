@@ -16,3 +16,4 @@ function logout(){
     window.location.href = "../Login/new_login.php";
   }
 }
+
