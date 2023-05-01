@@ -22,7 +22,7 @@ html{
 }
 .login-page{
     min-height: 482.333px;
-    background-image: url(https://signin.apc.edu.ph/images/apc-building.png?d502daa968ea0214f24d82489356321e);
+    background-image: url('../images/apc-building.png');
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
