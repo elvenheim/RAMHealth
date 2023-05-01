@@ -1,0 +1,42 @@
+/* interface navigation menu */
+
+.card-header-indicator{
+    z-index: 555;
+    position: absolute;
+    top: 5.7%;
+    left: 4.3%;
+    height: 5px;
+    width: 200px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.card-title{
+    position: relative;
+    width: fit-content;
+    right: 40.5%;
+    top: -4%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.building-floor-dropdown{
+    position: relative;
+    top: -5%;
+    right: 39.3%;
+}
+
+/* table part */
+.air-quality-parameters-table{
+    overflow: hidden;
+    position: relative;
+    margin-top: 1%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    height: fit-content;
+    width: 90%;
+    opacity: 1;
+}

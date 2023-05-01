@@ -17,3 +17,10 @@ function logout(){
   }
 }
 
+function navParameter(){
+
+}
+
+function navSensor(){
+  
+}

@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+.content-parameter{
+    opacity: 0;
+}
+
+.content-sensor{
+    opacity: 0;
+}
+
+
 /* Table Buttons */
 .table-button{
     position: relative;
@@ -36,99 +46,6 @@
 
 .refresh-table:active{
     color: #E7AE41;
-}
-
-.import-table{
-    position: relative;
-    top: 50%;
-    left: 91%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    width:fit-content;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.import-table:active{
-    color: #E7AE41;
-}
-
-
-/* table part */
-
-table{
-    border-collapse: collapse;
-}
-
-th, td{
-    border: 1px solid #000;
-    padding: 15px;
-}
-
-th{
-    background-color: #e0e3e7;
-}
-
-td{
-    background-color: #ececec;
-}
-
-.air-quality-parameters-table{
-    overflow: hidden;
-    position: relative;
-    margin-top: 1%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: left;
-    height: fit-content;
-    width: 90%;
-    opacity: 0;
-}
-
-.air-quality-sensors-table{
-    overflow: hidden;
-    top: -11.9%;
-    left: 10%;
-    position: relative;
-    margin-top: 0%;
-    margin-right: 10%;
-    margin-left: 10%;
-    text-align: left;
-    height: fit-content;
-    width: 70%;
-    opacity: 0.7;
-}
-
-/* table delete buttons */
-
-.delete-column{
-    background-color: transparent;
-    border: none;
-}
-
-.delete-button-row{
-    position: absolute;
-    margin-top: -0.3%;
-    margin-left: -2%;
-
-    background: transparent;
-    border: none;
-}
-
-.delete-button[type="button"]{
-    box-shadow: none;
-    border: 1px solid #000;
-    background-color: #f44336;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.delete-button:active{
-    background-color: #E7AE41;
 }
 
 /* table pagination */
