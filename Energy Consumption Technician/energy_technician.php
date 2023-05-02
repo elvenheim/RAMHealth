@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Energy Consumption Technician</title>
     <link rel="stylesheet" href="energy_technician.css">
+    <link rel="stylesheet" href="energy_technician_two.css">
+    <link rel="stylesheet" href="ec_nav_two.css">
+    <link rel="stylesheet" href="ec_nav_one.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
     <body class="energy-technician-main">
-    <div class="wrapper">
+        <div class="wrapper">
             <nav class="main-header navbar navbar-expand navbar-gray">
                 <div class="apc-logo">
                     <img src="https://signin.apc.edu.ph/images/logo.png" width="55px"/>
@@ -17,15 +20,13 @@
                 <div class="ram-health-title">
                     RAM Health
                 </div>
-                <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    <?php include 'air_technician_name.php';?>
+                    <?php include 'energy_technician_name.php';?>
                 </span>
                 <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
-                    <?php include 'air_technician_role.php';?>
+                    <?php include 'energy_technician_role.php';?>
                 </span>
-                </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post">
                         <button class="logout-button" type="button" onclick="logout()">
@@ -37,19 +38,20 @@
             </nav>
         </div>
         <!-- For the Main Interface Contents -->
-        <!-- Air Technician Table -->
+        <!-- Energy Technician Table -->
         <div class="content"> 
             <div class="card">
-                <div class="content-parameter">
-                    <nav class="card-header-indicator">
-                    </nav>
-                    <nav class="card-header">
-                    </nav>
-                    <a class = "card-title">
-                        <span>
-                            Energy Consumption Table
-                        </span>
+                <nav class="card-header">
+                    <nav id="param-header" class="card-header-indicator"></nav>
+                    <a class = "card-title" onclick="navParameter()">
+                        <span> Energy Consumption Table </span>
                     </a>
+                    <nav id="sensor-header" class="card-header-indicator-second"></nav>
+                    <a class = "card-title-second" onclick="navSensor()"> 
+                        <span> Energy Consumption Sensors </span>
+                    </a>
+                <div id="param-table" class="content-parameter">
+                    
                     <!-- Selection of Building Floor -->
                     <form class="building-floor-dropdown">
                         <span>
@@ -64,7 +66,7 @@
                     </form>
                     <!-- Selection of Building Floor -->
                     <div class = "table-button">
-                        <button id="download-table" class="download-table" onclick="adduser_popup()">
+                        <button id="download-table" class="download-table" onclick="downloadExcel()">
                             <span class="fas fa-download"></span>
                             Download
                         </button>
@@ -80,75 +82,58 @@
                             </label>
                         </form>
                     </div>
-                    <table class = "air-quality-parameters-table">
+                    <table class = "energy-consumption-parameters-table">
                         <thead>
                             <tr>
-                                <!-- <th class = "delete-column"></th> for sensors table-->
-                                <!-- <th>Room Number</th> still not linked -->
-                                <!-- <th>Sensor ID</th> sensor id still not connected-->
+                                <th>Room Number</th>
+                                <th>Sensor</th>
                                 <th>Date</th>
-                                <th>Time</th>
-                                <th>Indoor Temperature</th>
-                                <th>Outdoor Temperature</th>
-                                <th>Particulate Matter 10</th>
-                                <th>Particulate Matter 2.5</th>
-                                <th>Particulate Matter 0.1</th>
-                                <th>Carbon Dioxide Level</th>
-                                <th>Humidity Level</th>
+                                <th>Time</th>              
+                                <th>Electric Current</th>
                             </tr>
                         </thead>
                         <tbody id = "table-body">
-                            <?php include 'air_technician_parameter_table.php'; ?>
+                            <?php include 'energy_technician_parameter_table.php'; ?>
                         </tbody>
                     </table>
                 </div>
-                <div class="content-sensor">
-                    <nav class="card-header-indicator-second">
-                    </nav>
-                    <a class = "card-title-second">
-                        <span>
-                            Energy Consumption Sensors
-                        </span>
-                    </a>
-
-                    <table class = "air-quality-sensors-table">
+                <div id="sensor-table" class="content-sensor">
+                    <table class = "energy-consumption-sensors-table">
                         <thead>
                             <tr>
                                 <th class = "delete-column"></th>
                                 <th>Room Number</th>
-                                <th>Sensor ID</th>
+                                <th>Sensor</th>
                                 <th>Sensor Type</th>
                                 <th>Date Added</th>
                                 <th>Status</th>
-                                <th>Date of Update</th>
+                                <!-- <th>Date of Update</th> -->
                             </tr>
                         </thead>
-                        <tbody id = "table-body">
-                            <!-- <?php include 'air_technician_parameter_table.php'; ?> -->
+                        <tbody id = "table-body-sensor">
+                            <?php include 'energy_technician_sensor_table.php'; ?>
                         </tbody>
-                    </table>
+                    </table>    
                     <div id="addroom-popup" class = "popup">
                         <span class = "add-title"> 
-                            EQ Sensor Panel
+                            AQ Sensor Panel
                         </span>
                         <div class = "popup-line">
                         </div>
-                        <form id="add-room" method="POST" class="user-input" action="housekeep_fetch_input.php">                                <label for="building_floor">Building Floor:</label>
-                            <input type="number" id="building-floor" name="building-floor" required><br>
+                        <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
 
-                            <label for="room-number">Room Number:</label>
-                            <input type="text" id="room-number" name="room-number" required><br>
-                            
-                            <label for="room-name">Sensor Type:</label>
-                        <input type="text" id="room-name" name="room-name" required><br>
+                            <?php include 'input_room.php'?>
 
-                            <label for="room-type">Sensor Name:</label>
-                            <input type="text" id="room-type" name="room-type" required><br>
+                            <?php include 'input_sensor.php'?>
+
+                            <label for="sensor-name">Sensor Name:</label>
+                            <input type="text" id="sensor_name" name="sensor_name" required><br>
 
                             <button class="save-details" type="submit">Add Room</button>
                         </form>
                     </div>
                 </div>
+                </nav>
             </div>
         </div>
     </div>

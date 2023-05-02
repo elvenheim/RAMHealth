@@ -30,8 +30,8 @@
     background-color: #fff;
     border: 1px solid rgba(127,127,127);
     bottom: 30%;
-    width: 20%;
-    height: 460px;
+    width: 22%;
+    height: 370px;
     border-radius: 4px;
 }
 
@@ -81,7 +81,6 @@ form label {
     width: fit-content;
 }
 
-form input[type="number"],
 form input[type="text"] {
     position: relative;
     display: block;
@@ -95,9 +94,24 @@ form input[type="text"] {
     font-size: 16px;
 }
 
+.room_number, .sensor_type{
+    z-index: 550;
+    position: relative;
+    display: block;
+    width: 96%;
+    top: 12%;
+    right: 0%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .save-details[type="submit"] {
     position: relative;
-    top: 12%;
+    z-index: 1;
+    top: 13%;
     left: 33%;
     width: fit-content;
     align-items: center;

@@ -18,7 +18,7 @@
     z-index: 555;
     position: relative;
     width: fit-content;
-    right: 700px;
+    right: 590px;
     top: 20px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
@@ -29,9 +29,9 @@
 .card-header-indicator{
     position: absolute;
     top: 48px;
-    left: 45px;
+    left: 48px;
     height: 5px;
-    width: 200px;
+    width: 310px;
     opacity: 1;
     background-color: #E7AE41;
     border-radius: 10px;
@@ -41,7 +41,7 @@
     z-index: 554;
     position: relative;
     width: fit-content;
-    right: 590px;
+    right: 500px;
     top: 20px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
@@ -52,9 +52,9 @@
 .card-header-indicator-second{
     position: absolute;
     top: 48px;
-    left: 342px;
+    left: 432px;
     height: 5px;
-    width: 225px;
+    width: 330px;
     opacity: 0;
     background-color: #E7AE41;
     border-radius: 10px;

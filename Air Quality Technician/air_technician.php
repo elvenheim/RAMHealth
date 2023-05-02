@@ -128,14 +128,9 @@
                         </div>
                         <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
 
-                            <label for="building-floor">Building Floor:</label>
-                            <input type="number" id="building_floor" name="building_floor" required><br>
+                            <?php include 'input_room.php'?>
 
-                            <label for="room-number">Room Number:</label>
-                            <input type="text" id="room_number" name="room_number" required><br>
-                            
-                            <label for="sensor-type">Sensor Type:</label>
-                            <input type="text" id="sensor_type" name="sensor_type" required><br>
+                            <?php include 'input_sensor.php'?>
 
                             <label for="sensor-name">Sensor Name:</label>
                             <input type="text" id="sensor_name" name="sensor_name" required><br>
@@ -150,5 +145,4 @@
     </div>
     <script src="../Air Quality Technician/air_technician.js"></script>
     </body>
-    
 </html>

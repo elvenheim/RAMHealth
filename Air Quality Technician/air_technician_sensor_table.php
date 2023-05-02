@@ -94,36 +94,7 @@
         echo "</td>";
         echo "</tr>";
     }
-
-    // $sql = "SELECT * FROM sensor WHERE sensor_type ='1' ORDER BY sensor_id LIMIT $offset, $rows_per_page";
-    // $result_table = mysqli_query($con, $sql);
-
-    // while ($row = mysqli_fetch_assoc($result_table)){
-    //     echo "<tr>";
-    //     echo '<td class="delete-button-row">';
-    //     echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['sensor_id'] . ')"> 
-    //         <i class="fas fa-trash"></i> 
-    //         </button>';
-    //     echo "</td>";
-    //     echo "<td>" . $row['sensor_id'] . "</td>";
-    //     echo "<td>" . $row['sensor_room_num'] . "</td>";
-    //     echo "<td>" . $row['sensor_type'] . "</td>";
-    //     echo "<td>" . $row['sensor_name'] . "</td>";
-    //     echo "<td>" . $row['sensor_added_at'] . "</td>";
-    //     echo "<td>";
-    //     echo '<form class="status-form">';
-    //     echo '<input type="hidden" name="user_id" value="' . $row['sensor_id'] . '">';
-    //     echo '<select name="sensor_status" onchange="updateStatus(this.form);">';
-    //     echo '<option value="1"' . ($row['sensor_status'] == 1 ? ' selected' : '') . '>Enabled</option>';
-    //     echo '<option value="0"' . ($row['sensor_status'] == 0 ? ' selected' : '') . '>Disabled</option>';
-    //     echo '</select>';
-    //     echo '</form>';
-    //     echo "</td>";
-    //     // echo "<td>" . $row['sensor_update'] . "</td>";
-    //     echo "</tr>";
-    // }
-        
-
+    
     echo "<div class='pagination-sensor'>";
     if ($total_pages > 1) {
         $start_page = max(1, $page - 2);
