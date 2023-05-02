@@ -33,7 +33,6 @@ function adduser_popup(){
     popupBg.style.opacity = "0";
     popup.style.opacity = "0";
     popupBg.style.pointerEvents = "none";
-    popupBg.style.pointerEvents = "none";
     popup_close_btn.style.cursor = "default";
     popup_close_btn.removeAttribute("onclick");
     document.getElementById("add_user").reset();

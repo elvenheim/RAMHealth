@@ -56,7 +56,7 @@
                     </div>
                     <form id="add_user" method="POST" class="user-input" action="admin_fetch_input.php">
                     <label for="user_id">User ID:</label>
-                    <input type="text" id="user_id" name="user_id" required><br>
+                    <input type="number" id="user_id" name="user_id"required><br>
 
                     <?php include 'input_role.php'?>
 

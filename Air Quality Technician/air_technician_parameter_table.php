@@ -24,14 +24,8 @@
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        // For sensors table
-        // echo '<td class="delete-button-row">';
-        // echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['air_quality_id'] . ')"> 
-        //     <i class="fas fa-trash"></i> 
-        //     </button>';
-        // echo "</td>";
-
-        // echo "<td>" . $row['air_quality_id'] . "</td>";
+        echo "<td>" . $row['aq_room_num'] . "</td>";
+        echo "<td>" . $row['aq_sensor_id'] . "</td>";
         echo "<td>" . $row['air_quality_date'] . "</td>";
         echo "<td>" . $row['air_quality_time'] . "</td>";
         echo "<td>" . $row['temperature_indoor'] . "</td>";
@@ -44,7 +38,7 @@
         echo "</tr>";
     }
     
-    echo "<div class='pagination'>";
+    echo "<div class='pagination-parameter'>";
     if ($total_pages > 1) {
         $start_page = max(1, $page - 2);
         $end_page = min($total_pages, $start_page + 4);

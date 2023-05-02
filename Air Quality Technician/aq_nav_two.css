@@ -1,38 +1,14 @@
-/* interface navigation menu */
-.card-header-indicator-second{
-    z-index: 554;
-    position: absolute;
-    top: 5.7%;
-    left: 19.1%;
-    height: 5px;
-    width: 225px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
-}
-
-.card-title-second{
-    position: relative;
-    width: fit-content;
-    right: 25%;
-    top: -7.65%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-
-/* add user popup */
+/* add sensor popup */
 .popup{
     z-index: 2;
     position: absolute;
-    top: 11.5%;
+    top: 50%;
     left: 2%;
     background-color: #fff;
     border: 1px solid rgba(127,127,127);
     bottom: 30%;
     width: 20%;
-    height: 55%;
+    height: 460px;
     border-radius: 4px;
 }
 
@@ -128,5 +104,5 @@ form input[type="submit"]:hover {
     text-align: left;
     height: fit-content;
     width: 70%;
-    opacity: 0;
+    opacity: 1;
 }

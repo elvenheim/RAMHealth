@@ -117,8 +117,7 @@ body{
 
 /* interface navigation menu */
 .card-header{
-    z-index: 1;
-    position: relative;
+    position: absolute;
     height: 6%;
     width: 100%;
     border-bottom: 1px solid;

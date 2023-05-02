@@ -20,7 +20,6 @@
                 <div class="ram-health-title">
                     RAM Health
                 </div>
-                <!-- FOR LOG OUT -->
                 <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
                     <?php include 'air_technician_name.php';?>
@@ -28,7 +27,6 @@
                 <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
                     <?php include 'air_technician_role.php';?>
                 </span>
-                </div>
                 <ul id="btn_logout" class="log-out">
                     <form name="logout-form" method="post">
                         <button class="logout-button" type="button" onclick="logout()">
@@ -43,16 +41,17 @@
         <!-- Air Technician Table -->
         <div class="content"> 
             <div class="card">
-                <div class="content-parameter">
-                    <nav class="card-header-indicator">
-                    </nav>
-                    <nav class="card-header">
-                    </nav>
-                    <a class = "card-title">
-                        <span>
-                            Air Quality Table
-                        </span>
+                <nav class="card-header">
+                    <nav id="param-header" class="card-header-indicator"></nav>
+                    <a class = "card-title" onclick="navParameter()">
+                        <span> Air Quality Table </span>
                     </a>
+                    <nav id="sensor-header" class="card-header-indicator-second"></nav>
+                    <a class = "card-title-second" onclick="navSensor()"> 
+                        <span> Air Quality Sensors </span>
+                    </a>
+                <div id="param-table" class="content-parameter">
+                    
                     <!-- Selection of Building Floor -->
                     <form class="building-floor-dropdown">
                         <span>
@@ -67,7 +66,7 @@
                     </form>
                     <!-- Selection of Building Floor -->
                     <div class = "table-button">
-                        <button id="download-table" class="download-table" onclick="adduser_popup()">
+                        <button id="download-table" class="download-table" onclick="downloadExcel()">
                             <span class="fas fa-download"></span>
                             Download
                         </button>
@@ -86,11 +85,10 @@
                     <table class = "air-quality-parameters-table">
                         <thead>
                             <tr>
-                                <!-- <th class = "delete-column"></th> for sensors table-->
-                                <!-- <th>Room Number</th> still not linked -->
-                                <!-- <th>Sensor ID</th> sensor id still not connected-->
+                                <th>Room Number</th>
+                                <th>Sensor ID</th>
                                 <th>Date</th>
-                                <th>Time</th>
+                                <th>Time</th>              
                                 <th>Indoor Temperature</th>
                                 <th>Outdoor Temperature</th>
                                 <th>Particulate Matter 10</th>
@@ -105,15 +103,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="content-sensor">
-                    <nav class="card-header-indicator-second">
-                    </nav>
-                    <a class = "card-title-second">
-                        <span>
-                            Air Quality Sensors
-                        </span>
-                    </a>
-
+                <div id="sensor-table" class="content-sensor">
                     <table class = "air-quality-sensors-table">
                         <thead>
                             <tr>
@@ -126,35 +116,39 @@
                                 <th>Date of Update</th>
                             </tr>
                         </thead>
-                        <tbody id = "table-body">
-                            <!-- <?php include 'air_technician_parameter_table.php'; ?> -->
+                        <tbody id = "table-body-sensor">
+                            <?php include $_SERVER['DOCUMENT_ROOT']."../air_technician_sensor_table.php"; ?>
                         </tbody>
-                    </table>
+                    </table>    
                     <div id="addroom-popup" class = "popup">
                         <span class = "add-title"> 
                             AQ Sensor Panel
                         </span>
                         <div class = "popup-line">
                         </div>
-                        <form id="add-room" method="POST" class="user-input" action="housekeep_fetch_input.php">                                <label for="building_floor">Building Floor:</label>
-                            <input type="number" id="building-floor" name="building-floor" required><br>
+                        <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
+
+                            <label for="building-floor">Building Floor:</label>
+                            <input type="number" id="building-floor" name="" required><br>
 
                             <label for="room-number">Room Number:</label>
                             <input type="text" id="room-number" name="room-number" required><br>
                             
-                            <label for="room-name">Sensor Type:</label>
-                        <input type="text" id="room-name" name="room-name" required><br>
+                            <label for="sensor-type">Sensor Type:</label>
+                            <input type="text" id="sensor-type" name="sensor-type" required><br>
 
-                            <label for="room-type">Sensor Name:</label>
-                            <input type="text" id="room-type" name="room-type" required><br>
+                            <label for="sensor-name">Sensor Name:</label>
+                            <input type="text" id="sensor-name" name="sensor-name" required><br>
 
                             <button class="save-details" type="submit">Add Room</button>
                         </form>
                     </div>
                 </div>
+                </nav>
             </div>
         </div>
     </div>
     <script src="../Air Quality Technician/air_technician.js"></script>
     </body>
+    
 </html>
