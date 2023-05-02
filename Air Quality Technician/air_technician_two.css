@@ -15,6 +15,7 @@
 /* interface navigation menu */
 
 .card-title{
+    z-index: 555;
     position: relative;
     width: fit-content;
     right: 700px;
@@ -37,6 +38,7 @@
 }
 
 .card-title-second{
+    z-index: 554;
     position: relative;
     width: fit-content;
     right: 590px;
@@ -48,7 +50,6 @@
 }
 
 .card-header-indicator-second{
-    z-index: 554;
     position: absolute;
     top: 48px;
     left: 342px;

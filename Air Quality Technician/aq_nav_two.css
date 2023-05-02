@@ -1,3 +1,17 @@
+/* table part */
+.air-quality-sensors-table{
+    position: relative;
+    overflow: hidden;
+    top: 120px;
+    left: 10%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    height: fit-content;
+    width: 1300px;
+}
+
 /* add sensor popup */
 .popup{
     z-index: 2;
@@ -39,7 +53,6 @@
 
 
 /* input forms */
-
 .user-input {
     position: relative;
     display: flex;
@@ -90,19 +103,4 @@ form input[type="text"] {
   
 form input[type="submit"]:hover {
     background-color: #3e8e41;
-}
-
-/* table part */
-.air-quality-sensors-table{
-    overflow: hidden;
-    top: -11.9%;
-    left: 10%;
-    position: relative;
-    margin-top: 0%;
-    margin-right: 10%;
-    margin-left: 10%;
-    text-align: left;
-    height: fit-content;
-    width: 70%;
-    opacity: 1;
 }

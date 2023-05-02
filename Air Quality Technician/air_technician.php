@@ -111,13 +111,14 @@
                                 <th>Room Number</th>
                                 <th>Sensor ID</th>
                                 <th>Sensor Type</th>
+                                <th>Sensor Name</th>
                                 <th>Date Added</th>
                                 <th>Status</th>
-                                <th>Date of Update</th>
+                                <!-- <th>Date of Update</th> -->
                             </tr>
                         </thead>
                         <tbody id = "table-body-sensor">
-                            <?php include $_SERVER['DOCUMENT_ROOT']."../air_technician_sensor_table.php"; ?>
+                            <?php include 'air_technician_sensor_table.php'; ?>
                         </tbody>
                     </table>    
                     <div id="addroom-popup" class = "popup">
@@ -129,16 +130,16 @@
                         <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
 
                             <label for="building-floor">Building Floor:</label>
-                            <input type="number" id="building-floor" name="" required><br>
+                            <input type="number" id="building_floor" name="building_floor" required><br>
 
                             <label for="room-number">Room Number:</label>
-                            <input type="text" id="room-number" name="room-number" required><br>
+                            <input type="text" id="room_number" name="room_number" required><br>
                             
                             <label for="sensor-type">Sensor Type:</label>
-                            <input type="text" id="sensor-type" name="sensor-type" required><br>
+                            <input type="text" id="sensor_type" name="sensor_type" required><br>
 
                             <label for="sensor-name">Sensor Name:</label>
-                            <input type="text" id="sensor-name" name="sensor-name" required><br>
+                            <input type="text" id="sensor_name" name="sensor_name" required><br>
 
                             <button class="save-details" type="submit">Add Room</button>
                         </form>

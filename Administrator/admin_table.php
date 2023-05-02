@@ -32,7 +32,6 @@ $(document).ready(function() {
   });
 });
 
-
 function deleteRow(userId) {
   if (confirm("Are you sure you want to delete this user?")) {
       var xhr = new XMLHttpRequest();
@@ -48,7 +47,6 @@ function deleteRow(userId) {
   }
 }
 </script>
-
 
 <?php 
     require_once('admin_connect.php');

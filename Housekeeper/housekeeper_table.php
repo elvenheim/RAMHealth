@@ -13,6 +13,21 @@
         };
         xhr.send("room_num=" + roomNum);
     }
+
+    function deleteRow(userId) {
+        if (confirm("Are you sure you want to delete this user?")) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "admin_delete_user.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert("User has been successfully deleted.");
+                    window.location.reload();
+                }
+            };
+            xhr.send("user_id=" + userId);
+        }
+    }
 }
 </script>
 
