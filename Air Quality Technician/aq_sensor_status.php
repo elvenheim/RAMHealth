@@ -1,5 +1,5 @@
 <?php
-    require_once('air_technician_connect.php');
+  require_once('air_technician_connect.php');
 
   $sensor_id = $_POST['sensor_id'];
   $sensor_status = $_POST['sensor_status'];

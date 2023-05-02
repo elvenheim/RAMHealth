@@ -12,6 +12,15 @@
     width: 1300px;
 }
 
+/* user status */
+
+.status-form select {
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+}
+
 /* add sensor popup */
 .popup{
     z-index: 2;

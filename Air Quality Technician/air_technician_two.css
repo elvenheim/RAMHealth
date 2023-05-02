@@ -2,14 +2,14 @@
 /* table contents */
 .content-parameter{
     position: absolute;
-    opacity: 1;
-    pointer-events: visible;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .content-sensor{
     position: relative;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
+    pointer-events: visible;
 }
 
 /* interface navigation menu */

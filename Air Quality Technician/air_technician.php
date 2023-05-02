@@ -109,9 +109,8 @@
                             <tr>
                                 <th class = "delete-column"></th>
                                 <th>Room Number</th>
-                                <th>Sensor ID</th>
+                                <th>Sensor</th>
                                 <th>Sensor Type</th>
-                                <th>Sensor Name</th>
                                 <th>Date Added</th>
                                 <th>Status</th>
                                 <!-- <th>Date of Update</th> -->
