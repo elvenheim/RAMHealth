@@ -116,11 +116,11 @@
                     </table>    
                     <div id="addroom-popup" class = "popup">
                         <span class = "add-title"> 
-                            AQ Sensor Panel
+                            EC Sensor Panel
                         </span>
                         <div class = "popup-line">
                         </div>
-                        <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
+                        <form id="add-aq-sensor" method="POST" class="user-input" action="ec_sensor_fetch_input.php">
 
                             <?php include 'input_room.php'?>
 
