@@ -87,7 +87,6 @@
                 <table class = "admin-table">
                     <thead>
                         <tr>
-                            <th class = "delete-column"></th>
                             <th>User ID</th>
                             <th>Role</th>
                             <th>Full Name</th>

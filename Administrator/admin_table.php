@@ -1,7 +1,41 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+function updateTable() {
+    // Get all the updated data in the table
+    var data = [];
+    $('table tr').each(function(i, row){
+        var rowData = {};
+        $(row).find('td[contenteditable=true]').each(function(j, cell){
+            rowData[$(cell).attr('class')] = $(cell).html();
+        });
+        data.push(rowData);
+    });
+
+    // Show a confirmation message
+    if (window.confirm("Are you sure you want to update the table?")) {
+        // Send the data to the server using Ajax
+        $.ajax({
+            url: 'update_table.php',
+            type: 'POST',
+            data: {data: data},
+            success: function(response) {
+                if (response.status === 'error') {
+                    console.log('Error: ' + response.message);
+                } else {
+                    console.log('Table updated successfully');
+                    location.reload();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error);
+            }
+        });
+    }
+}
+
+
 $(document).ready(function() {
-  $('select[name="user_status"]').change(function() {
+  $('select[name="user_status"]').not('.no-color-change').change(function() {
     var form = $(this).parent('form');
     var formData = form.serialize();
     var originalStatus = $(this).data('original-status');
@@ -74,18 +108,10 @@ function deleteRow(userId) {
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr" . ($row['user_status'] == 0 ? ' class="disabled"' : '') . ">";
-        echo '<td class="delete-button-row">';
-        echo '<a href="admin.php">
-          <button class="delete-button" type="button" 
-          onclick="deleteRow(' . $row['user_id'] . ')"> 
-          <i class="fas fa-trash"></i> 
-          </button>
-          </a>';
-        echo "</td>";
-        echo "<td>" . $row['user_id'] . "</td>";
+        echo "<td contenteditable='true'>" . $row['user_id'] . "</td>";
         echo "<td>" . $row['role_name'] . "</td>";
-        echo "<td>" . $row['user_fullname'] . "</td>";
-        echo "<td>" . $row['user_email'] . "</td>";
+        echo "<td contenteditable='true'>" . $row['user_fullname'] . "</td>";
+        echo "<td contenteditable='true'>" . $row['user_email'] . "</td>";
         echo "<td>" . $row['user_create_at'] . "</td>";
         echo "<td>";
         echo '<form class="status-form">';
@@ -96,9 +122,17 @@ function deleteRow(userId) {
         echo '</select>';
         echo '</form>';
         echo "</td>";
+        echo '<td class="action-buttons">';
+        echo '<div>';
+        echo ' <button class="delete-button" type="button" onclick="deleteRow(' . $row['user_id'] . ')"> 
+              <i class="fas fa-trash"></i></button>';
+        echo '</div>';
+        echo "</td>";
         echo "</tr>";
     }
-    
+
+    echo '<button class="update-button" type="button" onclick="updateTable()">Update</button>';
+
     echo "<div class='pagination'>";
     if ($total_pages > 1) {
         $start_page = max(1, $page - 2);
