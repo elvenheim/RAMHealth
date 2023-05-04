@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="ec_nav_one.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+    <script src="../Energy Consumption Technician/energy_technician.js"></script>
 </head>
     <body class="energy-technician-main">
         <div class="wrapper">
@@ -137,6 +138,5 @@
             </div>
         </div>
     </div>
-    <script src="../Energy Consumption Technician/energy_technician.js"></script>
     </body>
 </html>

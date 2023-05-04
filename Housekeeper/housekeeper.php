@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="housekeeper.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+    <script src="../Housekeeper/housekeeper.js"></script>
 </head>
 <body class="housekeeper-main">
     <div class="wrapper">
@@ -94,6 +95,5 @@
             </div>
         </div>
     </div>
-    <script src="../Housekeeper/housekeeper.js"></script>
 </body>
 </html>
