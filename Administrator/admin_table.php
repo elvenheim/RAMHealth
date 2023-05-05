@@ -1,38 +1,37 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-function updateTable() {
-    // Get all the updated data in the table
-    var data = [];
-    $('table tr').each(function(i, row){
-        var rowData = {};
-        $(row).find('td[contenteditable=true]').each(function(j, cell){
-            rowData[$(cell).attr('class')] = $(cell).html();
-        });
-        data.push(rowData);
-    });
+// function updateTable() {
+//     // Get all the updated data in the table
+//     var data = [];
+//     $('table tr').each(function(i, row){
+//         var rowData = {};
+//         $(row).find('td[contenteditable=true]').each(function(j, cell){
+//             rowData[$(cell).attr('class')] = $(cell).html();
+//         });
+//         data.push(rowData);
+//     });
 
-    // Show a confirmation message
-    if (window.confirm("Are you sure you want to update the table?")) {
-        // Send the data to the server using Ajax
-        $.ajax({
-            url: 'update_table.php',
-            type: 'POST',
-            data: {data: data},
-            success: function(response) {
-                if (response.status === 'error') {
-                    console.log('Error: ' + response.message);
-                } else {
-                    console.log('Table updated successfully');
-                    location.reload();
-                }
-            },
-            error: function(xhr, status, error) {
-                console.log('Error: ' + error);
-            }
-        });
-    }
-}
-
+//     // Show a confirmation message
+//     if (window.confirm("Are you sure you want to update the table?")) {
+//         // Send the data to the server using Ajax
+//         $.ajax({
+//             url: 'update_table.php',
+//             type: 'POST',
+//             data: {data: data},
+//             success: function(response) {
+//                 if (response.status === 'error') {
+//                     console.log('Error: ' + response.message);
+//                 } else {
+//                     console.log('Table updated successfully');
+//                     location.reload();
+//                 }
+//             },
+//             error: function(xhr, status, error) {
+//                 console.log('Error: ' + error);
+//             }
+//         });
+//     }
+// }
 
 $(document).ready(function() {
   $('select[name="user_status"]').not('.no-color-change').change(function() {
@@ -74,7 +73,7 @@ function deleteRow(userId) {
       xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
               alert("User has been successfully deleted.");
-              window.location.reload();
+              window.location.href = "admin.php";
           }
       };
       xhr.send("user_id=" + userId);
@@ -102,16 +101,16 @@ function deleteRow(userId) {
             FROM user u
             JOIN role_type r 
             ON u.user_role = r.role_id
-            ORDER BY u.user_id
+            ORDER BY u.user_id ASC, u.user_status DESC
             LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr" . ($row['user_status'] == 0 ? ' class="disabled"' : '') . ">";
-        echo "<td contenteditable='true'>" . $row['user_id'] . "</td>";
+        echo "<td>" . $row['user_id'] . "</td>";
         echo "<td>" . $row['role_name'] . "</td>";
-        echo "<td contenteditable='true'>" . $row['user_fullname'] . "</td>";
-        echo "<td contenteditable='true'>" . $row['user_email'] . "</td>";
+        echo "<td>" . $row['user_fullname'] . "</td>";
+        echo "<td>" . $row['user_email'] . "</td>";
         echo "<td>" . $row['user_create_at'] . "</td>";
         echo "<td>";
         echo '<form class="status-form">';
@@ -133,20 +132,4 @@ function deleteRow(userId) {
 
     echo '<button class="update-button" type="button" onclick="updateTable()">Update</button>';
 
-    echo "<div class='pagination'>";
-    if ($total_pages > 1) {
-        $start_page = max(1, $page - 2);
-        $end_page = min($total_pages, $start_page + 4);
-        if ($end_page - $start_page < 4 && $start_page > 1) {
-            $start_page = max(1, $end_page - 4);
-        }
-        echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
-        for ($i = $start_page; $i <= $end_page; $i++) {
-            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
-        }
-        echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
-    }
-    echo "</div>";
 ?>

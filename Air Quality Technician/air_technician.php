@@ -45,7 +45,7 @@
                 <nav class="card-header">
                     <nav id="param-header" class="card-header-indicator"></nav>
                     <a class = "card-title" onclick="navParameter()">
-                        <span> Air Quality Table </span>
+                        <span> Air Quality Parameter Table </span>
                     </a>
                     <nav id="sensor-header" class="card-header-indicator-second"></nav>
                     <a class = "card-title-second" onclick="navSensor()"> 

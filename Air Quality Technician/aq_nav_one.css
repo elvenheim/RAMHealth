@@ -46,7 +46,7 @@
 }
 
 .refresh-table{
-    position: inherit;
+    position: relative;
     top: 100%;
     left: 1500px;
     font-family: 'Nunito Sans', sans-serif;
@@ -61,10 +61,10 @@
     color: #E7AE41;
 }
 
-.import-table{
-    position: inherit;
-    top: 100%;
-    left: 1656px;
+.import-btn{
+    position: relative;
+    bottom: 25px;
+    left: 1658px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     width: max-content;

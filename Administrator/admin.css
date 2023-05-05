@@ -376,12 +376,12 @@ tr.disabled td:not(.delete-button-row){
 /* table pagination */
 
 .pagination {
-    position: absolute;
-    margin-left: 0%;
-    margin-bottom: 3%;
+    z-index: 540;
+    position: relative;
+    top: 3%;
     bottom: 0;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
   
 .pagination a {

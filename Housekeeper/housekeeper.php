@@ -92,6 +92,7 @@
                         <?php include 'housekeeper_table.php'; ?>
                     </tbody>
                 </table> 
+                <?php include 'housekeep_pagination.php'; ?>
             </div>
         </div>
     </div>

@@ -99,7 +99,8 @@
                     <tbody id = "table-body">
                         <?php include 'admin_table.php'; ?>
                     </tbody>
-                </table> 
+                </table>
+                <?php include 'admin_pagination.php'; ?>
             </div>
         </div>
     </div>
