@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="aq_nav_one.css">       
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+    <script src="../Air Quality Technician/air_technician.js"></script>
 </head>
     <body class="aq-technician-main">
         <div class="wrapper">
@@ -44,14 +45,13 @@
                 <nav class="card-header">
                     <nav id="param-header" class="card-header-indicator"></nav>
                     <a class = "card-title" onclick="navParameter()">
-                        <span> Air Quality Table </span>
+                        <span> Air Quality Parameter Table </span>
                     </a>
                     <nav id="sensor-header" class="card-header-indicator-second"></nav>
                     <a class = "card-title-second" onclick="navSensor()"> 
                         <span> Air Quality Sensors </span>
                     </a>
                 <div id="param-table" class="content-parameter">
-                    
                     <!-- Selection of Building Floor -->
                     <form class="building-floor-dropdown">
                         <span>
@@ -142,7 +142,5 @@
                 </nav>
             </div>
         </div>
-    </div>
-    <script src="../Air Quality Technician/air_technician.js"></script>
     </body>
 </html>

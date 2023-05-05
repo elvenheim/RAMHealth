@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="new_login.css">
       <link rel="shortcut icon" href="../favicons/favicon.ico"/>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+      <script src="../Login/new_login.js"></script>
    </head>
    <body class="login-page">
       <div class="center">
@@ -32,6 +33,5 @@
                </button>
             </form>
       </div>
-      <script src="../Login/new_login.js"></script>
    </body>
 </html>

@@ -154,7 +154,7 @@ body{
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 42.5%;
+    left: 37.9%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -289,12 +289,12 @@ form input[type="submit"]:hover {
 /* table part */
 
 table{
-    width: 95%;
     border-collapse: collapse;
 }
 
 th, td{
     border: 1px solid #000;
+    width: 300px;
     padding: 15px;
 }
 
@@ -310,25 +310,25 @@ tr.disabled td:not(.delete-button-row){
     overflow: hidden;
     position: relative;
     top: auto;
+    left: 100px;
     bottom: auto;
-    margin-top: 2.5%;
+    width: 1920px !important;
+    margin-top: 0.5%;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
 }
 
-/* table delete buttons */
-
-.delete-column{
-    background-color: transparent;
+.action-buttons {
+    position: relative;
     border: none;
+    background-color: transparent !important;
 }
 
-.delete-button-row{
+.action-buttons div {
     position: absolute;
-    margin-top: -0.3%;
-    background: transparent;
-    border: none;
+    top: 10px;
+    right: 50;
 }
 
 .delete-button[type="button"]{
@@ -346,6 +346,24 @@ tr.disabled td:not(.delete-button-row){
     background-color: #E7AE41;
 }
 
+.update-button[type="button"]{
+    position: relative;
+    z-index: 1;
+    top: 80%;
+    left: 40.5%;
+    width: fit-content;
+    align-items: center;
+    background-color: #293a82;
+    color: #fff;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* user status */
 
 .status-form select {
@@ -358,12 +376,12 @@ tr.disabled td:not(.delete-button-row){
 /* table pagination */
 
 .pagination {
-    position: absolute;
-    margin-left: 0%;
-    margin-bottom: 3%;
+    z-index: 540;
+    position: relative;
+    top: 3%;
     bottom: 0;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
   
 .pagination a {

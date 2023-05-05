@@ -266,9 +266,7 @@ form input[type="submit"]:hover {
 /* table part */
 
 table{
-    width: 70%;
     border-collapse: collapse;
-    
 }
 
 th, td{
@@ -285,6 +283,7 @@ td{
 }
 
 .housekeeper-table{
+    overflow: hidden;
     position: relative;
     margin-top: 2%;
     margin-right: 2%;
@@ -326,7 +325,8 @@ td{
 /* table pagination */
 
 .pagination {
-    position: absolute;
+    z-index: 540;
+    position: relative;
     margin-left: 0%;
     margin-bottom: 3%;
     bottom: 0;

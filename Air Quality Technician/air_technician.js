@@ -11,6 +11,12 @@ function collapse_logout(){
   }
 }
 
+function logout(){
+  if (confirm("Are you sure you want to log out?")) {
+    window.location.href = "../Login/new_login.php";
+  }
+}
+
 function downloadExcel() {
   // Create an XMLHTTPRequest to get the Excel file from the server
   var xhr = new XMLHttpRequest();
@@ -28,13 +34,7 @@ function downloadExcel() {
       }
   };
   xhr.send();
-}
-
-function logout(){
-  if (confirm("Are you sure you want to log out?")) {
-    window.location.href = "../Login/new_login.php";
-  }
-}
+};
 
 function navParameter(){
   var navParamHeader = document.getElementById("param-header");

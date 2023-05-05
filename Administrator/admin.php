@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="admin.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+    <script src="../Administrator/admin.js"></script>
 </head>
     <body class="admin-main">
         <div class="wrapper">
@@ -87,7 +88,6 @@
                 <table class = "admin-table">
                     <thead>
                         <tr>
-                            <th class = "delete-column"></th>
                             <th>User ID</th>
                             <th>Role</th>
                             <th>Full Name</th>
@@ -99,10 +99,10 @@
                     <tbody id = "table-body">
                         <?php include 'admin_table.php'; ?>
                     </tbody>
-                </table> 
+                </table>
+                <?php include 'admin_pagination.php'; ?>
             </div>
         </div>
     </div>
-    <script src="../Administrator/admin.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
     require_once('air_technician_connect.php');
 
-    $room_num = $_POST['room_num'];
+    $room_num = $_POST['room_number'];
     $sensor_type = $_POST['sensor_type'];
     $sensor_name = $_POST['sensor_name'];
     $sensor_created_at = date('Y-m-d');
@@ -14,7 +14,7 @@
     $result = mysqli_stmt_get_result($stmt);
     if(mysqli_num_rows($result) > 0) {
         echo '<script type="text/javascript">alert("Sensor already exists");
-            window.location.href="admin.php"</script>';
+            window.location.href="air_technician.php"</script>';
         exit;
     }
 
@@ -25,11 +25,11 @@
 
     if (mysqli_stmt_affected_rows($stmt) > 0) {
         echo '<script type="text/javascript">alert("Sensor added successfully");
-            window.location.href="admin.php"</script>';
+            window.location.href="air_technician.php"</script>';
         exit;
     } else {
         echo '<script type="text/javascript">alert("Error adding sensor...");
-            window.location.href="admin.php"</script>';
+            window.location.href="air_technician.php"</script>';
         exit;
     }
 

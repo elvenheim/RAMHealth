@@ -8,13 +8,13 @@
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 alert("Room has been successfully deleted.");
-                window.location.reload();
+                window.location.href = "housekeeper.php";
             }
         };
         xhr.send("room_num=" + roomNum);
     }
 
-    function deleteRow(userId) {
+function deleteRow(userId) {
         if (confirm("Are you sure you want to delete this user?")) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "admin_delete_user.php", true);
@@ -90,21 +90,4 @@
         echo "<td>" . $row['room_added_at'] . "</td>";
         echo "</tr>";
     }
-    
-    echo "<div class='pagination'>";
-    if ($total_pages > 1) {
-        $start_page = max(1, $page - 2);
-        $end_page = min($total_pages, $start_page + 4);
-        if ($end_page - $start_page < 4 && $start_page > 1) {
-            $start_page = max(1, $end_page - 4);
-        }
-        echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
-        for ($i = $start_page; $i <= $end_page; $i++) {
-            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
-        }
-        echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
-    }
-    echo "</div>";
 ?>
