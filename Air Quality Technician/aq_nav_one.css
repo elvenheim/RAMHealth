@@ -1,15 +1,15 @@
 /* table part */
 .air-quality-parameters-table{
     overflow: hidden;
-    position: inherit;
+    position: relative;
     top: 150px;
-    left: 50px;
-    margin-top: 1%;
+    left: 0px;
+    width: 1800px !important;
+    margin-top: 10px;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
     height: fit-content;
-    width: 1800px;
 }
 
 .building-floor-dropdown{

@@ -1,16 +1,16 @@
 <?php
     require_once('air_technician_connect.php');
     
-    if (isset($_SESSION['user_id'])) {
-      $stmt = $con->prepare("SELECT user_fullname FROM user WHERE user_id = ?");
-      $stmt->bind_param("i", $_SESSION['user_id']);
+    if (isset($_SESSION['employee_id'])) {
+      $stmt = $con->prepare("SELECT employee_fullname FROM user_list WHERE employee_id = ?");
+      $stmt->bind_param("i", $_SESSION['employee_id']);
       $stmt->execute();
       $result = $stmt->get_result();
 
       if ($result->num_rows > 0) {
           $row = $result->fetch_assoc();
-          $_SESSION['user_fullname'] = $row['user_fullname'];
+          $_SESSION['employee_fullname'] = $row['employee_fullname'];
       }
   }
-  echo $_SESSION['user_fullname'];
+  echo $_SESSION['employee_fullname'];
 ?>

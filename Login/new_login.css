@@ -9,7 +9,7 @@ body{
     overflow: auto;
     margin: auto;
     width: fit-content;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
@@ -57,7 +57,9 @@ h5{
 .logo{
     padding: 1rem !important;
 }
+
 #o365logo{
+    margin-right: 0.25rem;
     vertical-align: middle;
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Air Quality Technician</title>
+    <title>RAM Health</title>
     <link rel="stylesheet" href="air_technician.css">
     <link rel="stylesheet" href="air_technician_two.css">
     <link rel="stylesheet" href="aq_nav_two.css">
@@ -51,6 +51,7 @@
                     <a class = "card-title-second" onclick="navSensor()"> 
                         <span> Air Quality Sensors </span>
                     </a>
+                </nav>
                 <div id="param-table" class="content-parameter">
                     <!-- Selection of Building Floor -->
                     <form class="building-floor-dropdown">

@@ -3,9 +3,12 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $con->prepare("SELECT user.*, role_type.role_url FROM user 
-            JOIN role_type ON user.user_role = role_type.role_id 
-            WHERE user.user_email = ? AND user.user_password = ?");
+    $stmt = $con->prepare("SELECT u.*, ul.employee_id, ul.employee_email, ul.employee_password, 
+                            r.role_url 
+            FROM user u
+            JOIN user_list ul ON u.employee_id = ul.employee_id
+            JOIN role_type r ON u.user_role = r.role_id 
+            WHERE ul.employee_email = ? AND ul.employee_password = ?");
     $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -18,9 +21,11 @@
             window.location.href="new_login.php"</script>';
             exit;
         }
-        $_SESSION['user_id'] = $row['user_id']; // Store user's id in session
+        $_SESSION['employee_id'] = $row['employee_id']; // Store user's id in session
         $_SESSION['session_id'] = uniqid(); // Generate a unique session ID
         header("Location: " . $role_url);
         exit;
     }
+
+    mysqli_close($con);
 ?>

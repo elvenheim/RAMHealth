@@ -1,4 +1,4 @@
-<div class='pagination'>
+<div class='pagination-usertable'>
 <?php
 require_once('admin_connect.php');
     
@@ -24,7 +24,7 @@ $sql = "SELECT u.*, r.role_name
 $result_table = mysqli_query($con, $sql);
 
 if ($total_pages > 1) {
-    $start_page = max(1, $page - 2);
+    $start_page = max(1, $page - 1);
     $end_page = min($total_pages, $start_page + 4);
     if ($end_page - $start_page < 4 && $start_page > 1) {
         $start_page = max(1, $end_page - 4);

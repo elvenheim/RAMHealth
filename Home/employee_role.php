@@ -1,5 +1,5 @@
 <?php
-  require_once('housekeep_connect.php');
+  require_once('home_connect.php');
 
   if (isset($_SESSION['employee_id'])) {
       $employee_id = $_SESSION['employee_id'];

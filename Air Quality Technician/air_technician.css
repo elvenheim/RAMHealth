@@ -90,12 +90,15 @@ body{
     background-color: #f8f9fa;
     padding: 10px;
 }
+
 .wrapper{
     min-height: 100%;
 }
+
 .aq-technician-main{
     background-color: #C2C7D0;
 }
+
 .card{
     z-index: 1;
     box-shadow: 0 0 1px;

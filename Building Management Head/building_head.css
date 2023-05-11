@@ -42,48 +42,50 @@ body{
     user-select: none;
 }
 
-.log-out{
+.log-out {
     position: absolute;
-    top: 2%;
-    padding-left: 89.5%;
-    z-index: 3;
+    right: 185px;
     display: none;
 }
 
-.log-out-name{
+.logout-button[type="submit"] {
+    z-index: 3000;
     position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 1vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.role-type{
-    position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 3.5vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
-    color: #C2C7D0;
-    cursor: default;
-}
-
-.logout-button[type="button"]{
     padding-top: 0;
+    margin-top: 27px;
     margin-right: 100px;
-    width: 100%;
+    width: 150px;
     height: 40px;
     font-size: 1.2rem;
     text-align: center;
     border: 1px solid #343A40;
     color: #343A40;
     cursor: pointer;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
     line-height: 1;
     background: #fff;
+    pointer-events: auto;
+}
+
+.logout-button[type="submit"]:hover{
+    background-color: #E7AE41;
+}
+
+.log-out-symbol {
+    z-index: 499;
+    position: absolute;
+    top: 13.5px;
+    right: 25px;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 1vh;
+    margin-right: 0vh;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.log-out-symbol:hover{
+    color: #E7AE41;
 }
 
 .user-footer{

@@ -69,7 +69,6 @@ function navSensor(){
     navSensorHeader.style.opacity = "1";
     navSensorTable.style.opacity = "1";
     navSensorTable.style.pointerEvents = "visible";
-
     navParamHeader.style.opacity = "0";
     navParamTable.style.opacity = "0";
     navParamTable.style.pointerEvents = "none";
@@ -77,9 +76,18 @@ function navSensor(){
     navSensorHeader.style.opacity = "1";
     navSensorTable.style.opacity = "1";
     navSensorTable.style.pointerEvents = "visible";
-
     navParamHeader.style.opacity = "0";
     navParamTable.style.opacity = "0";
     navParamTable.style.pointerEvents = "none";
   }
 }
+
+// prevent back button of browser
+(function () {
+  if (window.history && window.history.pushState) {
+      window.history.pushState('', null, './admin.php');
+      window.onpopstate = function () {
+          window.history.pushState('', null, './admin.php');
+      };
+  }
+})();

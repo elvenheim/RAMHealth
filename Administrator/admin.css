@@ -4,405 +4,112 @@ html{
     width: auto;
     overflow: hidden;
 }
-body{
+
+.admin-main {
+    background-color: #C2C7D0;
+    position: relative;
     text-align: center;
     align-items: center;
-    margin: 0 auto;
+    margin: auto;
     font-family: 'Nunito', sans-serif;
 }
-.navbar{
+  
+.navbar {
+    z-index: 1037;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     border-bottom: 5px solid #E7AE41;
-    height: 7vh;
+    height: 65px;
     display: flex;
-}
-.navbar-gray{
     color: #fff;
     background-color: #343A40;
-}
-.navbar-expand{
     padding-right: 0.5rem;
     padding-left: 0;
-    flex-flow: row nowrap;
-    justify-content: right;
+    justify-content: flex-start;
 }
-.apc-logo{
+
+.ram-health-logo {
     position: relative;
-    margin-top: 0.3%;
-    margin-right: auto;
-    margin-left: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 55px;
+    width: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left !important;
 }
-.ram-health-title{
+
+.ram-health-title {
     position: relative;
-    color:#E7AE41;
+    top: 10px;
+    right: 910px;
+    color: #E7AE41;
     font-weight: bolder;
     white-space: nowrap;
     font-size: 35px;
-    padding-top: 0.7%;
-    padding-right: 85%;
-    user-select: none; 
-}
-
-.log-out{
-    position: absolute;
-    top: 2%;
-    padding-left: 89.5%;
-    z-index: 3;
-    display: none;
-}
-
-.log-out-name{
-    position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 1vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
+    user-select: none;
     cursor: pointer;
 }
 
-.role-type{
+.log-out {
     position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 3.5vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
-    color: #C2C7D0;
-    cursor: default;
+    right: 185px;
+    display: none;
 }
 
-.logout-button[type="button"]{
+.logout-button[type="submit"] {
+    z-index: 3000;
+    position: absolute;
     padding-top: 0;
+    margin-top: 27px;
     margin-right: 100px;
-    width: 100%;
+    width: 150px;
     height: 40px;
     font-size: 1.2rem;
     text-align: center;
     border: 1px solid #343A40;
     color: #343A40;
     cursor: pointer;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
     line-height: 1;
     background: #fff;
+    pointer-events: auto;
 }
 
-.user-footer{
-    background-color: #fff;
-    padding: 10px;
-}
-.wrapper{
-    min-height: 100%;
-}
-.admin-main{
-    background-color: #C2C7D0;
-}
-.card{
-    z-index: 1;
-    box-shadow: 0 0 1px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    align-items: center;
-}
-
-.card-title{
-    position: relative;
-    padding-top: 1%;
-    padding-left: 5px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* Table Buttons */
-.table-button{
-    position: relative;
-    width: 100%;
-    padding-top: 0%;
-} 
-
-.add-user{
-    position: relative;
-    top: 100%;
-    left: -39.7%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.add-user:active{
-    color: #E7AE41;
-}
-
-#adduser-popup, #adduser-popup-bg {
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-.refresh-table{
-    position: relative;
-    top: 100%;
-    left: 37.9%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.refresh-table:active{
-    color: #E7AE41;
-}
-
-
-/* add user popup */
-
-.popup-bg{
-    position: absolute;
-    z-index: 1;
-    background-color: rgba(0,0,0,0.5);
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.popup{
-    z-index: 2;
-    position: absolute;
-    top: 15%;
-    background-color: #fff;
-    opacity: 0; 
-    border: 1px solid rgba(127,127,127);
-    box-shadow: 0 0.2rem 0.75rem rgba(0,0,0,0.5);
-    bottom: 30%;
-    width: 25%;
-    height: 65%;
-    border-radius: 4px;
-}
-
-/* popup contents */
-
-.add-title{
-    position: relative;
-    top: 2.5%;
-    left: 2%;
-    bottom: -2%;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.close-btn{
-    position: relative;
-    left: 30%;
-    top: 2%;
-    cursor: pointer;
-}
-
-.popup-line{
-    position: relative;
-    top: 5%;
-    background-color: #000;
-    width: 100%;
-    height: 0.2%;
-}
-
-/* input forms */
-
-.user-input {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-    align-items: center;
-}
-  
-form label {
-    position: relative;
-    top: 8%;
-    display: block;
-    float: left;
-    width: fit-content;
-    margin-right: 10px;
-}
-
-form input[type="text"],
-form input[type="number"],
-form input[type="email"],
-form input[type="password"] {
-    position: relative;
-    display: block;
-    width: 90%;
-    top: 9%;
-    right: 0%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.role_name{
-    position: relative;
-    display: block;
-    width: 95%;
-    top: 9%;
-    right: 0%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.save-details[type="submit"] {
-    position: relative;
-    top: 10%;
-    width: 95%;
-    background-color: #293a82;
-    color: #fff;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-  
-form input[type="submit"]:hover {
-    background-color: #3e8e41;
-}
-  
-/* table part */
-
-table{
-    border-collapse: collapse;
-}
-
-th, td{
-    border: 1px solid #000;
-    width: 300px;
-    padding: 15px;
-}
-
-th{
-    background-color: #e0e3e7;
-}
-
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
-}
-
-.admin-table{
-    overflow: hidden;
-    position: relative;
-    top: auto;
-    left: 100px;
-    bottom: auto;
-    width: 1920px !important;
-    margin-top: 0.5%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: left;
-}
-
-.action-buttons {
-    position: relative;
-    border: none;
-    background-color: transparent !important;
-}
-
-.action-buttons div {
-    position: absolute;
-    top: 10px;
-    right: 50;
-}
-
-.delete-button[type="button"]{
-    box-shadow: none;
-    border: 1px solid #000;
-    background-color: #f44336;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.delete-button:active{
+.logout-button[type="submit"]:hover{
     background-color: #E7AE41;
 }
 
-.update-button[type="button"]{
-    position: relative;
-    z-index: 1;
-    top: 80%;
-    left: 40.5%;
-    width: fit-content;
-    align-items: center;
-    background-color: #293a82;
-    color: #fff;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+.log-out-symbol {
+    z-index: 499;
+    position: absolute;
+    top: 13.5px;
+    right: 25px;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 1vh;
+    margin-right: 0vh;
+    font-size: 1.3rem;
     cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
 }
 
-/* user status */
-
-.status-form select {
+.log-out-symbol:hover{
+    color: #E7AE41;
+}
+  
+.role-type {
+    z-index: 498;
+    position: absolute;
+    top: 0px;
+    right: 0.5%;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 3.8vh;
+    margin-right: 0vh;
     font-size: 1rem;
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-}
-  
-/* table pagination */
-
-.pagination {
-    z-index: 540;
-    position: relative;
-    top: 3%;
-    bottom: 0;
-    justify-content: flex-end;
-    margin-top: 20px; 
-}
-  
-.pagination a {
-    color: #000;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-  
-.pagination a:hover {
-    background-color: #eee;
-}
-  
-.pagination a.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.pagination .disabled {
-    color: gray;
-    pointer-events: none;
+    color: #C2C7D0;
+    cursor: default;
 }

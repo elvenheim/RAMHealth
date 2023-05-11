@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Building Management Head</title>
+    <title>RAM Health</title>
     <link rel="stylesheet" href="building_head.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
@@ -17,25 +17,20 @@
                 <div class="ram-health-title">
                     RAM Health
                 </div>
-                <!-- FOR LOG OUT -->
-                <span id="user_full_name" name="full_name" class="log-out-name" 
+                <span id="log_out_dropdown" name="log_out_dropdown" class="log-out-symbol fas fa-power-off" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                    <?php include 'building_head_name.php';?>
-                </span>
-                <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
-                    <?php include 'building_head_role.php';?>
                 </span>
                 </div>
-                <ul id="btn_logout" class="log-out">
-                    <form name="logout-form" method="post">
-                        <button class="logout-button" type="button" onclick="logout()">
-                            <span class="fas fa-power-off"></span>
-                            Logout
-                        </button>
-                    </form>
-                </ul>
             </nav>
         </div>
+        <ul id="btn_logout" class="log-out">
+            <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
+                <button class="logout-button" type="submit" name="logout">
+                    <span class="fas fa-power-off"></span>
+                    Logout
+                </button>
+            </form>
+        </ul>
         <!-- For the Main Interface Contents -->
         <!-- Building Head Table -->
         <div class="content">

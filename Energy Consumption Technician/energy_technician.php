@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Energy Consumption Technician</title>
+    <title>RAM Health</title>
     <link rel="stylesheet" href="energy_technician.css">
     <link rel="stylesheet" href="energy_technician_two.css">
     <link rel="stylesheet" href="ec_nav_two.css">

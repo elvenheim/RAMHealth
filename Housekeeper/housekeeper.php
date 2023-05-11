@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Housekeeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RAM Health</title>
     <link rel="stylesheet" href="housekeeper.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
@@ -27,8 +28,8 @@
             </span>
             </div>
             <ul id="btn_logout" class="log-out">
-                <form name="logout-form" method="post">
-                    <button class="logout-button" type="button" onclick="logout()">
+                <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
+                    <button class="logout-button" type="submit" name="logout">
                         <span class="fas fa-power-off"></span>
                         Logout
                     </button>

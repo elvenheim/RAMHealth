@@ -18,7 +18,7 @@
                <b>APC RAM Health</b>
                </h3>
             </div>
-            <div class="d-flex justify-content-center"><h5>Login with <img id="o365logo" src="https://signin.apc.edu.ph/images/office-365-logo.png" width="90"/> Account</h5>
+            <div class="d-flex justify-content-center"><h5>Login with <img id="o365logo" src="../images/office-365-logo.png" width="90"/>Account</h5>
             </div>
          </div> 
             <!-- NOW CONNECTED TO DATABASE -->
