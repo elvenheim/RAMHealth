@@ -34,7 +34,7 @@ function downloadExcel() {
       }
   };
   xhr.send();
-};
+}
 
 function navParameter(){
   var navParamHeader = document.getElementById("param-header");
