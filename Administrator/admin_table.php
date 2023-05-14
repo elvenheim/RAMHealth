@@ -90,12 +90,12 @@ function deleteRow(employeeId) {
     } else{
       while ($row = mysqli_fetch_assoc($result_table)) {
         echo "<tr" . ($row['user_status'] == 0 ? " class=\"disabled\"" : '') . ">";
-        echo "<td>" . $row['employee_id'] . "</td>";
-        echo "<td>" . $row['employee_fullname'] . "</td>";
-        echo "<td>" . $row['employee_email'] . "</td>";
-        echo "<td>" . implode(', ', explode(',', $row['role_names'])) . "</td>";
-        echo "<td>" . $row['employee_create_at'] . "</td>";
-        echo "<td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['employee_id'] . "</td>";
+        echo '<td style="min-width: 150px; max-width: 150px;">' . $row['employee_fullname'] . "</td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['employee_email'] . "</td>";
+        echo '<td style="min-width: 250px; max-width: 250px;">' . implode(', ', explode(',', $row['role_names'])) . "</td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['employee_create_at'] . "</td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">';
         echo '<form class="status-form">';
         echo '<input type="hidden" name="employee_id" value="' . $row['employee_id'] . '">';
         echo '<select name="user_status" onchange="updateStatus(this.form);">';

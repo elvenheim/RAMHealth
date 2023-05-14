@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+html{
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+
+.homepage-main{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    background-color: #C2C7D0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* CONTENT */
+.card{
+    position: fixed;
+    bottom: 5px;
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 90%;
+    width: 1900px;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.125);
+    align-items: center !important;
+}
+
+.navbar {
+    z-index: 1037;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 5px solid #E7AE41;
+    height: 65px;
+    display: flex;
+    color: #fff;
+    background-color: #343A40;
+    padding-right: 0.5rem;
+    padding-left: 0;
+    justify-content: flex-start;
+}
+
+.ram-health-logo {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 55px;
+    width: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left !important;
+}
+
+.ram-health-title {
+    position: relative;
+    top: 10px;
+    right: 910px;
+    color: #E7AE41;
+    font-weight: bolder;
+    white-space: nowrap;
+    font-size: 35px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.home-content{
+    z-index: 1038;
+    position: relative;
+}
+
+.card-title{
+    position: relative;
+    top: 30px;
+    font-size: 2.5rem;
+}
+
+.role-list-card{
+    position: relative;
+    top: 50px;
+}

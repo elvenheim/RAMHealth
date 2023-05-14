@@ -13,7 +13,23 @@ html{
     margin: auto;
     font-family: 'Nunito', sans-serif;
 }
-  
+
+/* CONTENT */
+.card{
+    position: fixed;
+    bottom: 5px;
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 90%;
+    width: 1900px;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.125);
+    align-items: center !important;
+}
+
 .navbar {
     z-index: 1037;
     position: fixed;
@@ -98,18 +114,4 @@ html{
 
 .log-out-symbol:hover{
     color: #E7AE41;
-}
-  
-.role-type {
-    z-index: 498;
-    position: absolute;
-    top: 0px;
-    right: 0.5%;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 3.8vh;
-    margin-right: 0vh;
-    font-size: 1rem;
-    color: #C2C7D0;
-    cursor: default;
 }

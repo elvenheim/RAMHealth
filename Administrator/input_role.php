@@ -1,12 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('option').mousedown(function(e) {
-    e.preventDefault();
-    $(this).prop('selected', !$(this).prop('selected'));
-    return false;
-});
-</script>
-
 <?php 
     require_once('admin_connect.php');
 
@@ -18,5 +9,5 @@
     while ($row = mysqli_fetch_assoc($roleIdsResult)) {
         echo '<option value="' . $row['role_id'] . '">' . $row['role_name'] . '</option>';
     }
-    echo '</select><br>';
+    echo '</select>';
 ?>

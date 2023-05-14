@@ -79,13 +79,3 @@ function navDeletedUserTable(){
     navContentOne.style.pointerEvents = "none";
   }
 }
-
-// prevent back button of browser (not yet working properly)
-// (function () {
-//     if (window.history && window.history.pushState) {
-//         window.history.pushState('', null, './homepage.php');
-//         window.onpopstate = function () {
-//             window.history.pushState('', null, './admin.php');
-//         };
-//     }
-// })();

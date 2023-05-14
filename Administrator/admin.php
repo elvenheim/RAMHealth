@@ -125,7 +125,7 @@
                             Edit
                         </button>
                     </div>
-                    <table class="admin-table">
+                    <table class="admin-deleted-user-table">
                         <thead>
                             <tr>
                             <th>Employee ID</th>

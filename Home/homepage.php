@@ -11,38 +11,35 @@
 </head>
     <body class="homepage-main">
         <nav class="navbar">
-            <div class="apc-logo">
-                <img src="https://signin.apc.edu.ph/images/logo.png" 
-                alt="APC Logo" class="apc-logo-home" onclick="location.href='../Home/homepage.php';">
-                <div class="ram-health-title">
+            <div class="ram-health-logo">
+                <div class="ram-health-title" onclick="location.href='../Home/homepage.php';">
                 RAM Health
                 </div>
             </div>
-            <span id="user_full_name" name="full_name" class="log-out-name fas fa-power-off" 
+            <span id="user_full_name" name="full_name" class="log-out-name" 
                 onselectstart="return false;" onclick="collapse_logout()">
                 <?php include 'employee_name.php';?>
             </span>
-            <span id="user_role_type" name="role_type" class="role-type" onselectstart="return false;">
-                <?php include 'employee_role.php';?>
-            </span>
-            </div>
-            <ul id="btn_logout" class="log-out">
-                <form name="logout-form" method="post">
-                    <button class="logout-button" type="button" onclick="logout()">
-                        <span class="fas fa-power-off"></span>
-                        Logout
-                    </button>
-                </form>
-            </ul>
         </nav>
-        <div class="content-one">
+        <ul id="btn_logout" class="log-out">
+            <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
+                <button class="logout-button" type="submit" name="logout">
+                    <span class="fas fa-power-off"></span>
+                    Logout
+                </button>
+            </form>
+        </ul>
+        <div class="home-content">
             <div class="card">
                 <a class = "card-title">
                     <span>
-                         Users & Accessibility
+                        Home Page
                     </span>
                 </a>
+                <div class="role-list-card">
+                    <?php include 'role_links.php'?>
+                </div>
+            </div>
         </div>
-    </div>
     </body>
 </html>

@@ -23,9 +23,8 @@
         }
         $_SESSION['employee_id'] = $row['employee_id']; // Store user's id in session
         $_SESSION['session_id'] = uniqid(); // Generate a unique session ID
-        header("Location: " . $role_url);
+        header('Location: ../Home/homepage.php');
+        // header("Location: " . $role_url); //For their specific role url
         exit;
     }
-
-    mysqli_close($con);
 ?>
