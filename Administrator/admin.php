@@ -104,46 +104,29 @@
                             <?php include 'admin_table.php'; ?>
                         </tbody>
                     </table>
-                    <?php include 'admin_pagination.php'; ?>
+                    <?php include 'admin_user_table_pagination.php'; ?>
                 </div>
             </div>
             <div id="deleted-user-table" class="content-two">
-            <div class="card">
-                    <div id="adduser-popup-bg" class = "popup-bg">
-                    </div>  
-                    <div class = "table-button">
-                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()">
-                            <span class="fas fa-plus"></span>
-                            Add User
-                        </button>
-                        <button class="refresh-table" onclick="location.reload()">
-                            <span class="fas fa-arrows-rotate"></span>
-                            Refresh
-                        </button>
-                        <button class="edit-table" onclick="location.reload()">
-                            <span class="fas fa-pen-to-square"></span>
-                            Edit
-                        </button>
+                <div class="card">
+                        <table class="admin-deleted-user-table">
+                            <thead>
+                                <tr>
+                                <th>Employee ID</th>
+                                <th>Full Name</th>
+                                <th>Email Address</th>
+                                <th>Role</th>
+                                <th>Created At</th>
+                                <th>Deleted At</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deleted-user-table-body">
+                                <?php include 'admin_deleted_user_table.php'; ?>
+                            </tbody>
+                        </table>
+                            <?php include 'admin_deleted_user_pagination.php'; ?>
                     </div>
-                    <table class="admin-deleted-user-table">
-                        <thead>
-                            <tr>
-                            <th>Employee ID</th>
-                            <th>Full Name</th>
-                            <th>Email Address</th>
-                            <th>Role</th>
-                            <th>Created At</th>
-                            <th>Account Status</th>
-                            <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-                            <?php include 'admin_table.php'; ?>
-                        </tbody>
-                    </table>
-                    <?php include 'admin_pagination.php'; ?>
                 </div>
-            </div>
             </div>
         </div>
     </body>

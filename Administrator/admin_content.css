@@ -196,6 +196,7 @@ th, td{
 
 th{
     background-color: #e0e3e7;
+    text-align: center;
 }
 
 tr.disabled td:not(.delete-button-row){
@@ -226,6 +227,10 @@ tr.disabled td:not(.delete-button-row){
     text-align: center !important;
 }
 
+.action-buttons button{
+    margin: 0 5px;
+}
+
 .delete-button[type="button"]{
     position: relative;
     right: 0px;
@@ -238,6 +243,20 @@ tr.disabled td:not(.delete-button-row){
     height: 30px;
     cursor: pointer;
 }
+
+.edit-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 
 .delete-button:active{
     background-color: #E7AE41;
@@ -272,14 +291,14 @@ tr.disabled td:not(.delete-button-row){
   
 /* table pagination */
 
-.pagination-usertable {
+.pagination {
     z-index: 540;
     position: relative;
     right: 20px;
     margin-top: 40px; 
 }
   
-.pagination-usertable  a {
+.pagination a {
     color: #000;
     text-decoration: none;
     padding: 5px 10px;
@@ -288,16 +307,16 @@ tr.disabled td:not(.delete-button-row){
     border-radius: 5px;
 }
   
-.pagination-usertable a:hover {
+.pagination a:hover {
     background-color: #eee;
 }
   
-.pagination-usertable  a.active {
+.pagination a.active {
     background-color: #007bff;
     color: #fff;
 }
 
-.pagination-usertable  .disabled {
+.pagination.disabled {
     color: gray;
     pointer-events: none;
 }

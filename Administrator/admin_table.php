@@ -106,8 +106,10 @@ function deleteRow(employeeId) {
         echo "</td>";
         echo '<td class="action-buttons">';
         echo '<div>';
-        echo ' <button class="delete-button" type="button" onclick="deleteRow(' . $row['employee_id'] . ')"> 
-                    <i class="fas fa-trash"></i></button>';
+        echo '<button class="edit-button" type="button" onclick="editRow(' . $row['employee_id'] . ')"> 
+                <i class="fas fa-edit"></i></button>';
+        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['employee_id'] . ')"> 
+                <i class="fas fa-trash"></i></button>';
         echo '</div>';
         echo "</td>";
         echo "</tr>";

@@ -21,10 +21,20 @@
             window.location.href="new_login.php"</script>';
             exit;
         }
-        $_SESSION['employee_id'] = $row['employee_id']; // Store user's id in session
-        $_SESSION['session_id'] = uniqid(); // Generate a unique session ID
+        if($row['employee_password'] != $password){
+            echo '<script type="text/javascript">alert("Incorrect password. Please try again.");
+            window.location.href="new_login.php"</script>';
+            exit;
+        }
+        $_SESSION['employee_id'] = $row['employee_id'];
+        $_SESSION['session_id'] = uniqid();
         header('Location: ../Home/homepage.php');
-        // header("Location: " . $role_url); //For their specific role url
         exit;
     }
+    else {
+        echo '<script type="text/javascript">alert("Invalid email or password. Please try again.");
+        window.location.href="new_login.php"</script>';
+        exit;
+    }
+    
 ?>

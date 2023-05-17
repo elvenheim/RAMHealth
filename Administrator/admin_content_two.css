@@ -1,0 +1,42 @@
+/* Deleted User Table Styles */
+.admin-deleted-user-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+
+/*Pagination Buttons */
+.pagination-deleted-usertable {
+    z-index: 540;
+    position: relative;
+    right: 20px;
+    margin-top: 40px; 
+}
+  
+.pagination-deleted-usertable a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.pagination-deleted-usertable a:hover {
+    background-color: #eee;
+}
+  
+.pagination-deleted-usertable  a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-deleted-usertable  .disabled {
+    color: gray;
+    pointer-events: none;
+}
