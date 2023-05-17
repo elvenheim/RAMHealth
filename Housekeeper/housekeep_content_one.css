@@ -1,14 +1,33 @@
+/* interface navigation menu */
+.card-header-indicator{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 120.5px;
+    height: 5px;
+    width: 250px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.content-one{
+    opacity: 1;
+    pointer-events: visible;
+}
+
 /* Table Buttons */
 .table-button{
     position: relative;
     top: 100px;
     width: 100%;
+    white-space: nowrap;
 } 
 
-.add-user{
+.add-room{
     position: relative;
     top: 100%;
-    left: -38%;
+    left: -37.25%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -16,7 +35,7 @@
     cursor: pointer;
 }
 
-.add-user:active{
+.add-room:active{
     color: #E7AE41;
 }
 
@@ -51,7 +70,7 @@
     cursor: pointer;
 }
 
-.refresh-table:active{
+.edit-table:active{
     color: #E7AE41;
 }
 
@@ -98,10 +117,12 @@
     left: 30%;
     top: 2%;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .close-btn:hover{
     color: #f44336;
+    transform: scale(1.2);
 }
 
 .popup-line{
@@ -133,10 +154,7 @@ form label {
     margin-right: 10px;
 }
 
-form input[type="text"],
-form input[type="number"],
-form input[type="email"],
-form input[type="password"] {
+form input[type="text"] {
     position: relative;
     display: block;
     width: 90%;
@@ -148,11 +166,11 @@ form input[type="password"] {
     font-size: 16px;
 }
 
-.role_name{
+.building_floor{
     position: relative;
     display: block;
     width: 95%;
-    height: 15%;
+    height: 7%;
     top: 9%;
     padding: 10px;
     margin-bottom: 20px;
@@ -192,18 +210,18 @@ th, td{
     border: 1px solid #000;
     width: auto;
     padding: 15px;
+    text-align: center;
 }
 
 th{
     background-color: #e0e3e7;
-    text-align: center;
 }
 
 tr.disabled td:not(.delete-button-row){
     background-color: #ccc;
 }
 
-.admin-table{
+.housekeeper-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -316,7 +334,13 @@ tr.disabled td:not(.delete-button-row){
     color: #fff;
 }
 
-.pagination.disabled {
+.pagination-disabled {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
     color: gray;
     pointer-events: none;
 }

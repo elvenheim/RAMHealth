@@ -46,16 +46,17 @@ html{
     justify-content: flex-start;
 }
 
+/* ram health homepage button */
 .ram-health-logo {
     position: relative;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    height: 55px;
+    transform: translateX(-50%) scale(1);
+    height: fit-content;
     width: 55px;
     display: flex;
     flex-direction: row;
-    justify-content: left !important;
+    justify-content: flex-start;
 }
 
 .ram-health-title {
@@ -68,6 +69,12 @@ html{
     font-size: 35px;
     user-select: none;
     cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.ram-health-title:hover {
+    color: #fff;
+    font-size: 36px;
 }
 
 .log-out {
@@ -93,10 +100,11 @@ html{
     line-height: 1;
     background: #fff;
     pointer-events: auto;
+    transition: color 1s ease;
 }
 
 .logout-button[type="submit"]:hover{
-    background-color: #E7AE41;
+    color: #E7AE41;
 }
 
 .log-out-symbol {
@@ -113,5 +121,57 @@ html{
 }
 
 .log-out-symbol:hover{
+    color: #E7AE41;
+}
+
+/* interface navigation menu */
+.card-header{
+    z-index: 1996;
+    position: absolute;
+    top: 130px;
+    left: 7px;
+    height: 6%;
+    width: 1901px;
+    border-bottom: 1px solid;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-title{
+    z-index: 2000;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    right: 1550px;
+    top: -32.5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover{
+    color: #E7AE41;
+}
+
+.card-title-second{
+    z-index: 1998;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    right: 1250px;
+    bottom: 1.5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card-title-second:hover{
     color: #E7AE41;
 }

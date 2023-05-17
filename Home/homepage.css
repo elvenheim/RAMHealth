@@ -45,16 +45,17 @@ html{
     justify-content: flex-start;
 }
 
+/* ram health homepage button */
 .ram-health-logo {
     position: relative;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    height: 55px;
+    transform: translateX(-50%) scale(1);
+    height: fit-content;
     width: 55px;
     display: flex;
     flex-direction: row;
-    justify-content: left !important;
+    justify-content: flex-start;
 }
 
 .ram-health-title {
@@ -67,6 +68,12 @@ html{
     font-size: 35px;
     user-select: none;
     cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.ram-health-title:hover {
+    color: #fff;
+    font-size: 36px;
 }
 
 .home-content{
@@ -84,3 +91,19 @@ html{
     position: relative;
     top: 50px;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.role-link {
+    font-size: 1.5rem;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.role-link:hover{
+    color: #E7AE41;
+    font-size: 1.6rem;
+}
+  

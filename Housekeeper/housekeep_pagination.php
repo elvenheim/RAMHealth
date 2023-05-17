@@ -14,10 +14,6 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    // Fetch data from the database
-    $sql = "SELECT * FROM room_number LIMIT $offset, $rows_per_page";
-    $result_table = mysqli_query($con, $sql);
-    
     echo "<div class='pagination'>";
     if ($total_pages > 1) {
         $start_page = max(1, $page - 2);
@@ -25,13 +21,22 @@
         if ($end_page - $start_page < 4 && $start_page > 1) {
             $start_page = max(1, $end_page - 4);
         }
-        echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? " class='disabled'" : "") . ">Prev</a>";
+
+        if ($page == 1) {
+            echo "<span class='pagination-disabled'>Prev</span>";
+        } else {
+            echo "<a href='?page=" . ($page - 1) . "'>Prev</a>";
+        }
+
         for ($i = $start_page; $i <= $end_page; $i++) {
             echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
-        echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+
+        if ($page == $total_pages) {
+            echo "<span class='pagination-disabled'>Next</span>";
+        } else {
+            echo "<a href='?page=" . ($page + 1) . "'>Next</a>";
+        }
     }
     echo "</div>";
 ?>

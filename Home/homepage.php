@@ -16,7 +16,7 @@
                 RAM Health
                 </div>
             </div>
-            <span id="user_full_name" name="full_name" class="log-out-name" 
+            <span id="user_full_name" name="full_name" class="log-out-name"
                 onselectstart="return false;" onclick="collapse_logout()">
                 <?php include 'employee_name.php';?>
             </span>

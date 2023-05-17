@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>   
     <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="admin_header.css">
-    <link rel="stylesheet" href="admin_content.css">
-    <link rel="stylesheet" href="admin_content_two.css">
+    <link rel="stylesheet" href="admin_content_one.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Administrator/admin.js"></script>
@@ -24,7 +22,7 @@
             </span>
             </div>
         </nav>
-        <ul id="btn_logout" class="log-out">
+        <ul id="btn_logout" class="log-out" style="display: none;">
             <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
                 <button class="logout-button" type="submit" name="logout">
                     <span class="fas fa-power-off"></span>
@@ -35,17 +33,17 @@
         <div class="content">
             <nav class="card-header">
                 <nav id="user-list-table-header" class="card-header-indicator"></nav>
-                    <a class = "card-title" onclick="navUserTable()">
+                    <a href="../Administrator/admin.php" class = "card-title">
                         <span> Users & Accessibility </span>
                     </a>
                 <nav id="deleted-user-header" class="card-header-indicator-second"></nav>
-                <a class = "card-title-second" onclick="navDeletedUserTable()"> 
+                <a href="../Administrator/admin_deleted_user_main.php" class = "card-title-second"> 
                     <span> Deleted Users </span>
                 </a>
             </nav>
             <div id="user-list-table"class="content-one">
                 <div class="card">
-                    <div id="adduser-popup" class = "popup">
+                    <div id="adduser-popup" class = "popup" style="opacity: 0; pointer-events: none;">
                         <span class = "add-title"> 
                             Add User
                         </span>
@@ -72,22 +70,11 @@
                         <button class="save-details" type="submit">Save User Data</button>
                         </form>
                     </div>
-                    <div id="adduser-popup-bg" class = "popup-bg">
+                    <div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
                     </div>  
-                    <div class = "table-button">
-                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()">
-                            <span class="fas fa-plus"></span>
-                            Add User
-                        </button>
-                        <button class="refresh-table" onclick="location.reload()">
-                            <span class="fas fa-arrows-rotate"></span>
-                            Refresh
-                        </button>
-                        <button class="edit-table" onclick="location.reload()">
-                            <span class="fas fa-pen-to-square"></span>
-                            Edit
-                        </button>
-                    </div>
+                    <div class="table-button">
+                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add User</button><!--
+                        --><button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    </div>
                     <table class="admin-table">
                         <thead>
                             <tr>
@@ -105,27 +92,6 @@
                         </tbody>
                     </table>
                     <?php include 'admin_user_table_pagination.php'; ?>
-                </div>
-            </div>
-            <div id="deleted-user-table" class="content-two">
-                <div class="card">
-                        <table class="admin-deleted-user-table">
-                            <thead>
-                                <tr>
-                                <th>Employee ID</th>
-                                <th>Full Name</th>
-                                <th>Email Address</th>
-                                <th>Role</th>
-                                <th>Created At</th>
-                                <th>Deleted At</th>
-                                </tr>
-                            </thead>
-                            <tbody id="deleted-user-table-body">
-                                <?php include 'admin_deleted_user_table.php'; ?>
-                            </tbody>
-                        </table>
-                            <?php include 'admin_deleted_user_pagination.php'; ?>
-                    </div>
                 </div>
             </div>
         </div>

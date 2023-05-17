@@ -1,5 +1,26 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 <script>
+function deleteRow(employeeId) {
+  var currentEmployeeId = <?php echo $_SESSION['employee_id']; ?>;
+  if (employeeId == currentEmployeeId) {
+    alert("You cannot delete your own account.");
+    return;
+  }
+
+  if (confirm("Are you sure you want to delete this user?")) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "admin_delete_user.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              alert("User has been successfully deleted.");
+              window.location.href = "admin.php";
+          }
+      };
+      xhr.send("employee_id=" + employeeId);
+  }
+}
+
 $(document).ready(function() {
   $('select[name="user_status"]').not('.no-color-change').change(function() {
     var form = $(this).parent('form');
@@ -32,28 +53,6 @@ $(document).ready(function() {
   });
 });
 
-function deleteRow(employeeId) {
-  // Check if the user being deleted is the current user
-  var currentEmployeeId = <?php echo $_SESSION['employee_id']; ?>;
-  if (employeeId == currentEmployeeId) {
-    alert("You cannot delete your own account.");
-    return;
-  }
-
-  if (confirm("Are you sure you want to delete this user?")) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "admin_delete_user.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-              alert("User has been successfully deleted.");
-              window.location.href = "admin.php";
-          }
-      };
-      xhr.send("employee_id=" + employeeId);
-  }
-}
-
 </script>
 
 <?php 
@@ -80,8 +79,7 @@ function deleteRow(employeeId) {
             JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
             GROUP BY ul.employee_id
             ORDER BY ul.employee_id ASC
-            LIMIT $offset, $rows_per_page
-            ";
+            LIMIT $offset, $rows_per_page";
             
     $result_table = mysqli_query($con, $sql);
     
@@ -113,6 +111,6 @@ function deleteRow(employeeId) {
         echo '</div>';
         echo "</td>";
         echo "</tr>";
-    }
+      }
     }
 ?>

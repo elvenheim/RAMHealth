@@ -1,5 +1,7 @@
 <?php 
-   session_start();
+   if( empty(session_id()) && !headers_sent()){
+      session_start();
+   }
    $host = "localhost";
    $user = "root";
    $password = "";

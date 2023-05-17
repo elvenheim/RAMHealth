@@ -1,16 +1,33 @@
+/* interface navigation menu */
+.card-header-indicator-second{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 470.5px;
+    height: 5px;
+    width: 195px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.content-one{
+    opacity: 1;
+    pointer-events: visible;
+}
+
 /* Table Buttons */
 .table-button{
-    z-index: 500;
     position: relative;
-    top: 200px;
+    top: 100px;
     width: 100%;
+    white-space: nowrap;
 } 
 
 .refresh-table{
     position: relative;
-    top: 5%;
-    bottom: 5%;
-    left: 40.2%;
+    top: 100%;
+    left: 41%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -22,18 +39,6 @@
     color: #E7AE41;
 }
 
-/* interface navigation menu */
-.card-header-indicator-second{
-    z-index: 1997;
-    position: absolute;
-    top: -2.5px;
-    left: 485px;
-    height: 5px;
-    width: 180px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
-}
 
 /* table part */
 .table-no-record{
@@ -60,17 +65,47 @@ tr.disabled td:not(.delete-button-row){
     background-color: #ccc;
 }
 
-/* Deleted User Table Styles */
-.admin-deleted-user-table{
+.housekeeper-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
     left: 100px;
     width: 1690px;
-    margin-top: 151px;
+    margin-top: 125px;
     text-align: left;
 }
 
+.action-buttons {
+    position: relative;
+    width: 10px;
+    white-space: nowrap;
+    background-color: transparent !important;
+}
+
+.action-buttons div {
+    position: relative;
+    bottom: 10px;
+    height: 5px;
+    text-align: center !important;
+}
+
+.action-buttons button{
+    margin: 0 5px;
+}
+
+.restore-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+  
 /* table pagination */
 
 .pagination {

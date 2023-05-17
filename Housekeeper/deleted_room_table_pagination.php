@@ -1,13 +1,13 @@
 <?php
-    require_once('admin_connect.php');
-        
+    require_once('housekeep_connect.php');
+    
     $rows_per_page = 10;
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-    
+
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM user_list";
+    $count_query = "SELECT COUNT(*) as count FROM deleted_room_num";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];

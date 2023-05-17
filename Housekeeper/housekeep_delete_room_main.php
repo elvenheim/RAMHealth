@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
     <link rel="stylesheet" href="housekeeper.css">
-    <link rel="stylesheet" href="housekeep_content_one.css">
+    <link rel="stylesheet" href="housekeep_content_two.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Housekeeper/housekeeper.js"></script>
@@ -22,7 +22,7 @@
             </span>
             </div>
             </nav>
-        <ul id="btn_logout" class="log-out" style="display: none;">
+        <ul id="btn_logout" class="log-out">
             <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
                 <button class="logout-button" type="submit" name="logout">
                     <span class="fas fa-power-off"></span>
@@ -43,39 +43,8 @@
                 </nav>
                 <div id="user-list-table"class="content-one">
                     <div class="card">
-                        <div id="addroom-popup" class = "popup" style="opacity: 0; pointer-events: none;">
-                            <span class = "add-title"> 
-                                Add Room
-                            </span>
-
-                            <span class = "close-popup"> 
-                                <i id="close-btn"class= "fas fa-x fa-xl close-btn"></i>
-                            </span>
-
-                            <div class = "popup-line">
-                            </div>
-
-                            <form id="add_user" method="POST" class="user-input" action="housekeep_fetch_input.php">
-                            <label for="room_number">Room Number:</label>
-                            <input type="text" id="room_number" name="room_number"required><br>
-                            
-                            <?php include 'input_floor.php'; ?>
-
-                            <label for="room_type">Room Type:</label>
-                            <input type="text" id="room_type" name="room_type" required><br>
-
-                            <label for="room_name">Room Name:</label>
-                            <input type="text" id="room_name" name="room_name" required><br>
-
-                            <button class="save-details" type="submit">Save Room Data</button>
-                            </form>
-                        </div>
-                        <div id="addroom-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
-                        </div>  
                         <div class="table-button">
-                            <button id="adduser-btn" class="add-room" onclick="addroom_popup()"><span class="fas fa-plus"></span> Add Room</button>
                             <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>
-                            <button class="edit-table" onclick="location.reload()"><span class="fas fa-file-import"></span> Import</button>
                         </div>
                         <table class="housekeeper-table">
                             <thead>
@@ -84,15 +53,16 @@
                                 <th>Room Number</th>
                                 <th>Room Type</th>
                                 <th>Room Name</th>
-                                <th>Creation Date</th>
+                                <th>Created At</th>
+                                <th>Deleted At</th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="table-body">
-                                <?php include 'housekeeper_table.php'; ?>
+                                <?php include 'deleted_room_table.php'; ?>
                             </tbody>
                         </table>
-                        <?php include 'housekeep_pagination.php'; ?>
+                        <?php include 'deleted_room_table_pagination.php'; ?>
                     </div>
                 </div>
             </div>

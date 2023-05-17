@@ -12,7 +12,7 @@
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM user";
+    $count_query = "SELECT COUNT(*) as count FROM deleted_users";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
@@ -30,7 +30,7 @@
     //         LIMIT $offset, $rows_per_page
     //         ";
 
-    $sql = "SELECT * FROM deleted_users GROUP BY user_id";
+    $sql = "SELECT * FROM deleted_users GROUP BY user_id ORDER BY user_id ASC";
             
     $result_table = mysqli_query($con, $sql);
     
@@ -40,10 +40,10 @@
       while ($row = mysqli_fetch_assoc($result_table)) {
         echo "<tr>";
         echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_id'] . "</td>";
-        echo '<td style="min-width: 150px; max-width: 150px;">' . $row['user_fullname'] . "</td>";
-        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_email'] . "</td>";
+        // echo '<td style="min-width: 150px; max-width: 150px;">' . $row['user_fullname'] . "</td>";
+        // echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_email'] . "</td>";
         echo '<td style="min-width: 250px; max-width: 250px;">' . implode(', ', explode(',', $row['user_role'])) . "</td>";
-        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_create_at'] . "</td>";
+        // echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_create_at'] . "</td>";
         echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_delete_at'] . "</td>";
         echo "</tr>";
     }

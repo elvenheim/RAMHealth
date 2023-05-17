@@ -1,13 +1,3 @@
-<script>
-$(document).ready(function() {
-  $('.edit-button').click(function() {
-    var roomId = $(this).data('room-id');
-    // Use the roomId to perform the necessary actions for editing
-    // For example, you can display a popup or form for editing
-    // and pre-fill the form fields with existing data for the specific room ID
-  });
-});
-</script>
 <?php 
     require_once('housekeep_connect.php');
     
@@ -25,15 +15,16 @@ $(document).ready(function() {
     $total_pages = ceil($total_rows / $rows_per_page);
 
     // Fetch data from the database
-    $sql = "SELECT rn.*, bldg.bldg_floor_name 
-            FROM room_number rn 
-            JOIN building_floor bldg ON rn.bldg_floor = bldg.building_floor
+    $sql = "SELECT drn.*, bflr.bldg_floor_name
+            FROM deleted_room_num drn
+            JOIN building_floor bflr ON drn.bldg_floor = bflr.building_floor
+            ORDER BY bldg_floor ASC
             LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
         
     // Loop through the data and create table rows
     if ($total_rows == 0) {
-        echo '<span class ="table-no-record"> No rooms are registered in the database...' . "</span>" ;
+        echo '<span class ="table-no-record"> No rooms are deleted in the database...' . "</span>" ;
     } else{
         while ($row = mysqli_fetch_assoc($result_table)){
             echo "<tr>";
@@ -42,14 +33,13 @@ $(document).ready(function() {
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_type'] . "</td>";
             echo '<td style="min-width: 120px; max-width: 120px;">' . $row['room_name'] . "</td>";
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_added_at'] . "</td>";
+            echo '<td style="min-width: 80px; max-width: 80px;">' . $row['room_delete_at'] . "</td>";
             echo '<td class="action-buttons">';
             echo '<div>';
-            echo '<button class="edit-button" type="button" onclick="editRow(\'' . $row['room_num'] . '\')"> 
-                    <i class="fas fa-edit"></i></button>';
-            echo '<button class="delete-button" type="button" onclick="deleteRow(\'' . $row['room_num'] . '\')"> 
-                <i class="fas fa-trash"></i></button>';
+            echo '<button class="restore-button" type="button" onclick="restoreRow(\'' . $row['room_num'] . '\')"> 
+                    <i class="fas fa-rotate-left"></i></button>';
             echo '</div>';
-            echo "</td>";
+            echo "</td>";                
             echo "</tr>";
         }
     }

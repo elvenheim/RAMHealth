@@ -1,48 +1,43 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script> 
-    $('#deleted-user-pagination').on('click', 'a', function(e) {
-    e.preventDefault();
-    var page = $(this).data('page');
-    $('#deleted-user-table-body').load('admin_deleted_user_table.php?page=' + page);
-    });
-</script>
-
-<ul id="deleted-user-pagination" class="pagination">
-    <?php
-        require_once('admin_connect.php');
+<?php
+    require_once('admin_connect.php');
         
-        $rows_per_page = 10;
+    $rows_per_page = 10;
 
-        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-        $offset = ($page - 1) * $rows_per_page;
+    $offset = ($page - 1) * $rows_per_page;
 
-        $count_query = "SELECT COUNT(*) as count FROM deleted_users";
-        $count_result = mysqli_query($con, $count_query);
-        $count_row = mysqli_fetch_assoc($count_result);
-        $total_rows = $count_row['count'];
+    $count_query = "SELECT COUNT(DISTINCT user_id) as count FROM deleted_users";
+    $count_result = mysqli_query($con, $count_query);
+    $count_row = mysqli_fetch_assoc($count_result);
+    $total_rows = $count_row['count'];
 
-        $total_pages = ceil($total_rows / $rows_per_page);
+    $total_pages = ceil($total_rows / $rows_per_page);
 
-        if ($total_pages > 1) {
-            $start_page = max(1, $page - 2);
-            $end_page = min($total_pages, $start_page + 4);
-
-            if ($end_page - $start_page < 5 && $start_page > 1) {
-                $start_page = max(1, $end_page - 5);
-            }
-
-            echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-                ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
-
-            for ($i = $start_page; $i <= $end_page; $i++) {
-                if ($i <= $total_pages && $i > 0) {
-                    echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
-                }
-            }
-
-            echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-                ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+    echo "<div class='pagination'>";
+    if ($total_pages > 1) {
+        $start_page = max(1, $page - 2);
+        $end_page = min($total_pages, $start_page + 4);
+        if ($end_page - $start_page < 4 && $start_page > 1) {
+            $start_page = max(1, $end_page - 4);
         }
-    ?>
-</ul>
+
+        if ($page == 1) {
+            echo "<span class='pagination-disabled'>Prev</span>";
+        } else {
+            echo "<a href='?page=" . ($page - 1) . "'>Prev</a>";
+        }
+
+        for ($i = $start_page; $i <= $end_page; $i++) {
+            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
+        }
+
+        if ($page == $total_pages) {
+            echo "<span class='pagination-disabled'>Next</span>";
+        } else {
+            echo "<a href='?page=" . ($page + 1) . "'>Next</a>";
+        }
+    }
+    echo "</div>";
+?>
+

@@ -12,9 +12,9 @@
     $row = mysqli_fetch_assoc($result);
 
     // Insert data into deleted_room_num table
-    $insert_query = "INSERT INTO deleted_room_num (room_num, bldg_floor, room_type, room_added_at, room_delete_at) VALUES (?, ?, ?, ?, NOW())";
+    $insert_query = "INSERT INTO deleted_room_num (room_num, bldg_floor, room_type, room_name, room_added_at, room_delete_at) VALUES (?, ?, ?, ?, ?, NOW())";
     $stmt = mysqli_prepare($con, $insert_query);
-    mysqli_stmt_bind_param($stmt, 'ssss', $row['room_num'], $row['bldg_floor'], $row['room_type'], $row['room_added_at']);
+    mysqli_stmt_bind_param($stmt, 'sisss', $row['room_num'], $row['bldg_floor'], $row['room_type'], $row['room_name'], $row['room_added_at']);
     mysqli_stmt_execute($stmt);
 
     // Delete the room from the room_number table
@@ -28,5 +28,4 @@
     } else {
         echo "Error deleting room: " . mysqli_error($con);
     }
-
 ?>

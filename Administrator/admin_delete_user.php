@@ -6,12 +6,12 @@ $user_ids = $_POST['employee_id'];
 foreach($user_ids as $user_id) {
 
     // Get user data before deleting
-    $sql = "SELECT u.*, ul.employee_fullname, ul.employee_password, r.role_type ul.employee_email, 
+    $sql = "SELECT u.*, ul.employee_fullname, ul.employee_password, r.role_type, ul.employee_email, 
             ul.employee_create_at
-        FROM user u
-        JOIN user_list ul ON u.employee_id = ul.employee_id
-        JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
-        WHERE u.employee_id = ?";
+            FROM user u
+            JOIN user_list ul ON u.employee_id = ul.employee_id
+            JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
+            WHERE u.employee_id = ?";
     $stmt = mysqli_prepare($con, $select_query);
     mysqli_stmt_bind_param($stmt, 'i', $employee_id);
     mysqli_stmt_execute($stmt);

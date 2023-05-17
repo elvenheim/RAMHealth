@@ -1,362 +1,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
-
 html{
     height: auto;
     width: auto;
     overflow: hidden;
 }
-body{
+
+.housekeeper-main {
+    background-color: #C2C7D0;
+    position: relative;
     text-align: center;
     align-items: center;
-    margin: 0 auto;
+    margin: auto;
     font-family: 'Nunito', sans-serif;
 }
-.navbar{
-    border-bottom: 5px solid #E7AE41;
-    height: 7vh;
-    display: flex;
+
+/* CONTENT */
+.card{
+    position: fixed;
+    bottom: 5px;
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 90%;
+    width: 1900px;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.125);
+    align-items: center !important;
 }
-.navbar-gray{
+
+.navbar {
+    z-index: 1037;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 5px solid #E7AE41;
+    height: 65px;
+    display: flex;
     color: #fff;
     background-color: #343A40;
-}
-.navbar-expand{
     padding-right: 0.5rem;
     padding-left: 0;
-    flex-flow: row nowrap;
-    justify-content: right;
+    justify-content: flex-start;
 }
-.apc-logo{
+
+/* ram health homepage button */
+.ram-health-logo {
     position: relative;
-    margin-top: 0.3%;
-    margin-right: auto;
-    margin-left: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    height: fit-content;
+    width: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
-.ram-health-title{
+
+.ram-health-title {
     position: relative;
-    color:#E7AE41;
+    top: 10px;
+    right: 910px;
+    color: #E7AE41;
     font-weight: bolder;
     white-space: nowrap;
     font-size: 35px;
-    padding-top: 0.7%;
-    padding-right: 85%;
     user-select: none;
+    cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.log-out{
+.ram-health-title:hover {
+    color: #fff;
+    font-size: 36px;
+}
+
+.log-out {
     position: absolute;
-    top: 2%;
-    padding-left: 89.5%;
-    z-index: 3;
+    right: 185px;
     display: none;
 }
 
-.log-out-name{
+.logout-button[type="submit"] {
+    z-index: 3000;
     position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 1vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.role-type{
-    position: absolute;
-    text-transform: uppercase;
-    z-index: 2;
-    margin-top: 3.5vh;
-    margin-right: 0vh;
-    font-size: 1.5rem;
-    color: #C2C7D0;
-    cursor: default;
-}
-
-.logout-button[type="submit"]{
     padding-top: 0;
+    margin-top: 27px;
     margin-right: 100px;
-    width: 100%;
+    width: 150px;
     height: 40px;
     font-size: 1.2rem;
     text-align: center;
     border: 1px solid #343A40;
     color: #343A40;
     cursor: pointer;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
     line-height: 1;
     background: #fff;
+    pointer-events: auto;
+    transition: color 1s ease;
 }
 
 .logout-button[type="submit"]:hover{
-    background-color: #E7AE41;
+    color: #E7AE41;
 }
 
-.user-footer{
-    background-color: #f8f9fa;
-    padding: 10px;
+.log-out-symbol {
+    z-index: 499;
+    position: absolute;
+    top: 13.5px;
+    right: 25px;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 1vh;
+    margin-right: 0vh;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
-.wrapper{
-    min-height: 100%;
-}
-.housekeeper-main{
-    background-color: #C2C7D0;
-}
-.card{
-    z-index: 1;
-    box-shadow: 0 0 1px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    align-items: center;
+
+.log-out-symbol:hover{
+    color: #E7AE41;
 }
 
 /* interface navigation menu */
-.card-title{
-    position: relative;
-    padding-top: 1%;
-    padding-left: 5px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* Table Buttons */
-.table-button{
-    position: relative;
-    width: 100%;
-    padding-top: 0%;
-} 
-
-.refresh-table{
-    position: relative;
-    top: 100%;
-    right: 40%;
-    left: 40%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.refresh-table:active{
-    color: #E7AE41;
-}
-
-.import-table{
-    position: relative;
-    top: 50%;
-    left: 94%;
-    bottom: 1%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.import-btn{
-    position: inherit;
-    cursor: pointer;
-}
-
-.import-table:active{
-    color: #E7AE41;
-}
-
-/* add user popup */
-.popup{
-    z-index: 2;
+.card-header{
+    z-index: 1996;
     position: absolute;
-    top: 11.5%;
-    left: 2%;
-    background-color: #fff;
-    opacity: 1; 
-    border: 1px solid rgba(127,127,127);
-    bottom: 30%;
-    width: 25%;
-    height: 55%;
-    border-radius: 4px;
+    top: 130px;
+    left: 7px;
+    height: 6%;
+    width: 1901px;
+    border-bottom: 1px solid;
 }
 
-/* popup contents */
-.add-title{
-    position: relative;
-    top: 2.5%;
-    left: 2%;
-    bottom: -2%;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.close-btn{
-    position: relative;
-    left: 15%;
-    top: 2%;
-    cursor: pointer;
-}
-
-.popup-line{
-    position: relative;
-    top: 5%;
-    background-color: #000;
-    width: 100%;
-    height: 0.2%;
-}
-
-/* input forms */
-
-.user-input {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-    align-items: center;
-}
-  
-form label {
-    position: relative;
-    top: 10%;
-    display: block;
-    float: left;
-    width: fit-content;
-}
-
-form input[type="number"],
-form input[type="text"] {
-    position: relative;
-    display: block;
-    width: 90%;
-    top: 12%;
-    right: 0%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.save-details[type="submit"] {
-    position: relative;
-    top: 12%;
-    width: 95%;
-    align-items: center;
-    background-color: #293a82;
-    color: #fff;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-  
-form input[type="submit"]:hover {
-    background-color: #3e8e41;
-}
-
-/* table part */
-
-table{
-    border-collapse: collapse;
-}
-
-th, td{
-    border: 1px solid #000;
-    padding: 15px;
-}
-
-th{
-    background-color: #e0e3e7;
-}
-
-td{
-    background-color: #ececec;
-}
-
-.housekeeper-table{
-    overflow: hidden;
-    position: relative;
-    margin-top: 2%;
-    margin-right: 2%;
-    margin-left: auto;
-    text-align: left;
-    height: fit-content;
-}
-
-/* table delete buttons */
-
-.delete-column{
-    background-color: transparent;
-    border: none;
-}
-
-.delete-button-row{
-    position: absolute;
-    margin-top: 0;
-    padding-left: 0%;
-    background: transparent;
-    border: none;
-}
-
-.delete-button[type="button"]{
-    box-shadow: none;
-    border: 1px solid #000;
-    background-color: #f44336;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.delete-button:active{
-    background-color: #E7AE41;
-}
-
-/* table pagination */
-
-.pagination {
-    z-index: 540;
-    position: relative;
-    margin-left: 0%;
-    margin-bottom: 3%;
-    bottom: 0;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
-  
-.pagination a {
-    color: #000;
+a {
     text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-  
-.pagination a:hover {
-    background-color: #eee;
-}
-  
-.pagination a.active {
-    background-color: #007bff;
-    color: #fff;
+    color: inherit;
 }
 
-.pagination .disabled {
-    color: gray;
-    pointer-events: none;
+.card-title{
+    z-index: 2000;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    right: 1550px;
+    top: -32.5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover{
+    color: #E7AE41;
+}
+
+.card-title-second{
+    z-index: 1998;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    right: 1250px;
+    bottom: 1.5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card-title-second:hover{
+    color: #E7AE41;
 }
