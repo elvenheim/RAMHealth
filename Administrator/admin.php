@@ -73,8 +73,8 @@
                     <div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
                     </div>  
                     <div class="table-button">
-                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add User</button><!--
-                        --><button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    </div>
+                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add User</button>
+                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    </div>
                     <table class="admin-table">
                         <thead>
                             <tr>

@@ -17,7 +17,7 @@ function addroom_popup() {
   console.log("addroom_popup function called");
   var popup = document.getElementById("addroom-popup");
   var popupBg = document.getElementById("addroom-popup-bg");
-  var popup_close_btn = document.getElementById("close-btn");
+  var popup_close_btn = document.getElementById("add-close-btn");
 
   if (popupBg.style.opacity === "0" && popup.style.opacity === "0") {
     popupBg.style.opacity = "1";
@@ -25,22 +25,24 @@ function addroom_popup() {
     popupBg.style.pointerEvents = "visible";
     popup.style.pointerEvents = "visible";
     popup_close_btn.style.cursor = "pointer";
+    popup_close_btn.style.pointerEvents = "visible";
   } else {
     popupBg.style.opacity = "0";
     popup.style.opacity = "0";
     popupBg.style.pointerEvents = "none";
     popup.style.pointerEvents = "none";
     popup_close_btn.style.cursor = "default";
-    document.getElementById("add_user").reset();
+    popup_close_btn.style.pointerEvents = "none";
+    document.getElementById("add_room").reset();
   }
   popup_close_btn.setAttribute("onclick", "addroom_popup()");
 }
 
 function editRow(roomId) {
   console.log("addroom_popup function called");
-  var popup = document.getElementById("addroom-popup");
-  var popupBg = document.getElementById("addroom-popup-bg");
-  var popup_close_btn = document.getElementById("close-btn");
+  var popup = document.getElementById("editroom-popup");
+  var popupBg = document.getElementById("editroom-popup-bg");
+  var popup_close_btn = document.getElementById("edit-close-btn");
 
   if (popupBg.style.opacity === "0" && popup.style.opacity === "0") {
     popupBg.style.opacity = "1";
@@ -48,15 +50,17 @@ function editRow(roomId) {
     popupBg.style.pointerEvents = "visible";
     popup.style.pointerEvents = "visible";
     popup_close_btn.style.cursor = "pointer";
+    popup_close_btn.style.pointerEvents = "visible";
   } else {
     popupBg.style.opacity = "0";
     popup.style.opacity = "0";
     popupBg.style.pointerEvents = "none";
     popup.style.pointerEvents = "none";
     popup_close_btn.style.cursor = "default";
-    document.getElementById("add_user").reset();
+    popup_close_btn.style.pointerEvents = "none";
+    document.getElementById("edit_room").reset();
   }
-  popup_close_btn.setAttribute("onclick", "addroom_popup()");
+  popup_close_btn.setAttribute("onclick", "editRow()");
 }
 
 function deleteRow(roomNum) {
