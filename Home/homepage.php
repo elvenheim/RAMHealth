@@ -16,12 +16,12 @@
                 RAM Health
                 </div>
             </div>
-            <span id="user_full_name" name="full_name" class="log-out-name"
+            <span id="log_out_dropdown" name="log_out_dropdown" class="log-out-symbol fas fa-power-off" 
                 onselectstart="return false;" onclick="collapse_logout()">
-                <?php include 'employee_name.php';?>
             </span>
+            </div>
         </nav>
-        <ul id="btn_logout" class="log-out">
+        <ul id="btn_logout" class="log-out" style="display: none;">
             <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
                 <button class="logout-button" type="submit" name="logout">
                     <span class="fas fa-power-off"></span>

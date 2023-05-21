@@ -76,6 +76,37 @@ th{
     text-align: left;
 }
 
+.action-buttons {
+    position: relative;
+    width: 10px;
+    white-space: nowrap;
+    background-color: transparent !important;
+}
+
+.action-buttons div {
+    position: relative;
+    bottom: 10px;
+    height: 5px;
+    text-align: center !important;
+}
+
+.action-buttons button{
+    margin: 0 5px;
+}
+
+.restore-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 /* table pagination */
 
 .pagination {

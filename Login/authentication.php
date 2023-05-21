@@ -17,13 +17,7 @@
         $row = $result->fetch_assoc();
         $role_url = $row['role_url'];
         if ($row['user_status'] == 0) {
-            echo '<script type="text/javascript">alert("Account is disabled. Please contact the administrator.");
-            window.location.href="new_login.php"</script>';
-            exit;
-        }
-        if($row['employee_password'] != $password){
-            echo '<script type="text/javascript">alert("Incorrect password. Please try again.");
-            window.location.href="new_login.php"</script>';
+            header('Location: new_login.php?error=disabled');
             exit;
         }
         $_SESSION['employee_id'] = $row['employee_id'];
@@ -32,9 +26,17 @@
         exit;
     }
     else {
-        echo '<script type="text/javascript">alert("Invalid email or password. Please try again.");
-        window.location.href="new_login.php"</script>';
-        exit;
+        $stmt = $con->prepare("SELECT * FROM user_list WHERE employee_email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            header('Location: new_login.php?error=invalid_credentials');
+            exit;
+        } else {
+            header('Location: new_login.php?error=invalid_email');
+            exit;
+        }
     }
-    
 ?>
