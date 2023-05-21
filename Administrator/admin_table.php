@@ -71,6 +71,25 @@ $(document).ready(function() {
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
+    $sortColumns = [
+      'employee_id' => 'employee_id',
+      'employee_fullname' => 'employee_fullname',
+      'employee_email' => 'employee_email',
+      'role_names' => 'role_names',
+      'employee_create_at' => 'employee_create_at',
+      'user_status' => 'user_status'
+    ];
+    
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : 'employee_id';
+    $order = isset($_GET['order']) && $_GET['order'] === 'DESC' ? 'ASC' : 'ASC';
+    
+    // Check if the provided sort column exists in the mapping
+    if (array_key_exists($sort, $sortColumns)) {
+      $sortColumn = $sortColumns[$sort];
+    } else {
+      $sortColumn = 'employee_id'; // Default to Employee ID if an invalid sort column is provided
+    }
+
     $sql = "SELECT u.*, ul.employee_fullname, ul.employee_email, 
               ul.employee_create_at, GROUP_CONCAT(r.role_name SEPARATOR ', ') 
             AS role_names
@@ -78,7 +97,7 @@ $(document).ready(function() {
             JOIN user_list ul ON u.employee_id = ul.employee_id
             JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
             GROUP BY ul.employee_id
-            ORDER BY ul.employee_id ASC
+            ORDER BY $sortColumn $order
             LIMIT $offset, $rows_per_page";
             
     $result_table = mysqli_query($con, $sql);

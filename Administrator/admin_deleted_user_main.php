@@ -46,12 +46,13 @@
                         <table class="admin-deleted-user-table">
                             <thead>
                                 <tr>
-                                <th>Employee ID</th>
-                                <th>Full Name</th>
-                                <th>Email Address</th>
-                                <th>Role</th>
-                                <th>Created At</th>
-                                <th>Deleted At</th>
+                                <th><a href="?sort=employee_id" class="header-sort">Employee ID</a></th>
+                                <th><a href="?sort=employee_fullname" class="header-sort">Full Name</a></th>
+                                <th><a href="?sort=employee_email" class="header-sort">Email Address</a></th>
+                                <th><a href="?sort=role_names" class="header-sort">Role</a></th>
+                                <th><a href="?sort=employee_create_at" class="header-sort">Created At</a></th>
+                                <th><a href="?sort=user_delete_at" class="header-sort">Deleted At</th>
+                                <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="deleted-user-table-body">

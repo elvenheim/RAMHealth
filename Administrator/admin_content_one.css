@@ -27,7 +27,7 @@
 .add-user{
     position: relative;
     top: 100%;
-    left: -37.25%;
+    left: -39.7%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -47,7 +47,7 @@
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 35%;
+    left: 39.2%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -199,10 +199,20 @@ th, td{
     width: auto;
     padding: 15px;
     text-align: center;
+    cursor: default;
 }
 
 th{
     background-color: #e0e3e7;
+    cursor: default;
+}
+
+.header-sort{
+    transition: color 0.2s ease-in-out !important;
+}
+
+.header-sort:hover{
+    color: #E7AE41 !important;
 }
 
 tr.disabled td:not(.delete-button-row){

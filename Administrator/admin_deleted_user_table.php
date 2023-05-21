@@ -19,18 +19,15 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    // $sql = "SELECT u.*, ul.employee_fullname, ul.employee_email, 
-    //           ul.employee_create_at, GROUP_CONCAT(r.role_name SEPARATOR ', ') 
-    //         AS role_names
-    //         FROM user u
-    //         JOIN user_list ul ON u.employee_id = ul.employee_id
-    //         JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
-    //         GROUP BY ul.employee_id
-    //         ORDER BY ul.employee_id ASC
-    //         LIMIT $offset, $rows_per_page
-    //         ";
-
-    $sql = "SELECT * FROM deleted_users GROUP BY user_id ORDER BY user_id ASC";
+    $sql = "SELECT du.*, ul.employee_fullname, ul.employee_email, 
+            ul.employee_create_at, GROUP_CONCAT(r.role_name SEPARATOR ', ')
+            AS role_names
+            FROM deleted_users du 
+            JOIN user_list ul ON du.user_id = ul.employee_id
+            JOIN role_type r ON FIND_IN_SET(r.role_id, du.user_role) > 0
+            GROUP BY user_id ORDER BY user_id ASC
+            LIMIT $offset, $rows_per_page
+    ";
             
     $result_table = mysqli_query($con, $sql);
     
@@ -40,10 +37,10 @@
       while ($row = mysqli_fetch_assoc($result_table)) {
         echo "<tr>";
         echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_id'] . "</td>";
-        // echo '<td style="min-width: 150px; max-width: 150px;">' . $row['user_fullname'] . "</td>";
-        // echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_email'] . "</td>";
-        echo '<td style="min-width: 250px; max-width: 250px;">' . implode(', ', explode(',', $row['user_role'])) . "</td>";
-        // echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_create_at'] . "</td>";
+        echo '<td style="min-width: 150px; max-width: 150px;">' . $row['employee_fullname'] . "</td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['employee_email'] . "</td>";
+        echo '<td style="min-width: 250px; max-width: 250px;">' . implode(', ', explode(',', $row['role_names'])) . "</td>";
+        echo '<td style="min-width: 100px; max-width: 100px;">' . $row['employee_create_at'] . "</td>";
         echo '<td style="min-width: 100px; max-width: 100px;">' . $row['user_delete_at'] . "</td>";
         echo "</tr>";
     }

@@ -48,7 +48,7 @@
                             Add User
                         </span>
                         <span class = "close-popup"> 
-                            <i id="close-btn"class= "fas fa-x fa-xl close-btn"></i>
+                            <i id="close-btn" class= "fas fa-x fa-xl close-btn"></i>
                         </span>
                         <div class = "popup-line">
                         </div>
@@ -75,22 +75,22 @@
                     <div class="table-button">
                         <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add User</button>
                         <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    </div>
-                    <table class="admin-table">
+                        <table class="admin-table">
                         <thead>
                             <tr>
-                            <th>Employee ID</th>
-                            <th>Full Name</th>
-                            <th>Email Address</th>
-                            <th>Role</th>
-                            <th>Created At</th>
-                            <th>Account Status</th>
+                            <th><a href="?sort=employee_id" class="header-sort">Employee ID</a></th>
+                            <th><a href="?sort=employee_fullname" class="header-sort">Full Name</a></th>
+                            <th><a href="?sort=employee_email" class="header-sort">Email Address</a></th>
+                            <th><a href="?sort=role_names" class="header-sort">Role</a></th>
+                            <th><a href="?sort=employee_create_at" class="header-sort">Created At</a></th>
+                            <th><a href="?sort=user_status" class="header-sort">Account Status</th>
                             <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody id="table-body">
                             <?php include 'admin_table.php'; ?>
                         </tbody>
-                    </table>
+                        </table>
                     <?php include 'admin_user_table_pagination.php'; ?>
                 </div>
             </div>

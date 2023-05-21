@@ -21,22 +21,24 @@
         if ($end_page - $start_page < 4 && $start_page > 1) {
             $start_page = max(1, $end_page - 4);
         }
-
+    
+        $sortParam = isset($_GET['sort']) ? "&sort=" . $_GET['sort'] : "";
+    
         if ($page == 1) {
             echo "<span class='pagination-disabled'>Prev</span>";
         } else {
-            echo "<a href='?page=" . ($page - 1) . "'>Prev</a>";
+            echo "<a href='?page=" . ($page - 1) . "$sortParam'>Prev</a>";
         }
-
+    
         for ($i = $start_page; $i <= $end_page; $i++) {
-            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
+            echo "<a href='?page=$i$sortParam'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
-
+    
         if ($page == $total_pages) {
             echo "<span class='pagination-disabled'>Next</span>";
         } else {
-            echo "<a href='?page=" . ($page + 1) . "'>Next</a>";
+            echo "<a href='?page=" . ($page + 1) . "$sortParam'>Next</a>";
         }
     }
-    echo "</div>";
+    echo "</div>";    
 ?>

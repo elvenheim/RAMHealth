@@ -54,10 +54,15 @@ th, td{
 
 th{
     background-color: #e0e3e7;
+    cursor: default;
 }
 
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
+.header-sort{
+    transition: color 0.2s ease-in-out !important;
+}
+
+.header-sort:hover{
+    color: #E7AE41 !important;
 }
 
 /* Deleted User Table Styles */
