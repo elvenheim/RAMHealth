@@ -1,6 +1,4 @@
 <?php 
-    require_once('air_technician_connect.php');
-    
     $rows_per_page = 10;
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -24,11 +22,6 @@
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo '<td class="delete-button-row">';
-        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['sensor_id'] . ')"> 
-            <i class="fas fa-trash"></i> 
-            </button>';
-        echo "</td>";
         echo "<td>" . $row['sensor_room_num'] . "</td>";
         echo "<td>" . $row['sensor_name'] . "</td>";
         echo "<td>" . $row['sensor_type_name'] . "</td>";
@@ -41,6 +34,14 @@
         echo '<option value="0"' . ($row['sensor_status'] == 0 ? ' selected' : '') . '>Disabled</option>';
         echo '</select>';
         echo '</form>';
+        echo "</td>";
+        echo '<td class="action-buttons">';
+        echo '<div>';
+        echo '<button class="edit-button" type="button" onclick="editRow(' . $row['sensor_id'] . ')"> 
+                <i class="fas fa-edit"></i></button>';
+        echo '<button class="delete-button" type="button" onclick="deleteRow(' . $row['sensor_id'] . ')"> 
+                <i class="fas fa-trash"></i></button>';
+        echo '</div>';
         echo "</td>";
         echo "</tr>";
     }

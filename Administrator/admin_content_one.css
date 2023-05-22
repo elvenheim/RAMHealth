@@ -243,24 +243,7 @@ form input[type="submit"]:hover {
 .delete-button:active{
     background-color: #E7AE41;
 }
-
-.update-button[type="button"]{
-    position: relative;
-    z-index: 1;
-    top: 80%;
-    left: 40.5%;
-    width: fit-content;
-    align-items: center;
-    background-color: #293a82;
-    color: #fff;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-}
+y
 
 /* user status */
 

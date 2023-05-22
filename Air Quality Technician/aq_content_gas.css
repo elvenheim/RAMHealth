@@ -1,0 +1,121 @@
+/* interface navigation menu */
+.card-header-indicator{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 41px;
+    height: 5px;
+    width: 320px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.content-one{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+/* Table Buttons */
+.table-button{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    white-space: nowrap;
+} 
+
+.download-table{
+    position: inherit;
+    right: -43px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.download-table:active{
+    color: #E7AE41;
+}
+
+.refresh-table{
+    position: relative;
+    top: 100%;
+    left: 1500px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.refresh-table:active{
+    color: #E7AE41;
+}
+
+.import-btn{
+    position: relative;
+    bottom: 25px;
+    left: 1658px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.import-table:active{
+    color: #E7AE41;
+}
+
+/* gas table style */
+.gas-level-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+/* table pagination */
+
+.pagination-gas {
+    z-index: 540;
+    position: relative;
+    right: 20px;
+    margin-top: 40px; 
+}
+  
+.pagination-gas a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.pagination-gas a:hover {
+    background-color: #eee;
+}
+  
+.pagination-gas a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-gas-disabled {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    color: gray;
+    pointer-events: none;
+}

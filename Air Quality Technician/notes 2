@@ -1,0 +1,23 @@
+                    <!-- Selection of Building Floor -->
+                        <form class="building-floor-dropdown"> 
+                            <span> Building Floor: </span>
+                            <input type="hidden" name="user_id">
+                                <select name="user_status" onchange="updateStatus(this.form)">
+                                    <option value="1">Sample Floor 1</option>
+                                    <option value="0">Sample Floor 2</option>
+                                </select>
+                            </input>
+                        </form>
+
+                        <div class = "table-button">
+                            <button id="download-table" class="download-table" onclick="downloadExcel()">
+                            <span class="fas fa-download"></span> Download 
+                            </button>
+                            <button class="refresh-table" onclick="location.reload()">
+                            <span class="fas fa-arrows-rotate"></span> Refresh
+                            </button>
+                            <form class="import-table" method="POST" enctype="multipart/form-data">
+                            <label class="import-btn"><span class="fas fa-file-import"></span> Import
+                            <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
+                            </form>
+                        </div>

@@ -1,3 +1,5 @@
+<?php require_once('admin_connect.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +77,8 @@
                     </div>  
                     <div class="table-button">
                         <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add User</button>
-                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    </div>
+                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    
+                    </div>
                         <table class="admin-table">
                         <thead>
                             <tr>

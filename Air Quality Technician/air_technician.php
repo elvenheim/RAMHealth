@@ -1,12 +1,14 @@
+<?php require_once('air_technician_connect.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
-    <link rel="stylesheet" href="air_technician.css">>
+    <link rel="stylesheet" href="air_technician.css">
     <link rel="stylesheet" href="aq_content_one.css">
-    <link rel="stylesheet" href="aq_content_two.css">       
+    <link rel="stylesheet" href="aq_content_two.css">     
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
@@ -49,42 +51,23 @@
             </nav>
             <div id="param-table" class="content-parameter">
                 <div class="card">
-                    <!-- Selection of Building Floor -->
-                        <form class="building-floor-dropdown"> 
-                            <span> Building Floor: </span>
-                            <input type="hidden" name="user_id">
-                                <select name="user_status" onchange="updateStatus(this.form)">
-                                    <option value="1">Sample Floor 1</option>
-                                    <option value="0">Sample Floor 2</option>
-                                </select>
-                            </input>
-                        </form>
-                    <div class = "table-button">
-                        <button id="download-table" class="download-table" onclick="downloadExcel()">
-                        <span class="fas fa-download"></span> Download 
-                        </button>
-                        <button class="refresh-table" onclick="location.reload()">
-                        <span class="fas fa-arrows-rotate"></span> Refresh
-                        </button>
-                        <form class="import-table" method="POST" enctype="multipart/form-data">
-                        <label class="import-btn"><span class="fas fa-file-import"></span> Import
-                        <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
-                        </form>
+                    <div class = "table-button-group">
+                        <div class="parameter-table-button">
+                            <button id="gas-level-button" class="dropbtn first-button" onclick="location.href='air_tech_gas_main.php';">Gas Level</button>
+                        </div>
+                        <div class="parameter-table-button">
+                            <button id="air-particulate-button" class="dropbtn second-button" onclick="location.href='air_tech_particulate_matter_main.php';">Air Particulate Matter</button>
+                        </div>
+                        <div class="parameter-table-button">
+                            <button id="indoor-temperature-button" class="dropbtn third-button" onclick="location.href='air_tech_indoor_temp_main.php';">Indoor Temperature</button>
+                        </div>
+                        <div class="parameter-table-button">
+                            <button id="outdoor-temperature-button" class="dropbtn fourth-button" onclick="location.href='air_tech_outdoor_temp_main.php';">Outdoor Temperature</button>
+                        </div>
+                        <div class="parameter-table-button">
+                            <button id="relative-humidity-button" class="dropbtn fifth-button" onclick="location.href='air_tech_relative_humidity_main.php';">Relative Humidity</button>
+                        </div>
                     </div>
-                    <table class = "gas-level-parameters-table">
-                        <thead>
-                            <tr>
-                                <th>Room Number</th>
-                                <th>Sensor ID</th>
-                                <th>Date</th>
-                                <th>Time</th>              
-                                <th>Gas Level</th>
-                            </tr>
-                        </thead>
-                        <tbody id = "table-body">
-                            <?php include 'air_technician_parameter_table.php'; ?>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

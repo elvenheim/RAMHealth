@@ -6,10 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
-    <link rel="stylesheet" href="air_technician.css">>
-    <link rel="stylesheet" href="aq_content_one.css">
-    <link rel="stylesheet" href="aq_content_two.css">  
-    <link rel="stylesheet" href="aq_content_three.css">      
+    <link rel="stylesheet" href="air_technician.css">
+    <link rel="stylesheet" href="aq_content_gas.css"> 
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
@@ -50,39 +48,33 @@
                     <span> Deleted Air Quality Sensors </span>
                 </a>
             </nav>
-            <div id="sensor-table" class="content-sensor">
+            <div id="gas-level-param-table" class="gas-level-parameter">
                 <div class="card">
-                    <table class = "air-quality-sensors-table">
+                    <div class = "table-button">
+                        <button id="download-table" class="download-table" onclick="downloadExcel()">
+                            <span class="fas fa-download"></span> Download </button>
+                        <button class="refresh-table" onclick="location.reload()">
+                            <span class="fas fa-arrows-rotate"></span> Refresh</button>
+                        <form class="import-table" method="POST" enctype="multipart/form-data">
+                            <label class="import-btn"><span class="fas fa-file-import"></span> Import
+                            <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
+                        </form>
+                    </div>
+                    <table id = 'gas-level-parameters-table' class = 'gas-level-table'>
                         <thead>
                             <tr>
                                 <th>Room Number</th>
-                                <th>Sensor</th>
-                                <th>Sensor Type</th>
-                                <th>Date Added</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th>Sensor ID</th>
+                                <th>Date</th>
+                                <th>Time</th>              
+                                <th>Gas Level</th>
                             </tr>
                         </thead>
-                        <tbody id = "table-body-sensor">
-                            <?php include 'air_technician_sensor_table.php'; ?>
-                        </tbody>
-                    </table>    
-                    <div id="addroom-popup" class = "popup">
-                        <span class = "add-title"> 
-                            AQ Sensor Panel
-                        </span>
-                        <div class = "popup-line">
-                        </div>
-                        <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
-                            <?php include 'input_room.php'?>
-                            <?php include 'input_sensor.php'?>
-                            <label for="sensor-name">Sensor Name:</label>
-                            <input type="text" id="sensor_name" name="sensor_name" required><br>
-                            <button class="save-details" type="submit">Add Room</button>
-                        </form>
-                    </div>
+                        <tbody id = 'table-body'>
+                            <?php include 'air_technician_gas_table.php'?>
+                        </tbody> 
+                    </table>
                 </div>
-                </nav>
             </div>
         </div>
     </body>

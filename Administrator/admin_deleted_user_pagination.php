@@ -1,6 +1,4 @@
 <?php
-    require_once('admin_connect.php');
-        
     $rows_per_page = 10;
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
