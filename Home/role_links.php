@@ -19,9 +19,12 @@
             $role_name = $row['role_name'];
             $role_url = $row['role_url'];
             $role_icon = $row['role_icon'];
-            echo "<div class = 'role-button'> <a href='$role_url' class='role-link'>
-            <img src='$role_icon' class='role-icon'><br>
-            $role_name</a><br></div>";
+            echo "<div class='role-button' onclick=\"location.href='$role_url';\">
+                <a class='role-link'>
+                    <img src='$role_icon' class='role-icon'><br>
+                    $role_name
+                </a>
+            </div>";
         }
         echo "</div>";
     }

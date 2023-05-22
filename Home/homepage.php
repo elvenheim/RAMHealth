@@ -36,6 +36,11 @@
                         Home Page
                     </span>
                 </a>
+                <div class = "greet-user">
+                    <span>
+                        <?php include 'employee_name.php'?>
+                    </span>
+                </div>
                 <div class="role-list-card">
                     <?php include 'role_links.php'?>
                 </div>

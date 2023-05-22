@@ -35,36 +35,6 @@
     border-radius: 10px;
 }
 
-/* table part */
-.table-no-record{
-    position: relative;
-    top: 175px;
-    font-size: 1.5rem;
-}
-
-th, td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #000;
-    width: auto;
-    padding: 15px;
-    text-align: center;
-}
-
-th{
-    background-color: #e0e3e7;
-    cursor: default;
-}
-
-.header-sort{
-    transition: color 0.2s ease-in-out !important;
-}
-
-.header-sort:hover{
-    color: #E7AE41 !important;
-}
-
 /* Deleted User Table Styles */
 .admin-deleted-user-table{
     overflow: hidden;

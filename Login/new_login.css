@@ -147,17 +147,6 @@ i.fa-eye{
     color: #dd4c39;
 }
 
-.invalid-email{
-    position: relative;
-    left: 90px;
-    width: fit-content;
-    font-size: 1rem;
-    font-family: 'Nunito Sans', 'sans-serif';
-    text-align: center;
-    bottom: 15px;
-    color: #dd4c39;
-}
-
 .signin-button[type="submit"]{
     margin-top: 20px;
     margin-bottom: 40px;

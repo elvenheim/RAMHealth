@@ -1,8 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-
-</script>
-
 <?php 
     require_once('air_technician_connect.php');
     

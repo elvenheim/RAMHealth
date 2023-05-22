@@ -132,6 +132,7 @@ html{
     position: relative;
     top: 30px;
     font-size: 2.5rem;
+    font-weight: bolder;
 }
 
 .role-list-card{
@@ -144,31 +145,55 @@ a {
     color: inherit;
 }
 
-.role-button{
-    height: fit-content;
-    width: fit-content;
-    display: inline-flex;
-    border: solid 2px black;
-    margin-right: 5px;
-    margin-bottom: 5px;
+.greet-user{
+    margin-top: 90px;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
 }
 
-.role-link {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-    transition: color 0.3s ease, font-size 0.3s ease;
-}
-
-.role-link:hover{
+.website-name{
     color: #E7AE41;
-    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.roles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.role-button{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    border-radius: 5px;
+    border: solid 2px black;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    align-content: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.role-button:hover{
+    background-color: #E7AE41;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
 }
 
 .role-icon{
-    margin-top: 5px;
-    height: 60px;
-    width: 60px;
+    margin-top: 75px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-link {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    white-space: normal; word-wrap: break-word;
 }
   

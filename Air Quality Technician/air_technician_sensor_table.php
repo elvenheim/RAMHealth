@@ -1,53 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('select[name="sensor_status"]').change(function() {
-            var form = $(this).parent('form');
-            var formData = form.serialize();
-            var originalStatus = $(this).data('original-status');
-            if (confirm("Are you sure you want to update the sensor status?")) {
-            $.ajax({
-                url: 'aq_sensor_status.php',
-                type: 'POST',
-                data: formData,
-                success: function(response) {
-                if (response.status === 'success') {
-                    var statusSelect = form.find('select[name="sensor_status"]');
-                    if (response.sensor_status == 1) {
-                    statusSelect.css('background-color', '#646467');
-                    } else {
-                    statusSelect.css('background-color', '#ccc');
-                    }
-                    statusSelect.data('original-status', response.sensor_status);
-                }
-                location.reload();
-                },
-                error: function(xhr, status, error) {
-                console.log('Error: ' + error);
-                }
-            });
-            } else {
-            location.reload();
-            }
-        });
-    });
-
-    function deleteRow(sensorID) {
-        if (confirm("Are you sure you want to delete this sensor?")) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "air_technician_delete_sensor.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert("Sensor has been successfully deleted.");
-                    window.location.reload();
-                }
-            };
-            xhr.send("sensor_id=" + sensorID);
-        }
-    }
-</script>
-
 <?php 
     require_once('air_technician_connect.php');
     
@@ -112,3 +62,53 @@
     }
     echo "</div>";
 ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select[name="sensor_status"]').change(function() {
+            var form = $(this).parent('form');
+            var formData = form.serialize();
+            var originalStatus = $(this).data('original-status');
+            if (confirm("Are you sure you want to update the sensor status?")) {
+            $.ajax({
+                url: 'aq_sensor_status.php',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                if (response.status === 'success') {
+                    var statusSelect = form.find('select[name="sensor_status"]');
+                    if (response.sensor_status == 1) {
+                    statusSelect.css('background-color', '#646467');
+                    } else {
+                    statusSelect.css('background-color', '#ccc');
+                    }
+                    statusSelect.data('original-status', response.sensor_status);
+                }
+                location.reload();
+                },
+                error: function(xhr, status, error) {
+                console.log('Error: ' + error);
+                }
+            });
+            } else {
+            location.reload();
+            }
+        });
+    });
+
+    function deleteRow(sensorID) {
+        if (confirm("Are you sure you want to delete this sensor?")) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "air_technician_delete_sensor.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert("Sensor has been successfully deleted.");
+                    window.location.reload();
+                }
+            };
+            xhr.send("sensor_id=" + sensorID);
+        }
+    }
+</script>

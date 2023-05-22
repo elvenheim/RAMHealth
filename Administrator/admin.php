@@ -20,7 +20,6 @@
             <span id="log_out_dropdown" name="log_out_dropdown" class="log-out-symbol fas fa-power-off" 
                 onselectstart="return false;" onclick="collapse_logout()">
             </span>
-            </div>
         </nav>
         <ul id="btn_logout" class="log-out" style="display: none;">
             <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
@@ -30,6 +29,8 @@
                 </button>
             </form>
         </ul>
+        <!-- For the Main Interface Contents -->
+        <!-- Admin Table -->
         <div class="content">
             <nav class="card-header">
                 <nav id="user-list-table-header" class="card-header-indicator"></nav>
@@ -41,7 +42,7 @@
                     <span> Deleted Users </span>
                 </a>
             </nav>
-            <div id="user-list-table"class="content-one">
+            <div id="user-list-table" class="content-one">
                 <div class="card">
                     <div id="adduser-popup" class = "popup" style="opacity: 0; pointer-events: none;">
                         <span class = "add-title"> 

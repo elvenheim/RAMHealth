@@ -12,5 +12,9 @@
             $_SESSION['employee_fullname'] = $row['employee_fullname'];
         }
     }
+    echo 'Welcome to'; 
+    echo '<span class = "website-name"> RAM Health</span>, ';
+    echo '<span class = "employee-name">';
     echo $_SESSION['employee_fullname'];
+    echo '</span>';
 ?>

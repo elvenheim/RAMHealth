@@ -31,7 +31,7 @@
                   } elseif ($error === 'invalid_credentials') {
                      echo '<p class="invalid-message">Invalid email or password. Please try again.</p>';
                   } elseif ($error === 'invalid_email') {
-                     echo '<p class="invalid-email">Account does not exist.</p>';
+                     echo '<p class="invalid-message">Invalid email or password. Please try again.</p>';
                  }
                }
             ?>

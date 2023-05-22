@@ -183,42 +183,8 @@ form input[type="password"] {
 form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
-  
-/* table part */
-.table-no-record{
-    position: relative;
-    top: 175px;
-    font-size: 1.5rem;
-}
 
-th, td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #000;
-    width: auto;
-    padding: 15px;
-    text-align: center;
-    cursor: default;
-}
-
-th{
-    background-color: #e0e3e7;
-    cursor: default;
-}
-
-.header-sort{
-    transition: color 0.2s ease-in-out !important;
-}
-
-.header-sort:hover{
-    color: #E7AE41 !important;
-}
-
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
-}
-
+/* admin table style */
 .admin-table{
     overflow: hidden;
     border-collapse: collapse;
@@ -227,10 +193,6 @@ tr.disabled td:not(.delete-button-row){
     width: 1690px;
     margin-top: 125px;
     text-align: left;
-}
-
-.disabled {
-    color: gray;
 }
 
 .action-buttons {
