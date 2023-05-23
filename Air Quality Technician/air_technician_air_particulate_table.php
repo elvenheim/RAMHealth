@@ -17,19 +17,6 @@
     $sql = "SELECT * FROM aq_particulate_matter ORDER BY pm_id LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
-    echo "<table id = 'air-particualte-parameters-table' class = 'parameters-table' style='display: none;'>
-            <thead>
-                <tr>
-                    <th>Room Number</th>
-                    <th>Sensor ID</th>
-                    <th>Date</th>
-                    <th>Time</th>              
-                    <th>Particulate Matter 10</th>
-                    <th>Particulate Matter 2.5</th>
-                    <th>Particulate Matter 0.1</th>
-                </tr>
-            </thead>
-            <tbody id = 'table-body'>";
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         echo "<td>" . $row['pm_room_num'] . "</td>";
@@ -40,7 +27,7 @@
         echo "<td>" . $row['pm_two_five'] . "</td>";
         echo "<td>" . $row['pm_zero_one'] . "</td>";
         echo "</tr>";
-    }   echo "</tbody> </table>";
+    }
     
     echo "<div class='pagination-particulate-matter'>";
     if ($total_pages > 1) {
@@ -50,12 +37,12 @@
             $start_page = max(1, $end_page - 4);
         }
         echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
+            ($page == 1 ? "class='pagination-particulate-disabled'" : "") . ">Prev</a>";
         for ($i = $start_page; $i <= $end_page; $i++) {
             echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
         echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+            ($page == $total_pages ? " class='pagination-particulate-disabled'" : "") . ">Next</a>";
     }
     echo "</div>";
 ?>

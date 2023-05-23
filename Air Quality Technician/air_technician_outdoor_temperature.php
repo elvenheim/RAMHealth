@@ -7,7 +7,7 @@
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM aq_indoor_temperature";
+    $count_query = "SELECT COUNT(*) as count FROM aq_outdoor_temperature";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
@@ -17,17 +17,6 @@
     $sql = "SELECT * FROM aq_outdoor_temperature ORDER BY outdoor_temp_id LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
-    echo "<table id = 'outdoor-temperature-parameters-table' class = 'parameters-table' style='display: none;'>
-            <thead>
-                <tr>
-                    <th>Room Number</th>
-                    <th>Sensor ID</th>
-                    <th>Date</th>
-                    <th>Time</th>              
-                    <th>Outdoor Temperature</th>
-                </tr>
-            </thead>
-            <tbody id = 'table-body'>";
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
         echo "<td>" . $row['outdoor_temp_room_num'] . "</td>";
@@ -36,7 +25,7 @@
         echo "<td>" . $row['outdoor_temp_time'] . "</td>";
         echo "<td>" . $row['outdoor_temp_level_data'] . "</td>";
         echo "</tr>";
-    }   echo "</tbody> </table>";
+    }
     
     echo "<div class='pagination-outdoor-temperature'>";
     if ($total_pages > 1) {
@@ -46,12 +35,12 @@
             $start_page = max(1, $end_page - 4);
         }
         echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
+            ($page == 1 ? "class='pagination-outdoor-temp-disabled'" : "") . ">Prev</a>";
         for ($i = $start_page; $i <= $end_page; $i++) {
             echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
         echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+            ($page == $total_pages ? " class='pagination-outdoor-temp-disabled'" : "") . ">Next</a>";
     }
     echo "</div>";
 ?>

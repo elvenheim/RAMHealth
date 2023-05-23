@@ -90,7 +90,7 @@
 }
 
 /* gas table style */
-.gas-level-table{
+.air-particulate-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -102,14 +102,14 @@
 
 /* table pagination */
 
-.pagination-gas {
+.pagination-particulate {
     z-index: 540;
     position: relative;
     right: 20px;
     margin-top: 40px; 
 }
   
-.pagination-gas a {
+.pagination-particulate a {
     color: #000;
     text-decoration: none;
     padding: 5px 10px;
@@ -118,16 +118,16 @@
     border-radius: 5px;
 }
   
-.pagination-gas a:hover {
+.pagination-particulate a:hover {
     background-color: #eee;
 }
   
-.pagination-gas a.active {
+.pagination-particulate a.active {
     background-color: #007bff;
     color: #fff;
 }
 
-.pagination-gas-disabled {
+.pagination-particulate-disabled {
     text-decoration: none;
     padding: 5px 10px;
     margin-left: 5px;

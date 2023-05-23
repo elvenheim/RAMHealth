@@ -39,7 +39,7 @@
     color: #E7AE41;
 }
 
-#adduser-popup, #adduser-popup-bg {
+#addroom-popup, #addroom-popup-bg {
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
 }

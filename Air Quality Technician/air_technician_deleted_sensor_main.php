@@ -6,10 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
-    <link rel="stylesheet" href="air_technician.css">>
-    <link rel="stylesheet" href="aq_content_one.css">
-    <link rel="stylesheet" href="aq_content_two.css">  
-    <link rel="stylesheet" href="aq_content_three.css">      
+    <link rel="stylesheet" href="air_technician.css">
+    <link rel="stylesheet" href="aq_content_deleted_sensors.css">      
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>

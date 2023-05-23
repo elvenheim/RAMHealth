@@ -116,8 +116,8 @@ $(document).ready(function() {
         echo '<form class="status-form">';
         echo '<input type="hidden" name="employee_id" value="' . $row['employee_id'] . '">';
         echo '<select name="user_status" onchange="updateStatus(this.form);">';
-        echo '<option value="1"' . ($row['user_status'] == 1 ? ' selected' : '') . '>Enabled</option>';
-        echo '<option value="0"' . ($row['user_status'] == 0 ? ' selected' : '') . '>Disabled</option>';
+        echo '<option class="status-enabled" value="1"' . ($row['user_status'] == 1 ? ' selected' : '') . '>Enabled</option>';
+        echo '<option class="status-disabled" value="0"' . ($row['user_status'] == 0 ? ' selected' : '') . '>Disabled</option>';
         echo '</select>';
         echo '</form>';
         echo "</td>";

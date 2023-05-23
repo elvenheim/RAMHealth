@@ -51,6 +51,8 @@
             <div id="gas-level-param-table" class="gas-level-parameter">
                 <div class="card">
                     <div class = "table-button">
+                        <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
+                            <span class="fas fa-arrow-left"></span> Go Back </button>
                         <button id="download-table" class="download-table" onclick="downloadExcel()">
                             <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">

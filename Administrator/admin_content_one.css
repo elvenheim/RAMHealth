@@ -239,11 +239,9 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-
 .delete-button:active{
     background-color: #E7AE41;
 }
-y
 
 /* user status */
 
@@ -253,7 +251,7 @@ y
     border: none;
     border-radius: 5px;
 }
-  
+
 /* table pagination */
 
 .pagination {
