@@ -55,12 +55,12 @@
             $start_page = max(1, $end_page - 4);
         }
         echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='disabled'" : "") . ">Prev</a>";
+            ($page == 1 ? "class='pagination-sensor-disabled'" : "") . ">Prev</a>";
         for ($i = $start_page; $i <= $end_page; $i++) {
             echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
         }
         echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='disabled'" : "") . ">Next</a>";
+            ($page == $total_pages ? " class='pagination-sensor-disabled'" : "") . ">Next</a>";
     }
     echo "</div>";
 ?>

@@ -172,18 +172,6 @@ a {
     transition: color 0.3s ease;
 }
 
-.card-header-indicator{
-    z-index: 1999;
-    position: absolute;
-    top: -2.5px;
-    left: 41px;
-    height: 5px;
-    width: 320px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
-}
-
 .card-title-second:hover{
     color: #E7AE41;
 }
@@ -276,33 +264,10 @@ th{
     color: #E7AE41 !important;
 }
 
-/* table delete buttons */
-
-.delete-column{
-    background-color: transparent;
-    border: none;
+tr.disabled td:not(.delete-button-row){
+    background-color: #ccc;
 }
 
-.delete-button-row{
-    position: absolute;
-    margin-top: -0.3%;
-    margin-left: -2%;
-
-    background: transparent;
-    border: none;
-}
-
-.delete-button[type="button"]{
-    box-shadow: none;
-    border: 1px solid #000;
-    background-color: #f44336;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.delete-button:active{
-    background-color: #E7AE41;
+.disabled {
+    color: gray;
 }

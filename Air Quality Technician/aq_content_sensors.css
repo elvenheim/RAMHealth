@@ -1,45 +1,97 @@
-/* table part */
-.air-quality-sensors-table{
-    position: relative;
-    overflow: hidden;
-    top: 120px;
-    left: 10%;
-    margin-top: auto;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: left;
-    height: fit-content;
-    width: 1300px;
+/* interface navigation menu */
+.card-header-indicator-second{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 422px;
+    height: 5px;
+    width: 250px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
 }
 
-/* user status */
+.content-sensor{
+    opacity: 1;
+    pointer-events: visible;
+}
 
-.status-form select {
-    font-size: 1rem;
+/* Table Buttons */
+.table-button{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    white-space: nowrap;
+} 
+
+.add-user{
+    position: relative;
+    top: 100%;
+    left: -39.7%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
     background-color: transparent;
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* add sensor popup */
-.popup{
-    z-index: 2;
+.add-user:active{
+    color: #E7AE41;
+}
+
+#adduser-popup, #adduser-popup-bg {
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.refresh-table{
+    position: relative;
+    top: 100%;
+    left: 39.2%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.refresh-table:active{
+    color: #E7AE41;
+}
+
+/* add user popup */
+
+.popup-bg{
     position: absolute;
-    top: 50%;
-    left: 2%;
+    top: 0;
+    z-index: 1039;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup{
+    z-index: 1040;
+    position: fixed;
+    top: 16.5%;
+    left: 36.5%;
+    right: 36.5%;
     background-color: #fff;
+    opacity: 0; 
     border: 1px solid rgba(127,127,127);
-    bottom: 30%;
-    width: 22%;
-    height: 370px;
-    border-radius: 4px;
+    box-shadow: 0 0.2rem 0.75rem rgba(0,0,0,0.5);
+    height: 55%;
+    width: 25%;
+    border-radius: 10px;
 }
 
 /* popup contents */
+
 .add-title{
     position: relative;
-    top: 2.5%;
-    left: 2%;
+    top: 3%;
+    left: 2.5%;
     bottom: -2%;
     font-size: 1.5rem;
     font-weight: bold;
@@ -47,9 +99,15 @@
 
 .close-btn{
     position: relative;
-    left: 15%;
+    left: 30%;
     top: 2%;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover{
+    color: #f44336;
+    transform: scale(1.2);
 }
 
 .popup-line{
@@ -60,12 +118,11 @@
     height: 0.2%;
 }
 
-
 /* input forms */
+
 .user-input {
     position: relative;
     display: flex;
-    width: 100%;
     height: 100%;
     flex-direction: column;
     max-width: 400px;
@@ -75,18 +132,18 @@
   
 form label {
     position: relative;
-    top: 10%;
+    top: 8%;
     display: block;
     float: left;
     width: fit-content;
+    margin-right: 10px;
 }
 
 form input[type="text"] {
     position: relative;
     display: block;
     width: 90%;
-    top: 12%;
-    right: 0%;
+    top: 9%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -94,13 +151,36 @@ form input[type="text"] {
     font-size: 16px;
 }
 
-.room_number, .sensor_type{
-    z-index: 550;
+.sensor_type{
     position: relative;
     display: block;
-    width: 96%;
-    top: 12%;
-    right: 0%;
+    width: 95%;
+    top: 9%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.room_number{
+    position: relative;
+    display: block;
+    width: 95%;
+    top: 9%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.role_name{
+    position: relative;
+    display: block;
+    width: 95%;
+    height: 15%;
+    top: 9%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -110,11 +190,8 @@ form input[type="text"] {
 
 .save-details[type="submit"] {
     position: relative;
-    z-index: 1;
-    top: 13%;
-    left: 33%;
-    width: fit-content;
-    align-items: center;
+    top: 10%;
+    width: 95%;
     background-color: #293a82;
     color: #fff;
     border: 1px solid #007BFF;
@@ -126,4 +203,110 @@ form input[type="text"] {
   
 form input[type="submit"]:hover {
     background-color: #3e8e41;
+}
+
+/* gas table style */
+.air-quality-sensors-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.action-buttons {
+    position: relative;
+    width: 10px;
+    white-space: nowrap;
+    background-color: transparent !important;
+}
+
+.action-buttons div {
+    position: relative;
+    bottom: 10px;
+    height: 5px;
+    text-align: center !important;
+}
+
+.action-buttons button{
+    margin: 0 5px;
+}
+
+.delete-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.edit-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.delete-button:active{
+    background-color: #E7AE41;
+}
+
+/* sensor status */
+
+.status-form select {
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+}
+
+/* table pagination */
+
+.pagination-sensor {
+    z-index: 540;
+    position: relative;
+    right: 20px;
+    margin-top: 40px; 
+}
+  
+.pagination-sensor a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.pagination-sensor a:hover {
+    background-color: #eee;
+}
+  
+.pagination-sensor a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-sensor-disabled {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    color: gray;
+    pointer-events: none;
 }

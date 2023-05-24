@@ -50,6 +50,31 @@
             </nav>
             <div id="sensor-table" class="content-sensor">
                 <div class="card">
+                    <div id="adduser-popup" class = "popup" style="opacity: 0; pointer-events: none;">
+                        <span class = "add-title"> 
+                            Add Sensor
+                        </span>
+                        <span class = "close-popup"> 
+                            <i id="close-btn" class= "fas fa-x fa-xl close-btn"></i>
+                        </span>
+                        <div class = "popup-line">
+                        </div>
+                        <form id="add_user" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
+                            <label for="sensor-name">Sensor ID:</label>
+                            <input type="text" id="sensor_id" name="sensor_id" required><br>
+                            <label for="sensor-name">Sensor Name:</label>
+                            <input type="text" id="sensor_name" name="sensor_name" required><br>
+                            <?php include 'input_sensor.php'?>
+                            <?php include 'input_room.php'?>
+                            <button class="save-details" type="submit">Add Room</button>
+                        </form>
+                    </div>
+                    <div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
+                    </div>  
+                    <div class="table-button">
+                        <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add Room</button>
+                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    
+                    </div>
                     <table class = "air-quality-sensors-table">
                         <thead>
                             <tr>
@@ -66,20 +91,6 @@
                             <?php include 'air_technician_sensor_table.php'; ?>
                         </tbody>
                     </table>    
-                    <div id="addroom-popup" class = "popup">
-                        <span class = "add-title"> 
-                            AQ Sensor Panel
-                        </span>
-                        <div class = "popup-line">
-                        </div>
-                        <form id="add-aq-sensor" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
-                            <?php include 'input_room.php'?>
-                            <?php include 'input_sensor.php'?>
-                            <label for="sensor-name">Sensor Name:</label>
-                            <input type="text" id="sensor_name" name="sensor_name" required><br>
-                            <button class="save-details" type="submit">Add Room</button>
-                        </form>
-                    </div>
                 </div>
                 </nav>
             </div>
