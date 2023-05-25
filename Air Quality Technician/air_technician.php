@@ -51,6 +51,9 @@
             <div id="param-table" class="content-parameter">
                 <div class="card">
                     <div class = "table-button-group">
+                    <div class="parameter-table-button">
+                            <button id="gas-level-button" class="dropbtn first-button" onclick="location.href='air_tech_gas_main.php';">Air Quality Table</button>
+                        </div>
                         <div class="parameter-table-button">
                             <button id="gas-level-button" class="dropbtn first-button" onclick="location.href='air_tech_gas_main.php';">Gas Level</button>
                         </div>

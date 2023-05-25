@@ -15,7 +15,7 @@
     $sql = "SELECT sensor.*, sensor_type.sensor_type_name 
         FROM sensor
         INNER JOIN sensor_type ON sensor.sensor_type = sensor_type.sensor_type_id
-        WHERE sensor_type IN ('1', '6')
+        WHERE sensor_type IN ('1', '2', '3', '4', '5')
         ORDER BY sensor.sensor_id
         LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
