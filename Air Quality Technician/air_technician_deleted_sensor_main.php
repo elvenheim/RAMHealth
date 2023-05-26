@@ -57,7 +57,7 @@
                                 <th>Sensor</th>
                                 <th>Sensor Type</th>
                                 <th>Date Added</th>
-                                <th>Status</th>
+                                <th>Deleted At</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
