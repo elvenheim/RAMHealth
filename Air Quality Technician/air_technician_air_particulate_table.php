@@ -33,21 +33,4 @@
         echo "<td>" . $row['pm_zero_one'] . "</td>";
         echo "</tr>";
     }
-    
-    echo "<div class='pagination-particulate-matter'>";
-    if ($total_pages > 1) {
-        $start_page = max(1, $page - 2);
-        $end_page = min($total_pages, $start_page + 4);
-        if ($end_page - $start_page < 4 && $start_page > 1) {
-            $start_page = max(1, $end_page - 4);
-        }
-        echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='pagination-particulate-disabled'" : "") . ">Prev</a>";
-        for ($i = $start_page; $i <= $end_page; $i++) {
-            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
-        }
-        echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='pagination-particulate-disabled'" : "") . ">Next</a>";
-    }
-    echo "</div>";
 ?>

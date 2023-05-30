@@ -39,43 +39,43 @@
 		<nav class="card-header">
 			<nav id="param-header" class="card-header-indicator"></nav>
 			<a href="air_technician.php" class="card-title">
-				<span> Air Quality Parameter Table </span>
+				<span> Parameter Tables </span>
 			</a>
 			<nav id="sensor-header" class="card-header-indicator-second"></nav>
 			<a href="air_technician_sensor_main.php" class="card-title-second">
-				<span> Air Quality Sensors </span>
+				<span> Sensors </span>
 			</a>
 			<nav id="deleted-sensor-header" class="card-header-indicator-third"></nav>
 			<a href="air_technician_deleted_sensor_main.php" class="card-title-third">
-				<span> Deleted Air Quality Sensors </span>
+				<span> Deleted Sensors </span>
 			</a>
 		</nav>
 		<div id="param-table" class="content-parameter">
 			<div class="card">
 				<div class="table-button-group">
 					<div class="parameter-table-button">
-						<button id="gas-level-button" class="dropbtn first-button"
+						<button id="gas-level-button" class="dropbtn"
 							onclick="location.href='air_tech_general_param_main.php';">Air Quality Table</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="gas-level-button" class="dropbtn first-button"
+						<button id="gas-level-button" class="dropbtn"
 							onclick="location.href='air_tech_gas_main.php';">Gas Level</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="air-particulate-button" class="dropbtn second-button"
+						<button id="air-particulate-button" class="dropbtn"
 							onclick="location.href='air_tech_particulate_matter_main.php';">Air Particulate
 							Matter</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="indoor-temperature-button" class="dropbtn third-button"
+						<button id="indoor-temperature-button" class="dropbtn"
 							onclick="location.href='air_tech_indoor_temp_main.php';">Indoor Temperature</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="outdoor-temperature-button" class="dropbtn fourth-button"
+						<button id="outdoor-temperature-button" class="dropbtn"
 							onclick="location.href='air_tech_outdoor_temp_main.php';">Outdoor Temperature</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="relative-humidity-button" class="dropbtn fifth-button"
+						<button id="relative-humidity-button" class="dropbtn"
 							onclick="location.href='air_tech_relative_humidity_main.php';">Relative Humidity</button>
 					</div>
 				</div>

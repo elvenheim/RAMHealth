@@ -1,0 +1,101 @@
+/* interface navigation menu */
+.card-header-indicator{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 71px;
+    height: 5px;
+    width: 220px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.content-one{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+/* Table Buttons */
+.table-button{
+    position: relative;
+    display: flex;
+    top: 100px;
+    width: 1690px;
+    white-space: nowrap;
+} 
+
+.back-button{
+    position: relative;
+    left: 110px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
+.download-table{
+    position: relative;
+    left: 150px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.download-table:hover{
+    color: #E7AE41;
+}
+
+.refresh-table{
+    position: relative;
+    left: 1360px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.refresh-table:hover{
+    color: #E7AE41;
+}
+
+.import-btn{
+    position: relative;
+    left: 1400px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.import-table:hover{
+    color: #E7AE41;
+}
+
+.outlet-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+

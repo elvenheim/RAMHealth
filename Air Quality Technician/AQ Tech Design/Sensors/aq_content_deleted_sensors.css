@@ -3,9 +3,9 @@
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 737px;
+    left: 533.5px;
     height: 5px;
-    width: 330px;
+    width: 210px;
     opacity: 1;
     background-color: #E7AE41;
     border-radius: 10px;
@@ -115,41 +115,4 @@
 
 .restore-button:hover{
     background-color: #E7AE41;
-}
-
-/* table pagination */
-.pagination {
-    z-index: 540;
-    position: relative;
-    right: 20px;
-    margin-top: 40px; 
-}
-
-.pagination a {
-    color: #000;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.pagination a:hover {
-    background-color: #eee;
-}
-
-.pagination a.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.pagination-disabled {
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #eee;
-    color: gray;
-    pointer-events: none;
 }

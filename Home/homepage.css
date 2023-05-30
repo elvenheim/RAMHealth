@@ -173,12 +173,13 @@ a {
     cursor: pointer;
     align-content: center;
     justify-content: center;
-    transition: background-color 0.1s ease-in, width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in, width 0.2s ease-in-out, height 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .role-button:hover{
     height: 320px;
     width: 340px;
+    background-color: rgba(0, 0, 0, .05);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
 }
 

@@ -36,22 +36,22 @@
         <div class="content"> 
             <nav class="card-header">
                 <nav id="param-header" class="card-header-indicator"></nav>
-                <a href="../Air Quality Technician/air_technician.php" class = "card-title">
-                    <span> Air Quality Parameter Table </span>
+                <a href="air_technician.php" class = "card-title">
+                    <span> Parameter Tables </span>
                 </a>
                 <nav id="sensor-header" class="card-header-indicator-second"></nav>
-                <a href="../Air Quality Technician/air_technician_sensor_main.php" class = "card-title-second"> 
-                    <span> Air Quality Sensors </span>
+                <a href="air_technician_sensor_main.php" class = "card-title-second"> 
+                    <span> Sensors </span>
                 </a>
                 <nav id="deleted-sensor-header" class="card-header-indicator-third"></nav>
-                <a href="../Air Quality Technician/air_technician_deleted_sensor_main.php" class = "card-title-third"> 
-                    <span> Deleted Air Quality Sensors </span>
+                <a href="air_technician_deleted_sensor_main.php" class = "card-title-third"> 
+                    <span> Deleted Sensors </span>
                 </a>
             </nav>
             <div id="gas-level-param-table" class="gas-level-parameter">
                 <div class="card">
                     <div class = "table-button">
-                        <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
+                        <button id="back-button" class="back-button" onclick="location.href='air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
                         <button id="download-table" class="download-table" onclick="downloadExcel()">
                             <span class="fas fa-download"></span> Download </button>
@@ -77,6 +77,7 @@
                             <?php include 'air_technician_gas_table.php'?>
                         </tbody> 
                     </table>
+                    <?php include '../Air Quality Technician/AQ Tech Design/AQ Tech Pagination/gas_pagination.php'; ?>
                 </div>
             </div>
         </div>

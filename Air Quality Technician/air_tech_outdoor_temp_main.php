@@ -37,15 +37,15 @@
             <nav class="card-header">
                 <nav id="param-header" class="card-header-indicator"></nav>
                 <a href="../Air Quality Technician/air_technician.php" class = "card-title">
-                    <span> Air Quality Parameter Table </span>
+                    <span> Parameter Tables </span>
                 </a>
                 <nav id="sensor-header" class="card-header-indicator-second"></nav>
                 <a href="../Air Quality Technician/air_technician_sensor_main.php" class = "card-title-second"> 
-                    <span> Air Quality Sensors </span>
+                    <span> Sensors </span>
                 </a>
                 <nav id="deleted-sensor-header" class="card-header-indicator-third"></nav>
                 <a href="../Air Quality Technician/air_technician_deleted_sensor_main.php" class = "card-title-third"> 
-                    <span> Deleted Air Quality Sensors </span>
+                    <span> Deleted Sensors </span>
                 </a>
             </nav>
             <div id="outdoor-temperature-param-table" class="outdoor-temperature-parameter">
@@ -77,6 +77,7 @@
                             <?php include 'air_technician_outdoor_temperature.php'?>
                         </tbody> 
                     </table>
+                    <?php include '../Air Quality Technician/AQ Tech Design/AQ Tech Pagination/out_temp_pagination.php'; ?>
                 </div>
             </div>
         </div>

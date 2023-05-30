@@ -1,0 +1,155 @@
+/* interface navigation menu */
+.card-header-indicator-third{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 533.5px;
+    height: 5px;
+    width: 210px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+.content-deleted-sensor{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+/* Table Buttons */
+.table-button{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    white-space: nowrap;
+} 
+
+.refresh-table{
+    position: relative;
+    top: 100%;
+    left: 41.3%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.refresh-table:active{
+    color: #E7AE41;
+}
+
+
+/* popup contents */
+.add-title{
+    position: relative;
+    top: 3%;
+    left: 2.5%;
+    bottom: -2%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.close-btn{
+    position: relative;
+    left: 30%;
+    top: 2%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover{
+    color: #f44336;
+    transform: scale(1.2);
+}
+
+.popup-line{
+    position: relative;
+    top: 5%;
+    background-color: #000;
+    width: 100%;
+    height: 0.2%;
+}
+
+/*deleted sensor table style */
+.air-quality-deleted-sensors-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.action-buttons {
+    position: relative;
+    width: 10px;
+    white-space: nowrap;
+    background-color: transparent !important;
+}
+
+.action-buttons div {
+    position: relative;
+    bottom: 10px;
+    height: 5px;
+    text-align: center !important;
+}
+
+.action-buttons button{
+    margin: 0 5px;
+}
+
+.restore-button[type="button"]{
+    position: relative;
+    right: 0px;
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.restore-button:hover{
+    background-color: #E7AE41;
+}
+
+/* table pagination */
+.pagination {
+    z-index: 540;
+    position: relative;
+    right: 20px;
+    margin-top: 40px; 
+}
+
+.pagination a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-disabled {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    color: gray;
+    pointer-events: none;
+}

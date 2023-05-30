@@ -1,13 +1,10 @@
 function collapse_logout(){
-  var fullName = document.getElementById("user_full_name")
   var logoutBtn = document.getElementById("btn_logout");
 
   if (logoutBtn.style.display === "none") {
     logoutBtn.style.display = "block";
-    fullName.style.color = "#E7AE41"
   } else {
     logoutBtn.style.display = "none";
-    fullName.style.color ="#FFF"
   }
 }
 
@@ -17,50 +14,44 @@ function logout(){
   }
 }
 
-function navParameter(){
-  var navParamHeader = document.getElementById("param-header");
-  var navSensorHeader = document.getElementById("sensor-header");
-  var navParamTable = document.getElementById("param-table");
-  var navSensorTable = document.getElementById("sensor-table");
-
-  if(navParamTable.style.opacity === "1") {
-    navParamHeader.style.opacity = "1";
-    navParamTable.style.opacity = "1";
-    navParamTable.style.pointerEvents = "visible";
-    navSensorHeader.style.opacity = "0";
-    navSensorTable.style.opacity = "0";
-    navSensorTable.style.pointerEvents = "none";
-  }else{
-    navParamHeader.style.opacity = "1";
-    navParamTable.style.opacity = "1";
-    navParamTable.style.pointerEvents = "visible";
-    navSensorHeader.style.opacity = "0";
-    navSensorTable.style.opacity = "0";
-    navSensorTable.style.pointerEvents = "none";
-  }
+function downloadExcel() {
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'path/to/excel/file', true);
+  xhr.responseType = 'blob';
+  xhr.onload = function(e) {
+      if (this.status == 200) {
+          // Create a download link for the Excel file
+          var blob = new Blob([this.response], {type: 'application/vnd.ms-excel'});
+          var url = URL.createObjectURL(blob);
+          var link = document.createElement('a');
+          link.href = url;
+          link.download = 'file.xlsx';
+          link.click();
+      }
+  };
+  xhr.send();
 }
 
-function navSensor(){
-  var navParamHeader = document.getElementById("param-header");
-  var navSensorHeader = document.getElementById("sensor-header");
-  var navParamTable = document.getElementById("param-table");
-  var navSensorTable = document.getElementById("sensor-table");
+function adduser_popup() {
+  console.log("adduser_popup function called");
+  var popup = document.getElementById("adduser-popup");
+  var popupBg = document.getElementById("adduser-popup-bg");
+  var popup_close_btn = document.getElementById("close-btn");
 
-  if(navSensorTable.style.opacity === "0") {
-    navSensorHeader.style.opacity = "1";
-    navSensorTable.style.opacity = "1";
-    navSensorTable.style.pointerEvents = "visible";
-
-    navParamHeader.style.opacity = "0";
-    navParamTable.style.opacity = "0";
-    navParamTable.style.pointerEvents = "none";
-  }else{
-    navSensorHeader.style.opacity = "1";
-    navSensorTable.style.opacity = "1";
-    navSensorTable.style.pointerEvents = "visible";
-
-    navParamHeader.style.opacity = "0";
-    navParamTable.style.opacity = "0";
-    navParamTable.style.pointerEvents = "none";
+  if (popupBg.style.opacity === "0" && popup.style.opacity === "0") {
+    popupBg.style.opacity = "1";
+    popup.style.opacity = "1";
+    popupBg.style.pointerEvents = "visible";
+    popup.style.pointerEvents = "visible";
+    popup_close_btn.style.cursor = "pointer";
+  } else {
+    popupBg.style.opacity = "0";
+    popup.style.opacity = "0";
+    popupBg.style.pointerEvents = "none";
+    popup.style.pointerEvents = "none";
+    popup_close_btn.style.cursor = "default";
+    document.getElementById("add_user").reset();
   }
+  popup_close_btn.setAttribute("onclick", "adduser_popup()");
 }

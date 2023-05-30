@@ -3,9 +3,9 @@
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 41px;
+    left: 71px;
     height: 5px;
-    width: 320px;
+    width: 220px;
     opacity: 1;
     background-color: #E7AE41;
     border-radius: 10px;
@@ -98,42 +98,4 @@
     width: 1690px;
     margin-top: 125px;
     text-align: left;
-}
-
-/* table pagination */
-
-.pagination-gas {
-    z-index: 540;
-    position: relative;
-    right: 20px;
-    margin-top: 40px; 
-}
-  
-.pagination-gas a {
-    color: #000;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-  
-.pagination-gas a:hover {
-    background-color: #eee;
-}
-  
-.pagination-gas a.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.pagination-gas-disabled {
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #eee;
-    color: gray;
-    pointer-events: none;
 }
