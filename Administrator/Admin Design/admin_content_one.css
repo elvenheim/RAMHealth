@@ -129,7 +129,7 @@
     margin: 0 auto;
     align-items: center;
 }
-  
+
 form label {
     position: relative;
     top: 8%;
@@ -179,7 +179,7 @@ form input[type="password"] {
     font-size: 16px;
     cursor: pointer;
 }
-  
+
 form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
@@ -226,6 +226,10 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.delete-button:hover{
+    background-color: #E7AE41;
+}
+
 .edit-button[type="button"]{
     position: relative;
     right: 0px;
@@ -239,7 +243,7 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.delete-button:active{
+.edit-button:hover{
     background-color: #E7AE41;
 }
 
@@ -260,7 +264,7 @@ form input[type="submit"]:hover {
     right: 20px;
     margin-top: 40px; 
 }
-  
+
 .pagination a {
     color: #000;
     text-decoration: none;
@@ -269,11 +273,11 @@ form input[type="submit"]:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
+
 .pagination a:hover {
     background-color: #eee;
 }
-  
+
 .pagination a.active {
     background-color: #007bff;
     color: #fff;

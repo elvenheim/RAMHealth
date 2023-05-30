@@ -173,14 +173,17 @@ a {
     cursor: pointer;
     align-content: center;
     justify-content: center;
-    transition: background-color 0.2s ease-in-out, width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in, width 0.2s ease-in-out, height 0.2s ease-in-out;
 }
 
 .role-button:hover{
     height: 320px;
     width: 340px;
-    background-color:rgba(0,0,0,.100);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+}
+
+.role-button:active{
+    background-color: #E7AE41;
 }
 
 .role-icon{
@@ -198,4 +201,3 @@ a {
     font-size: 1.5rem;
     white-space: normal; word-wrap: break-word;
 }
-  

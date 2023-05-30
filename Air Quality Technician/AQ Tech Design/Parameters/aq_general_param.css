@@ -1,11 +1,11 @@
 /* interface navigation menu */
-.card-header-indicator-second{
+.card-header-indicator{
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 470.5px;
+    left: 41px;
     height: 5px;
-    width: 195px;
+    width: 320px;
     opacity: 1;
     background-color: #E7AE41;
     border-radius: 10px;
@@ -19,53 +19,78 @@
 /* Table Buttons */
 .table-button{
     position: relative;
+    display: flex;
     top: 100px;
-    width: 100%;
+    width: 1690px;
     white-space: nowrap;
 } 
 
-.refresh-table{
+.back-button{
     position: relative;
-    top: 100%;
-    left: 42%;
+    left: 110px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
+    width: max-content;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
-.refresh-table:active{
+.back-button:hover{
     color: #E7AE41;
 }
 
-
-/* table part */
-.table-no-record{
+.download-table{
     position: relative;
-    top: 175px;
-    font-size: 1.5rem;
+    left: 150px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
-th, td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #000;
-    width: auto;
-    padding: 15px;
-    text-align: center;
+.download-table:hover{
+    color: #E7AE41;
 }
 
-th{
-    background-color: #e0e3e7;
+.refresh-table{
+    position: relative;
+    left: 1360px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
+.refresh-table:hover{
+    color: #E7AE41;
 }
 
-.housekeeper-table{
+.import-btn{
+    position: relative;
+    left: 1400px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.import-table:hover{
+    color: #E7AE41;
+}
+
+/* gas table style */
+.gas-level-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -75,47 +100,16 @@ tr.disabled td:not(.delete-button-row){
     text-align: left;
 }
 
-.action-buttons {
-    position: relative;
-    width: 10px;
-    white-space: nowrap;
-    background-color: transparent !important;
-}
-
-.action-buttons div {
-    position: relative;
-    bottom: 10px;
-    height: 5px;
-    text-align: center !important;
-}
-
-.action-buttons button{
-    margin: 0 5px;
-}
-
-.restore-button[type="button"]{
-    position: relative;
-    right: 0px;
-    box-shadow: none;
-    border: 1px solid #000;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-  
 /* table pagination */
 
-.pagination {
+.pagination-gas {
     z-index: 540;
     position: relative;
     right: 20px;
     margin-top: 40px; 
 }
-  
-.pagination a {
+
+.pagination-gas a {
     color: #000;
     text-decoration: none;
     padding: 5px 10px;
@@ -123,17 +117,17 @@ tr.disabled td:not(.delete-button-row){
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
-.pagination a:hover {
+
+.pagination-gas a:hover {
     background-color: #eee;
 }
-  
-.pagination a.active {
+
+.pagination-gas a.active {
     background-color: #007bff;
     color: #fff;
 }
 
-.pagination-disabled {
+.pagination-gas-disabled {
     text-decoration: none;
     padding: 5px 10px;
     margin-left: 5px;

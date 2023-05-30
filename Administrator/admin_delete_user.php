@@ -1,53 +1,41 @@
 <?php
-require_once('admin_connect.php');
+    require_once('admin_connect.php');
 
-$user_ids = $_POST['employee_id'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Disable foreign key checks
+        mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 0");
 
-foreach($user_ids as $user_id) {
+        $user_id = $_POST['employee_id'];
 
-    // Get user data before deleting
-    $sql = "SELECT u.*, ul.employee_fullname, ul.employee_password, r.role_type, ul.employee_email, 
-            ul.employee_create_at
-            FROM user u
-            JOIN user_list ul ON u.employee_id = ul.employee_id
-            JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
-            WHERE u.employee_id = ?";
-    $stmt = mysqli_prepare($con, $select_query);
-    mysqli_stmt_bind_param($stmt, 'i', $employee_id);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    mysqli_stmt_bind_result($stmt, $user_fullname, $user_email, $user_password, $user_role, $user_create_at);
+        // Get user data before deleting
+        $select_query = "SELECT * FROM user_list WHERE employee_id = ?";
+        $stmt = mysqli_prepare($con, $select_query);
+        mysqli_stmt_bind_param($stmt, 'i', $user_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
 
-    if (mysqli_stmt_fetch($stmt)) {
         // Insert deleted user data into deleted_users table
-        $insert_query = "INSERT INTO deleted_users (user_id, user_fullname, user_email, user_password, 
-                        user_role, user_create_at, user_delete_at) 
-                        VALUES (?, ?, ?, ?, ?, ?, NOW())";
+        $insert_query = "INSERT INTO deleted_users (deleted_employee_id, deleted_employee_fullname, deleted_employee_email, 
+        deleted_employee_password, deleted_employee_create_at, employee_delete_at) 
+        VALUES (?, ?, ?, ?, ?, NOW())";
         $stmt2 = mysqli_prepare($con, $insert_query);
-        mysqli_stmt_bind_param($stmt2, 'isssis', $user_id, $user_fullname, $user_email, $user_password, $user_role, $user_create_at);
+        mysqli_stmt_bind_param($stmt2, 'issss', $row['employee_id'], $row['employee_fullname'], $row['employee_email'], $row['employee_password'], $row['employee_create_at']);
         mysqli_stmt_execute($stmt2);
 
-        // Delete user from user table
-        $delete_query = "DELETE FROM user WHERE employee_id = ?";
-        $stmt3 = mysqli_prepare($con, $delete_query);
-        mysqli_stmt_bind_param($stmt3, 'i', $user_id);
-        mysqli_stmt_execute($stmt3);
-
-        if (mysqli_stmt_affected_rows($stmt3) > 0) {
-            // Delete related data from user_list table
-            $delete_query2 = "DELETE FROM user_list WHERE employee_id = ?";
-            $stmt4 = mysqli_prepare($con, $delete_query2);
-            mysqli_stmt_bind_param($stmt4, 'i', $user_id);
-            mysqli_stmt_execute($stmt4);
-
-            echo '<script type="text/javascript">alert("User(s) have been deleted successfully.");
-            window.location.href="admin.php"</script>';
-            exit;
+        // Delete related data from user_list table
+        $delete_query2 = "DELETE FROM user_list WHERE employee_id = ?";
+        $stmt4 = mysqli_prepare($con, $delete_query2);
+        mysqli_stmt_bind_param($stmt4, 'i', $user_id);
+        mysqli_stmt_execute($stmt4);
+        
+        // Enable foreign key checks
+        mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 1");
+    
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            echo 'User has been deleted successfully.';
         } else {
             echo "Error deleting user: " . mysqli_error($con);
-        }
-    } else {
-        echo "Error getting user data: " . mysqli_error($con);
+        } 
     }
-}
 ?>

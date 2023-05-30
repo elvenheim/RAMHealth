@@ -1,17 +1,17 @@
 /* interface navigation menu */
-.card-header-indicator-third{
+.card-header-indicator-second{
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 737px;
+    left: 422px;
     height: 5px;
-    width: 330px;
+    width: 250px;
     opacity: 1;
     background-color: #E7AE41;
     border-radius: 10px;
 }
 
-.content-deleted-sensor{
+.content-sensor{
     opacity: 1;
     pointer-events: visible;
 }
@@ -63,7 +63,6 @@
 
 .popup-bg{
     position: absolute;
-    top: 0;
     z-index: 1039;
     background-color: rgba(0,0,0,0.5);
     opacity: 0;
@@ -74,7 +73,7 @@
 .popup{
     z-index: 1040;
     position: fixed;
-    top: 16.5%;
+    top: 25%;
     left: 36.5%;
     right: 36.5%;
     background-color: #fff;
@@ -129,7 +128,7 @@
     margin: 0 auto;
     align-items: center;
 }
-  
+
 form label {
     position: relative;
     top: 8%;
@@ -200,13 +199,13 @@ form input[type="text"] {
     font-size: 16px;
     cursor: pointer;
 }
-  
+
 form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
 
 /* gas table style */
-.air-quality-deleted-sensors-table{
+.air-quality-sensors-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -247,6 +246,10 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.delete-button:hover{
+    background-color: #E7AE41;
+}
+
 .edit-button[type="button"]{
     position: relative;
     right: 0px;
@@ -260,12 +263,11 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.delete-button:active{
+.edit-button:hover{
     background-color: #E7AE41;
 }
 
 /* sensor status */
-
 .status-form select {
     font-size: 1rem;
     background-color: transparent;
@@ -275,14 +277,14 @@ form input[type="submit"]:hover {
 
 /* table pagination */
 
-.pagination-sensor {
+.pagination {
     z-index: 540;
     position: relative;
     right: 20px;
     margin-top: 40px; 
 }
-  
-.pagination-sensor a {
+
+.pagination a{
     color: #000;
     text-decoration: none;
     padding: 5px 10px;
@@ -290,17 +292,17 @@ form input[type="submit"]:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
-.pagination-sensor a:hover {
+
+.pagination a:hover{
     background-color: #eee;
 }
-  
-.pagination-sensor a.active {
+
+.pagination a.active{
     background-color: #007bff;
     color: #fff;
 }
 
-.pagination-sensor-disabled {
+.pagination-disabled{
     text-decoration: none;
     padding: 5px 10px;
     margin-left: 5px;

@@ -43,15 +43,14 @@
                 </nav>
                 <div id="user-list-table"class="content-one">
                     <div class="card">
+                        <!-- add room pop-up -->
                         <div id="addroom-popup" class = "popup" style="opacity: 0; pointer-events: none;">
                             <span class = "add-title"> 
                                 Add Room
                             </span>
-
                             <span class = "close-popup"> 
                                 <i id="add-close-btn"class= "fas fa-x fa-xl close-btn"></i>
                             </span>
-
                             <div class = "popup-line">
                             </div>
 
@@ -67,48 +66,16 @@
                             <label for="room_name">Room Name:</label>
                             <input type="text" id="room_name" name="room_name" required><br>
 
-                            <button class="save-details" type="submit">Save Room Data</button>
+                            <button class="save-details" type="submit">Add Room Data</button>
                             </form>
                         </div>
 
                         <div id="addroom-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
                         </div>
 
-                        <div id="editroom-popup" class = "popup" style="opacity: 0; pointer-events: none;">
-                            <span class = "add-title"> 
-                                Edit Room
-                            </span>
-
-                            <span class = "close-popup"> 
-                                <i id="edit-close-btn"class= "fas fa-x fa-xl close-btn"></i>
-                            </span>
-
-                            <div class = "popup-line">
-                            </div>
-
-                            <form id="edit_room" method="POST" class="user-input" action="housekeep_fetch_input.php">
-                            <label for="room_number">Room Number:</label>
-                            <input type="text" id="room_number" name="room_number"required><br>
-                            
-                            <?php include 'input_floor.php'; ?>
-
-                            <label for="room_type">Room Type:</label>
-                            <input type="text" id="room_type" name="room_type" required><br>
-
-                            <label for="room_name">Room Name:</label>
-                            <input type="text" id="room_name" name="room_name" required><br>
-
-                            <button class="save-details" type="submit">Update Room Data</button>
-                            </form>
-                        </div>
-
-                        <div id="editroom-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
-                        </div>  
-
                         <div class="table-button">
                             <button id="adduser-btn" class="add-room" onclick="addroom_popup()"><span class="fas fa-plus"></span> Add Room</button>
                             <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>
-                            <button class="edit-table" onclick="location.reload()"><span class="fas fa-file-import"></span> Import</button>
                         </div>
                         <table class="housekeeper-table">
                             <thead>
@@ -117,7 +84,7 @@
                                 <th>Room Number</th>
                                 <th>Room Type</th>
                                 <th>Room Name</th>
-                                <th>Creation Date</th>
+                                <th>Updated At</th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>

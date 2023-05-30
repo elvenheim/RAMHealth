@@ -1,13 +1,44 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-  $('.edit-button').click(function() {
-    var roomId = $(this).data('room-id');
-    // Use the roomId to perform the necessary actions for editing
-    // For example, you can display a popup or form for editing
-    // and pre-fill the form fields with existing data for the specific room ID
-  });
-});
+function deleteRow(roomNum) {
+    if (confirm("Do you want to delete this room?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "housekeep_delete_room_table.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert("Room has been successfully deleted.");
+                location.reload();
+            }
+        };
+        xhr.send("room_num=" + roomNum);
+    }
+}
+
+function editRow(roomNum) {
+    if (confirm("Do you want to edit this room?")) {
+        // Assuming you have a form to edit the room details
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "fetch_room_details.php"); // Replace with your edit page URL
+        
+        // Create a hidden input field to pass the room number
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "room_num");
+        input.setAttribute("value", roomNum);
+        
+        // Append the input field to the form
+        form.appendChild(input);
+        
+        // Append the form to the document body
+        document.body.appendChild(form);
+        
+        // Submit the form
+        form.submit();
+    }
+}
+
 </script>
 
 <?php 
@@ -30,6 +61,7 @@ $(document).ready(function() {
     $sql = "SELECT rn.*, bldg.bldg_floor_name 
             FROM room_number rn 
             JOIN building_floor bldg ON rn.bldg_floor = bldg.building_floor
+            ORDER BY room_num
             LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
         
@@ -46,13 +78,15 @@ $(document).ready(function() {
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_added_at'] . "</td>";
             echo '<td class="action-buttons">';
             echo '<div>';
-            echo '<button class="edit-button" type="button" onclick="editRow(\'' . $row['room_num'] . '\')"> 
-                    <i class="fas fa-edit"></i></button>';
-            echo '<button class="delete-button" type="button" onclick="deleteRow(\'' . $row['room_num'] . '\')"> 
-                <i class="fas fa-trash"></i></button>';
+            echo '<button class="edit-button" type="button" onclick="editRow(\'' . $row['room_num'] . '\')">';
+            echo '<i class="fas fa-edit"></i>';
+            echo '</button>';
+            echo '<button class="delete-button" type="button" onclick="deleteRow(\'' . $row['room_num'] . '\')">'; 
+            echo '<i class="fas fa-trash"></i>';
+            echo '</button>';
             echo '</div>';
-            echo "</td>";
-            echo "</tr>";
+            echo '</td>';
+            echo '</tr>';
         }
     }
 ?>

@@ -1,9 +1,9 @@
 /* interface navigation menu */
-.card-header-indicator-second{
+.card-header-indicator{
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 422px;
+    left: 120.5px;
     height: 5px;
     width: 250px;
     opacity: 1;
@@ -11,7 +11,7 @@
     border-radius: 10px;
 }
 
-.content-sensor{
+.content-one{
     opacity: 1;
     pointer-events: visible;
 }
@@ -24,10 +24,10 @@
     white-space: nowrap;
 } 
 
-.add-user{
+.add-room{
     position: relative;
     top: 100%;
-    left: -38.7%;
+    left: -37.25%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -35,11 +35,11 @@
     cursor: pointer;
 }
 
-.add-user:active{
+.add-room:active{
     color: #E7AE41;
 }
 
-#adduser-popup, #adduser-popup-bg {
+#addroom-popup, #addroom-popup-bg {
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
 }
@@ -47,7 +47,7 @@
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 38%;
+    left: 35%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -56,6 +56,21 @@
 }
 
 .refresh-table:active{
+    color: #E7AE41;
+}
+
+.edit-table{
+    position: relative;
+    top: 100%;
+    left: 36.2%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-table:active{
     color: #E7AE41;
 }
 
@@ -81,7 +96,7 @@
     opacity: 0; 
     border: 1px solid rgba(127,127,127);
     box-shadow: 0 0.2rem 0.75rem rgba(0,0,0,0.5);
-    height: 55%;
+    height: 70%;
     width: 25%;
     border-radius: 10px;
 }
@@ -151,35 +166,11 @@ form input[type="text"] {
     font-size: 16px;
 }
 
-.sensor_type{
+.building_floor{
     position: relative;
     display: block;
     width: 95%;
-    top: 9%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.room_number{
-    position: relative;
-    display: block;
-    width: 95%;
-    top: 9%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.role_name{
-    position: relative;
-    display: block;
-    width: 95%;
-    height: 15%;
+    height: 7%;
     top: 9%;
     padding: 10px;
     margin-bottom: 20px;
@@ -204,9 +195,33 @@ form input[type="text"] {
 form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
+  
+/* table part */
+.table-no-record{
+    position: relative;
+    top: 175px;
+    font-size: 1.5rem;
+}
 
-/* gas table style */
-.air-quality-sensors-table{
+th, td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid #000;
+    width: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+th{
+    background-color: #e0e3e7;
+}
+
+tr.disabled td:not(.delete-button-row){
+    background-color: #ccc;
+}
+
+.housekeeper-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -260,11 +275,30 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
+
 .delete-button:active{
     background-color: #E7AE41;
 }
 
-/* sensor status */
+.update-button[type="button"]{
+    position: relative;
+    z-index: 1;
+    top: 80%;
+    left: 40.5%;
+    width: fit-content;
+    align-items: center;
+    background-color: #293a82;
+    color: #fff;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* user status */
 
 .status-form select {
     font-size: 1rem;
@@ -275,14 +309,14 @@ form input[type="submit"]:hover {
 
 /* table pagination */
 
-.pagination-sensor {
+.pagination {
     z-index: 540;
     position: relative;
     right: 20px;
     margin-top: 40px; 
 }
-  
-.pagination-sensor a {
+
+.pagination a {
     color: #000;
     text-decoration: none;
     padding: 5px 10px;
@@ -290,17 +324,17 @@ form input[type="submit"]:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
-.pagination-sensor a:hover {
+
+.pagination a:hover {
     background-color: #eee;
 }
-  
-.pagination-sensor a.active {
+
+.pagination a.active {
     background-color: #007bff;
     color: #fff;
 }
 
-.pagination-sensor-disabled {
+.pagination-disabled {
     text-decoration: none;
     padding: 5px 10px;
     margin-left: 5px;

@@ -1,0 +1,80 @@
+html{
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    background-color: #ccc;
+}  
+
+.form-container {
+    position: relative;
+    top: 200px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Nunito San', sans-serif;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: 98.5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Nunito San', sans-serif;
+}
+
+.form-container select {
+    width: 99.7%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container input[type="submit"] {
+    background-color: #293a82;
+    margin-right: 10px;
+    color: #fff;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Nunito San', sans-serif;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #E7AE41;
+}
+
+.form-container button[type="button"] {
+    background-color: red;
+    color: #fff;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Nunito San', sans-serif;
+}
+
+.form-container button[type="button"]:hover {
+    background-color: #E7AE41;
+}
+
+.form-buttons{
+    position: relative;
+    top: 10px;
+    left: 1660.1px;
+}

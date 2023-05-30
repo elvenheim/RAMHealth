@@ -8,6 +8,7 @@
     <title>RAM Health</title>
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician.css">
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_gas.css">
+    <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_param.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
@@ -65,16 +66,19 @@
                     <table id = 'gas-level-parameters-table' class = 'gas-level-table'>
                         <thead>
                             <tr>
-                                <th>Room Number</th>
-                                <th>Sensor ID</th>
-                                <th>Sensor Name</th>
-                                <th>Date</th>
-                                <th>Time</th>              
+                                <th>Building Floor</th>
+                                <th>Room</th>
+                                <th>Indoor Temperature</th>
+                                <th>Outdoor Temperature</th>
+                                <th>Particulate Matter 10</th>
+                                <th>Particulate Matter 2.5</th>
+                                <th>Particulate Matter 0.1</th>
                                 <th>Gas Level</th>
+                                <th>Relative Humidity</th>
                             </tr>
                         </thead>
                         <tbody id = 'table-body'>
-                            <?php include 'air_technician_gas_table.php'?>
+                            <?php include 'air_tech_general_param_table.php'?>
                         </tbody> 
                     </table>
                 </div>

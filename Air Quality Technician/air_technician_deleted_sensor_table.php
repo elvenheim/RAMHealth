@@ -1,3 +1,21 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function restoreRow(sensorID) {
+    if (confirm("Are you sure you want to restore this sensor?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "air_technician_restore_sensor.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert(xhr.responseText);
+                window.location.reload();
+            }
+        };
+        xhr.send("sensor_id=" + sensorID);
+    }
+}
+</script>
+
 <?php     
     require_once('air_technician_connect.php');
     
@@ -7,42 +25,35 @@
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM deleted_sensors";
+    $count_query = "SELECT COUNT(*) as count FROM deleted_aq_sensors";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT * FROM deleted_sensors ORDER BY deleted_sensor_id LIMIT $offset, $rows_per_page";
+    $sql = "SELECT daq.*, st.sensor_type_name
+            FROM deleted_aq_sensors daq
+            INNER JOIN sensor_type st ON daq.deleted_aq_sensor_type_id = st.sensor_type_id
+            ORDER BY deleted_aq_sensor_id 
+            LIMIT $offset, $rows_per_page";
+            
     $result_table = mysqli_query($con, $sql);
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo "<td>" . $row['pm_room_num'] . "</td>";
-        echo "<td>" . $row['pm_sensor'] . "</td>";
-        echo "<td>" . $row['pm_date'] . "</td>";
-        echo "<td>" . $row['pm_time'] . "</td>";
-        echo "<td>" . $row['pm_ten'] . "</td>";
-        echo "<td>" . $row['pm_two_five'] . "</td>";
-        echo "<td>" . $row['pm_zero_one'] . "</td>";
+        echo "<td>" . $row['deleted_aq_sensor_id'] . "</td>";
+        echo "<td>" . $row['deleted_aq_sensor_name'] . "</td>";
+        echo "<td>" . $row['sensor_type_name'] . "</td>";
+        echo "<td>" . $row['deleted_aq_sensor_room_num'] . "</td>";
+        echo "<td>" . $row['deleted_aq_sensor_add_at'] . "</td>";
+        echo "<td>" . $row['deleted_aq_sensor_deleted_at'] . "</td>";
+        echo '<td class="action-buttons">';
+        echo '<div>';
+        echo '<button class="restore-button" type="button" onclick="restoreRow(\'' . $row['deleted_aq_sensor_id'] . '\')"> 
+                <i class="fas fa-rotate-left"></i></button>';
+        echo '</div>';
+        echo "</td>"; 
         echo "</tr>";
     }
-    
-    echo "<div class='pagination-particulate-matter'>";
-    if ($total_pages > 1) {
-        $start_page = max(1, $page - 2);
-        $end_page = min($total_pages, $start_page + 4);
-        if ($end_page - $start_page < 4 && $start_page > 1) {
-            $start_page = max(1, $end_page - 4);
-        }
-        echo "<a href='?page=" . max(1, $page - 1) . "'" . 
-            ($page == 1 ? "class='pagination-particulate-disabled'" : "") . ">Prev</a>";
-        for ($i = $start_page; $i <= $end_page; $i++) {
-            echo "<a href='?page=$i'" . ($page == $i ? " class='active'" : "") . ">$i</a>";
-        }
-        echo "<a href='?page=" . min($total_pages, $page + 1) . "'" . 
-            ($page == $total_pages ? " class='pagination-particulate-disabled'" : "") . ">Next</a>";
-    }
-    echo "</div>";
 ?>

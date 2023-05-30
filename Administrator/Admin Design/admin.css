@@ -207,10 +207,14 @@ th{
     color: #E7AE41 !important;
 }
 
-tr.disabled td:not(.delete-button-row){
+tr.disabled td:not(.action-buttons){
     background-color: #ccc;
 }
 
 .disabled {
+    color: gray;
+}
+
+.highlight-row {
     color: gray;
 }

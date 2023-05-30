@@ -1,3 +1,21 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function restoreRow(roomNum) {
+  if (confirm("Are you sure you want to restore this room?")) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "housekeep_restore_room.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              alert("Room has been successfully restored.");
+              window.location.href = "housekeep_delete_room_main.php";
+          }
+      };
+    xhr.send("room_num=" + roomNum);
+  }
+}
+</script>
+
 <?php 
     require_once('housekeep_connect.php');
     

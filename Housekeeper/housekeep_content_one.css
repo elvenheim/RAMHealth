@@ -27,7 +27,7 @@
 .add-room{
     position: relative;
     top: 100%;
-    left: -37.25%;
+    left: -39.5%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -47,7 +47,7 @@
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 35%;
+    left: 38.9%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -59,23 +59,7 @@
     color: #E7AE41;
 }
 
-.edit-table{
-    position: relative;
-    top: 100%;
-    left: 36.2%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.edit-table:active{
-    color: #E7AE41;
-}
-
 /* add user popup */
-
 .popup-bg{
     position: absolute;
     top: 0;
@@ -144,7 +128,7 @@
     margin: 0 auto;
     align-items: center;
 }
-  
+
 form label {
     position: relative;
     top: 8%;
@@ -191,11 +175,11 @@ form input[type="text"] {
     font-size: 16px;
     cursor: pointer;
 }
-  
+
 form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
-  
+
 /* table part */
 .table-no-record{
     position: relative;
@@ -306,7 +290,7 @@ tr.disabled td:not(.delete-button-row){
     border: none;
     border-radius: 5px;
 }
-  
+
 /* table pagination */
 
 .pagination {
@@ -315,7 +299,7 @@ tr.disabled td:not(.delete-button-row){
     right: 20px;
     margin-top: 40px; 
 }
-  
+
 .pagination a {
     color: #000;
     text-decoration: none;
@@ -324,11 +308,11 @@ tr.disabled td:not(.delete-button-row){
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
+
 .pagination a:hover {
     background-color: #eee;
 }
-  
+
 .pagination a.active {
     background-color: #007bff;
     color: #fff;

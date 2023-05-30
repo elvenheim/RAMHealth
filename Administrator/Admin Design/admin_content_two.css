@@ -1,32 +1,14 @@
-/* interface navigation menu */
-.card-header-indicator-second{
-    z-index: 1999;
-    position: absolute;
-    top: -2.5px;
-    left: 470.5px;
-    height: 5px;
-    width: 195px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
-}
-
-.content-one{
-    opacity: 1;
-    pointer-events: visible;
-}
-
 /* Table Buttons */
 .table-button{
+    z-index: 500;
     position: relative;
-    top: 100px;
+    top: 200px;
     width: 100%;
-    white-space: nowrap;
 } 
 
 .refresh-table{
     position: relative;
-    top: 100%;
+    bottom: 100px;
     left: 42%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
@@ -39,33 +21,21 @@
     color: #E7AE41;
 }
 
-
-/* table part */
-.table-no-record{
-    position: relative;
-    top: 175px;
-    font-size: 1.5rem;
+/* interface navigation menu */
+.card-header-indicator-second{
+    z-index: 1997;
+    position: absolute;
+    top: -2.5px;
+    left: 485px;
+    height: 5px;
+    width: 180px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
 }
 
-th, td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #000;
-    width: auto;
-    padding: 15px;
-    text-align: center;
-}
-
-th{
-    background-color: #e0e3e7;
-}
-
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
-}
-
-.housekeeper-table{
+/* Deleted User Table Styles */
+.admin-deleted-user-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;
@@ -105,7 +75,11 @@ tr.disabled td:not(.delete-button-row){
     height: 30px;
     cursor: pointer;
 }
-  
+
+.restore-button:hover{
+    background-color: #E7AE41;
+}
+
 /* table pagination */
 
 .pagination {

@@ -14,13 +14,18 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT * FROM aq_relative_humidity ORDER BY humidity_id LIMIT $offset, $rows_per_page";
+    $sql = "SELECT aqrm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name 
+            FROM aq_relative_humidity aqrm
+            JOIN aq_sensor aqs ON aqrm.humidity_sensor = aqs.aq_sensor_id
+            ORDER BY humidity_id 
+            LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo "<td>" . $row['humidity_room_num'] . "</td>";
+        echo "<td>" . $row['aq_sensor_room_num'] . "</td>";
         echo "<td>" . $row['humidity_sensor'] . "</td>";
+        echo "<td>" . $row['aq_sensor_name'] . "</td>";
         echo "<td>" . $row['humidity_date'] . "</td>";
         echo "<td>" . $row['humidity_time'] . "</td>";
         echo "<td>" . $row['humidity_level_data'] . "</td>";

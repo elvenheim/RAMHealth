@@ -2,6 +2,7 @@
     require_once('admin_connect.php');
 
     $user_id = $_POST['employee_id'];
+    $deleted_user_id = $_POST['employee_id'];
     $user_fullname = $_POST['employee_fullname'];
     $user_email = $_POST['employee_email'];
     $user_password = $_POST['employee_password'];
@@ -30,10 +31,10 @@
     mysqli_stmt_execute($stmt_user_list);
 
     // insert data into user table
-    $insert_user_query = "INSERT INTO user (employee_id, user_role) VALUES (?, ?)";
+    $insert_user_query = "INSERT INTO user (employee_id, deleted_employee_id, user_role) VALUES (?, ?, ?)";
     $stmt_user = mysqli_prepare($con, $insert_user_query);
     foreach ($roles as $role) {
-        mysqli_stmt_bind_param($stmt_user, 'is', $user_id, $role);
+        mysqli_stmt_bind_param($stmt_user, 'iis', $user_id, $deleted_user_id, $role);
         mysqli_stmt_execute($stmt_user);
     }
 

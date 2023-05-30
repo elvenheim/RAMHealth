@@ -14,13 +14,18 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT * FROM aq_particulate_matter ORDER BY pm_id LIMIT $offset, $rows_per_page";
+    $sql = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name 
+            FROM aq_particulate_matter aqpm
+            JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id
+            ORDER BY pm_id 
+            LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo "<td>" . $row['pm_room_num'] . "</td>";
+        echo "<td>" . $row['aq_sensor_room_num'] . "</td>";
         echo "<td>" . $row['pm_sensor'] . "</td>";
+        echo "<td>" . $row['aq_sensor_name'] . "</td>";
         echo "<td>" . $row['pm_date'] . "</td>";
         echo "<td>" . $row['pm_time'] . "</td>";
         echo "<td>" . $row['pm_ten'] . "</td>";

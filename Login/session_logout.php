@@ -3,7 +3,7 @@
     
     $roles = array();
     
-    $stmt = $con->prepare("SELECT role_name, role_url FROM role_type");
+    $stmt = $con->prepare("SELECT * FROM role_type");
     $stmt->execute();
     $result = $stmt->get_result();
     

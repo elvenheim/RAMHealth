@@ -14,16 +14,21 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT * FROM aq_indoor_temperature ORDER BY indoor_temp_id LIMIT $offset, $rows_per_page";
+    $sql = "SELECT aqit.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
+            FROM aq_indoor_temperature aqit
+            JOIN aq_sensor aqs ON aqit.indoor_temp_sensor = aqs.aq_sensor_id
+            ORDER BY indoor_temp_sensor 
+            LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
  
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr>";
-        echo "<td>" . $row['indoor_temp_room_num'] . "</td>";
+        echo "<td>" . $row['aq_sensor_room_num'] . "</td>";
         echo "<td>" . $row['indoor_temp_sensor'] . "</td>";
+        echo "<td>" . $row['aq_sensor_name'] . "</td>";
         echo "<td>" . $row['indoor_temp_date'] . "</td>";
         echo "<td>" . $row['indoor_temp_time'] . "</td>";
-        echo "<td>" . $row['indoor_temp_level_data'] . "</td>";
+        echo "<td>" . $row['indoor_temp_data'] . "</td>";
         echo "</tr>";
     }
     

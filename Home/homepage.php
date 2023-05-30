@@ -22,7 +22,7 @@
             </div>
         </nav>
         <ul id="btn_logout" class="log-out" style="display: none;">
-            <form id="logout" name="logout-form" method="post" action="../Login/session_logout.php">
+            <form id="logout" name="logout-form" method="POST" action="../Login/session_logout.php">
                 <button class="logout-button" type="submit" name="logout">
                     <span class="fas fa-power-off"></span>
                     Logout
