@@ -6,6 +6,6 @@ The team is under the supervision of Engr. Stanley Glenn E. Brucal
 
 Members of the Team:
 
-Rich Diamond P. Custodio
+Rich Diamond P. Custodio (literally the only one developing the website)
 
-Nicole G. Palenzuela
+Nicole G. Palenzuela (useless member)
