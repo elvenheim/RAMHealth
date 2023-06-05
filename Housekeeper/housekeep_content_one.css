@@ -3,7 +3,7 @@
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 120.5px;
+    left: 70px;
     height: 5px;
     width: 250px;
     opacity: 1;
@@ -199,6 +199,10 @@ th, td{
 
 th{
     background-color: #e0e3e7;
+}
+
+th a:hover{
+    color: #E7AE41;
 }
 
 tr.disabled td:not(.delete-button-row){

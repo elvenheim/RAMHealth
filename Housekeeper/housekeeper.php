@@ -80,11 +80,11 @@
                         <table class="housekeeper-table">
                             <thead>
                                 <tr>
-                                <th>Building Floor</th>
-                                <th>Room Number</th>
-                                <th>Room Type</th>
-                                <th>Room Name</th>
-                                <th>Updated At</th>
+                                <th><a href="#arrange-floor" onclick="sortTable(0)">Building Floor<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-number" onclick="sortTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-type" onclick="sortTable(2)">Room Type<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-name" onclick="sortTable(3)">Room Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-updated-at" onclick="sortTable(4)">Updated At<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>

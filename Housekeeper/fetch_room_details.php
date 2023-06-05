@@ -36,24 +36,26 @@
                 echo '<div class="form-container">';
                 echo '<form method="post" action="update_room.php">'; // Replace with your update page URL
                 
+                echo '<div class="form-title">';
+                echo 'Edit Room';
+                echo '</div>';
+                
                 echo '<div style="display: none;">';
                 echo 'Room Number: <input type="text" name="room_num" value="' . $room['room_num'] . '" readonly>';
                 echo '</div>';
 
-                echo '<label for="new_room_num">New Room Number:</label>';
-                echo '<input type="text" name="new_room_num" value="' . $room['room_num'] . '">';
-                
                 $buildingFloorQuery = "SELECT building_floor, bldg_floor_name FROM building_floor";
                 $buildingFloorResult = mysqli_query($con, $buildingFloorQuery);
-                
                 echo '<label for="bldg_floor">Building Floor:</label>';
                 echo '<select name="bldg_floor">';
-                
                 while ($row = mysqli_fetch_assoc($buildingFloorResult)) {
                     echo '<option value="' . $row['building_floor'] . '"' . ($row['building_floor'] == $room['bldg_floor'] ? ' selected' : '') . '>' . $row['bldg_floor_name'] . '</option>';
                 }
-                
                 echo '</select>';
+
+                echo '<label for="new_room_num">New Room Number:</label>';
+                echo '<input type="text" name="new_room_num" value="' . $room['room_num'] . '">';
+
                 echo '<label for="room_type">Room Type:</label>';
                 echo '<input type="text" name="room_type" value="' . $room['room_type'] . '">';
                 echo '<label for="room_name">Room Name:</label>';

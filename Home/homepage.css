@@ -128,13 +128,6 @@ html{
     position: relative;
 }
 
-.card-title{
-    position: relative;
-    top: 30px;
-    font-size: 2.5rem;
-    font-weight: bolder;
-}
-
 .role-list-card{
     position: relative;
     top: 50px;
@@ -146,7 +139,7 @@ a {
 }
 
 .greet-user{
-    margin-top: 90px;
+    margin-top: 140px;
     margin-bottom: 10px;
     font-size: 1.8rem;
 }

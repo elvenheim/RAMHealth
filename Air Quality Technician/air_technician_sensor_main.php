@@ -72,7 +72,6 @@
                     </div>
                     <div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
                     </div>
-
                     <!-- edit room pop-up -->
                     <div id="editroom-popup" class = "popup" style="opacity: 0; pointer-events: none;">
                             <span class = "add-title"> 
@@ -108,19 +107,20 @@
                         <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add Sensor</button>
                         <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    
                     </div>
-                    <table class = "air-quality-sensors-table">
+                    <table class="air-quality-sensors-table">
                         <thead>
                             <tr>
-                                <th>Sensor ID</th>
-                                <th>Sensor Name</th>
-                                <th>Sensor Type</th>
-                                <th>Room Number</th>
-                                <th>Date Added</th>
+                                <th><a href="#arrange-floor" onclick="sortTable(0)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-number" onclick="sortTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-id" onclick="sortTable(2)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-name" onclick="sortTable(3)">Sensor Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-type" onclick="sortTable(4)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-date-added" onclick="sortTable(5)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id = "table-body-sensor">
+                        <tbody id="table-body-sensor">
                             <?php include 'air_technician_sensor_table.php'; ?>
                         </tbody>
                     </table>

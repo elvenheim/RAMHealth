@@ -256,6 +256,10 @@ th{
     cursor: default;
 }
 
+th a:hover{
+    color: #E7AE41;
+}
+
 .header-sort{
     transition: color 0.2s ease-in-out !important;
 }

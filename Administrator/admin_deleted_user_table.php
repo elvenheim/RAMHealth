@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 function restoreRow(delemployeeId) {
-  if (confirm("Are you sure you want to restore this user " + delemployeeId + "?")) {
+  if (confirm("Are you sure you want to restore this user?")) {
       var xhr = new XMLHttpRequest();
       xhr.open("POST", "admin_restore_user.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -9,7 +9,6 @@ function restoreRow(delemployeeId) {
           if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                     alert("User has been successfully restored.");
-                    alert("Error deleting user: " + xhr.responseText);
                     location.reload();
                 } else {
                     alert("Error deleting user: " + xhr.responseText);

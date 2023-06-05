@@ -56,12 +56,13 @@
                     <table class = "air-quality-deleted-sensors-table">
                         <thead>
                             <tr>
-                                <th>Sensor ID</th>
-                                <th>Sensor</th>
-                                <th>Sensor Type</th>
-                                <th>Room Number</th>
-                                <th>Date Added</th>
-                                <th>Deleted At</th>
+                                <th><a href="#arrange-floor" onclick="sortDeleteTable(0)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-number" onclick="sortDeleteTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-id" onclick="sortDeleteTable(2)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-name" onclick="sortDeleteTable(3)">Sensor Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-type" onclick="sortDeleteTable(4)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-date-added" onclick="sortDeleteTable(5)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-deleted-at" onclick="sortDeleteTable(6)">Deleted At<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Actions</th>
                             </tr>
                         </thead>

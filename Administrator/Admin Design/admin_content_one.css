@@ -3,7 +3,7 @@
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 115px;
+    left: 75px;
     height: 5px;
     width: 250px;
     opacity: 1;
@@ -154,17 +154,34 @@ form input[type="password"] {
     font-size: 16px;
 }
 
-.role_name{
+.assign-roles-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.checkbox-container {
+    overflow-y: auto;
     position: relative;
     display: block;
-    width: 95%;
-    height: 15%;
+    height: 10%;
+    width: 90%;
     top: 9%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+.checkbox-container div {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 .save-details[type="submit"] {

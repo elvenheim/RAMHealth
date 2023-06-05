@@ -5,7 +5,7 @@ html{
     overflow: hidden;
 }
 
-.aq-technician-main{
+.building-head-main {
     background-color: #C2C7D0;
     position: relative;
     text-align: center;
@@ -127,11 +127,10 @@ html{
 /* interface navigation menu */
 .card-header{
     z-index: 1996;
-    position: absolute;
-    top: 130px;
-    left: 7px;
-    height: 6%;
-    width: 1901px;
+    position: relative;
+    display: flex;
+    top: 19.5px;
+    width: 100%;
     border-bottom: 1px solid;
 }
 
@@ -142,11 +141,11 @@ a {
 
 .card-title{
     z-index: 2000;
-    position: absolute;
+    position: relative;
+    left: 85px;
+    margin-right: 200px;
     height: fit-content;
     width: fit-content;
-    right: 1626px;
-    top: -32.5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
@@ -160,11 +159,9 @@ a {
 
 .card-title-second{
     z-index: 1998;
-    position: absolute;
+    position: relative;
     height: fit-content;
     width: fit-content;
-    right: 1450px;
-    bottom: 1.5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
@@ -174,142 +171,4 @@ a {
 
 .card-title-second:hover{
     color: #E7AE41;
-}
-
-.card-title-third{
-    z-index: 1998;
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-    right: 1175px;
-    bottom: 1.5px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.card-title-third:hover{
-    color: #E7AE41;
-}
-
-/* main menu buttons */
-
-.table-button-group {
-    justify-content: center;
-    align-items: center;
-    margin-top: 170px;
-    width: 100%;
-    height: 500px;
-}
-
-.parameter-table-button {
-    position: relative;
-    align-items: center;
-}
-
-.dropbtn {
-    z-index: 1000;
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: margin-top 0.2s ease;
-    background-color: #eee;
-    width: 1100px;
-    height: fit-content;
-    color: black;
-    padding: 10px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    border: solid 1px black;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.dropbtn:hover{
-    background-color: #E7AE41;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
-}
-
-/* table part */
-.table-no-record{
-    position: relative;
-    top: 175px;
-    font-size: 1.5rem;
-}
-
-th, td{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #000;
-    width: auto;
-    padding: 15px;
-    text-align: center;
-    cursor: default;
-}
-
-th{
-    background-color: #e0e3e7;
-    cursor: default;
-}
-
-th a:hover{
-    color: #E7AE41;
-}
-
-.header-sort{
-    transition: color 0.2s ease-in-out !important;
-}
-
-.header-sort:hover{
-    color: #E7AE41 !important;
-}
-
-tr.disabled td:not(.delete-button-row){
-    background-color: #ccc;
-}
-
-.disabled {
-    color: gray;
-}
-
-/* table pagination */
-
-.pagination {
-    z-index: 540;
-    position: relative;
-    right: 20px;
-    margin-top: 40px; 
-}
-
-.pagination a{
-    color: #000;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.pagination a:hover{
-    background-color: #eee;
-}
-
-.pagination a.active{
-    background-color: #007bff;
-    color: #fff;
-}
-
-.pagination-disabled{
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #eee;
-    color: gray;
-    pointer-events: none;
 }

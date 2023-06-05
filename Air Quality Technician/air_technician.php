@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,13 +57,12 @@
 							onclick="location.href='air_tech_general_param_main.php';">Air Quality Table</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="gas-level-button" class="dropbtn"
-							onclick="location.href='air_tech_gas_main.php';">Gas Level</button>
+						<button id="air-particulate-button" class="dropbtn"
+							onclick="location.href='air_tech_particulate_matter_main.php';">Air Particulate Matter</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="air-particulate-button" class="dropbtn"
-							onclick="location.href='air_tech_particulate_matter_main.php';">Air Particulate
-							Matter</button>
+						<button id="gas-level-button" class="dropbtn"
+							onclick="location.href='air_tech_gas_main.php';">Gas Level</button>
 					</div>
 					<div class="parameter-table-button">
 						<button id="indoor-temperature-button" class="dropbtn"
@@ -83,5 +81,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

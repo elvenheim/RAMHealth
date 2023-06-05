@@ -3,7 +3,7 @@
     z-index: 1999;
     position: absolute;
     top: -2.5px;
-    left: 470.5px;
+    left: 360px;
     height: 5px;
     width: 195px;
     opacity: 1;
@@ -61,11 +61,15 @@ th{
     background-color: #e0e3e7;
 }
 
+th a:hover{
+    color: #E7AE41;
+}
+
 tr.disabled td:not(.delete-button-row){
     background-color: #ccc;
 }
 
-.housekeeper-table{
+.deleted-housekeeper-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;

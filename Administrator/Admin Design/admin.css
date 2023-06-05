@@ -145,7 +145,7 @@ a {
     position: absolute;
     height: fit-content;
     width: fit-content;
-    right: 1550px;
+    right: 1590px;
     top: -32.5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
@@ -163,7 +163,7 @@ a {
     position: absolute;
     height: fit-content;
     width: fit-content;
-    right: 1250px;
+    right: 1370px;
     bottom: 1.5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
@@ -199,6 +199,10 @@ th{
     cursor: default;
 }
 
+th a:hover{
+    color: #E7AE41;
+}
+
 .header-sort{
     transition: color 0.2s ease-in-out !important;
 }
@@ -218,3 +222,4 @@ tr.disabled td:not(.action-buttons){
 .highlight-row {
     color: gray;
 }
+

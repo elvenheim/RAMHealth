@@ -39,27 +39,28 @@ function editRow(employeeId) {
 	if (confirm("Do you want to edit this user?")){
     var form = document.createElement("form");
     form.setAttribute("method", "post");
-    form.setAttribute("action", "fetch_employee_details.php"); // Replace with your edit page URL
+    form.setAttribute("action", "fetch_employee_details.php");
     
-    // Create a hidden input field to pass the employee ID
     var input = document.createElement("input");
     input.setAttribute("type", "hidden");
     input.setAttribute("name", "employee_id");
     input.setAttribute("value", employeeId);
     
-    // Append the input field to the form
     form.appendChild(input);
     
-    // Append the form to the document body
     document.body.appendChild(form);
     
-    // Submit the form
     form.submit();
 	}
 }
 
 function deleteRow(employeeId) {
-    if (confirm("Do you want to delete this user " + employeeId + "?")) {
+	var currentEmployeeId = <?php echo $_SESSION['employee_id']; ?>;
+	if (employeeId == currentEmployeeId) {
+		alert("You cannot delete your own account.");
+		return;
+	}
+    if (confirm("Do you want to delete this user?")) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "admin_delete_user.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -94,35 +95,12 @@ function deleteRow(employeeId) {
 
 	$total_pages = ceil($total_rows / $rows_per_page);
 
-	$sortColumns = [
-		'employee_id' => 'employee_id',
-		'employee_fullname' => 'employee_fullname',
-		'employee_email' => 'employee_email',
-		'role_names' => 'role_names',
-		'employee_create_at' => 'employee_create_at',
-		'user_status' => 'user_status'
-	];
-	
-	$sort = isset($_GET['sort']) ? $_GET['sort'] : 'employee_id';
-	$order = isset($_GET['order']) && $_GET['order'] === 'DESC' ? 'DESC' : 'ASC';
-	
-	// Check if the provided sort column exists in the mapping
-	if (array_key_exists($sort, $sortColumns)) {
-		$sortColumn = $sortColumns[$sort];
-	} else {
-		$sortColumn = 'employee_id'; // Default to Employee ID if an invalid sort column is provided
-	}
-
-	if ($sort === 'user_status') {
-		$sortColumn = "CASE WHEN user_status = 1 THEN 0 ELSE 1 END";
-	}
-
 	$sql = "SELECT ul.*, u.user_role, GROUP_CONCAT(r.role_name ORDER BY r.role_name SEPARATOR ', ') AS role_names, u.user_status
 			FROM user_list ul
 			JOIN user u ON ul.employee_id = u.employee_id
 			JOIN role_type r ON FIND_IN_SET(r.role_id, u.user_role) > 0
 			GROUP BY ul.employee_id
-			ORDER BY $sortColumn $order
+			ORDER BY u.user_status DESC
 			LIMIT $offset, $rows_per_page";
 
 	$result_table = mysqli_query($con, $sql);

@@ -31,11 +31,6 @@
         </ul>
         <div class="home-content">
             <div class="card">
-                <a class = "card-title">
-                    <span>
-                        Home Page
-                    </span>
-                </a>
                 <div class = "greet-user">
                     <span>
                         <?php include 'employee_name.php'?>

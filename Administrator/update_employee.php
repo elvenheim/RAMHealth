@@ -7,6 +7,7 @@
         $newEmployeeEmail = $_POST['new_employee_email'];
         $newEmployeePassword = isset($_POST['new_employee_password']) ? $_POST['new_employee_password'] : '';
         $selectedRoles = isset($_POST['role_name']) ? $_POST['role_name'] : [];
+        $userStatus = isset($_POST['user_status']) ? $_POST['user_status'] : '';
 
         mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 0");
         
@@ -22,7 +23,7 @@
 
             // Insert the selected roles for the employee
             foreach ($selectedRoles as $roleId) {
-                $insertRoleQuery = "INSERT INTO user (employee_id, user_role) VALUES ('$employeeId', '$roleId')";
+                $insertRoleQuery = "INSERT INTO user (employee_id, user_role, user_status) VALUES ('$employeeId', '$roleId', '$userStatus')";
                 mysqli_query($con, $insertRoleQuery);
             }
 

@@ -82,12 +82,12 @@
                         <table class="admin-table">
                         <thead>
                             <tr>
-                            <th><a href="?sort=employee_id" class="header-sort">Employee ID</a></th>
-                            <th><a href="?sort=employee_fullname" class="header-sort">Full Name</a></th>
-                            <th><a href="?sort=employee_email" class="header-sort">Email Address</a></th>
-                            <th><a href="?sort=role_names" class="header-sort">Role</a></th>
-                            <th><a href="?sort=employee_create_at" class="header-sort">Created At</a></th>
-                            <th><a href="?sort=user_status" class="header-sort">Account Status</th>
+                            <th><a href="#arrange-employee_id" onclick="sortTable(0)">Employee ID<span class="sort-indicator">&#x25BC</span></a></th>
+                            <th><a href="#arrange-employee_fullname" onclick="sortTable(1)">Full Name<span class="sort-indicator">&#x25BC</span></a></th>
+                            <th><a href="#arrange-employee_email" onclick="sortTable(2)">Email Address<span class="sort-indicator">&#x25BC</span></a></th>
+                            <th><a href="#arrange-role_names" onclick="sortTable(3)">Role<span class="sort-indicator">&#x25BC</span></a></th>
+                            <th><a href="#arrange-employee_create_at" onclick="sortTable(4)">Created At<span class="sort-indicator">&#x25BC</span></a></th>
+                            <th>Account Status</th>
                             <th>Actions</th>
                             </tr>
                         </thead>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>   
     <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head.css">
-    <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_air_quality.css">
+    <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_energy_consumption.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Administrator/admin.js"></script>

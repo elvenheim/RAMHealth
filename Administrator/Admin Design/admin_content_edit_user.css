@@ -43,7 +43,6 @@ html, body {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     font-family: 'Nunito San', sans-serif;
     font-size: 16px;
 }
@@ -54,8 +53,7 @@ html, body {
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc;
     padding: 5px;
-    border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-family: 'Nunito San', sans-serif;
 }
 
@@ -63,24 +61,50 @@ html, body {
     display: block;
     margin-bottom: 5px;
     font-family: 'Nunito San', sans-serif;
+    cursor: pointer;
 }
 
 .form-container .checkbox-list input[type="checkbox"] {
     margin-right: 5px;
     font-family: 'Nunito San', sans-serif;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.user-status-button{
+.form-container select {
+    width: 99%;
+    padding: 10px;
+    margin-bottom: 20px;
     background-color: transparent;
-    border: none;
+    border: 1px solid #ccc;
+    font-family: 'Nunito San', sans-serif;
+    font-size: 16px;
+}
+
+.assign-roles-container {
+    display: flex;
+    align-items: center;
+}
+
+.assign-roles-container label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.assign-roles-container label input[type="checkbox"] {
+    margin-left: 312px;
+    margin-right: 5px;
+    font-family: 'Nunito San', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .form-container input[type="submit"] {
     background-color: #293a82;
     margin-right: 10px;
     color: #fff;
-    border: 1px solid #007BFF;
+    border: 1px solid #000;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -93,10 +117,10 @@ html, body {
     background-color: #E7AE41;
 }
 
-.form-container button[type="button"] {
+.form-container button.cancel-edit-button {
     background-color: red;
     color: #fff;
-    border: 1px solid #007BFF;
+    border: 1px solid #000;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -105,7 +129,7 @@ html, body {
     cursor: pointer;
 }
 
-.form-container button[type="button"]:hover {
+.form-container button.cancel-edit-button:hover {
     background-color: #E7AE41;
 }
 

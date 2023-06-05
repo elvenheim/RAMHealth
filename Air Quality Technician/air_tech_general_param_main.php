@@ -8,10 +8,12 @@
     <title>RAM Health</title>
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician.css">
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_gas.css">
-    <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_param.css">
+    <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_general_param.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
+    <script src="../Air Quality Technician/air_technician_export.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </head>
     <body class="aq-technician-main">
         <nav class="navbar">
@@ -54,7 +56,7 @@
                     <div class = "table-button">
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
-                        <button id="download-table" class="download-table" onclick="downloadExcel()">
+                        <button id="download-table" class="download-table" onclick="downloadAQExcelTables()">
                             <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>

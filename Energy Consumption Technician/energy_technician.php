@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +12,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 	<script src="../Energy Consumption Technician/energy_technician.js"></script>
 </head>
-
 <body class="ec-technician-main">
 	<nav class="navbar">
 		<div class="ram-health-logo">
@@ -62,16 +60,16 @@
 							onclick="location.href='../Energy Consumption Technician/ec_tech_acu_main.php';">Air Conditioning Units</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="air-particulate-button" class="dropbtn"
-							onclick="location.href='../Energy Consumption Technician/ec_tech_lights_main.php';">Lights</button>
-					</div>
-					<div class="parameter-table-button">
 						<button id="indoor-temperature-button" class="dropbtn"
 							onclick="location.href='../Energy Consumption Technician/ec_tech_outlets_main.php';">Convenience Outlets</button>
 					</div>
 					<div class="parameter-table-button">
 						<button id="outdoor-temperature-button" class="dropbtn"
 							onclick="location.href='../Energy Consumption Technician/ec_tech_utilities_main.php';">Equipment or Utilities</button>
+					</div>
+					<div class="parameter-table-button">
+						<button id="air-particulate-button" class="dropbtn"
+							onclick="location.href='../Energy Consumption Technician/ec_tech_lights_main.php';">Lights</button>
 					</div>
 					<div class="parameter-table-button">
 						<button id="relative-humidity-button" class="dropbtn"
@@ -82,5 +80,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

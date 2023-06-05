@@ -46,15 +46,15 @@
                         <div class="table-button">
                             <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>
                         </div>
-                        <table class="housekeeper-table">
+                        <table class="deleted-housekeeper-table">
                             <thead>
                                 <tr>
-                                <th>Building Floor</th>
-                                <th>Room Number</th>
-                                <th>Room Type</th>
-                                <th>Room Name</th>
-                                <th>Created At</th>
-                                <th>Deleted At</th>
+                                <th><a href="#arrange-floor" onclick="sortDeleteTable(0)">Building Floor<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-number" onclick="sortDeleteTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-type" onclick="sortDeleteTable(2)">Room Type<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-name" onclick="sortDeleteTable(3)">Room Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-updated-at" onclick="sortDeleteTable(4)">Updated At<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-deleted-at" onclick="sortDeleteTable(4)">Deleted At<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>

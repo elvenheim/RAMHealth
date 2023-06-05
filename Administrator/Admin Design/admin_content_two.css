@@ -1,3 +1,16 @@
+/* interface navigation menu */
+.card-header-indicator-second{
+    z-index: 1997;
+    position: absolute;
+    top: -2.5px;
+    left: 365px;
+    height: 5px;
+    width: 180px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
 /* Table Buttons */
 .table-button{
     z-index: 500;
@@ -19,19 +32,6 @@
 
 .refresh-table:active{
     color: #E7AE41;
-}
-
-/* interface navigation menu */
-.card-header-indicator-second{
-    z-index: 1997;
-    position: absolute;
-    top: -2.5px;
-    left: 485px;
-    height: 5px;
-    width: 180px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
 }
 
 /* Deleted User Table Styles */

@@ -4,10 +4,13 @@
     $roleIdsQuery = "SELECT role_id, role_name FROM role_type";
     $roleIdsResult = mysqli_query($con, $roleIdsQuery);
     
-    echo '<label for="role_name">Role:</label>';
-    echo '<select id="role_name" name="role_name[]" class="role_name" multiple required>';
+    echo '<label for="role_name">Roles:</label>';
+    echo '<div class="checkbox-container">'; // Add the container div
     while ($row = mysqli_fetch_assoc($roleIdsResult)) {
-        echo '<option value="' . $row['role_id'] . '">' . $row['role_name'] . '</option>';
+        echo '<div>';
+        echo '<input type="checkbox" id="role_name_' . $row['role_id'] . '" name="role_name[]" value="' . $row['role_id'] . '">';
+        echo '<label for="role_name_' . $row['role_id'] . '">' . $row['role_name'] . '</label>';
+        echo '</div>';
     }
-    echo '</select>';
+    echo '</div>';
 ?>

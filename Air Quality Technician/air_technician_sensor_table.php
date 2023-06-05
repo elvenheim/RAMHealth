@@ -86,19 +86,22 @@ function editRow(AQsensorId) {
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT aq.*, st.sensor_type_name
+    $sql = "SELECT aq.*, st.sensor_type_name, rn.room_num, rn.bldg_floor
         FROM aq_sensor aq
-        INNER JOIN sensor_type st ON aq.aq_sensor_type = st.sensor_type_id
-        ORDER BY aq.aq_sensor_id
+        LEFT JOIN room_number rn ON aq_sensor_room_num = rn.room_num
+        LEFT JOIN sensor_type st ON aq.aq_sensor_type = st.sensor_type_id
+        GROUP BY aq.aq_sensor_id
+        ORDER BY aq.aq_sensor_status DESC, rn.bldg_floor DESC
         LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
     while ($row = mysqli_fetch_assoc($result_table)){
         echo "<tr" . ($row['aq_sensor_status'] == 0 ? " class=\"disabled\"" : '') . ">";
+        echo "<td>" . $row['bldg_floor'] . "</td>";
+        echo "<td>" . $row['room_num'] . "</td>";
         echo "<td>" . $row['aq_sensor_id'] . "</td>";
         echo "<td>" . $row['aq_sensor_name'] . "</td>";
         echo "<td>" . $row['sensor_type_name'] . "</td>";
-        echo "<td>" . $row['aq_sensor_room_num'] . "</td>";
         echo "<td>" . $row['aq_sensor_added_at'] . "</td>";
         echo "<td>";
         echo '<form class="status-form">';

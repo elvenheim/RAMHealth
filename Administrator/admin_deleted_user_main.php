@@ -51,12 +51,11 @@
                         <table class="admin-deleted-user-table">
                             <thead>
                                 <tr>
-                                <th><a href="?sort=employee_id" class="header-sort">Employee ID</a></th>
-                                <th><a href="?sort=employee_fullname" class="header-sort">Full Name</a></th>
-                                <th><a href="?sort=employee_email" class="header-sort">Email Address</a></th>
-                                <th><a href="?sort=role_names" class="header-sort">Role</a></th>
-                                <th><a href="?sort=employee_create_at" class="header-sort">Created At</a></th>
-                                <th><a href="?sort=user_delete_at" class="header-sort">Deleted At</th>
+                                <th><a href="#arrange-employee_id" onclick="sortDeleteTable(0)">Employee ID<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-employee_fullname" onclick="sortDeleteTable(1)">Full Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-employee_email" onclick="sortDeleteTable(2)">Email Address<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-role_names" onclick="sortDeleteTable(3)">Role<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-employee_create_at" onclick="sortDeleteTable(4)">Created At<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>
