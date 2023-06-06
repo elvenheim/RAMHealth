@@ -2,15 +2,15 @@
     // Generate randomized data for outdoor_temp table
     $csvData = "humidity_id,humidity_sensor,humidity_level_data,humidity_date,humidity_time" . PHP_EOL; //you may change your table headers
 
-    $startDate = strtotime('2023-05-01');
-    $endDate = strtotime('2023-05-31');
+    $startDate = strtotime('2023-07-01');
+    $endDate = strtotime('2023-07-31');
 
     $counter = 1;
 
     $startSensor = 801;
     $endSensor = 811;
     
-    for ($i = 1; $i <= 200; $i++) {
+    for ($i = 501; $i <= 550; $i++) {
         $sensorNumber = ($i % ($endSensor - $startSensor + 1)) + $startSensor;
         $sensor = "AQ" . sprintf('%03d', $sensorNumber) . "RELHUM01"; //sensor name generator
         $data = mt_rand(50, 100); //data input randomizer, case for me is that 26 to 40 are the values

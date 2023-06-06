@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician.css">
+    <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician_dropdown.css">
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_gas.css">
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_general_param.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
     <script src="../Air Quality Technician/air_technician_export.js"></script>
+    <script src="../Air Quality Technician/air_technician_table_sort.js"></script>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </head>
     <body class="aq-technician-main">
@@ -60,6 +62,16 @@
                             <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
+                        <form id="filter-table-form" method="POST">
+                            <div class="filter-table">
+                                <div class="dropdown-form">
+                                    <?php include 'input_floor.php'?>
+                                </div>
+                                <div id="dropdown-room" class="dropdown-room">
+                                    <?php include 'input_room_checkbox.php'?>
+                                </div>
+                            </div>
+                        </form>
                         <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
                             <label class="import-btn">
                                 <span class="fas fa-file-import"></span> Import
@@ -68,18 +80,18 @@
                             </label>
                         </form>
                     </div>
-                    <table id = 'gas-level-parameters-table' class = 'gas-level-table'>
+                    <table class = 'air-quality-table'>
                         <thead>
                             <tr>
-                                <th>Building Floor</th>
-                                <th>Room</th>
-                                <th>Indoor Temperature</th>
-                                <th>Outdoor Temperature</th>
-                                <th>Particulate Matter 10</th>
-                                <th>Particulate Matter 2.5</th>
-                                <th>Particulate Matter 0.1</th>
-                                <th>Gas Level</th>
-                                <th>Relative Humidity</th>
+                            <th><a href="#arrange-floor" onclick="sortAQGeneralTable(0)">Floor<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-room" onclick="sortAQGeneralTable(1)">Room<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-indoor-temperature" onclick="sortAQGeneralTable(2)">Indoor Temperature<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-outdoor-temperature" onclick="sortAQGeneralTable(3)">Outdoor Temperature<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-10" onclick="sortAQGeneralTable(4)">Particulate Matter 10<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-2-5" onclick="sortAQGeneralTable(5)">Particulate Matter 2.5<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-0-1" onclick="sortAQGeneralTable(6)">Particulate Matter 0.1<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-gas-level" onclick="sortAQGeneralTable(7)">Gas Level<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-relative-humidity" onclick="sortAQGeneralTable(8)">Relative Humidity<span class="sort-indicator">&#x25BC;</span></a></th>
                             </tr>
                         </thead>
                         <tbody id = 'table-body'>

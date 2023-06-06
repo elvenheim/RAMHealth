@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+.filter-table{
+    z-index: 4000;
+    position: absolute;
+    top: 1px;
+    left: 400px;
+    display: flex;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.dropdown-form{
+    margin-right: 40px;
+    display: flex;
+}
+
+.dropdown-form .bldg_floor{
+    height: 22.4px;
+}
+
+.dropdown-form label{
+    margin-right: 5px;
+}
+
+.dropdown-form select{
+    cursor: pointer;
+}
+
+.dropdown-room{
+    display: flex;
+}
+
+.dropdown-room label{
+    display: flex;
+}
+
+.button-select-room{
+    position: absolute;
+    right: 5px;
+    height: 22.4px;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    position: relative;
+    top: 23px;
+    right: 5px;
+    margin-top: -1px;
+    margin-left: -45px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #8f8f9d;
+    width: 150px;
+    height: 300px;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 1rem;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.dropdown-item{
+    display: flex;
+}

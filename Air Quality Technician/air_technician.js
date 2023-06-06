@@ -37,108 +37,50 @@ function adduser_popup() {
   popup_close_btn.setAttribute("onclick", "adduser_popup()");
 }
 
-function sortTable(columnIndex) {
-  let table, rows, switching, i, x, y, shouldSwitch, sortIndicator;
-  table = document.querySelector(".air-quality-sensors-table");
-  switching = true;
-  sortIndicator = document.querySelector(
-      `th:nth-child(${columnIndex + 1}) .sort-indicator`
-  );
-
-  let sortOrder = sortIndicator.getAttribute("data-sort-order") || "asc";
-  
-  while (switching) {
-      switching = false;
-      rows = table.rows;
-      
-      for (i = 1; i < rows.length - 1; i++) {
-          shouldSwitch = false;
-          x = rows[i].getElementsByTagName("td")[columnIndex];
-          y = rows[i + 1].getElementsByTagName("td")[columnIndex];
-
-          let xValue = x.innerHTML.toLowerCase();
-          let yValue = y.innerHTML.toLowerCase();
-          
-          if (sortOrder === "asc") {
-              if (xValue > yValue) {
-                  shouldSwitch = true;
-                  break;
-              }
-          } else {
-              if (xValue < yValue) {
-                  shouldSwitch = true;
-                  break;
-              }
-          }
-      }
-      
-      if (shouldSwitch) {
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-      }
-  }
-  
-  // Toggle the sorting order
-  if (sortOrder === "asc") {
-      sortIndicator.setAttribute("data-sort-order", "desc");
-      sortIndicator.innerHTML = "&#x25BC;";
-  } else {
-      sortIndicator.setAttribute("data-sort-order", "asc");
-      sortIndicator.innerHTML = "&#x25B2;";
-  }
-}
-
-function sortDeleteTable(columnIndex) {
-  let table, rows, switching, i, x, y, shouldSwitch, sortIndicator;
-  table = document.querySelector(".air-quality-deleted-sensors-table");
-  switching = true;
-  sortIndicator = document.querySelector(
-      `th:nth-child(${columnIndex + 1}) .sort-indicator`
-  );
-
-  let sortOrder = sortIndicator.getAttribute("data-sort-order") || "asc";
-  
-  while (switching) {
-      switching = false;
-      rows = table.rows;
-      
-      for (i = 1; i < rows.length - 1; i++) {
-          shouldSwitch = false;
-          x = rows[i].getElementsByTagName("td")[columnIndex];
-          y = rows[i + 1].getElementsByTagName("td")[columnIndex];
-
-          let xValue = x.innerHTML.toLowerCase();
-          let yValue = y.innerHTML.toLowerCase();
-          
-          if (sortOrder === "asc") {
-              if (xValue > yValue) {
-                  shouldSwitch = true;
-                  break;
-              }
-          } else {
-              if (xValue < yValue) {
-                  shouldSwitch = true;
-                  break;
-              }
-          }
-      }
-      
-      if (shouldSwitch) {
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-      }
-  }
-  
-  // Toggle the sorting order
-  if (sortOrder === "asc") {
-      sortIndicator.setAttribute("data-sort-order", "desc");
-      sortIndicator.innerHTML = "&#x25BC;";
-  } else {
-      sortIndicator.setAttribute("data-sort-order", "asc");
-      sortIndicator.innerHTML = "&#x25B2;";
-  }
-}
-
 function submitForm() {
   document.querySelector('.import-table').submit();
+}
+
+function toggleDropdown() {
+  var menu = document.getElementById('room-number-menu');
+  menu.classList.toggle('show');
+}
+
+function selectAll(source) {
+  var checkboxes = document.getElementsByName('room_number[]');
+  for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = source.checked;
+  }
+}
+
+function updateRoomsDropdown(selectedFloor) {
+  var container = document.getElementById('dropdown-room');
+  container.innerHTML = '<p>Loading rooms...</p>';
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'input_room_checkbox.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          container.innerHTML = xhr.responseText;
+      }
+  };
+  xhr.send('selected_floor=' + encodeURIComponent(selectedFloor));
+}
+
+function submitForm(url) {
+  document.getElementById("submit-room-num").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      var form = document.getElementById("filter-table-form");
+      var formData = new FormData(form); // Get the form data
+
+      // Send an AJAX request
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.onload = function() {
+          // Handle the response here if needed
+      };
+      xhr.send(formData);
+  });
 }

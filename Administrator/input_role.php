@@ -5,7 +5,7 @@
     $roleIdsResult = mysqli_query($con, $roleIdsQuery);
     
     echo '<label for="role_name">Roles:</label>';
-    echo '<div class="checkbox-container">'; // Add the container div
+    echo '<div class="checkbox-container">';
     while ($row = mysqli_fetch_assoc($roleIdsResult)) {
         echo '<div>';
         echo '<input type="checkbox" id="role_name_' . $row['role_id'] . '" name="role_name[]" value="' . $row['role_id'] . '">';

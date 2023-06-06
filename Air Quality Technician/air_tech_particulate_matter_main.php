@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician.css">
+    <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/air_technician_dropdown.css">
     <link rel="stylesheet" href="../Air Quality Technician/AQ Tech Design/Parameters/aq_content_ap_matter.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
+    <script src="../Air Quality Technician/air_technician_table_sort.js"></script>
     <script src="../Air Quality Technician/air_technician_export.js"></script>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </head>
@@ -57,6 +59,17 @@
                             <span class="fas fa-arrow-left"></span> Go Back </button>
                         <button id="download-table" class="download-table" onclick="downloadAPMExcelTable()">
                             <span class="fas fa-download"></span> Download </button>
+                        <!-- Building Floor Dropdown -->
+                        <form id="filter-table-form" method="POST">
+                            <div class="filter-table">
+                                <div class="dropdown-form">
+                                    <?php include 'input_floor.php'?>
+                                </div>
+                                <div id="dropdown-room" class="dropdown-room">
+                                    <?php include 'input_room_checkbox.php'?>
+                                </div>
+                            </div>
+                        </form>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
                         <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
@@ -70,14 +83,14 @@
                     <table id = 'air-particulate-parameters-table' class = 'air-particulate-table'>
                         <thead>
                             <tr>
-                                <th>Room Number</th>
-                                <th>Sensor ID</th>
-                                <th>Sensor Name</th>
-                                <th>Date</th>
-                                <th>Time</th>              
-                                <th>Particulate Matter 10</th>
-                                <th>Particulate Matter 2.5</th>
-                                <th>Particulate Matter 0.1</th>
+                            <th><a href="#arrange-room-number" onclick="sortAQPMTable(0)">Room Number<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-sensor-id" onclick="sortAQPMTable(1)">Sensor ID<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-sensor-name" onclick="sortAQPMTable(2)">Sensor Name<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-date" onclick="sortAQPMTable(3)">Date<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-time" onclick="sortAQPMTable(4)">Time<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-10" onclick="sortAQPMTable(5)">Particulate Matter 10<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-2-5" onclick="sortAQPMTable(6)">Particulate Matter 2.5<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-particulate-matter-0-1" onclick="sortAQPMTable(7)">Particulate Matter 0.1<span class="sort-indicator">&#x25BC;</span></a></th>
                             </tr>
                         </thead>
                         <tbody id = 'table-body'>

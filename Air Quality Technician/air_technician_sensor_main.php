@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
+    <script src="../Air Quality Technician/air_technician_table_sort.js"></script>
 </head>
     <body class="aq-technician-main">
         <nav class="navbar">
@@ -110,12 +111,12 @@
                     <table class="air-quality-sensors-table">
                         <thead>
                             <tr>
-                                <th><a href="#arrange-floor" onclick="sortTable(0)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
-                                <th><a href="#arrange-room-number" onclick="sortTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
-                                <th><a href="#arrange-sensor-id" onclick="sortTable(2)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
-                                <th><a href="#arrange-sensor-name" onclick="sortTable(3)">Sensor Name<span class="sort-indicator">&#x25BC</span></a></th>
-                                <th><a href="#arrange-sensor-type" onclick="sortTable(4)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
-                                <th><a href="#arrange-date-added" onclick="sortTable(5)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-floor" onclick="sortAQSensorTable(0)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-room-number" onclick="sortAQSensorTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-id" onclick="sortAQSensorTable(2)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-name" onclick="sortAQSensorTable(3)">Sensor Name<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-sensor-type" onclick="sortAQSensorTable(4)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-date-added" onclick="sortAQSensorTable(5)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
