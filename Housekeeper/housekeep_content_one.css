@@ -73,20 +73,19 @@
 .popup{
     z-index: 1040;
     position: fixed;
-    top: 16.5%;
+    top: 25%;
     left: 36.5%;
     right: 36.5%;
     background-color: #fff;
     opacity: 0; 
     border: 1px solid rgba(127,127,127);
     box-shadow: 0 0.2rem 0.75rem rgba(0,0,0,0.5);
-    height: 70%;
+    height: 55%;
     width: 25%;
     border-radius: 10px;
 }
 
 /* popup contents */
-
 .add-title{
     position: relative;
     top: 3%;
@@ -118,11 +117,10 @@
 }
 
 /* input forms */
-
 .user-input {
     position: relative;
     display: flex;
-    height: 100%;
+    height: 700px;
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;

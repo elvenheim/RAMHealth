@@ -90,8 +90,7 @@ function editRow(AQsensorId) {
         FROM aq_sensor aq
         LEFT JOIN room_number rn ON aq_sensor_room_num = rn.room_num
         LEFT JOIN sensor_type st ON aq.aq_sensor_type = st.sensor_type_id
-        GROUP BY aq.aq_sensor_id
-        ORDER BY aq.aq_sensor_status DESC, rn.bldg_floor DESC
+        ORDER BY rn.room_num ASC
         LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 

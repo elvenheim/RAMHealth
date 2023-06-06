@@ -57,3 +57,187 @@ function downloadAQExcelTables() {
     fetchTableData(0);
 }
 
+function downloadAPMExcelTable() {
+  var tableName = 'aq_particulate_matter';
+
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', window.location.origin + '/RAMHealth/scripts/export_script.php?table=' + tableName, true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      var arraybuffer = this.response;
+      var data = new Uint8Array(arraybuffer);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      
+      // Apply bold font style to the header row
+      var headerRange = XLSX.utils.decode_range(worksheet['!ref']);
+      for (var col = headerRange.s.c; col <= headerRange.e.c; col++) {
+        var headerCell = XLSX.utils.encode_cell({ r: headerRange.s.r, c: col });
+        var headerCellStyle = worksheet[headerCell].s || {};
+        headerCellStyle.font = { bold: true };
+        worksheet[headerCell].s = headerCellStyle;
+      }
+      
+      var workbookOut = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbookOut, worksheet, 'Table Data');
+      var excelBuffer = XLSX.write(workbookOut, { type: 'array' });
+      var blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = tableName + '.xlsx';
+      link.click();
+    }
+  };
+  xhr.send();
+}
+
+function downloadGASExcelTable() {
+  var tableName = 'aq_gas_level';
+
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', window.location.origin + '/RAMHealth/scripts/export_script.php?table=' + tableName, true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      var arraybuffer = this.response;
+      var data = new Uint8Array(arraybuffer);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      
+      // Apply bold font style to the header row
+      var headerRange = XLSX.utils.decode_range(worksheet['!ref']);
+      for (var col = headerRange.s.c; col <= headerRange.e.c; col++) {
+        var headerCell = XLSX.utils.encode_cell({ r: headerRange.s.r, c: col });
+        var headerCellStyle = worksheet[headerCell].s || {};
+        headerCellStyle.font = { bold: true };
+        worksheet[headerCell].s = headerCellStyle;
+      }
+      
+      var workbookOut = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbookOut, worksheet, 'Table Data');
+      var excelBuffer = XLSX.write(workbookOut, { type: 'array' });
+      var blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = tableName + '.xlsx';
+      link.click();
+    }
+  };
+  xhr.send();
+}
+
+function downloadIndoorTempExcelTable() {
+  var tableName = 'aq_indoor_temperature';
+
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', window.location.origin + '/RAMHealth/scripts/export_script.php?table=' + tableName, true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      var arraybuffer = this.response;
+      var data = new Uint8Array(arraybuffer);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      
+      // Apply bold font style to the header row
+      var headerRange = XLSX.utils.decode_range(worksheet['!ref']);
+      for (var col = headerRange.s.c; col <= headerRange.e.c; col++) {
+        var headerCell = XLSX.utils.encode_cell({ r: headerRange.s.r, c: col });
+        var headerCellStyle = worksheet[headerCell].s || {};
+        headerCellStyle.font = { bold: true };
+        worksheet[headerCell].s = headerCellStyle;
+      }
+      
+      var workbookOut = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbookOut, worksheet, 'Table Data');
+      var excelBuffer = XLSX.write(workbookOut, { type: 'array' });
+      var blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = tableName + '.xlsx';
+      link.click();
+    }
+  };
+  xhr.send();
+}
+
+function downloadOutdoorTempExcelTable() {
+  var tableName = 'aq_outdoor_temperature';
+
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', window.location.origin + '/RAMHealth/scripts/export_script.php?table=' + tableName, true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      var arraybuffer = this.response;
+      var data = new Uint8Array(arraybuffer);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      
+      // Apply bold font style to the header row
+      var headerRange = XLSX.utils.decode_range(worksheet['!ref']);
+      for (var col = headerRange.s.c; col <= headerRange.e.c; col++) {
+        var headerCell = XLSX.utils.encode_cell({ r: headerRange.s.r, c: col });
+        var headerCellStyle = worksheet[headerCell].s || {};
+        headerCellStyle.font = { bold: true };
+        worksheet[headerCell].s = headerCellStyle;
+      }
+      
+      var workbookOut = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbookOut, worksheet, 'Table Data');
+      var excelBuffer = XLSX.write(workbookOut, { type: 'array' });
+      var blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = tableName + '.xlsx';
+      link.click();
+    }
+  };
+  xhr.send();
+}
+
+function downloadHumidityExcelTable() {
+  var tableName = 'aq_relative_humidity';
+
+  // Create an XMLHTTPRequest to get the Excel file from the server
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', window.location.origin + '/RAMHealth/scripts/export_script.php?table=' + tableName, true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      var arraybuffer = this.response;
+      var data = new Uint8Array(arraybuffer);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      
+      // Apply bold font style to the header row
+      var headerRange = XLSX.utils.decode_range(worksheet['!ref']);
+      for (var col = headerRange.s.c; col <= headerRange.e.c; col++) {
+        var headerCell = XLSX.utils.encode_cell({ r: headerRange.s.r, c: col });
+        var headerCellStyle = worksheet[headerCell].s || {};
+        headerCellStyle.font = { bold: true };
+        worksheet[headerCell].s = headerCellStyle;
+      }
+      
+      var workbookOut = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbookOut, worksheet, 'Table Data');
+      var excelBuffer = XLSX.write(workbookOut, { type: 'array' });
+      var blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = tableName + '.xlsx';
+      link.click();
+    }
+  };
+  xhr.send();
+}

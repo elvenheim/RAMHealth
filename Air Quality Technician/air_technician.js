@@ -138,3 +138,7 @@ function sortDeleteTable(columnIndex) {
       sortIndicator.innerHTML = "&#x25B2;";
   }
 }
+
+function submitForm() {
+  document.querySelector('.import-table').submit();
+}

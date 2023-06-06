@@ -60,9 +60,12 @@
                             <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
-                        <form class="import-table" method="POST" enctype="multipart/form-data">
-                            <label class="import-btn"><span class="fas fa-file-import"></span> Import
-                            <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
+                        <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
+                            <label class="import-btn">
+                                <span class="fas fa-file-import"></span> Import
+                                <input type="hidden" id="table_name" name="table_name" value="aq_indoor_temperature">
+                                <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
+                            </label>
                         </form>
                     </div>
                     <table id = 'gas-level-parameters-table' class = 'gas-level-table'>

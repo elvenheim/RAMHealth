@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/air_technician.js"></script>
+    <script src="../Air Quality Technician/air_technician_export.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </head>
     <body class="aq-technician-main">
         <nav class="navbar">
@@ -53,13 +55,16 @@
                     <div class = "table-button">
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
-                        <button id="download-table" class="download-table" onclick="downloadExcel()">
+                        <button id="download-table" class="download-table" onclick="downloadOutdoorTempExcelTable()">
                             <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
-                        <form class="import-table" method="POST" enctype="multipart/form-data">
-                            <label class="import-btn"><span class="fas fa-file-import"></span> Import
-                            <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
+                        <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
+                            <label class="import-btn">
+                                <span class="fas fa-file-import"></span> Import
+                                <input type="hidden" id="table_name" name="table_name" value="aq_outdoor_temperature">
+                                <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
+                            </label>
                         </form>
                     </div>
                     <table id = 'outdoor-temperature-parameters-table' class = 'outdoor-temperature-table'>
