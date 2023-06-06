@@ -56,6 +56,7 @@
                                 <th><a href="#arrange-employee_email" onclick="sortDeleteTable(2)">Email Address<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th><a href="#arrange-role_names" onclick="sortDeleteTable(3)">Role<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th><a href="#arrange-employee_create_at" onclick="sortDeleteTable(4)">Created At<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-employee_delete_at" onclick="sortDeleteTable(5)">Delete At<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th>Actions</th>
                                 </tr>
                             </thead>

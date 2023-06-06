@@ -101,7 +101,7 @@ function sortTable(columnIndex) {
 
 function sortDeleteTable(columnIndex) {
   let table, rows, switching, i, x, y, shouldSwitch, sortIndicator;
-  table = document.querySelector(".admin-table");
+  table = document.querySelector(".admin-deleted-user-table");
   switching = true;
   sortIndicator = document.querySelector(
       `th:nth-child(${columnIndex + 1}) .sort-indicator`
