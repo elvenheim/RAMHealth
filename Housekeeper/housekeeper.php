@@ -76,6 +76,13 @@
                         <div class="table-button">
                             <button id="adduser-btn" class="add-room" onclick="addroom_popup()"><span class="fas fa-plus"></span> Add Room</button>
                             <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>
+                            <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
+                                <label class="import-btn">
+                                    <span class="fas fa-file-import"></span> Import
+                                    <input type="hidden" id="table_name" name="table_name" value="aq_sensor">
+                                    <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
+                                </label>
+                            </form>     
                         </div>
                         <table class="housekeeper-table">
                             <thead>

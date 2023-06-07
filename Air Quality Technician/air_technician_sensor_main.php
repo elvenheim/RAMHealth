@@ -102,11 +102,18 @@
                             </form>
                     </div>
                     <div id="editroom-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
-                    </div>  
-
+                    </div>
+                    
                     <div class="table-button">
                         <button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add Sensor</button>
-                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    
+                        <button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>
+                        <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
+                            <label class="import-btn">
+                                <span class="fas fa-file-import"></span> Import
+                                <input type="hidden" id="table_name" name="table_name" value="aq_sensor">
+                                <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
+                            </label>
+                        </form>           
                     </div>
                     <table class="air-quality-sensors-table">
                         <thead>
@@ -127,7 +134,6 @@
                     </table>
                     <?php include '../Air Quality Technician/AQ Tech Design/AQ Tech Pagination/aq_tech_sensor_pagination.php'; ?>
                 </div>
-                </nav>
             </div>
         </div>
     </body>
