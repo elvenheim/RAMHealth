@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/Parameters/ec_content_others.css">
 	<link rel="shortcut icon" href="../favicons/favicon.ico"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
-	<script src="../Energy Consumption Technician/energy_technician.js"></script>
+    <script src="../Air Quality Technician/scripts/air_technician.js"></script>
 </head>
 
 <body class="ec-technician-main">
