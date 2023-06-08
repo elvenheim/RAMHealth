@@ -14,8 +14,6 @@ function restoreRow(sensorID) {
         xhr.send("sensor_id=" + sensorID);
     }
 }
-
-
 </script>
 
 <?php     

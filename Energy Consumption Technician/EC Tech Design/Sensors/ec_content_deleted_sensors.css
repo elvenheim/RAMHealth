@@ -39,40 +39,8 @@
     color: #E7AE41;
 }
 
-
-/* popup contents */
-.add-title{
-    position: relative;
-    top: 3%;
-    left: 2.5%;
-    bottom: -2%;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.close-btn{
-    position: relative;
-    left: 30%;
-    top: 2%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.close-btn:hover{
-    color: #f44336;
-    transform: scale(1.2);
-}
-
-.popup-line{
-    position: relative;
-    top: 5%;
-    background-color: #000;
-    width: 100%;
-    height: 0.2%;
-}
-
 /*deleted sensor table style */
-.air-quality-deleted-sensors-table{
+.energy-deleted-sensors-table{
     overflow: hidden;
     border-collapse: collapse;
     position: relative;

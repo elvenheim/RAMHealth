@@ -84,3 +84,7 @@ function submitForm(url) {
       xhr.send(formData);
   });
 }
+
+function cancelEdit() {
+  window.location.href = 'air_technician_sensor_main.php'; // Replace with the desired page URL to redirect the user
+}

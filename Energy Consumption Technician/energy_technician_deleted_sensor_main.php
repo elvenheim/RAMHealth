@@ -8,10 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>RAM Health</title>
 	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/energy_technician.css">
-	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/Parameters/ec_content_deleted_sensors.css">
+	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/Sensors/ec_content_deleted_sensors.css">
 	<link rel="shortcut icon" href="../favicons/favicon.ico" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
-    <script src="../Air Quality Technician/scripts/air_technician.js"></script>
+    <script src="../Energy Consumption Technician/scripts/energy_technician.js"></script>
 </head>
 
 <body class="ec-technician-main">
@@ -52,73 +52,21 @@
 		</nav>
 		<div id="sensor-table" class="content-sensor">
 			<div class="card">
-				<!-- add room pop-up -->
-				<div id="adduser-popup" class = "popup" style="opacity: 0; pointer-events: none;">
-					<span class = "add-title"> 
-						Add Sensor
-					</span>
-					<span class = "close-popup"> 
-						<i id="close-btn" class= "fas fa-x fa-xl close-btn"></i>
-					</span>
-					<div class = "popup-line">
-					</div>
-					<form id="add_user" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
-						<label for="sensor-id">Sensor ID:</label>
-						<input type="text" id="sensor_id" name="sensor_id" required><br>
-						<label for="sensor-name">Sensor Name:</label>
-						<input type="text" id="sensor_name" name="sensor_name" required><br>
-						<?php include 'input_sensor.php'?>
-						<?php include 'input_room.php'?>
-						<button class="save-details" type="submit">Add Room</button>
-					</form>
-				</div>
-				<div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
-				</div>
-				<!-- edit room pop-up -->
-				<div id="editroom-popup" class = "popup" style="opacity: 0; pointer-events: none;">
-						<span class = "add-title"> 
-							Edit Room
-						</span>
-
-						<span class = "close-popup"> 
-							<i id="edit-close-btn"class= "fas fa-x fa-xl close-btn"></i>
-						</span>
-
-						<div class = "popup-line">
-						</div>
-
-						<form id="edit_room" method="POST" class="user-input" action="housekeep_fetch_input.php">
-						<label for="room_number">Room Number:</label>
-						<input type="text" id="room_number" name="room_number"required><br>
-						
-						<?php include 'input_floor.php'; ?>
-
-						<label for="room_type">Room Type:</label>
-						<input type="text" id="room_type" name="room_type" required><br>
-
-						<label for="room_name">Room Name:</label>
-						<input type="text" id="room_name" name="room_name" required><br>
-
-						<button class="save-details" type="submit">Update Room Data</button>
-						</form>
-				</div>
-				<div id="editroom-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">
-				</div>  
-
 				<div class="table-button">
-					<button id="adduser-btn" class="add-user" onclick="adduser_popup()"><span class="fas fa-plus"></span> Add Sensor</button>
 					<button class="refresh-table" onclick="location.reload()"><span class="fas fa-arrows-rotate"></span> Refresh</button>                    
 				</div>
 				<table class="energy-deleted-sensors-table">
 					<thead>
 						<tr>
-							<th><a href="#arrange-floor" onclick="sortAQSensorTable(0)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
-							<th><a href="#arrange-room-number" onclick="sortAQSensorTable(1)">Room Number<span class="sort-indicator">&#x25BC</span></a></th>
-							<th><a href="#arrange-sensor-id" onclick="sortAQSensorTable(2)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
-							<th><a href="#arrange-sensor-name" onclick="sortAQSensorTable(3)">Sensor Name<span class="sort-indicator">&#x25BC</span></a></th>
-							<th><a href="#arrange-sensor-type" onclick="sortAQSensorTable(4)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
-							<th><a href="#arrange-date-added" onclick="sortAQSensorTable(5)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
-							<th>Status</th>
+							<th><a href="#arrange-panel-group" onclick="sortDeletedECSensorTable(0)">Panel Grouping<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-panel-label" onclick="sortDeletedECSensorTable(1)">Panel Label<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-floor" onclick="sortDeletedECSensorTable(2)">Floor<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-room" onclick="sortDeletedECSensorTable(3)">Room<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-arduino-id" onclick="sortDeletedECSensorTable(4)">Arduino ID<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-sensor-id" onclick="sortDeletedECSensorTable(5)">Sensor ID<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-sensor-type" onclick="sortDeletedECSensorTable(6)">Sensor Type<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-date-added" onclick="sortDeletedECSensorTable(7)">Date Added<span class="sort-indicator">&#x25BC</span></a></th>
+							<th><a href="#arrange-date-deleted" onclick="sortDeletedECSensorTable(8)">Deleted At<span class="sort-indicator">&#x25BC</span></a></th>
 							<th>Actions</th>
 						</tr>
 					</thead>

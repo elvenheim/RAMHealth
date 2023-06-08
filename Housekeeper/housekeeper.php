@@ -56,15 +56,15 @@
 
                             <form id="add_room" method="POST" class="user-input" action="housekeep_fetch_input.php">
                             <label for="room_number">Room Number:</label>
-                            <input type="text" id="room_number" name="room_number"required><br>
+                            <input type="text" id="room_number" name="room_number"><br>
                             
                             <?php include 'input_floor.php'; ?>
 
                             <label for="room_type">Room Type:</label>
-                            <input type="text" id="room_type" name="room_type" required><br>
+                            <input type="text" id="room_type" name="room_type"><br>
 
                             <label for="room_name">Room Name:</label>
-                            <input type="text" id="room_name" name="room_name" required><br>
+                            <input type="text" id="room_name" name="room_name"><br>
 
                             <button class="save-details" type="submit">Add Room Data</button>
                             </form>
@@ -79,7 +79,7 @@
                             <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
                                 <label class="import-btn">
                                     <span class="fas fa-file-import"></span> Import
-                                    <input type="hidden" id="table_name" name="table_name" value="aq_sensor">
+                                    <input type="hidden" id="table_name" name="table_name" value="room_number">
                                     <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
                                 </label>
                             </form>     

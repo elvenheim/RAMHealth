@@ -90,7 +90,7 @@ function editRow(AQsensorId) {
         FROM aq_sensor aq
         LEFT JOIN room_number rn ON aq_sensor_room_num = rn.room_num
         LEFT JOIN sensor_type st ON aq.aq_sensor_type = st.sensor_type_id
-        ORDER BY rn.room_num ASC
+        ORDER BY rn.room_num ASC, aq.aq_sensor_status DESC
         LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
 
@@ -122,5 +122,4 @@ function editRow(AQsensorId) {
         echo "</td>";
         echo "</tr>";
     }
-    
 ?>

@@ -61,7 +61,7 @@ function editRow(roomNum) {
     $sql = "SELECT rn.*, bldg.bldg_floor_name 
             FROM room_number rn 
             JOIN building_floor bldg ON rn.bldg_floor = bldg.building_floor
-            ORDER BY room_num
+            ORDER BY bldg.building_floor ASC
             LIMIT $offset, $rows_per_page";
     $result_table = mysqli_query($con, $sql);
         
@@ -74,7 +74,7 @@ function editRow(roomNum) {
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['bldg_floor_name'] . "</td>";
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_num'] . "</td>";
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_type'] . "</td>";
-            echo '<td style="min-width: 120px; max-width: 120px;">' . $row['room_name'] . "</td>";
+            echo '<td style="min-width: 120px; max-width: 120px;">' . ($row['room_name'] ? $row['room_name'] : 'N/A') . "</td>";
             echo '<td style="min-width: 100px; max-width: 100px;">' . $row['room_added_at'] . "</td>";
             echo '<td class="action-buttons">';
             echo '<div>';

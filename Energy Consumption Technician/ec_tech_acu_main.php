@@ -66,13 +66,12 @@
 				</div>
 				<table id = 'acu-parameters-table' class = 'acu-table'>
 					<thead>
-						<tr>
-							<th>Building Floor</th>
-							<th>Sensor ID</th>
-							<th>Sensor Name</th>
-							<th>Date</th>
-							<th>Time</th>              
-							<th>Current</th>
+						<tr>        
+							<th><a href="#arrange-room-number" onclick="sortAQInTempTable(0)">Room Number<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-sensor-id" onclick="sortAQInTempTable(1)">Sensor ID<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-date" onclick="sortAQInTempTable(2)">Date<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-time" onclick="sortAQInTempTable(3)">Time<span class="sort-indicator">&#x25BC;</span></a></th>
+                            <th><a href="#arrange-current" onclick="sortAQInTempTable(4)">Current<span class="sort-indicator">&#x25BC;</span></a></th>
 						</tr>
 					</thead>
 					<tbody id = 'table-body'>

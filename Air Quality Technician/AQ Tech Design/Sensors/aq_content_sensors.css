@@ -47,7 +47,7 @@
 .refresh-table{
     position: relative;
     top: 100%;
-    left: 31%;
+    left: 38%;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
@@ -56,23 +56,6 @@
 }
 
 .refresh-table:active{
-    color: #E7AE41;
-}
-
-.import-btn{
-    position: relative;
-    bottom: 25px;
-    left: 89.2%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.1rem;
-    width: max-content;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-}
-
-.import-table:hover{
     color: #E7AE41;
 }
 

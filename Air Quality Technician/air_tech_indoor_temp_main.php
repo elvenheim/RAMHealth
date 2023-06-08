@@ -58,7 +58,7 @@
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
                         <button id="download-table" class="download-table" onclick="downloadIndoorTempExcelTable()">
-                            <span class="fas fa-download"></span> Download </button>
+                            <span class="fas fa-download"></span> Export </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
                         <form id="filter-table-form" method="POST">

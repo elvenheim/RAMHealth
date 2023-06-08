@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Air Quality Technician/air_technician.js"></script>
 </head>
 <body>
 
