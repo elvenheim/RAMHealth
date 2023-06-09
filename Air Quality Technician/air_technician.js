@@ -68,21 +68,8 @@ function updateRoomsDropdown(selectedFloor) {
   xhr.send('selected_floor=' + encodeURIComponent(selectedFloor));
 }
 
-function submitForm(url) {
-  document.getElementById("submit-room-num").addEventListener("click", function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      var form = document.getElementById("filter-table-form");
-      var formData = new FormData(form); // Get the form data
-
-      // Send an AJAX request
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", url, true);
-      xhr.onload = function() {
-          // Handle the response here if needed
-      };
-      xhr.send(formData);
-  });
+function submitForm() {
+  document.querySelector('.import-table').submit();
 }
 
 function cancelEdit() {

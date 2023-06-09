@@ -63,14 +63,16 @@
 					</span>
 					<div class = "popup-line">
 					</div>
-					<form id="add_user" method="POST" class="user-input" action="aq_sensor_fetch_input.php">
-						<label for="sensor-id">Sensor ID:</label>
-						<input type="text" id="sensor_id" name="sensor_id" required><br>
-						<label for="sensor-name">Sensor Name:</label>
-						<input type="text" id="sensor_name" name="sensor_name" required><br>
-						<?php include 'input_sensor.php'?>
+					<form id="add_user" method="POST" class="user-input" action="ec_sensor_fetch_input.php">
+						<?php include 'input_panel_group.php'?>
+						<?php include 'input_panel_label.php'?>
+						<?php include 'input_floor.php'?>
 						<?php include 'input_room.php'?>
-						<button class="save-details" type="submit">Add Room</button>
+						<?php include 'input_arduino_label.php'?>
+						<label for="sensor_id">Sensor ID:</label>
+						<input type="text" id="sensor_id" name="sensor_id" required><br>
+						<?php include 'input_sensor.php'?>
+						<button class="save-details" type="submit">Add Sensor</button>
 					</form>
 				</div>
 					<div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">

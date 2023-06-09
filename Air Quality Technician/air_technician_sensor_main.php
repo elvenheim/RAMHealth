@@ -68,7 +68,7 @@
                             <input type="text" id="sensor_name" name="sensor_name" required><br>
                             <?php include 'input_sensor.php'?>
                             <?php include 'input_room.php'?>
-                            <button class="save-details" type="submit">Add Room</button>
+                            <button class="save-details" type="submit">Add Sensor</button>
                         </form>
                     </div>
                     <div id="adduser-popup-bg" class = "popup-bg" style="opacity: 0; pointer-events: none;">

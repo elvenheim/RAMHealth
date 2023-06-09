@@ -61,19 +61,23 @@
                 LIMIT $offset, $rows_per_page";
 
         $result_table = mysqli_query($con, $sql);
-
-        while ($row = mysqli_fetch_assoc($result_table)){
-            echo "<tr>";
-            echo "<td>" . $row['bldg_floor'] . "</td>";
-            echo "<td>" . $row['air_quality_room_num'] . "</td>"; 
-            echo "<td>" . ($row['indoor_temp_data'] !== null && $row['indoor_temp_data'] !== '' ? $row['indoor_temp_data'] . "&deg;C" : "N/A") . "</td>";
-            echo "<td>" . ($row['outdoor_temp_data'] !== null && $row['outdoor_temp_data'] !== '' ? $row['outdoor_temp_data'] . "&deg;C" : "N/A") . "</td>";        
-            echo "<td>" . ($row['pm_ten'] !== null && $row['pm_ten'] !== '' ? $row['pm_ten'] . " &micro;g/m³" : "N/A") . "</td>";
-            echo "<td>" . ($row['pm_two_five'] !== null && $row['pm_two_five'] !== '' ? $row['pm_two_five'] . " &micro;g/m³" : "N/A") . "</td>";
-            echo "<td>" . ($row['pm_zero_one'] !== null && $row['pm_zero_one'] !== '' ? $row['pm_zero_one'] . " &micro;g/m³" : "N/A") . "</td>";
-            echo "<td>" . ($row['gas_level_data'] !== null && $row['gas_level_data'] !== '' ? $row['gas_level_data'] . " ppm" : "N/A") . "</td>";
-            echo "<td>" . ($row['humidity_level_data'] !== null && $row['humidity_level_data'] !== '' ? $row['humidity_level_data'] . "%" : "N/A") . "</td>";
-            echo "</tr>";
+        
+        if ($total_rows == 0) {
+            echo '<span class="table-no-record"> No users are registered in the database...</span>';
+        } else{
+            while ($row = mysqli_fetch_assoc($result_table)){
+                echo "<tr>";
+                echo "<td>" . $row['bldg_floor'] . "</td>";
+                echo "<td>" . $row['air_quality_room_num'] . "</td>"; 
+                echo "<td>" . ($row['indoor_temp_data'] !== null && $row['indoor_temp_data'] !== '' ? $row['indoor_temp_data'] . "&deg;C" : "N/A") . "</td>";
+                echo "<td>" . ($row['outdoor_temp_data'] !== null && $row['outdoor_temp_data'] !== '' ? $row['outdoor_temp_data'] . "&deg;C" : "N/A") . "</td>";        
+                echo "<td>" . ($row['pm_ten'] !== null && $row['pm_ten'] !== '' ? $row['pm_ten'] . " &micro;g/m³" : "N/A") . "</td>";
+                echo "<td>" . ($row['pm_two_five'] !== null && $row['pm_two_five'] !== '' ? $row['pm_two_five'] . " &micro;g/m³" : "N/A") . "</td>";
+                echo "<td>" . ($row['pm_zero_one'] !== null && $row['pm_zero_one'] !== '' ? $row['pm_zero_one'] . " &micro;g/m³" : "N/A") . "</td>";
+                echo "<td>" . ($row['gas_level_data'] !== null && $row['gas_level_data'] !== '' ? $row['gas_level_data'] . " ppm" : "N/A") . "</td>";
+                echo "<td>" . ($row['humidity_level_data'] !== null && $row['humidity_level_data'] !== '' ? $row['humidity_level_data'] . "%" : "N/A") . "</td>";
+                echo "</tr>";
+            }
         }
     } else {}
 ?>

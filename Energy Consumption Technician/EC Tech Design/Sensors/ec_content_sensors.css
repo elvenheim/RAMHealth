@@ -60,7 +60,6 @@
 }
 
 /* add user popup */
-
 .popup-bg{
     position: absolute;
     z-index: 1039;
@@ -71,22 +70,21 @@
 }
 
 .popup{
-    z-index: 1040;
+    z-index: 1040 !important;
     position: fixed;
-    top: 25%;
+    top: 16%;
     left: 36.5%;
     right: 36.5%;
     background-color: #fff;
     opacity: 0; 
     border: 1px solid rgba(127,127,127);
     box-shadow: 0 0.2rem 0.75rem rgba(0,0,0,0.5);
-    height: 55%;
+    height: 80%;
     width: 25%;
     border-radius: 10px;
 }
 
 /* popup contents */
-
 .add-title{
     position: relative;
     top: 3%;
@@ -174,11 +172,10 @@ form input[type="text"] {
     font-size: 16px;
 }
 
-.role_name{
+.bldg_floor{
     position: relative;
     display: block;
     width: 95%;
-    height: 15%;
     top: 9%;
     padding: 10px;
     margin-bottom: 20px;
@@ -186,6 +183,43 @@ form input[type="text"] {
     border-radius: 5px;
     font-size: 16px;
 }
+
+.arduino_label{
+    position: relative;
+    display: block;
+    width: 95%;
+    top: 9%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.panel_label{
+    position: relative;
+    display: block;
+    width: 95%;
+    top: 9%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.panel_grouping{
+    position: relative;
+    display: block;
+    width: 95%;
+    top: 9%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 
 .save-details[type="submit"] {
     position: relative;

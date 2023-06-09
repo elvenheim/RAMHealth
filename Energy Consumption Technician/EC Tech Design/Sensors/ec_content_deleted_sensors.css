@@ -40,6 +40,15 @@
 }
 
 /*deleted sensor table style */
+.table-no-record{
+    position: absolute;
+    top: 250px;
+    left: 765px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bolder;
+}
+
+
 .energy-deleted-sensors-table{
     overflow: hidden;
     border-collapse: collapse;

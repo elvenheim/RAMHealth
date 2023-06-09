@@ -45,27 +45,32 @@ function restoreRow(sensorID) {
         LEFT JOIN room_number rn ON decs.arduino_bldg_floor = rn.bldg_floor AND decs.arduino_room_num = rn.room_num
         LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor 
         LEFT JOIN sensor_type st ON decs.arduino_sensors_type = st.sensor_type_id
+        ORDER BY bf.building_floor ASC
         LIMIT $offset, $rows_per_page";
 
     $result_table = mysqli_query($con, $sql);
 
-    while ($row = mysqli_fetch_assoc($result_table)){
-        echo '<tr data-sensor-id="' . $row['ec_arduino_sensor_id'] . '"' . '>';
-        echo "<td>" . $row['ec_panel_grouping_id'] . "</td>";
-        echo "<td>" . $row['ec_panel_label_id'] . "</td>";
-        echo "<td>" . $row['bldg_floor_name'] . "</td>";
-        echo "<td>" . $row['arduino_room_num'] . "</td>";
-        echo "<td>" . $row['ec_arduino_sensor_label_id'] . "</td>";
-        echo "<td>" . $row['ec_arduino_sensor_id'] . "</td>";
-        echo "<td>" . $row['sensor_type_name'] . "</td>";
-        echo "<td>" . $row['arduino_sensors_added_at'] . "</td>";
-        echo "<td>" . $row['arduino_sensors_deleted_at'] . "</td>";
-        echo '<td class="action-buttons">';
-        echo '<div>';
-        echo '<button class="restore-button" type="button" onclick="restoreRow(\'' . $row['ec_arduino_sensor_id'] . '\')"> 
-                <i class="fas fa-rotate-left"></i></button>';
-        echo '</div>';
-        echo "</td>";
-        echo "</tr>";
+    if ($total_rows == 0) {
+        echo '<span class="table-no-record"> No sensors has been deleted yet...</span>';
+    } else{
+        while ($row = mysqli_fetch_assoc($result_table)){
+            echo '<tr data-sensor-id="' . $row['ec_arduino_sensor_id'] . '"' . '>';
+            echo "<td>" . $row['ec_panel_grouping_id'] . "</td>";
+            echo "<td>" . $row['ec_panel_label_id'] . "</td>";
+            echo "<td>" . $row['bldg_floor_name'] . "</td>";
+            echo "<td>" . $row['arduino_room_num'] . "</td>";
+            echo "<td>" . $row['ec_arduino_sensor_label_id'] . "</td>";
+            echo "<td>" . $row['ec_arduino_sensor_id'] . "</td>";
+            echo "<td>" . $row['sensor_type_name'] . "</td>";
+            echo "<td>" . $row['arduino_sensors_added_at'] . "</td>";
+            echo "<td>" . $row['arduino_sensors_deleted_at'] . "</td>";
+            echo '<td class="action-buttons">';
+            echo '<div>';
+            echo '<button class="restore-button" type="button" onclick="restoreRow(\'' . $row['ec_arduino_sensor_id'] . '\')"> 
+                    <i class="fas fa-rotate-left"></i></button>';
+            echo '</div>';
+            echo "</td>";
+            echo "</tr>";
+        }
     }
 ?>

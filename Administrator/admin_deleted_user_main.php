@@ -51,7 +51,7 @@
                         <table class="admin-deleted-user-table">
                             <thead>
                                 <tr>
-                                <th><a href="#arrange-employee_id" onclick="sortDeleteTable(0)">Employee ID<span class="sort-indicator">&#x25BC</span></a></th>
+                                <th><a href="#arrange-employee_id" onclick="sortDeleteTable(0)">User ID<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th><a href="#arrange-employee_fullname" onclick="sortDeleteTable(1)">Full Name<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th><a href="#arrange-employee_email" onclick="sortDeleteTable(2)">Email Address<span class="sort-indicator">&#x25BC</span></a></th>
                                 <th><a href="#arrange-role_names" onclick="sortDeleteTable(3)">Role<span class="sort-indicator">&#x25BC</span></a></th>

@@ -74,7 +74,7 @@
 						<?php include '../Energy Consumption Technician/tables/sensors/energy_deleted_sensor_table.php'; ?>
 					</tbody>
 				</table>
-				<?php include '../Energy Consumption Technician/EC Tech Design/Pagination/ec_tech_sensor_pagination.php'; ?>
+				<?php include '../Energy Consumption Technician/EC Tech Design/Pagination/ec_tech_deleted_sensor_pagination.php'; ?>
 			</div>
         </div>
 	</div>
