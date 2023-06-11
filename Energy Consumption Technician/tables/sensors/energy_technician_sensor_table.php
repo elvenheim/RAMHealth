@@ -67,7 +67,7 @@ function editRow(ECsensorId) {
     if (confirm("Do you want to edit this sensor?")){
         var form = document.createElement("form");
         form.setAttribute("method", "post");
-        form.setAttribute("action", "../Energy Consumption Technician/scripts/sensor table/fetch_ec_sensor_details.php"); // Replace with your edit page URL
+        form.setAttribute("action", "../Energy Consumption Technician/fetch_ec_sensor_details.php"); // Replace with your edit page URL
 
         // Create a hidden input field to pass the employee ID
         var input = document.createElement("input");
@@ -115,7 +115,7 @@ function editRow(ECsensorId) {
         LEFT JOIN room_number rn ON eas.arduino_bldg_floor = rn.bldg_floor AND eas.arduino_room_num = rn.room_num
         LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor
         LEFT JOIN sensor_type st ON eas.ec_arduino_sensors_type = st.sensor_type_id
-        ORDER BY bf.building_floor ASC, eas.arduino_sensors_status ASC, eas.ec_arduino_sensors_id
+        ORDER BY bf.building_floor ASC, eas.arduino_sensors_status ASC, SUBSTRING_INDEX(eas.ec_arduino_sensors_id, '-', -1) + 0 ASC
         LIMIT $offset, $rows_per_page";
 
     $result_table = mysqli_query($con, $sql);

@@ -1,0 +1,28 @@
+.pm-ten-gauge-group{
+    margin-bottom: 50px;
+}
+
+.pm-two-five-gauge-group{
+    margin-bottom: 50px;
+}
+
+.pm-zero-one-gauge-group{
+    margin-bottom: 50px;
+}
+
+.indoor-temp-gauge-group{
+    margin-bottom: 50px;
+}
+
+.gauge-title{
+    margin-top: 3px;
+    display: inline-flex;
+    margin-bottom: 40px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gauge{
+    scale: 1.3;
+}

@@ -57,8 +57,6 @@
                     <div class = "table-button">
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
-                        <button id="download-table" class="download-table" onclick="downloadIndoorTempExcelTable()">
-                            <span class="fas fa-download"></span> Export </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
                         <form id="filter-table-form" method="POST">
@@ -78,6 +76,8 @@
                                 <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
                             </label>
                         </form>
+                        <button id="download-table" class="download-table" onclick="downloadIndoorTempExcelTable()">
+                            <span class="fas fa-download"></span> Export </button>
                     </div>
                     <table id = 'indoor-temperature-parameters-table' class = 'indoor-temperature-table'>
                         <thead>

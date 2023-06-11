@@ -1,6 +1,5 @@
 function collapse_logout(){
   var logoutBtn = document.getElementById("btn_logout");
-
   if (logoutBtn.style.display === "none") {
     logoutBtn.style.display = "block";
   } else {

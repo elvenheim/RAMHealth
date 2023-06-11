@@ -35,7 +35,7 @@
                  }
                }
             ?>
-            <input id="email_field" name="email"  type="email" placeholder="Email" autocomplete="email" autofocus required>
+            <input id="email_field" name="email" type="email" placeholder="Email" autocomplete="email" autofocus required>
             <i class="fas fa-envelope"></i>
             <input id="password_field" name="password" type="password" placeholder="Password" autocomplete="password" required>
             <i class="fas fa-eye" onclick="show_password()"></i>

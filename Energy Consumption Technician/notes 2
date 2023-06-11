@@ -1,64 +1,32 @@
-<!-- Selection of Building Floor -->
-<form class="building-floor-dropdown"> 
-    <span> Building Floor: </span>
-    <input type="hidden" name="user_id">
-        <select name="user_status" onchange="updateStatus(this.form)">
-            <option value="1">Sample Floor 1</option>
-            <option value="0">Sample Floor 2</option>
-        </select>
-    </input>
-</form>
-
-<div class = "table-button">
-    <button id="download-table" class="download-table" onclick="downloadExcel()">
-    <span class="fas fa-download"></span> Download 
-    </button>
-    <button class="refresh-table" onclick="location.reload()">
-    <span class="fas fa-arrows-rotate"></span> Refresh
-    </button>
-    <form class="import-table" method="POST" enctype="multipart/form-data">
-        <label class="import-btn"><span class="fas fa-file-import"></span> Import
-        <input type="file" name="csv_file" style="display: none;" required accept=".csv"></label> 
-    </form>
-</div>
-
-$sql = "SELECT aq.*, aqs.aq_sensor_id, aqs.aq_sensor_room_num, aqs.aq_sensor_name
-FROM aq_gas_level aq
-JOIN aq_sensor aqs ON aq.gas_sensor = aqs.aq_sensor_id
-ORDER BY aqs.aq_sensor_id
-LIMIT $offset, $rows_per_page";
-$result_table = mysqli_query($con, $sql);
-
-while ($row = mysqli_fetch_assoc($result_table)){
-        echo "<tr>";
-        echo "<td>" . $row['aq_sensor_room_num'] . "</td>";
-        echo "<td>" . $row['aq_sensor_id'] . "</td>";
-        echo "<td>" . $row['aq_sensor_name'] . "</td>";
-        echo "<td>" . $row['gas_date'] . "</td>";
-        echo "<td>" . $row['gas_time'] . "</td>";
-        echo "<td>" . $row['gas_level_data']  . ' ppm' . "</td>";
-        echo "</tr>";
-}   
-
-<table id = 'gas-level-parameters-table' class = 'gas-level-table'>
-    <thead>
-        <tr>
-            <th>Room Number</th>
-            <th>Sensor ID</th>
-            <th>Sensor Name</th>
-            <th>Date</th>
-            <th>Time</th>              
-            <th>Gas Level</th>
-        </tr>
-    </thead>
-    <tbody id = 'table-body'>
-        <?php include 'air_technician_gas_table.php'?>
-    </tbody> 
-</table>
-
-
-// Disable foreign key checks
-mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 0");
-
-// Enable foreign key checks
-mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 1");
+if (isset($_POST['arduino_label'])) {
+        $selectedFloor = $_POST['arduino_label'];
+        
+        $roomQuery = "SELECT room_num FROM room_number WHERE bldg_floor = ?";
+        $stmt = mysqli_prepare($con, $roomQuery);
+        mysqli_stmt_bind_param($stmt, 's', $selectedFloor);
+        mysqli_stmt_execute($stmt);
+        $roomResult = mysqli_stmt_get_result($stmt);
+        
+        echo '<label for="room_number">Room:</label>';
+        echo '<div class="checkbox-dropdown">';
+        echo '<button class="button-select-room" type="button" id="room-number-dropdown" onclick="toggleDropdown()">';
+        echo '-Select Room-' ;
+        echo '</button>';
+        echo '<div class="dropdown-menu" id="room-number-menu">';
+        echo '<div class="dropdown-item">';
+        echo '<input type="checkbox" id="select-all" class="select-all" onclick="selectAll(this)" value="select-all">';
+        echo '<label for="select-all">Select All</label>';
+        echo '</div>';
+        
+        while ($row = mysqli_fetch_assoc($roomResult)) {
+            echo '<div class="dropdown-item">';
+            echo '<input type="checkbox" id="' . $row['room_num'] . '" name="room_number[]" value="' . $row['room_num'] . '">';
+            echo '<label for="' . $row['room_num'] . '">' . $row['room_num'] . '</label>';
+            echo '</div>';
+        }
+        echo '<button button id="submit-room_num" type="submit" name="submit" class="submit-button">Submit</button>';
+        echo '</div>';
+        echo '</div>';
+    } else {
+        echo 'No arduino selected.';
+    }

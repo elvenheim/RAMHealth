@@ -1,0 +1,21 @@
+.pm-ten-chart-group{
+    margin-bottom: 50px;
+}
+
+.pm-two-five-chart-group{
+    margin-bottom: 50px;
+}
+
+.chart-title{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.chart-button{
+    margin-left: 25px;
+    text-align: left;
+}

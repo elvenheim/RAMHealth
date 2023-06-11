@@ -1,17 +1,27 @@
-<?php
+<?php   
     require_once('energy_technician_connect.php');
 
     $rows_per_page = 10;
-
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM ec_acu";
-    $count_result = mysqli_query($con, $count_query);
-    $count_row = mysqli_fetch_assoc($count_result);
-    $total_rows = $count_row['count'];
-
+    $sql = "SELECT acu.*, eas.arduino_bldg_floor, eas.arduino_room_num, bf.bldg_floor_name
+            FROM ec_param_acu_data acu
+            JOIN ec_arduino_sensors eas ON acu.ec_sensor_acu_id = eas.ec_arduino_sensors_id
+            LEFT JOIN room_number rn ON eas.arduino_room_num = rn.room_num
+            LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor
+            INNER JOIN (SELECT ec_sensor_acu_id, MAX(CONCAT(ec_acu_date, ' ', ec_acu_time)) AS max_datetime
+                    FROM ec_param_acu_data
+                    GROUP BY ec_sensor_acu_id) AS latest 
+                    ON acu.ec_sensor_acu_id = latest.ec_sensor_acu_id 
+            AND CONCAT(acu.ec_acu_date, ' ', acu.ec_acu_time) = latest.max_datetime
+            ORDER BY acu.ec_sensor_acu_id ASC
+            LIMIT $offset, $rows_per_page";
+    $result_table = mysqli_query($con, $sql);
+    
+    $total_rows_result = mysqli_query($con, "SELECT FOUND_ROWS()");
+    $total_rows_row = mysqli_fetch_row($total_rows_result);
+    $total_rows = $total_rows_row[0];
     $total_pages = ceil($total_rows / $rows_per_page);
     
     echo "<div class='pagination'>";

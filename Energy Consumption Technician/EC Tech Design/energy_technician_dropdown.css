@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+.filter-table{
+    z-index: 4000;
+    position: absolute;
+    top: -38px;
+    left: 240px;
+    height: 70px;
+    width: 100px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.dropdown-form-group{
+    height: 50px;
+    width: 475px;
+    margin-bottom: -5px;
+    display: inline-flex;
+}
+.dropdown-form-group-two{
+    height: 50px;
+    width: 475px;
+    text-align: left;
+}
+
+/* dropdown form one */
+.dropdown-form{
+    margin-top: 10px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.dropdown-form select{
+    width: 150px;
+    margin-left: 5px;
+    margin-top: 1px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* dropdown form two */
+.dropdown-form-two{
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.dropdown-form-two .panel_label{
+    margin-left: 5px;
+}
+
+.dropdown-form-two select{
+    width: 150px;
+    margin-top: 1px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* dropdown form three */
+.dropdown-form-three{
+    margin-top: 10px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.dropdown-form-three select{
+    width: 150px;
+    margin-left: 5px;
+    margin-top: 1px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* idk what are these na */
+.dropdown-sensor{
+    display: inline-flex;
+}
+
+.dropdown-sensor label{
+    margin-left: 7px;
+    display: inline-flex;
+}
+
+.button-select-sensor{
+    margin-top: 2px;
+    margin-left: 5.2px;
+    height: 28px;
+    width: 150px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    margin-top: -1px;
+    margin-left: 5px;
+    overflow-y: auto;
+    background-color: #f9f9fb;
+    border-radius: 3px;
+    border: 1px solid #8f8f9d;
+    width: 212px;
+    height: fit-content;
+    opacity: 0;
+    pointer-events: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+}
+
+.show{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.dropdown-item{
+    margin-top: 5px;
+    display: flex;
+}
+
+.dropdown-item:hover{
+    background-color: #e0e0e6;
+}
+
+.submit-button{
+    margin-top: 5px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+/* Table Buttons */
+.table-button{
+    position: relative;
+    display: flex;
+    top: 100px;
+    width: 1690px;
+    white-space: nowrap;
+} 
+
+.back-button{
+    position: relative;
+    left: 110px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
+.refresh-table{
+    position: relative;
+    left: 1360px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.refresh-table:hover{
+    color: #E7AE41;
+}
+
+.import-btn{
+    position: relative;
+    top: 1px;
+    left: 1390px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.import-table:hover{
+    color: #E7AE41;
+}
+
+.download-table{
+    position: relative;
+    left: 1430px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.download-table:hover{
+    color: #E7AE41;
+}

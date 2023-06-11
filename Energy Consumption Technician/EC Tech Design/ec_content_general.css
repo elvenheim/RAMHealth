@@ -1,0 +1,73 @@
+/* interface navigation menu */
+.card-header-indicator{
+    z-index: 1999;
+    position: absolute;
+    top: -2.5px;
+    left: 71px;
+    height: 5px;
+    width: 220px;
+    opacity: 1;
+    background-color: #E7AE41;
+    border-radius: 10px;
+}
+
+/* tables */
+.general-param-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.acu-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.lights-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.others-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.outlet-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}
+
+.utilities-table{
+    overflow: hidden;
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+    width: 1690px;
+    margin-top: 125px;
+    text-align: left;
+}

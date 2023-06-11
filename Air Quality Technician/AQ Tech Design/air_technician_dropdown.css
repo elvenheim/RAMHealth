@@ -3,7 +3,7 @@
     z-index: 4000;
     position: absolute;
     top: 1px;
-    left: 400px;
+    left: 240px;
     display: flex;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
@@ -23,6 +23,7 @@
 }
 
 .dropdown-form select{
+    margin-top: 1px;
     cursor: pointer;
 }
 
@@ -36,6 +37,7 @@
 
 .button-select-room{
     position: absolute;
+    top: 1px;
     right: 5px;
     height: 22.4px;
     cursor: pointer;
@@ -52,10 +54,11 @@
     border-radius: 3px;
     border: 1px solid #8f8f9d;
     width: 150px;
-    height: 300px;
+    height: fit-content;
     opacity: 0;
     pointer-events: none;
     font-size: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
 }
 
 .show{
@@ -64,5 +67,85 @@
 }
 
 .dropdown-item{
+    margin-top: 5px;
     display: flex;
+}
+
+.submit-button{
+    margin-top: 5px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+/* Table Buttons */
+.table-button{
+    position: relative;
+    display: flex;
+    top: 100px;
+    width: 1690px;
+    white-space: nowrap;
+} 
+
+.back-button{
+    position: relative;
+    left: 110px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
+.refresh-table{
+    position: relative;
+    left: 1360px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.refresh-table:hover{
+    color: #E7AE41;
+}
+
+.import-btn{
+    position: relative;
+    left: 1390px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.import-table:hover{
+    color: #E7AE41;
+}
+
+.download-table{
+    position: relative;
+    left: 1430px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.download-table:hover{
+    color: #E7AE41;
 }

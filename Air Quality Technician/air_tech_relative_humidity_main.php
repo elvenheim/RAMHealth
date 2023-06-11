@@ -57,21 +57,18 @@
                     <div class = "table-button">
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
-                        <button id="download-table" class="download-table" onclick="downloadHumidityExcelTable()">
-                            <span class="fas fa-download"></span> Download </button>
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
-                        <form id="filter-table-form" method="POST">
-                            <div class="filter-table">
-                                <script> submitForm("air_technician_relative_humidity.php");</script>
-                                <div class="dropdown-form">
-                                    <?php include 'input_floor.php'?>
+                            <form id="filter-table-form" method="POST">
+                                <div class="filter-table">
+                                    <div class="dropdown-form">
+                                        <?php include 'input_floor.php'?>
+                                    </div>
+                                    <div id="dropdown-room" class="dropdown-room">
+                                        <?php include 'input_room_checkbox.php'?>
+                                    </div>
                                 </div>
-                                <div id="dropdown-room" class="dropdown-room">
-                                    <?php include 'input_room_checkbox.php'?>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         <form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_aq.php">
                             <label class="import-btn">
                                 <span class="fas fa-file-import"></span> Import
@@ -79,6 +76,8 @@
                                 <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
                             </label>
                         </form>
+                        <button id="download-table" class="download-table" onclick="downloadHumidityExcelTable()">
+                            <span class="fas fa-download"></span> Export </button>
                     </div>
                     <table id = 'relative-humidity-parameters-table' class = 'relative-humidity-table'>
                         <thead>

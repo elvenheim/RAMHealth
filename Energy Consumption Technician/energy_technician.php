@@ -52,15 +52,19 @@
 			<div class="card">
 				<div class="table-button-group">
 					<div class="parameter-table-button">
-						<button id="gas-level-button" class="dropbtn"
-							onclick="location.href='../Energy Consumption Technician/ec_tech_general_param_main.php';">Energy Consumption Table</button>
+					<div class="parameter-table-button">
+						<button id="gas-level-button" class="dropbtn disabled" disabled 
+							onclick="location.href='../Energy Consumption Technician/ec_tech_general_param_main.php';">
+							Energy Consumption Table (Under Maintenance)
+						</button>
+					</div>
 					</div>
 					<div class="parameter-table-button">
 						<button id="gas-level-button" class="dropbtn"
 							onclick="location.href='../Energy Consumption Technician/ec_tech_acu_main.php';">Air Conditioning Units</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="indoor-temperature-button" class="dropbtn"
+						<button id="indoor-temperature-button" class="dropbtn disabled" disabled
 							onclick="location.href='../Energy Consumption Technician/ec_tech_outlets_main.php';">Convenience Outlets</button>
 					</div>
 					<div class="parameter-table-button">
@@ -68,11 +72,11 @@
 							onclick="location.href='../Energy Consumption Technician/ec_tech_utilities_main.php';">Equipment or Utilities</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="air-particulate-button" class="dropbtn"
+						<button id="air-particulate-button" class="dropbtn disabled" disabled
 							onclick="location.href='../Energy Consumption Technician/ec_tech_lights_main.php';">Lights</button>
 					</div>
 					<div class="parameter-table-button">
-						<button id="relative-humidity-button" class="dropbtn"
+						<button id="relative-humidity-button" class="dropbtn disabled" disabled
 							onclick="location.href='../Energy Consumption Technician/ec_tech_others_main.php';">Others</button>
 					</div>
 				</div>

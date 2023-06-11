@@ -30,11 +30,11 @@
 
     if (mysqli_stmt_affected_rows($stmt) > 0) {
         echo '<script type="text/javascript">alert("Sensor added successfully");
-            window.location.href="energy_technician.php"</script>';
+            window.history.back();</script>';
         exit;
     } else {
         echo '<script type="text/javascript">alert("Error adding sensor...");
-            window.location.href="energy_technician.php"</script>';
+            window.history.back();</script>';
         exit;
-    }
+    }    
 ?>

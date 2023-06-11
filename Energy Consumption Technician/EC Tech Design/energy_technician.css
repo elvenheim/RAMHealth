@@ -277,7 +277,6 @@ tr.disabled td:not(.delete-button-row){
 }
 
 /* table pagination */
-
 .pagination {
     z-index: 540;
     position: relative;

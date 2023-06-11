@@ -14,18 +14,19 @@
 
     $total_pages = ceil($total_rows / $rows_per_page);
 
-    $sql = "SELECT ect.*, bf.building_floor, acu.acu_current, ecl.lighting_current, 
-                    ecot.others_current, ecou.outlet_current, util.utilities_current
-            FROM energy_consumption_table ect
-            LEFT JOIN ec_sensor ecs ON ect.ec_bldg_floor = ecs.ec_sensor_bldg_floor
-            LEFT JOIN building_floor bf ON ecs.ec_sensor_bldg_floor = bf.building_floor
-            LEFT JOIN ec_acu acu ON ect.ec_acu_data = acu.acu_sensor
-            LEFT JOIN ec_lighting ecl ON ect.ec_lighting_data = ecl.lighting_sensor
-            LEFT JOIN ec_others ecot ON ect.ec_others_data = ecot.others_sensor
-            LEFT JOIN ec_outlet ecou ON ect.ec_outlet_data = ecou.outlet_sensor
-            LEFT JOIN ec_utilities util ON ect.ec_utilities_data = util.utilities_sensor
-            GROUP BY energy_consume_id
-            ORDER BY ec_bldg_floor
+    $sql = "SELECT acu.*, eas.arduino_bldg_floor, eas.arduino_room_num, bf.bldg_floor_name
+            
+            FROM ec_param_others_data acu
+            JOIN ec_arduino_sensors eas ON acu.ec_sensor_others_id = eas.ec_arduino_sensors_id
+            LEFT JOIN room_number rn ON eas.arduino_room_num = rn.room_num
+            LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor
+            INNER JOIN (SELECT ec_sensor_others_id, MAX(CONCAT(ec_others_date, ' ', ec_others_time)) AS max_datetime
+                    FROM ec_param_others_data
+                    GROUP BY ec_sensor_others_id) AS latest 
+                    ON acu.ec_sensor_others_id = latest.ec_sensor_others_id 
+            AND CONCAT(acu.ec_others_date, ' ', acu.ec_others_time) = latest.max_datetime
+            WHERE eas.ec_arduino_sensors_id IN ('$acuSensors')
+            ORDER BY acu.ec_sensor_others_id ASC
             LIMIT $offset, $rows_per_page";
 
     $result_table = mysqli_query($con, $sql);

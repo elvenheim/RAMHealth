@@ -1,0 +1,87 @@
+/* Table Buttons */
+.table-button{
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    top: 110px;
+    width: 1900px;
+    white-space: nowrap;
+    border-bottom: 1px solid #000;
+} 
+
+.filter-table{
+    position: relative;
+    left: 50px;
+    bottom: 13px;
+    display: inline-flex;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+}
+.dropdown-form{
+    margin-right: 40px;
+    display: inline-flex;
+}
+
+.dropdown-form .bldg_floor{
+    height: 22.4px;
+}
+
+.dropdown-form label{
+    margin-right: 5px;
+}
+
+.dropdown-form select{
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.dropdown-room{
+    position: relative;
+    display: inline-flex;
+}
+
+.dropdown{
+    margin-left: 5px;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+/* other table buttons */
+.other-table-button{
+    position: absolute;
+    bottom: 13px;
+    left: 1645px;
+    display: inline-flex;
+}
+
+.refresh-table{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-right: 30px;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.refresh-table:hover{
+    color: #E7AE41;
+}
+
+.download-table{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.download-table:hover{
+    color: #E7AE41;
+}

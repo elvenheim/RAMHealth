@@ -57,8 +57,6 @@
                     <div class = "table-button">
                         <button id="back-button" class="back-button" onclick="location.href='../Air Quality Technician/air_technician.php';">
                             <span class="fas fa-arrow-left"></span> Go Back </button>
-                        <button id="download-table" class="download-table" onclick="downloadAPMExcelTable()">
-                            <span class="fas fa-download"></span> Download </button>
                         <!-- Building Floor Dropdown -->
                         <form id="filter-table-form" method="POST">
                             <div class="filter-table">
@@ -79,6 +77,8 @@
                                 <input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
                             </label>
                         </form>
+                        <button id="download-table" class="download-table" onclick="downloadAPMExcelTable()">
+                            <span class="fas fa-download"></span> Export </button>
                     </div>
                     <table id = 'air-particulate-parameters-table' class = 'air-particulate-table'>
                         <thead>

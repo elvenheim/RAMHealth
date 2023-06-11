@@ -63,7 +63,7 @@
         $result_table = mysqli_query($con, $sql);
         
         if ($total_rows == 0) {
-            echo '<span class="table-no-record"> No users are registered in the database...</span>';
+            echo '<span class="table-no-record"> No data found...</span>';
         } else{
             while ($row = mysqli_fetch_assoc($result_table)){
                 echo "<tr>";

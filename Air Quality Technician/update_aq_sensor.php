@@ -8,6 +8,8 @@
         $new_aq_sensor_name = $_POST['new_aq_sensor_name'];
         $new_sensor_type = $_POST['sensor_type'];
         $new_room_number = $_POST['room_number'];
+        $sensor_added_at = $_POST['sensor_added_at'];
+        $sensor_status = $_POST['sensor_status'];
         
         // Disable foreign key checks
         mysqli_query($con, "SET FOREIGN_KEY_CHECKS = 0");
@@ -18,8 +20,8 @@
         
         if ($deleteResult) {
             // Insert the new row with updated data
-            $insertQuery = "INSERT INTO aq_sensor (aq_sensor_id, aq_sensor_name, aq_sensor_type, aq_sensor_room_num) 
-                            VALUES ('$new_aq_sensor_id', '$new_aq_sensor_name', '$new_sensor_type', '$new_room_number')";
+            $insertQuery = "INSERT INTO aq_sensor (aq_sensor_id, aq_sensor_name, aq_sensor_type, aq_sensor_room_num, aq_sensor_added_at, aq_sensor_status) 
+                            VALUES ('$new_aq_sensor_id', '$new_aq_sensor_name', '$new_sensor_type', '$new_room_number', '$sensor_added_at', '$sensor_status')";
             $insertResult = mysqli_query($con, $insertQuery);
             
             if ($insertResult) {

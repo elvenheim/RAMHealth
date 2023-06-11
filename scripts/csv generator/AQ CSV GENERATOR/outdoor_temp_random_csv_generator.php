@@ -13,7 +13,7 @@
     for ($i = 1; $i <= 200; $i++) {
         $sensorNumber = ($i % ($endSensor - $startSensor + 1)) + $startSensor;
         $sensor = "AQ" . sprintf('%03d', $sensorNumber) . "OUTTEMP01"; //sensor name generator
-        $data = mt_rand(26, 40); //data input randomizer, case for me is that 26 to 40 are the values
+        $data = mt_rand(24, 40); //data input randomizer, case for me is that 26 to 40 are the values
         $date = date('Y-m-d', mt_rand($startDate, $endDate)); //date randomizer
         $time = date('H:i:s', mt_rand(strtotime('07:00:00'), strtotime('19:00:00'))); //time randomizer
     

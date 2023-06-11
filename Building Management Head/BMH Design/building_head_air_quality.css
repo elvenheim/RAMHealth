@@ -1,68 +1,100 @@
-/* interface navigation menu */
-.card-header-indicator{
-    z-index: 1999;
-    position: absolute;
-    top: 29px;
-    left: 66px;
-    height: 5px;
-    width: 150px;
-    opacity: 1;
-    background-color: #E7AE41;
-    border-radius: 10px;
-}
-
-.content-one{
-    opacity: 1;
-    pointer-events: visible;
-}
-
+/* aq-main-contents */
 .aq-main-contents{
     display: flex;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: 20px;
     height: 100%;
 }
 
+.back-button{
+    position: absolute;
+    left: 30px;
+    top: 65px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
 /* left-gauge-box design */
 .left-gauge-box{
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     margin-right: 25px;
-    height: 85%;
+    height: 714px;
     width: 450px;
-    border: solid 2px #000;
+    border: solid 1px #000;
 }
 
 .left-gauge-card{
-    background-color: #E7AE41;
-    height: 1000px;
+    z-index: 1;
+    background-color: #fff;
+    height: fit-content;
     width: auto;
 }
 
 /* chart-box design */
 .chart-box{
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     margin-right: 25px;
-    height: 85%;
+    height: 714px;
     width: 900px;
-    border: solid 2px #000;
+    border: solid 1px #000;
+    align-items: center;
 }
 
 .chart-card{
-    background-color: #E7AE41;
-    height: 1000px;
-    width: auto;
+    background-color: transparent;
+    height: fit-content;
+    width: 95%;
 }
 
 /* right-gauge-box design */
-.right-gauge-box{
-    overflow: auto;
-    height: 85%;
-    width: 450px;
-    border: solid 2px #000;
+.right-gauge-box-group{
+    display: flex;
+    flex-direction: column;
 }
 
+.right-gauge-box-top{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+    width: 450px;
+    margin-bottom: 10px;
+    border: solid 1px #000;
+}
+
+.right-gauge-box-bottom{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+    width: 450px;
+    margin-bottom: 10px;
+    border: solid 1px #000;
+}
+
+.right-gauge-box-summary{
+    overflow: hidden;
+    height: fit-content;
+    width: 450px;
+    border: solid 1px #000;
+}
+
+
 .right-gauge-card{
-    background-color: #E7AE41;
-    height: 1000px;
+    background-color: #fff;
+    height: 230px;
     width: auto;
 }

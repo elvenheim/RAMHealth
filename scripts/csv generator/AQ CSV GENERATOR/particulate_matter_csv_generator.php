@@ -1,9 +1,9 @@
 <?php 
     // Generate randomized data for indoor_temp table
-    $csvData = "pm_id,pm_sensor,pm_ten,pm_two_five,pm_zero_one,pm_date,pm_time" . PHP_EOL; //you may change your table headers
+    $csvData = "pm_sensor,pm_ten,pm_two_five,pm_zero_one,pm_date,pm_time" . PHP_EOL; //you may change your table headers
 
-    $startDate = strtotime('2023-05-01');
-    $endDate = strtotime('2023-05-31');
+    $startDate = strtotime('2023-04-01');
+    $endDate = strtotime('2023-04-30');
 
     $counter = 1;
 
@@ -13,13 +13,13 @@
     for ($i = 1; $i <= 200; $i++) {
         $sensorNumber = ($i % ($endSensor - $startSensor + 1)) + $startSensor;
         $sensor = "AQ" . sprintf('%03d', $sensorNumber) . "PM01"; //sensor name generator
-        $data = mt_rand(300, 3000); //data input randomizer, case for me is that 26 to 40 are the values
-        $data2 = mt_rand(300, 3000); //data input randomizer, case for me is that 26 to 40 are the values
-        $data3 = mt_rand(300, 3000); //data input randomizer, case for me is that 26 to 40 are the values
+        $data = mt_rand(5, 43); //data input randomizer, case for me is that 26 to 40 are the values
+        $data2 = mt_rand(5, 65); //data input randomizer, case for me is that 26 to 40 are the values
+        $data3 = mt_rand(5, 53); //data input randomizer, case for me is that 26 to 40 are the values
         $date = date('Y-m-d', mt_rand($startDate, $endDate)); //date randomizer
         $time = date('H:i:s', mt_rand(strtotime('07:00:00'), strtotime('19:00:00'))); //time randomizer
     
-        $csvData .= "$i,$sensor,$data,$data2,$data3,$date,$time" . PHP_EOL; //row data generator
+        $csvData .= "$sensor,$data,$data2,$data3,$date,$time" . PHP_EOL; //row data generator
     }
     
 

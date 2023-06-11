@@ -1,6 +1,10 @@
 <?php 
     require_once('air_technician_connect.php');
 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start(); // Start the session if it's not already started
+    }
+
     if (isset($_POST['selected_floor'])) {
         $selectedFloor = $_POST['selected_floor'];
         
@@ -22,12 +26,17 @@
         echo '</div>';
         
         while ($row = mysqli_fetch_assoc($roomResult)) {
+            $isChecked = isset($_POST['room_number']) && in_array($row['room_num'], $_POST['room_number']) ? 'checked' : '';
             echo '<div class="dropdown-item">';
-            echo '<input type="checkbox" id="' . $row['room_num'] . '" name="room_number[]" value="' . $row['room_num'] . '">';
+            echo '<input type="checkbox" id="' . $row['room_num'] . '" name="room_number[]" value="' . $row['room_num'] . '" ' . $isChecked . '>';
             echo '<label for="' . $row['room_num'] . '">' . $row['room_num'] . '</label>';
             echo '</div>';
         }
-        echo '<button button id="submit-room_num" type="submit" name="submit" class="submit-button">Submit</button>';
+
+        // Store the selected room numbers in the session
+        $_SESSION['selected_rooms'] = isset($_POST['room_number']) ? $_POST['room_number'] : [];
+
+        echo '<button button id="submit-room-num" type="submit" name="submit" class="submit-button">Submit</button>';
         echo '</div>';
         echo '</div>';
     } else {

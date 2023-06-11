@@ -1,7 +1,7 @@
 <?php 
     require_once('energy_technician_connect.php');
 
-    $arduinolabelQuery = "SELECT ec_arduino_sensor_label_id FROM ec_arduino_label_sensor";
+    $arduinolabelQuery = "SELECT ec_arduino_sensor_label_id FROM ec_arduino_label_sensor WHERE ec_arduino_type BETWEEN 6 AND 10";
     $arduinolabelResult = mysqli_query($con, $arduinolabelQuery);
     
     echo '<label for="arduino_label">Arduino ID:</label>';

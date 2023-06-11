@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+html{
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+
+.building-head-main {
+    background-color: #C2C7D0;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* CONTENT */
+.card{
+    position: fixed;
+    bottom: 5px;
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 90%;
+    width: 1900px;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.125);
+    align-items: center !important;
+}
+
+.navbar {
+    z-index: 1037;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 5px solid #E7AE41;
+    height: 65px;
+    display: flex;
+    color: #fff;
+    background-color: #343A40;
+    padding-right: 0.5rem;
+    padding-left: 0;
+    justify-content: flex-start;
+}
+
+/* ram health homepage button */
+.ram-health-logo {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    height: fit-content;
+    width: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.ram-health-title {
+    position: relative;
+    top: 10px;
+    right: 910px;
+    color: #E7AE41;
+    font-weight: bolder;
+    white-space: nowrap;
+    font-size: 35px;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.ram-health-title:hover {
+    color: #fff;
+    font-size: 36px;
+}
+
+.log-out {
+    position: absolute;
+    right: 185px;
+    display: none;
+}
+
+.logout-button[type="submit"] {
+    z-index: 3000;
+    position: absolute;
+    padding-top: 0;
+    margin-top: 27px;
+    margin-right: 100px;
+    width: 150px;
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #343A40;
+    color: #343A40;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    line-height: 1;
+    background: #fff;
+    pointer-events: auto;
+    transition: color 1s ease;
+}
+
+.logout-button[type="submit"]:hover{
+    color: #E7AE41;
+}
+
+.log-out-symbol {
+    z-index: 499;
+    position: absolute;
+    top: 13.5px;
+    right: 25px;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-top: 1vh;
+    margin-right: 0vh;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.log-out-symbol:hover{
+    color: #E7AE41;
+}
+
+.role-list-card{
+    position: relative;
+    top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.greet-user{
+    margin-top: 140px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.roles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.role-button{
+    height: 300px;
+    width: 320px;
+    display: flex;
+    border-radius: 5px;
+    border: solid 2px black;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    align-content: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-in, width 0.2s ease-in-out, height 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.role-button:hover{
+    height: 320px;
+    width: 340px;
+    background-color: rgba(0, 0, 0, .05);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+}
+
+.role-button:active{
+    background-color: #E7AE41;
+}
+
+.role-icon{
+    margin-top: 45px;
+    margin-bottom: 10px;
+    height: 150px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-link {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    white-space: normal; word-wrap: break-word;
+}

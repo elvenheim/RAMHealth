@@ -33,9 +33,9 @@
             echo "<td>" . $row['aq_sensor_name'] . "</td>";
             echo "<td>" . $row['pm_date'] . "</td>";
             echo "<td>" . $row['pm_time'] . "</td>";
-            echo "<td>" . $row['pm_ten'] . "</td>";
-            echo "<td>" . $row['pm_two_five'] . "</td>";
-            echo "<td>" . $row['pm_zero_one'] . "</td>";
+            echo "<td>" . $row['pm_ten'] . " &micro;g/m³" . "</td>";
+            echo "<td>" . $row['pm_two_five'] . " &micro;g/m³" .  "</td>";
+            echo "<td>" . $row['pm_zero_one'] . " &micro;g/m³" . "</td>";
             echo "</tr>";
         }
 
