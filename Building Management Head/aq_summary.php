@@ -61,6 +61,7 @@
                 echo "<br>";
             }
         } else {
+            echo "<br>";
             echo "No results found.";
         }
     } else {

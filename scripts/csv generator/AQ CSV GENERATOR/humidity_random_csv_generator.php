@@ -1,23 +1,23 @@
 <?php 
     // Generate randomized data for outdoor_temp table
-    $csvData = "humidity_id,humidity_sensor,humidity_level_data,humidity_date,humidity_time" . PHP_EOL; //you may change your table headers
+    $csvData = "humidity_sensor,humidity_level_data,humidity_date,humidity_time" . PHP_EOL; //you may change your table headers
 
-    $startDate = strtotime('2023-07-01');
-    $endDate = strtotime('2023-07-31');
+    $startDate = strtotime('2023-01-01');
+    $endDate = strtotime('2023-06-13');
 
     $counter = 1;
 
     $startSensor = 801;
     $endSensor = 811;
     
-    for ($i = 501; $i <= 550; $i++) {
+    for ($i = 0; $i <= 1000; $i++) {
         $sensorNumber = ($i % ($endSensor - $startSensor + 1)) + $startSensor;
         $sensor = "AQ" . sprintf('%03d', $sensorNumber) . "RELHUM01"; //sensor name generator
         $data = mt_rand(50, 100); //data input randomizer, case for me is that 26 to 40 are the values
         $date = date('Y-m-d', mt_rand($startDate, $endDate)); //date randomizer
         $time = date('H:i:s', mt_rand(strtotime('07:00:00'), strtotime('19:00:00'))); //time randomizer
     
-        $csvData .= "$i,$sensor,$data,$date,$time" . PHP_EOL; //row data generator
+        $csvData .= "$sensor,$data,$date,$time" . PHP_EOL; //row data generator
     }
     
 

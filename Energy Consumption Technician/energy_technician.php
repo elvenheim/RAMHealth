@@ -55,7 +55,7 @@
 					<div class="parameter-table-button">
 						<button id="gas-level-button" class="dropbtn disabled" disabled 
 							onclick="location.href='../Energy Consumption Technician/ec_tech_general_param_main.php';">
-							Energy Consumption Table (Under Maintenance)
+							Energy Consumption Table
 						</button>
 					</div>
 					</div>

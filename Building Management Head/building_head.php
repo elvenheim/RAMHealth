@@ -14,6 +14,8 @@
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Building Management Head/building_head.js"></script>
+    <script src="../Building Management Head/building_head_export.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </head>
     <body class="building-head-main">
         <nav class="navbar">
@@ -51,7 +53,7 @@
                     <div class="other-table-button">
                         <button class="refresh-table" onclick="location.reload()">
                             <span class="fas fa-arrows-rotate"></span> Refresh</button>
-                        <button id="download-table" class="download-table" onclick="downloadGeneralExcelTable()">
+                        <button id="download-table" class="download-table" onclick="downloadAQExcelTables()">
                             <span class="fas fa-download"></span> Export </button>
                     </div>
                 </div>
