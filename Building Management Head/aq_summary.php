@@ -50,7 +50,7 @@
     
         if (mysqli_num_rows($result_table) > 0) {
             while ($row = mysqli_fetch_assoc($result_table)) {
-                echo "<span class='summary-title'>Latest Summary of Air Quality Today</span><br>";
+                echo "<span class='summary-title'>Latest Summary in ". $selectedRoom . "</span><br>";
                 echo "PM10: " . ($row['pm_ten'] !== null && $row['pm_ten'] !== '' ? $row['pm_ten'] . " µg/m³" : "N/A") . "<br>";
                 echo "PM2.5: " . ($row['pm_two_five'] !== null && $row['pm_two_five'] !== '' ? $row['pm_two_five'] . " µg/m³" : "N/A") . "<br>";
                 echo "PM0.1: " . ($row['pm_zero_one'] !== null && $row['pm_zero_one'] !== '' ? $row['pm_zero_one'] . " µg/m³" : "N/A") . "<br>";

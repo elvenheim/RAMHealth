@@ -40,6 +40,10 @@ function submitForm() {
   document.querySelector('.import-table').submit();
 }
 
+function cancelEdit() {
+  window.location.href = 'energy_technician_sensor_main.php'; // Replace with the desired page URL to redirect the user
+}
+
 function toggleDropdown() {
   var menu = document.getElementById('sensor-menu');
   menu.classList.toggle('show');
@@ -101,12 +105,4 @@ function updateSensorDropdown(selectedArduino) {
       }
   };
   xhr.send('selected_arduino=' + encodeURIComponent(selectedArduino));
-}
-
-function submitForm() {
-  document.querySelector('.import-table').submit();
-}
-
-function cancelEdit() {
-  window.location.href = 'energy_technician_sensor_main.php'; // Replace with the desired page URL to redirect the user
 }

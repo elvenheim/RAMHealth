@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>RAM Health</title>
 	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/energy_technician.css">
-	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/Parameters/ec_content_acu.css">
+	<link rel="stylesheet" href="../Energy Consumption Technician/EC Tech Design/ec_content_general.css">
 	<link rel="shortcut icon" href="../favicons/favicon.ico" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <script src="../Air Quality Technician/scripts/air_technician.js"></script>

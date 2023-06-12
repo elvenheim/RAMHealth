@@ -34,7 +34,7 @@
         <div id="user-list-table" class="content-one">
             <div class="card">
                 <div class="greet-user">
-                    <span>Please choose which parameter you want to view.</span>
+                    <span>Please choose which parameter you want to view</span>
                 </div>
                 <div class="role-list-card">
                     <div class="roles">

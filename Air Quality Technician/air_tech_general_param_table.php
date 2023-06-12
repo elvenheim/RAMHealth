@@ -25,36 +25,42 @@
                 LEFT JOIN aq_sensor aqs ON aqt.air_quality_room_num = aqs.aq_sensor_room_num
                 LEFT JOIN room_number rn ON aqs.aq_sensor_room_num = rn.room_num
                 LEFT JOIN building_floor bf ON bf.building_floor = rn.bldg_floor
+                
                 LEFT JOIN (
                     SELECT pm_sensor, MAX(CONCAT(pm_date, ' ', pm_time)) AS max_datetime
                     FROM aq_particulate_matter
                     GROUP BY pm_sensor
                 ) AS latest_pm ON aqt.aq_pm_id = latest_pm.pm_sensor
                 LEFT JOIN aq_particulate_matter pm ON aqt.aq_pm_id = pm.pm_sensor AND CONCAT(pm.pm_date, ' ', pm.pm_time) = latest_pm.max_datetime
+                
                 LEFT JOIN (
                     SELECT gas_sensor, MAX(CONCAT(gas_date, ' ', gas_time)) AS max_datetime
                     FROM aq_gas_level
                     GROUP BY gas_sensor
                 ) AS latest_gas ON aqt.aq_gas_id = latest_gas.gas_sensor
                 LEFT JOIN aq_gas_level gs ON aqt.aq_gas_id = gs.gas_sensor AND CONCAT(gs.gas_date, ' ', gs.gas_time) = latest_gas.max_datetime
+                
                 LEFT JOIN (
                     SELECT indoor_temp_sensor, MAX(CONCAT(indoor_temp_date, ' ', indoor_temp_time)) AS max_datetime
                     FROM aq_indoor_temperature
                     GROUP BY indoor_temp_sensor
                 ) AS latest_indoor_temp ON aqt.aq_indoor_temp_id = latest_indoor_temp.indoor_temp_sensor
                 LEFT JOIN aq_indoor_temperature it ON aqt.aq_indoor_temp_id = it.indoor_temp_sensor AND CONCAT(it.indoor_temp_date, ' ', it.indoor_temp_time) = latest_indoor_temp.max_datetime
+                
                 LEFT JOIN (
                     SELECT outdoor_temp_sensor, MAX(CONCAT(outdoor_temp_date, ' ', outdoor_temp_time)) AS max_datetime
                     FROM aq_outdoor_temperature
                     GROUP BY outdoor_temp_sensor
                 ) AS latest_outdoor_temp ON aqt.aq_outdoor_temp_id = latest_outdoor_temp.outdoor_temp_sensor
                 LEFT JOIN aq_outdoor_temperature ot ON aqt.aq_outdoor_temp_id = ot.outdoor_temp_sensor AND CONCAT(ot.outdoor_temp_date, ' ', ot.outdoor_temp_time) = latest_outdoor_temp.max_datetime
+                
                 LEFT JOIN (
                     SELECT humidity_sensor, MAX(CONCAT(humidity_date, ' ', humidity_time)) AS max_datetime
                     FROM aq_relative_humidity
                     GROUP BY humidity_sensor
                 ) AS latest_humidity ON aqt.aq_humidity_id = latest_humidity.humidity_sensor
                 LEFT JOIN aq_relative_humidity rh ON aqt.aq_humidity_id = rh.humidity_sensor AND CONCAT(rh.humidity_date, ' ', rh.humidity_time) = latest_humidity.max_datetime
+                
                 WHERE air_quality_room_num IN ('$roomNumbers')
                 GROUP BY air_quality_table_id
                 ORDER BY air_quality_room_num
