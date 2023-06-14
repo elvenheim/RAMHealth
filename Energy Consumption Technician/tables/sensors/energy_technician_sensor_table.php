@@ -96,7 +96,7 @@ function editRow(ECsensorId) {
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM ec_arduino_sensors";
+    $count_query = "SELECT COUNT(*) as count FROM ec_arduino_sensor_linking";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
@@ -115,7 +115,9 @@ function editRow(ECsensorId) {
         LEFT JOIN room_number rn ON eas.arduino_bldg_floor = rn.bldg_floor AND eas.arduino_room_num = rn.room_num
         LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor
         LEFT JOIN sensor_type st ON eas.ec_arduino_sensors_type = st.sensor_type_id
-        ORDER BY bf.building_floor ASC, eas.arduino_sensors_status ASC, SUBSTRING_INDEX(eas.ec_arduino_sensors_id, '-', -1) + 0 ASC
+        GROUP BY eas.ec_arduino_sensors_id
+        ORDER BY eas.arduino_bldg_floor ASC, SUBSTRING_INDEX(eas.ec_arduino_sensors_id, '-', -1) + 0 ASC, 
+        eas.arduino_sensors_status ASC
         LIMIT $offset, $rows_per_page";
 
     $result_table = mysqli_query($con, $sql);

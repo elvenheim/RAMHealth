@@ -68,7 +68,8 @@
 						<?php include 'input_panel_label.php'?>
 						<?php include 'input_floor.php'?>
 						<?php include 'input_room.php'?>
-						<?php include 'input_arduino_label.php'?>
+						<label for="arduino_id">Arduino ID:</label>
+						<input type="text" id="arduino_id" name="arduino_id" required><br>
 						<label for="sensor_id">Sensor ID:</label>
 						<input type="text" id="sensor_id" name="sensor_id" required><br>
 						<?php include 'input_sensor.php'?>

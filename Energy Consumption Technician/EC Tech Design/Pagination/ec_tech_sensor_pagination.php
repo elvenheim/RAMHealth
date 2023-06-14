@@ -7,7 +7,7 @@
 
     $offset = ($page - 1) * $rows_per_page;
 
-    $count_query = "SELECT COUNT(*) as count FROM ec_arduino_sensors";
+    $count_query = "SELECT COUNT(*) as count FROM ec_arduino_sensor_linking";
     $count_result = mysqli_query($con, $count_query);
     $count_row = mysqli_fetch_assoc($count_result);
     $total_rows = $count_row['count'];
