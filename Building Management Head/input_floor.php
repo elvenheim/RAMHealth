@@ -20,3 +20,7 @@
         ?>
     </select><br>
 </form>
+
+<?php
+        $_SESSION['selected_floor'] = isset($_POST['building_floor']) ? $_POST['building_floor'] : '';
+?>

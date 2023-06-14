@@ -62,11 +62,11 @@
                 pointer: true,
                 pointerOptions: {
                     toplength: -15,
-                    bottomlength: 50,
+                    bottomlength: 10,
                     bottomwidth: 5,
                     color: 'lightblue',
                     stroke: '#ffffff',
-                    stroke_width: 1
+                    stroke_width: 0
                 },
             };
 

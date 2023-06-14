@@ -114,45 +114,37 @@
             }
 
             chart = new Chart(ctx, {
-                type: 'line',
+                type: 'bar', // Change the chart type to 'bar'
                 data: {
                     labels: data.dates,
                     datasets: [{
                         label: 'PM Ten',
                         data: data.pmTenValues,
                         borderColor: 'black',
-                        borderWidth: 2,
-                        backgroundColor: '#E7AE41',
-                        fill: 'origin'
+                        backgroundColor: '#E7AE41', // Change the background color
+                        borderWidth: 1, // Remove the borderWidth property
                     }]
                 },
                 options: {
                     scales: {
-                        x: {ticks: {
-                            font: {
-                            size: 15, // Specify the desired label font size
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 15, // Specify the desired label font size
                                 },
                             },
                             grid: {
-                                color: 'rgba(0, 0, 0, 1)',
-                                borderDash: [5, 5],
-                                borderWidth: 1,
-                                drawBorder: true,
-                                drawOnChartArea: true,
-                                drawTicks: true,
-                                tickColor: 'rgba(0, 0, 0, 1)',
-                                tickLength: 20,
-                                lineWidth: 1,
+                                display: false, // Remove the grid configuration for x-axis
                             },
-                            display: true,
                             title: {
                                 display: false,
                                 text: selectedRange === 'tenpast24hours' ? 'Time' : 'Date'
                             }
                         },
-                        y: {ticks: {
-                            font: {
-                            size: 15, // Specify the desired label font size
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 15, // Specify the desired label font size
                                 },
                             },
                             grid: {
@@ -178,7 +170,6 @@
                     plugins: {
                         legend: {
                             display: false,
-                            position: 'top'
                         }
                     }
                 }

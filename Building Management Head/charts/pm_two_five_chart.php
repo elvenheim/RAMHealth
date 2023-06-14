@@ -114,16 +114,15 @@
             }
 
             pmTwoFiveChart = new Chart(pmTwoFiveCtx, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: data.dates,
                     datasets: [{
                         label: 'PM Two Five',
                         data: data.pmTwoFiveValues,
                         borderColor: 'black',
-                        borderWidth: 2,
+                        borderWidth: 1,
                         backgroundColor: '#E7AE41',
-                        fill: 'origin'
                     }]
                 },
                 options: {
@@ -135,6 +134,7 @@
                                 },
                             },
                             grid: {
+                                display: false,
                                 color: 'rgba(0, 0, 0, 1)',
                                 borderDash: [5, 5],
                                 borderWidth: 1,
@@ -142,7 +142,7 @@
                                 drawOnChartArea: true,
                                 drawTicks: true,
                                 tickColor: 'rgba(0, 0, 0, 1)',
-                                tickLength: 20,
+                                tickLength: 10,
                                 lineWidth: 1,
                             },
                         },
@@ -165,7 +165,6 @@
                             beginAtZero: true,
                             suggestedMin: 0,
                             suggestedMax: 45,
-                            display: true,
                             title: {
                                 display: false,
                                 text: 'PM 2.5'
