@@ -115,12 +115,12 @@ html{
     white-space: normal;
     bottom: 5px;
     box-shadow: 0 0 1px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    height: 90%;
-    width: 1900px;
+    height: 90vh;
+    width: 99vw;
     background-color: #fff;
     border: 0 solid rgba(0,0,0,.125);
     align-items: center !important;

@@ -114,15 +114,17 @@
             }
 
             pmTwoFiveChart = new Chart(pmTwoFiveCtx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: data.dates,
                     datasets: [{
                         label: 'PM Two Five',
                         data: data.pmTwoFiveValues,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        backgroundColor: '#E7AE41',
+                        borderColor: '#E7AE41',
+                        backgroundColor: '#007BFF',
+                        borderWidth: 3,
+                        pointRadius: 6,
+                        pointHoverRadius: 11,
                     }]
                 },
                 options: {

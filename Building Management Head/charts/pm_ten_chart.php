@@ -121,9 +121,9 @@
                         label: 'PM Ten',
                         data: data.pmTenValues,
                         borderColor: '#E7AE41',
-                        backgroundColor: '#E7AE41', // Change the background color
-                        borderWidth: 4,
-                        pointRadius: 8,
+                        backgroundColor: '#007BFF', // Change the background color
+                        borderWidth: 3,
+                        pointRadius: 6,
                         pointHoverRadius: 11,
                     }]
                 },

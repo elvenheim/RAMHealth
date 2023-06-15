@@ -114,15 +114,17 @@
             }
 
             pmZeroOneChart = new Chart(pmZeroOneCtx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: data.dates,
                     datasets: [{
                         label: 'PM Zero One',
                         data: data.pmZeroOneValues,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        backgroundColor: '#E7AE41',
+                        borderColor: '#E7AE41',
+                        backgroundColor: '#007BFF',
+                        borderWidth: 3,
+                        pointRadius: 6,
+                        pointHoverRadius: 11,
                     }]
                 },
                 options: {
