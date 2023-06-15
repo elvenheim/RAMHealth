@@ -2,7 +2,7 @@
 html{
     height: auto;
     width: auto;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .building-head-main {
@@ -15,22 +15,6 @@ html{
 }
 
 /* CONTENT */
-.card{
-    position: fixed;
-    white-space: normal;
-    bottom: 5px;
-    box-shadow: 0 0 1px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    height: 90%;
-    width: 1900px;
-    background-color: #fff;
-    border: 0 solid rgba(0,0,0,.125);
-    align-items: center !important;
-}
-
 .navbar {
     z-index: 1037;
     position: fixed;
@@ -126,6 +110,22 @@ html{
 }
 
 /* interface navigation menu */
+.card{
+    position: fixed;
+    white-space: normal;
+    bottom: 5px;
+    box-shadow: 0 0 1px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 90%;
+    width: 1900px;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.125);
+    align-items: center !important;
+}
+
 .card-header{
     z-index: 1996;
     position: relative;

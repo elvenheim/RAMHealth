@@ -40,6 +40,8 @@
         <div id="user-list-table" class="content-one">
             <div class="card">
                 <div class = "table-button">
+                    <button id="back-button" class="back-button" onclick="location.href='building_head_main_menu.php';">
+                        <span class="fas fa-arrow-left"></span> Go Back </button>
                     <form id="filter-table-form" method="POST">
                         <div class="filter-table">
                             <div class="dropdown-form">
@@ -58,10 +60,8 @@
                     </div>
                 </div>
                 <div class="aq-main-contents">
-                    <button id="back-button" class="back-button" onclick="location.href='building_head_main_menu.php';">
-                        <span class="fas fa-arrow-left"></span> Go Back </button>
-                    <div class="left-gauge-box">
-                        <div class="left-gauge-card">
+                    <div class="gauge-box-one">
+                        <div class="gauge-box-one-card">
                             <div class="pm-ten-gauge-group">
                                 <?php include('../Building Management Head/gauges/pm_ten_gauge.php')?>
                             </div>
@@ -73,6 +73,26 @@
                             </div>
                             <div class="gas-gauge-group">
                                 <?php include('../Building Management Head/gauges/gas_gauge.php')?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge-box-two">
+                        <div class="gauge-box-two-card">
+                            <div class="indoor-temp-gauge-group">
+                                <?php include('../Building Management Head/gauges/indoor_temperature_gauge.php')?>
+                            </div>
+                            <div class="outdoor-temp-gauge-group">
+                                <?php include('../Building Management Head/gauges/outdoor_temperature_gauge.php')?>
+                            </div>
+                            <div class="humidity-gauge-group">
+                                <?php include('../Building Management Head/gauges/humidity_gauge.php')?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-gauge-box-summary">
+                        <div class="right-gauge-card">
+                            <div class="aq-summary-group">
+                                <?php include('../Building Management Head/aq_summary.php')?>
                             </div>
                         </div>
                     </div>
@@ -88,32 +108,6 @@
                                 <?php include('../Building Management Head/charts/pm_zero_one_chart.php')?>
                             </div>
                             
-                        </div>
-                    </div>
-                    <div class="right-gauge-box-group">
-                        <div class="right-gauge-box-top">
-                            <div class="right-gauge-card">
-                                <div class="indoor-temp-gauge-group">
-                                    <?php include('../Building Management Head/gauges/indoor_temperature_gauge.php')?>
-                                </div>
-                                <div class="outdoor-temp-gauge-group">
-                                    <?php include('../Building Management Head/gauges/outdoor_temperature_gauge.php')?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-gauge-box-bottom">
-                            <div class="right-gauge-card">
-                                <div class="humidity-gauge-group">
-                                    <?php include('../Building Management Head/gauges/humidity_gauge.php')?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-gauge-box-summary">
-                            <div class="right-gauge-card">
-                                <div class="aq-summary-group">
-                                    <?php include('../Building Management Head/aq_summary.php')?>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

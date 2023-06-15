@@ -114,15 +114,17 @@
             }
 
             chart = new Chart(ctx, {
-                type: 'bar', // Change the chart type to 'bar'
+                type: 'line', // Change the chart type to 'bar'
                 data: {
                     labels: data.dates,
                     datasets: [{
                         label: 'PM Ten',
                         data: data.pmTenValues,
-                        borderColor: 'black',
+                        borderColor: '#E7AE41',
                         backgroundColor: '#E7AE41', // Change the background color
-                        borderWidth: 1, // Remove the borderWidth property
+                        borderWidth: 4,
+                        pointRadius: 8,
+                        pointHoverRadius: 11,
                     }]
                 },
                 options: {

@@ -1,17 +1,39 @@
 /* Table Buttons */
 .table-button{
     z-index: 2;
-    position: fixed;
+    position: absolute;
     display: flex;
-    top: 110px;
-    width: 1900px;
+    flex-direction: row;
+    top: 0px;
+    height: 5%;
+    width: 100%;
     white-space: nowrap;
+    background-color: #E7AE41;
     border-bottom: 1px solid #000;
 } 
 
-.filter-table{
+.back-button{
     position: relative;
-    left: 50px;
+    left: 35px;
+    bottom: 14px;
+    margin-right: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
+.filter-table{
+    position: ab;
+    height: 100%;
+    left: 5%;
     bottom: 13px;
     display: inline-flex;
     font-family: 'Nunito Sans', sans-serif;

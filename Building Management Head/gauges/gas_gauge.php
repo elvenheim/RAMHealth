@@ -54,7 +54,7 @@
                 maxLabelMinFontSize: 10,
                 label: '',
                 labelFontColor: '#000000',
-                labelMinFontSize: 12,
+                labelMinFontSize: 15,
                 gaugeWidthScale: 0.9,
                 counter: true,
                 levelColors: ['#E7AE41'],

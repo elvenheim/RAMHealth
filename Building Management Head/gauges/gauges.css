@@ -1,28 +1,89 @@
+.gauge-title{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+/* left most gauge groups */
 .pm-ten-gauge-group{
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
 }
 
 .pm-two-five-gauge-group{
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
 }
 
 .pm-zero-one-gauge-group{
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.gas-gauge-group{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
 }
 
 .indoor-temp-gauge-group{
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
 }
 
-.gauge-title{
-    margin-top: 3px;
-    display: inline-flex;
-    margin-bottom: 40px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
+.outdoor-temp-gauge-group{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
 }
 
-/* .gauge{
-    scale: 1.3;
-} */
+.humidity-gauge-group{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.gauge{
+    scale: 1;
+}
