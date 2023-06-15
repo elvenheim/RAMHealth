@@ -1,5 +1,5 @@
 <?php     
-    require_once('building_head_connect.php');
+    require_once('ac_gauge_connect.php');
 
     if (isset($_POST['room_number'])) {
         // Retrieve the selected room numbers
@@ -25,7 +25,7 @@
         while ($row = mysqli_fetch_assoc($result_table)){
             $pm_ten_level[] = $row['pm_ten'];
         }
-        }
+    }
 ?>
 
 <!DOCTYPE html>

@@ -13,7 +13,7 @@
         echo '<form method="POST">';
         echo '<label for="room_number">Room:</label>';
         echo '<div class="dropdown">';
-        echo '<select name="room_number" onchange="this.form.submit()">'; // Add onchange event to submit the form
+        echo '<select id="room_number" name="room_number" onchange="this.form.submit()">'; // Add onchange event to submit the form
         echo '<option value="">- Select Room -</option>'; // Add a default option
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
