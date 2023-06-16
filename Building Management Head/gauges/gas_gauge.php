@@ -52,7 +52,7 @@
                 max: 4000,
                 minLabelMinFontSize: 10,
                 maxLabelMinFontSize: 10,
-                label: '',
+                label: '    ',
                 labelFontColor: '#000000',
                 labelMinFontSize: 15,
                 gaugeWidthScale: 0.9,
