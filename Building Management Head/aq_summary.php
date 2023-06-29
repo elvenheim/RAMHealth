@@ -59,7 +59,7 @@
                 echo "<br>";
             }
         } else {
-            echo "<span class='summary-title'>Latest Summary</span><br>";
+            echo "<span class='summary-title'>Latest Summary in ". $selectedRoom . "</span><br>";
             echo "No data found...";
             echo "<br> <br> <br>";
             echo "<br> <br> <br>";

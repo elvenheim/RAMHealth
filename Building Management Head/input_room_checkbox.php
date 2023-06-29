@@ -12,7 +12,8 @@
         
         echo '<form method="POST">';
         echo '<label for="room_number">Room: </label>';
-        echo '<select id="room_number" name="room_number" class="room_number" onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value)">';
+        echo '<select id="room_number" name="room_number" class="room_number" 
+        onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value)">';
         echo '<option value="" disabled selected>- Select Room -</option>';
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
@@ -27,7 +28,7 @@
         echo '</div>';
         echo '</form>';
     } else {
-        echo '<label for="room_number">No Floor Selected...</label>';
+        echo '<label for="room_number">No Floor Selected</label>';
     }
 ?>
 

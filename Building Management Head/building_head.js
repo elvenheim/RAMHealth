@@ -24,17 +24,3 @@ function selectAll(source) {
       checkboxes[i].checked = source.checked;
   }
 }
-
-function updateRoomsDropdown(selectedFloor) {
-  var container = document.getElementById('dropdown-room');
-  
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'input_room_checkbox.php', true);
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-          container.innerHTML = xhr.responseText;
-      }
-  };
-  xhr.send('selected_floor=' + encodeURIComponent(selectedFloor));
-}

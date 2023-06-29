@@ -1,27 +1,19 @@
 <?php
     require_once('building_head_connect.php');
 
-    if (isset($_POST['room_number'])) {
-        // Retrieve the selected room numbers
-        $selectedRoom = $_POST['room_number'];
+    $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
+        FROM aq_particulate_matter aqpm
+        JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id";
 
-        $_SESSION['selected_room'] = $selectedRoom;
+    $result_table = mysqli_query($con, $sqlten);
 
-        $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
-            FROM aq_particulate_matter aqpm
-            JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id
-            WHERE aqs.aq_sensor_room_num IN ('$selectedRoom')";
-
-        $result_table = mysqli_query($con, $sqlten);
-
-        $pmTenData = array();
-        while ($row = mysqli_fetch_assoc($result_table)) {
-            $pmTenData[] = array(
-                'date' => $row['pm_date'],
-                'time' => $row['pm_time'],
-                'pm_ten' => $row['pm_ten']
-            );
-        }
+    $pmTenData = array();
+    while ($row = mysqli_fetch_assoc($result_table)) {
+        $pmTenData[] = array(
+            'date' => $row['pm_date'],
+            'time' => $row['pm_time'],
+            'pm_ten' => $row['pm_ten']
+        );
     }
 
     // Fetch the past 24 hours data
