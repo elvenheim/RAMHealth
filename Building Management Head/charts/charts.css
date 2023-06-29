@@ -1,14 +1,8 @@
-.pm-ten-chart-group{
-    margin-bottom: 50px;
-}
-
-.pm-two-five-chart-group{
-    margin-bottom: 50px;
-}
-
 .chart-title{
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     display: inline-flex;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.2rem;
@@ -17,5 +11,64 @@
 
 .chart-button{
     margin-left: 25px;
+    margin-bottom: 10px;
     text-align: left;
+}
+
+.pm-ten-chart{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.pm-ten-chart-group{
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: -10%;
+    position: relative;
+    width: 550px;
+    height: 350px;
+}
+
+.pm-two-five-chart{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.pm-two-five-chart-group{
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: -10%;
+    position: relative;
+    width: 550px;
+    height: 350px;
+}
+
+.pm-zero-one-chart{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.pm-zero-one-chart-group{
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: -10%;
+    position: relative;
+    width: 550px;
+    height: 350px;
 }

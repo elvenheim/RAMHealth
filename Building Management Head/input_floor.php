@@ -7,20 +7,16 @@
                 GROUP BY bf.building_floor
                 ORDER BY bf.building_floor ASC";
     $roomResult = mysqli_query($con, $roomQuery);
-?>
 
-<form id="floor-selection-form">
-    <label for="bldg_floor">Floor:</label>
-    <select id="bldg_floor" name="bldg_floor" class="bldg_floor" required onchange="updateRoomsDropdown(this.value)">
-        <option value="" disabled selected>-Select Floor-</option>
-        <?php
-        while ($row = mysqli_fetch_assoc($roomResult)) {
-            echo '<option value="' . $row['building_floor'] . '">' . $row['bldg_floor_name'] . '</option>';
-        }
-        ?>
-    </select><br>
-</form>
+    echo '<form id="floor-selection-form">';
+    echo '<label for="bldg_floor">Floor: </label>';
+    echo '<select id="bldg_floor" name="bldg_floor" class="bldg_floor" required onchange="updateRoomsDropdown(this.value)">';
+    echo '<option value="" disabled selected>-Select Floor-</option>';
+    while ($row = mysqli_fetch_assoc($roomResult)) {
+        echo '        <option value="' . $row['building_floor'] . '">' . $row['bldg_floor_name'] . '</option>';
+    }
+    echo '</select><br>';
+    echo '</form>';
 
-<?php
-        $_SESSION['selected_floor'] = isset($_POST['building_floor']) ? $_POST['building_floor'] : '';
+    $_SESSION['selected_floor'] = isset($_POST['building_floor']) ? $_POST['building_floor'] : '';
 ?>

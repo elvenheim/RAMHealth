@@ -1,7 +1,7 @@
 /* Table Buttons */
 .table-button{
     z-index: 2;
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 5%;
@@ -11,9 +11,14 @@
     border-bottom: 1px solid #000;
 } 
 
+.back-class-btn{
+    position: relative;
+}
+
 .back-button{
     position: relative;
     left: 35px;
+    margin-top: 8px;
     margin-right: 15px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
@@ -30,45 +35,31 @@
 
 .filter-table{
     position: relative;
-    margin-left: 12%;
-    top: 19.8%;
-    left: 5%;
-    display: inline-flex;
+    margin-top: 8.5px;
+    margin-left: 2.5%;
+    display: flex;
     flex-direction: row;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
-}
-
-.dropdown-form{
-    margin-right: 40px;
 }
 
 .dropdown-form .bldg_floor{
     height: 22.4px;
 }
 
-.dropdown-form label{
-    margin-right: -1px;
-}
-
 .dropdown-form select{
-    margin-top: 2px;
     cursor: pointer;
 }
 
 .dropdown-room{
-    z-index: 20;
-    font-size: 1.1rem;
-    font-family: 'Nunito Sans', sans-serif;
-    margin-top: 0.4%;
-    display: inline-flex;
+    margin-left: 40px;
 }
 
-.dropdown{
-    margin-left: 5px;
+.dropdown-room .room_number{
+    height: 22.4px;
 }
 
-.dropdown select{
+.dropdown-room select{
     cursor: pointer;
 }
 
@@ -81,8 +72,10 @@
 .other-table-button{
     z-index: 19;
     position: relative;
+    margin-right: 10px;
     width: 100%;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
 }
 
 .refresh-table{

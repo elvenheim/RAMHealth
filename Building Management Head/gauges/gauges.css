@@ -87,3 +87,24 @@
 .gauge{
     scale: 1;
 }
+
+.aq-summary-group{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 234px;
+    height: 180px;
+    border: 1px solid rgba(0,0,0,.175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+.summary-title{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

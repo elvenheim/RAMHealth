@@ -1,6 +1,4 @@
 <?php
-    require_once('building_head_connect.php');
-
     if (isset($_POST['room_number'])) {
         // Retrieve the selected room numbers
         $selectedRoom = $_POST['room_number'];
@@ -61,11 +59,17 @@
                 echo "<br>";
             }
         } else {
-            echo "<br>";
-            echo "No results found.";
+            echo "<span class='summary-title'>Latest Summary</span><br>";
+            echo "No data found...";
+            echo "<br> <br> <br>";
+            echo "<br> <br> <br>";
+            echo "<br> <br>";
         }
     } else {
-        echo "<br>";
-        echo "No room number selected.";
+        echo "<span class='summary-title'>Latest Summary</span><br>";
+        echo "Select a Room";
+        echo "<br> <br> <br>";
+        echo "<br> <br> <br>";
+        echo "<br> <br>";
     }    
 ?>

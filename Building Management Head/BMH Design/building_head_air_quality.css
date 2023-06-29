@@ -1,9 +1,10 @@
 /* aq-main-contents */
 .aq-main-contents{
+    position: relative;
     display: flex;
-    margin-top: 70px;
-    margin-left: 20px;
-    height: 100%;
+    margin-top: 30px;
+    height: 90%;
+    width: 100%;
 }
 
 /* left-gauge-box design */
@@ -13,7 +14,7 @@
     right: 0.5%;
     display: flex;
     flex-direction: column;
-    margin-right: 1%;
+    margin-right: 1.5%;
     height: 90%;
     width: 12%;
     border: solid 0px #000;
@@ -33,7 +34,7 @@
     right: 0.5%;
     display: flex;
     flex-direction: column;
-    margin-right: 0.5%;
+    margin-right: 1%;
     height: 90%;
     width: 12%;
     border: solid 0px #000;
@@ -43,64 +44,47 @@
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    height: 100%;
+    height: 90%;
     width: auto;
 }
 
-
-/* chart-box design */
-.chart-box{
-    overflow-y: auto;
-    overflow-x: hidden;
+.chart-box-one{
+    position: relative;
+    bottom: 2%;
+    right: 0.5%;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 5.5%;
+    margin-right: 20%;
     height: 90%;
-    width: 900px;
-    border: solid 1px #000;
-    align-items: center;
+    width: 12%;
+    border: solid 0px #000;
 }
 
-.chart-card{
-    background-color: transparent;
-    height: fit-content;
-    width: 95%;
-}
-
-/* right-gauge-box design */
-.right-gauge-box-group{
+.chart-box-one-card{
     display: flex;
     flex-direction: column;
-}
-
-.right-gauge-box-top{
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: fit-content;
-    width: 450px;
-    margin-bottom: 10px;
-    border: solid 1px #000;
-}
-
-.right-gauge-box-bottom{
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: fit-content;
-    width: 450px;
-    margin-bottom: 10px;
-    border: solid 1px #000;
-}
-
-.right-gauge-box-summary{
-    overflow: hidden;
-    height: fit-content;
-    width: 450px;
-    border: solid 1px #000;
-}
-
-
-.right-gauge-card{
     background-color: #fff;
-    height: 230px;
+    height: 90%;
+    width: auto;
+}
+
+.chart-box-two{
+    position: relative;
+    bottom: 2%;
+    right: 0.5%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    height: 90%;
+    width: 12%;
+    border: solid 0px #000;
+}
+
+.chart-box-two-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 90%;
     width: auto;
 }

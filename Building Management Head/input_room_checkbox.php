@@ -11,10 +11,9 @@
         $roomResult = mysqli_stmt_get_result($stmt);
         
         echo '<form method="POST">';
-        echo '<label for="room_number">Room:</label>';
-        echo '<div class="dropdown">';
-        echo '<select id="room_number" name="room_number" onchange="this.form.submit()">'; // Add onchange event to submit the form
-        echo '<option value="">- Select Room -</option>'; // Add a default option
+        echo '<label for="room_number">Room: </label>';
+        echo '<select id="room_number" name="room_number" class="room_number" onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value)">';
+        echo '<option value="" disabled selected>- Select Room -</option>';
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
             $isSelected = isset($_POST['room_number']) && $_POST['room_number'] == $row['room_num'] ? 'selected' : '';
@@ -28,6 +27,31 @@
         echo '</div>';
         echo '</form>';
     } else {
-        echo 'No floor selected.';
+        echo '<label for="room_number">No Floor Selected...</label>';
     }
 ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function refreshGaugeOne(roomNumber) {
+        $.ajax({
+            type: 'POST',
+            url: 'refresh_aq_gauge_one.php',
+            data: { room_number: roomNumber },
+            success: function(response) {
+                $('#refreshGaugeOne').html(response);
+            }
+        });
+    }
+
+    function refreshGaugeTwo(roomNumber) {
+        $.ajax({
+            type: 'POST',
+            url: 'refresh_aq_gauge_two.php',
+            data: { room_number: roomNumber },
+            success: function(response) {
+                $('#refreshGaugeTwo').html(response);
+            }
+        });
+    }
+</script>
