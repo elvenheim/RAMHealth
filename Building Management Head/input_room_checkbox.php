@@ -12,10 +12,8 @@
         
         echo '<form method="POST">';
         echo '<label for="room_number">Room: </label>';
-        echo '<select id="room_number" name="room_number" class="room_number" 
-        onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value);
-        refreshPieOne(this.value)">';
-        echo '<option value="" disabled selected>- Select Room -</option>';
+        echo '<select id="room_number" name="room_number" class="room_number" onchange="submitAllAQ(this.value)">';
+        echo '<option value=""selected>- Select Room -</option>';
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
             $isSelected = isset($_POST['room_number']) && $_POST['room_number'] == $row['room_num'] ? 'selected' : '';
@@ -57,14 +55,8 @@
         });
     }
 
-    function refreshPieOne(roomNumber) {
-        $.ajax({
-            type: 'POST',
-            url: 'refresh_pie_chart.php',
-            data: { room_number: roomNumber },
-            success: function(response) {
-                $('#refreshPieOne').html(response);
-            }
-        });
+    function submitAllAQ(roomNumber){
+        refreshGaugeOne(roomNumber);
+        refreshGaugeTwo(roomNumber);
     }
 </script>

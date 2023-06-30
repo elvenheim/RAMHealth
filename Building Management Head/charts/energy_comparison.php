@@ -26,6 +26,9 @@
                 'pm_ten' => $row['pm_ten']
             );
         }
+    } elseif (empty($_POST['room_number'])) {
+        // Clear the selected rooms when no room is selected
+        unset($_SESSION['selected_rooms']);
     }
 
     // Fetch the data for the last week
@@ -38,12 +41,6 @@
     $lastWeekData = array();
     while ($row = mysqli_fetch_assoc($lastWeekResult)) {
         $lastWeekData[] = $row;
-    }
-
-    // Reset data if no room is selected
-    if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) {
-        $lastWeekData = array();
-        $pmTenData = array();
     }
 ?>
 
@@ -61,7 +58,7 @@
     </div>
 
     <?php if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) : ?>
-        <p>Select a room number.</p>
+        <p>Please select rooms to show data</p>
     <?php endif; ?>
 
     <script>

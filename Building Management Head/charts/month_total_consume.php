@@ -26,6 +26,9 @@
                 'pm_ten' => $row['pm_ten']
             );
         }
+    } elseif (empty($_POST['room_number'])) {
+        // Clear the selected rooms when no room is selected
+        unset($_SESSION['selected_rooms']);
     }
 
     // Fetch the data for the current month
@@ -49,14 +52,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <span class="current-month-consume-title">Current Month Total Energy Consumption</span>
-    <div class="current-month-chart-group">
-        <canvas id="currentMonthConsume" class="current-month-consume"></canvas>
+    <span class="tentenchart-title">Current Month Total Energy Consumption</span>
+    <div class="pm-ten-tentenchart-group">
+        <canvas id="pmTenTenChart" class="tentenchart"></canvas>
+        <div id="message" class="message"></div>
     </div>
 
     <script>
-        var current_month_ctx = document.getElementById('currentMonthConsume').getContext('2d');
-        var current_month_consume;
+        var TenTenctx = document.getElementById('pmTenTenChart').getContext('2d');
+        var tentenchart;
         var currentMonthData = <?php echo json_encode($currentMonthData); ?>;
 
         function updateChart() {
@@ -74,45 +78,51 @@
                 return record.num_records;
             });
 
-            if (current_month_consume) {
-                current_month_consume.destroy();
+            if (tentenchart) {
+                tentenchart.destroy();
             }
 
-            current_month_consume = new Chart(current_month_ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: values,
-                        backgroundColor: '#007BFF',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
+            if (selectedRooms.length === 0) {
+                document.getElementById('message').innerText = "Please select rooms to show data";
+            } else {
+                document.getElementById('message').innerText = "";
+
+                tentenchart = new Chart(TenTenctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: values,
+                            backgroundColor: '#007BFF',
+                            borderWidth: 1
+                        }]
                     },
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            max: Math.max(...values) + 1,
-                            ticks: {
-                                stepSize: 1
+                    options: {
+                        indexAxis: 'y',
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: Math.max(...values) + 1,
+                                ticks: {
+                                    stepSize: 1
+                                }
                             }
                         }
                     }
-                }
-            });
+                });
+            }
         }
         updateChart();
 
         // Reset the chart when the page is refreshed or left
         window.addEventListener('unload', function() {
-            if (current_month_consume) {
-                current_month_consume.destroy();
+            if (tentenchart) {
+                tentenchart.destroy();
             }
         });
     </script>
