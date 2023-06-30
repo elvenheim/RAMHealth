@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="aq-main-contents">
-                    <div class="chart-box-one">
+                    <div id="refreshChartOne" class="chart-box-one">
                         <div class="chart-box-one-card">
                             <div class="pm-ten-chart">
                                 <?php include('../Building Management Head/charts/pm_ten_chart.php')?>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="chart-box-two">
+                    <div id="refreshChartTwo" class="chart-box-two">
                         <div class="chart-box-two-card">
                             <div class="pm-zero-one-chart">
                                 <?php include('../Building Management Head/charts/pm_zero_one_chart.php')?>

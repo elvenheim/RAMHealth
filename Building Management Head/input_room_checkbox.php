@@ -13,7 +13,8 @@
         echo '<form method="POST">';
         echo '<label for="room_number">Room: </label>';
         echo '<select id="room_number" name="room_number" class="room_number" 
-        onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value)">';
+        onchange="refreshGaugeOne(this.value); refreshGaugeTwo(this.value);
+        refreshPieOne(this.value)">';
         echo '<option value="" disabled selected>- Select Room -</option>';
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
@@ -52,6 +53,17 @@
             data: { room_number: roomNumber },
             success: function(response) {
                 $('#refreshGaugeTwo').html(response);
+            }
+        });
+    }
+
+    function refreshPieOne(roomNumber) {
+        $.ajax({
+            type: 'POST',
+            url: 'refresh_pie_chart.php',
+            data: { room_number: roomNumber },
+            success: function(response) {
+                $('#refreshPieOne').html(response);
             }
         });
     }

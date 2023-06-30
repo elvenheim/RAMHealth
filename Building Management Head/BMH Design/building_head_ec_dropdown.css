@@ -1,0 +1,127 @@
+.dropdown-menu{
+    position: relative;
+    top: 23px;
+    right: 5px;
+    margin-top: -1px;
+    margin-left: -45px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #8f8f9d;
+    width: 150px;
+    height: fit-content;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+}
+
+/* Table Buttons */
+.table-button{
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+} 
+
+.back-class-btn{
+    position: relative;
+}
+
+.back-button{
+    position: relative;
+    left: 35px;
+    margin-top: 8px;
+    margin-right: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    color: #E7AE41;
+}
+
+.filter-table{
+    position: relative;
+    margin-top: 8.5px;
+    margin-left: 2.5%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.dropdown-form .bldg_floor{
+    height: 22.4px;
+}
+
+.dropdown-form select{
+    cursor: pointer;
+}
+
+.dropdown-room{
+    margin-left: 40px;
+}
+
+.dropdown-room .room_number{
+    height: 22.4px;
+}
+
+.dropdown-room select{
+    cursor: pointer;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+/* other table buttons */
+.other-table-button{
+    z-index: 19;
+    position: relative;
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.refresh-table{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-left: 83%;
+    margin-right: 30px;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.refresh-table:hover{
+    color: #E7AE41;
+}
+
+.download-table{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.download-table:hover{
+    color: #E7AE41;
+}

@@ -27,7 +27,7 @@
     var container = document.getElementById('dropdown-room');
     
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'input_room_checkbox.php', true);
+    xhr.open('POST', 'input_room_checkbox_two.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {

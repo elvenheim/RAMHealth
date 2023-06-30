@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RAM Health</title>   
     <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head.css">
-    <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_dropdown.css">
     <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_energy_consume.css">
+    <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_ec_dropdown.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
     <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -47,10 +47,10 @@
                     </div>
                     <div class="filter-table">
                         <div class="dropdown-form">
-                            <?php include 'input_floor.php'?>
+                            <?php include 'input_floor_two.php'?>
                         </div>
                         <div id="dropdown-room" class="dropdown-room">
-                            <?php include 'input_room_checkbox.php'?>
+                            <?php include 'input_room_checkbox_two.php'?>
                         </div>
                     </div>
                     <div class="other-table-button">
@@ -69,8 +69,11 @@
                             <div class="current-month-power-demand">
                                 1143.95 kWh
                             </div>
-                            <div class="energy-consume-pie">
-                                Sample Text
+                            <div id="refreshPieOne" class="energy-consume-pie">
+                                <?php include('../Building Management Head/charts/energy_comparison.php')?>
+                            </div>
+                            <div id="refreshBarOne" class="energy-consume-bar">
+                                <?php include('../Building Management Head/charts/month_total_consume.php')?>
                             </div>
                         </div>
                     </div>

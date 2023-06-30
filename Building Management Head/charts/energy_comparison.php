@@ -1,177 +1,120 @@
 <?php
     require_once('building_head_connect.php');
 
-    $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
-        FROM aq_particulate_matter aqpm
-        JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id";
+    if (isset($_POST['room_number'])) {
+        // Retrieve the selected room numbers
+        $selectedRooms = $_POST['room_number'];
 
-    $result_table = mysqli_query($con, $sqlten);
+        $_SESSION['selected_rooms'] = $selectedRooms;
 
-    $pmTenData = array();
-    while ($row = mysqli_fetch_assoc($result_table)) {
-        $pmTenData[] = array(
-            'date' => $row['pm_date'],
-            'time' => $row['pm_time'],
-            'pm_ten' => $row['pm_ten']
-        );
+        // Convert the selected rooms array to a string for the SQL query
+        $selectedRoomsStr = implode("','", $selectedRooms);
+
+        $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
+            FROM aq_particulate_matter aqpm
+            JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id
+            WHERE aqs.aq_sensor_room_num IN ('$selectedRoomsStr')
+            AND aqpm.pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY)";
+
+        $result_table = mysqli_query($con, $sqlten);
+
+        $pmTenData = array();
+        while ($row = mysqli_fetch_assoc($result_table)) {
+            $pmTenData[] = array(
+                'date' => $row['pm_date'],
+                'time' => $row['pm_time'],
+                'pm_ten' => $row['pm_ten']
+            );
+        }
     }
 
-    // Fetch the past 24 hours data
-    $tenpast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS pm_datetime, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) GROUP BY pm_datetime";
-    $tenpast24hoursResult = mysqli_query($con, $tenpast24hoursSql);
-    $tenpast24hoursData = array();
-    while ($row = mysqli_fetch_assoc($tenpast24hoursResult)) {
-        $tenpast24hoursData[] = $row;
+    // Fetch the data for the last week
+    $lastWeekSql = "SELECT aqs.aq_sensor_room_num, COUNT(*) AS num_records
+                    FROM aq_particulate_matter aqpm
+                    JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id
+                    WHERE aqpm.pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+                    GROUP BY aqs.aq_sensor_room_num";
+    $lastWeekResult = mysqli_query($con, $lastWeekSql);
+    $lastWeekData = array();
+    while ($row = mysqli_fetch_assoc($lastWeekResult)) {
+        $lastWeekData[] = $row;
     }
 
-    // Fetch the past 7 days data
-    $tenpast7DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY) GROUP BY pm_date";
-    $tenpast7DaysResult = mysqli_query($con, $tenpast7DaysSql);
-    $tenpast7DaysData = array();
-    while ($row = mysqli_fetch_assoc($tenpast7DaysResult)) {
-        $tenpast7DaysData[] = $row;
-    }
-
-    // Fetch the past 30 days data
-    $tenpast30DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 30 DAY) GROUP BY pm_date";
-    $tenpast30DaysResult = mysqli_query($con, $tenpast30DaysSql);
-    $tenpast30DaysData = array();
-    while ($row = mysqli_fetch_assoc($tenpast30DaysResult)) {
-        $tenpast30DaysData[] = $row;
-    }
-
-    // Fetch the past 12 months data
-    $tenpast12MonthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS pm_month, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) GROUP BY pm_month";
-    $tenpast12MonthsResult = mysqli_query($con, $tenpast12MonthsSql);
-    $tenpast12MonthsData = array();
-    while ($row = mysqli_fetch_assoc($tenpast12MonthsResult)) {
-        $tenpast12MonthsData[] = $row;
+    // Reset data if no room is selected
+    if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) {
+        $lastWeekData = array();
+        $pmTenData = array();
     }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PM Ten Chart Example</title>
+    <title>Last Week's Energy Consumption</title>
     <link rel="stylesheet" href="../Building Management Head/charts/charts.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <span class="chart-title">General Air Particulate Matter 10 Level</span>
-    <div class="chart-button">
-        <label for="timeRange">Time Range:</label>
-        <select id="timeRange" onchange="updateChart()">
-            <option value="tenpast24hours" selected>Past 24 Hours</option>
-            <option value="tenpast7Days">Past 7 Days</option>
-            <option value="tenpast30Days">Past 30 Days</option>
-            <option value="tenpast12Months">Past 12 Months</option>
-        </select>
-    </div>
+    <span class="chart-title">Last Week's Energy Consumption</span>
     <div class="pm-ten-chart-group">
         <canvas id="pmTenChart" class="chart"></canvas>
     </div>
 
+    <?php if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) : ?>
+        <p>Select a room number.</p>
+    <?php endif; ?>
+
     <script>
         var ctx = document.getElementById('pmTenChart').getContext('2d');
         var chart;
-        var tenpast24hoursData = <?php echo json_encode($tenpast24hoursData); ?>;
-        var tenpast7DaysData = <?php echo json_encode($tenpast7DaysData); ?>;
-        var tenpast30DaysData = <?php echo json_encode($tenpast30DaysData); ?>;
-        var tenpast12MonthsData = <?php echo json_encode($tenpast12MonthsData); ?>;
-
-        function processData(selectedRange, rawData) {
-            var processedData = {
-                dates: [],
-                pmTenValues: []
-            };
-
-            rawData.forEach(function(row) {
-                processedData.dates.push(row.pm_datetime || row.pm_date || row.pm_month);
-                processedData.pmTenValues.push(row.peak_pm_ten);
-            });
-
-            return processedData;
-        }
+        var lastWeekData = <?php echo json_encode($lastWeekData); ?>;
 
         function updateChart() {
-            var selectedRange = document.getElementById('timeRange').value;
-            var rawData;
+            var selectedRooms = <?php echo json_encode(isset($_SESSION['selected_rooms']) ? $_SESSION['selected_rooms'] : []); ?>;
 
-            if (selectedRange === 'tenpast24hours') {
-                rawData = tenpast24hoursData;
-            } else if (selectedRange === 'tenpast7Days') {
-                rawData = tenpast7DaysData;
-            } else if (selectedRange === 'tenpast30Days') {
-                rawData = tenpast30DaysData;
-            } else if (selectedRange === 'tenpast12Months') {
-                rawData = tenpast12MonthsData;
-            }
+            var filteredData = lastWeekData.filter(function(record) {
+                return selectedRooms.includes(record.aq_sensor_room_num);
+            });
 
-            var data = processData(selectedRange, rawData);
+            var labels = filteredData.map(function(record) {
+                return record.aq_sensor_room_num;
+            });
+            var values = filteredData.map(function(record) {
+                return record.num_records;
+            });
 
             if (chart) {
                 chart.destroy();
             }
 
             chart = new Chart(ctx, {
-                type: 'line',
+                type: 'pie',
                 data: {
-                    labels: data.dates,
+                    labels: labels,
                     datasets: [{
-                        label: 'PM Ten',
-                        data: data.pmTenValues,
-                        borderColor: '#E7AE41',
-                        backgroundColor: '#007BFF',
-                        borderWidth: 3,
-                        pointRadius: 6,
-                        pointHoverRadius: 11,
+                        data: values,
+                        backgroundColor: [
+                            '#E7AE41',
+                            '#007BFF',
+                            '#DC3545',
+                            '#28A745',
+                            '#FFC107',
+                            '#17A2B8',
+                            '#6610F2',
+                            '#6C757D',
+                        ],
+                        borderWidth: 1
                     }]
                 },
                 options: {
-                    scales: {
-                        x: {
-                            ticks: {
-                                font: {
-                                    size: 15, // Specify the desired label font size
-                                },
-                            },
-                            grid: {
-                                display: false, // Remove the grid configuration for x-axis
-                            },
-                            title: {
-                                display: false,
-                                text: selectedRange === 'tenpast24hours' ? 'Time' : 'Date'
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                font: {
-                                    size: 15, // Specify the desired label font size
-                                },
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 1)',
-                                borderDash: [5, 5],
-                                borderWidth: 1,
-                                drawBorder: true,
-                                drawOnChartArea: true,
-                                drawTicks: true,
-                                tickColor: 'rgba(0, 0, 0, 1)',
-                                tickLength: 10,
-                                lineWidth: 1,
-                            },
-                            beginAtZero: true,
-                            suggestedMin: 0,
-                            suggestedMax: 45,
-                            title: {
-                                display: false,
-                                text: 'PM Ten'
-                            }
-                        }
-                    },
                     plugins: {
                         legend: {
-                            display: false,
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 12
+                                }
+                            },
                         }
                     }
                 }

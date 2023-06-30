@@ -30,14 +30,14 @@
 
 .chart-box-one{
     position: relative;
-    bottom: 2%;
+    bottom: 1%;
     right: 0.5%;
     display: flex;
     flex-direction: column;
-    margin-left: 5.5%;
+    margin-left: 1.5%;
     margin-right: 20%;
-    height: 90%;
-    width: 12%;
+    height: 100%;
+    width: 45%;
     border: solid 1px #000;
 }
 
@@ -47,4 +47,13 @@
     background-color: #fff;
     height: 90%;
     width: auto;
+}
+
+.energy-consume-pie{
+    position: absolute;
+    bottom: 50px;
+}
+
+.energy-consume-bar{
+    position: absolute;
 }
