@@ -16,9 +16,8 @@
         echo '-Select Room-';
         echo '</button>';
         echo '<div class="dropdown-menu" id="room-number-menu">';
+        echo '<label class="select-instruct">-Select upto 12 Rooms-</label>';
         echo '<div class="dropdown-item">';
-        echo '<input type="checkbox" id="select-all" class="select-all" onclick="selectAll(this)" value="select-all">';
-        echo '<label for="select-all">Select All</label>';
         echo '</div>';
 
         while ($row = mysqli_fetch_assoc($roomResult)) {
@@ -32,7 +31,7 @@
         // Store the selected room numbers in the session
         $_SESSION['selected_rooms'] = isset($_POST['room_number']) ? $_POST['room_number'] : [];
 
-        echo '<button button id="submit-room-num" type="button" class="submit-button" onclick="submitAll()">OK</button>';
+        echo '<button button id="submit-room-num" type="button" class="submit-button" onclick="submitAll()">SUBMIT</button>';
         echo '</div>';
         echo '</div>';
     } else {
@@ -41,6 +40,38 @@
 ?>
 
 <script>
+    document.addEventListener('click', function(event) {
+        var dropdownMenu = document.getElementById('room-number-menu');
+        var dropdownButton = document.getElementById('room-number-dropdown');
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+
+    function toggleDropdown() {
+        var menu = document.getElementById('room-number-menu');
+        menu.classList.toggle('show');
+    }
+
+    function updateCheckboxCount() {
+        var checkboxes = document.getElementsByName('room_number[]');
+        var selectedCount = 0;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                selectedCount++;
+            }
+        }
+        return selectedCount;
+    }
+
+    function checkboxClickHandler() {
+        var selectedCount = updateCheckboxCount();
+        var checkboxes = document.getElementsByName('room_number[]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].disabled = (selectedCount >= 12 && !checkboxes[i].checked);
+        }
+    }
+
     function submitRoomNumbers() {
         var selectedRooms = $('input[name="room_number[]"]:checked').map(function() {
             return $(this).val();
@@ -71,8 +102,32 @@
         });
     }
 
-    function submitAll(){
-        submitRoomNumbers();
-        submitRoomNumbersBar();
+    function submitEnergyGauge(){
+        var selectedRooms = $('input[name="room_number[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+
+        $.ajax({
+            type: 'POST',
+            url: 'refresh_energy_gauge.php',
+            data: { room_number: selectedRooms },
+            success: function(response) {
+                $('#refreshEnergyGauge').html(response);
+            }
+        });
+    }
+
+    function submitAll() {
+        var selectedRooms = $('input[name="room_number[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+
+        if (selectedRooms.length <= 12) {
+            submitRoomNumbers();
+            submitRoomNumbersBar();
+            submitEnergyGauge();
+        } else {
+            alert('You can only select up to 12 rooms.');
+        }
     }
 </script>

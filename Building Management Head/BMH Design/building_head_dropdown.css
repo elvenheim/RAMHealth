@@ -16,6 +16,7 @@
 }
 
 .back-button{
+    z-index: 3;
     position: relative;
     left: 35px;
     margin-top: 8px;
@@ -34,6 +35,7 @@
 }
 
 .filter-table{
+    z-index: 4;
     position: relative;
     margin-top: 8.5px;
     margin-left: 2.5%;
@@ -70,9 +72,10 @@
 
 /* other table buttons */
 .other-table-button{
-    z-index: 19;
-    position: relative;
-    margin-right: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 7.5px;
+    left: 70px;
     width: 100%;
     display: flex;
     flex-direction: row;

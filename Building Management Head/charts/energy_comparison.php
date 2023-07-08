@@ -49,16 +49,17 @@
 <head>
     <title>Last Week's Energy Consumption</title>
     <link rel="stylesheet" href="../Building Management Head/charts/charts.css">
+    <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_energy_consume.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <span class="chart-title">Last Week's Energy Consumption</span>
-    <div class="pm-ten-chart-group">
+    <span class="chart-title">Energy Consumption Last Week</span>
+    <div class="energy-pie-group">
         <canvas id="pmTenChart" class="chart"></canvas>
     </div>
 
     <?php if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) : ?>
-        <p>Please select rooms to show data</p>
+        <span class="select-room">Please select rooms to show data</span>
     <?php endif; ?>
 
     <script>
@@ -106,7 +107,8 @@
                 options: {
                     plugins: {
                         legend: {
-                            position: 'bottom',
+                            position: 'right', // Show legend on the left side
+                            align: 'start',
                             labels: {
                                 font: {
                                     size: 12

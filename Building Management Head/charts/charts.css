@@ -72,3 +72,9 @@
     width: 550px;
     height: 350px;
 }
+
+.energy-pie-group{
+    position: relative;
+    width: 550px;
+    height: 100%;
+}

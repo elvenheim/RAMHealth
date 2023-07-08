@@ -6,6 +6,7 @@
     font-size: 0.9rem;
     font-weight: bold;
 }
+
 /* left most gauge groups */
 .pm-ten-gauge-group{
     margin-left: auto;
@@ -100,6 +101,7 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
     border-radius: 5px;
 }
+
 .summary-title{
     margin-top: 10px;
     margin-bottom: 5px;

@@ -1,0 +1,53 @@
+/* left-gauge-box design */
+.gauge-box-one{
+    position: relative;
+    bottom: 2%;
+    right: 0.5%;
+    margin-right: 1.5%;
+    height: 113%;
+    width: 47.5%;
+    border: solid 0px #000;
+}
+
+.gauge-box-one-card {
+    background-color: #fff;
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box; /* Include padding and border within the width */
+}
+
+.energy-gauge-group {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, .175);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175);
+    border-radius: 5px;
+}
+
+.gauge-title{
+    display: inline-flex;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gauge-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Set the width to 20% to accommodate 5 elements per row */
+}
+
+.gauge-container{
+    position: relative;
+}
+
+.gauge {
+    scale: 0.9;
+}
+  

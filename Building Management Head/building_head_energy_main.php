@@ -61,35 +61,39 @@
                     </div>
                 </div>
                 <div class="ec-main-contents">
-                    <div class="chart-box-one">
-                        <div class="chart-box-one-card">
-                            <div class="current-month-total-energy-consume">
-                                571.95 kWh
+                    <div class="chart-container">
+                        <div class="chart-box-one">
+                            <div class="chart-box-one-card">
+                                <div class="current-month-total-energy-consume">
+                                <span class="consume-title">Energy Intensity Index</span> <br>
+                                    <span class="consume-text">571.95 kWh</span>
+                                </div>
+                                <div class="current-month-power-demand">
+                                <span class="consume-title">Current Month Kilowatt Demand</span> <br>
+                                    <span class="consume-text">1143.95 kWh</span>
+                                </div>
                             </div>
-                            <div class="current-month-power-demand">
-                                1143.95 kWh
+                        </div>
+                        <div class="chart-box-two">
+                            <div class="chart-box-two-card">
+                                <div id="refreshPieOne" class="energy-consume-pie">
+                                    <?php include('../Building Management Head/charts/energy_comparison.php')?>
+                                </div>
                             </div>
-                            <div id="refreshPieOne" class="energy-consume-pie">
-                                <?php include('../Building Management Head/charts/energy_comparison.php')?>
-                            </div>
-                            <div id="refreshBarOne" class="energy-consume-bar">
-                                <?php include('../Building Management Head/charts/month_total_consume.php')?>
+                        </div>
+                        <div class="chart-box-three">
+                            <div class="chart-box-three-card">
+                                <div id="refreshBarOne" class="energy-consume-bar">
+                                    <?php include('../Building Management Head/charts/month_total_consume.php')?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="refreshGaugeOne" class="gauge-box-one">
+                    <div class="gauge-box-one">
                         <div class="gauge-box-one-card">
-                            <div class="pm-ten-gauge-group">
-                                <?php include('../Building Management Head/gauges/pm_ten_gauge.php')?>
-                            </div>
-                            <div class="pm-two-five-gauge-group">
-                                <?php include('../Building Management Head/gauges/pm_two_five_gauge.php')?>
-                            </div>
-                            <div class="pm-zero-one-gauge-group">
-                                <?php include('../Building Management Head/gauges/pm_zero_one_gauge.php')?>
-                            </div>
-                            <div class="gas-gauge-group">
-                                <?php include('../Building Management Head/gauges/gas_gauge.php')?>
+                            <div id ="refreshEnergyGauge" class="energy-gauge-group">
+                                <span class="gauge-title">Latest Energy Consumption Reading</span>
+                                <?php include('../Building Management Head/gauges/energy_consume_gauges.php')?>
                             </div>
                         </div>
                     </div>

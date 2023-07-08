@@ -12,15 +12,3 @@ function logout(){
       window.location.href = "../Login/new_login.php";
     }
 }
-
-function toggleDropdown() {
-  var menu = document.getElementById('room-number-menu');
-  menu.classList.toggle('show');
-}
-
-function selectAll(source) {
-  var checkboxes = document.getElementsByName('room_number[]');
-  for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = source.checked;
-  }
-}
