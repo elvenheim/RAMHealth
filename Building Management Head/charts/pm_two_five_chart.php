@@ -16,8 +16,11 @@
         );
     }
 
-    // Fetch the past 24 hours data
-    $twofivepast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS pm_datetime, MAX(pm_two_five) AS peak_pm_two_five FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) GROUP BY pm_datetime";
+    // Fetch the past 24 hours data with a time interval of 1 hour
+    $twofivepast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS pm_datetime, MAX(pm_two_five) AS peak_pm_two_five
+                        FROM aq_particulate_matter 
+                        WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) 
+                        GROUP BY pm_datetime";
     $twofivepast24hoursResult = mysqli_query($con, $twofivepast24hoursSql);
     $twofivepast24hoursData = array();
     while ($row = mysqli_fetch_assoc($twofivepast24hoursResult)) {
@@ -25,27 +28,36 @@
     }
 
     // Fetch the past 7 days data
-    $twofivepast7daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_two_five) AS peak_pm_two_five FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY) GROUP BY pm_date";
-    $twofivepast7daysResult = mysqli_query($con, $twofivepast7daysSql);
-    $twofivepast7daysData = array();
-    while ($row = mysqli_fetch_assoc($twofivepast7daysResult)) {
-        $twofivepast7daysData[] = $row;
+    $twofivepast7DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_two_five) AS peak_pm_two_five
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) 
+                        AND pm_date < CURDATE() + INTERVAL 1 DAY 
+                        GROUP BY pm_date";
+    $twofivepast7DaysResult = mysqli_query($con, $twofivepast7DaysSql);
+    $twofivepast7DaysData = array();
+    while ($row = mysqli_fetch_assoc($twofivepast7DaysResult)) {
+        $twofivepast7DaysData[] = $row;
     }
 
+
     // Fetch the past 30 days data
-    $twofivepast30daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_two_five) AS peak_pm_two_five FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 30 DAY) GROUP BY pm_date";
-    $twofivepast30daysResult = mysqli_query($con, $twofivepast30daysSql);
-    $twofivepast30daysData = array();
-    while ($row = mysqli_fetch_assoc($twofivepast30daysResult)) {
-        $twofivepast30daysData[] = $row;
+    $twofivepast30DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_two_five) AS peak_pm_two_five 
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) 
+                        AND pm_date < CURDATE() + INTERVAL 1 DAY 
+                        GROUP BY pm_date";
+    $twofivepast30DaysResult = mysqli_query($con, $twofivepast30DaysSql);
+    $twofivepast30DaysData = array();
+    while ($row = mysqli_fetch_assoc($twofivepast30DaysResult)) {
+        $twofivepast30DaysData[] = $row;
     }
 
     // Fetch the past 12 months data
-    $twofivepast12monthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS pm_month, MAX(pm_two_five) AS peak_pm_two_five FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) GROUP BY pm_month";
-    $twofivepast12monthsResult = mysqli_query($con, $twofivepast12monthsSql);
-    $twofivepast12monthsData = array();
-    while ($row = mysqli_fetch_assoc($twofivepast12monthsResult)) {
-        $twofivepast12monthsData[] = $row;
+    $twofivepast12MonthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS pm_month, MAX(pm_two_five) AS peak_pm_two_five
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) 
+                        GROUP BY pm_month";
+    $twofivepast12MonthsResult = mysqli_query($con, $twofivepast12MonthsSql);
+    $twofivepast12MonthsData = array();
+    while ($row = mysqli_fetch_assoc($twofivepast12MonthsResult)) {
+        $twofivepast12MonthsData[] = $row;
     }
 ?>
 
@@ -75,9 +87,9 @@
         var pmTwoFiveCtx = document.getElementById('pmTwoFiveChart').getContext('2d');
         var pmTwoFiveChart;
         var twofivepast24hoursData = <?php echo json_encode($twofivepast24hoursData); ?>;
-        var twofivepast7daysData = <?php echo json_encode($twofivepast7daysData); ?>;
-        var twofivepast30daysData = <?php echo json_encode($twofivepast30daysData); ?>;
-        var twofivepast12monthsData = <?php echo json_encode($twofivepast12monthsData); ?>;
+        var twofivepast7daysData = <?php echo json_encode($twofivepast7DaysData); ?>;
+        var twofivepast30daysData = <?php echo json_encode($twofivepast30DaysData); ?>;
+        var twofivepast12monthsData = <?php echo json_encode($twofivepast12MonthsData); ?>;
 
         function processTwoFiveData(selectedRange, rawData) {
             var processedData = {

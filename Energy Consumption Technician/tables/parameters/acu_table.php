@@ -1,8 +1,8 @@
 <?php     
     require_once('energy_technician_connect.php');
     
-    if (isset($_POST['submit']) && isset($_POST['ec_sensor'])) {
-        $selectedSensors = $_POST['ec_sensor'];
+    if (isset($_POST['submit']) && isset($_POST['room_number'])) {
+        $selectedSensors = $_POST['room_number'];
 
         $acuSensors = implode("','", $selectedSensors);
 
@@ -27,7 +27,7 @@
                         GROUP BY ec_sensor_acu_id) AS latest 
                         ON acu.ec_sensor_acu_id = latest.ec_sensor_acu_id 
                 AND CONCAT(acu.ec_acu_date, ' ', acu.ec_acu_time) = latest.max_datetime
-                WHERE eas.ec_arduino_sensors_id IN ('$acuSensors')
+                WHERE eas.arduino_room_num IN ('$acuSensors')
                 ORDER BY acu.ec_sensor_acu_id ASC
                 LIMIT $offset, $rows_per_page";
     
@@ -47,7 +47,7 @@
                 echo "<td>" . $row['ec_sensor_acu_id'] . "</td>";
                 echo "<td>" . $row['ec_acu_date'] . "</td>";
                 echo "<td>" . $row['ec_acu_time'] . "</td>";
-                echo "<td>" . $row['ec_acu_current']  . ' amperes' . "</td>";
+                echo "<td>" . $row['ec_acu_current']  . ' amps' . "</td>";
                 echo "</tr>";
             }
         }

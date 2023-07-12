@@ -62,18 +62,10 @@
                             <div class="filter-table">
                                 <div class="dropdown-form-group">
                                     <div class="dropdown-form">
-                                        <?php include 'filter_panel_group.php'?>
+                                        <?php include 'input_floor_dropdown.php'?>
                                     </div>
-                                    <div class="dropdown-form-two">
-                                        <?php include 'filter_panel_label.php'?>
-                                    </div>
-                                </div>
-                                <div class="dropdown-form-group-two">
-                                    <div class="dropdown-form-three">
-                                        <?php include 'filter_arduino_label.php'?>
-                                    </div>
-                                    <div id="dropdown-sensor" class="dropdown-sensor">
-                                            <?php include 'filter_sensor_checkbox.php'?>
+                                    <div id="dropdown-room" class="dropdown-room">
+                                        <?php include 'input_room_checkbox.php'?>
                                     </div>
                                 </div>
                             </div>
@@ -91,13 +83,12 @@
                     <table id = 'general-parameters-table' class = 'general-param-table'>
                         <thead>
                             <tr>
-                                <th><a href="#arrange-floor" onclick="sortECGeneralTable(0)">Floor<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-room" onclick="sortECGeneralTable(1)">Room<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-acu" onclick="sortECGeneralTable(2)">Air Conditioning Unit<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-outlet" onclick="sortECGeneralTable(3)">Convenience Outlets<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-utilities" onclick="sortECGeneralTable(4)">Utilities<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-ligths" onclick="sortECGeneralTable(5)">Lights<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-others" onclick="sortECGeneralTable(6)">Others<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-panel" onclick="sortECGeneralTable(0)">Panel Label<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-acu" onclick="sortECGeneralTable(1)">Air Conditioning Unit<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-outlet" onclick="sortECGeneralTable(2)">Convenience Outlets<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-utilities" onclick="sortECGeneralTable(3)">Utilities<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-lights" onclick="sortECGeneralTable(4)">Lights<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-others" onclick="sortECGeneralTable(5)">Others<span class="sort-indicator">&#x25BC;</span></a></th>
                             </tr>
                         </thead>
                         <tbody id = 'table-body'>

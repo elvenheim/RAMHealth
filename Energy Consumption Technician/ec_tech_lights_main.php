@@ -63,26 +63,18 @@
 						<div class="filter-table">
 							<div class="dropdown-form-group">
 								<div class="dropdown-form">
-									<?php include 'filter_panel_group.php'?>
-								</div>
-								<div class="dropdown-form-two">
-									<?php include 'filter_panel_label.php'?>
-								</div>
-							</div>
-							<div class="dropdown-form-group-two">
-								<div class="dropdown-form-three">
-									<?php include 'filter_arduino_label.php'?>
-								</div>
-								<div id="dropdown-sensor" class="dropdown-sensor">
-										<?php include 'filter_sensor_checkbox.php'?>
-								</div>
+                                    <?php include 'input_floor_dropdown.php'?>
+                                </div>
+                                <div id="dropdown-room" class="dropdown-room">
+                                    <?php include 'input_room_checkbox.php'?>
+                                </div>
 							</div>
 						</div>
 					</form>
 					<form class="import-table" method="POST" enctype="multipart/form-data" action="../scripts/import_table_ec.php">
 						<label class="import-btn">
 							<span class="fas fa-file-import"></span> Import
-							<input type="hidden" id="table_name" name="table_name" value="ec_param_acu_data">
+							<input type="hidden" id="table_name" name="table_name" value="ec_param_lights_data">
 							<input type="file" name="csv_file" style="display: none;" required accept=".csv" onchange="submitForm()">
 						</label>
                     </form>

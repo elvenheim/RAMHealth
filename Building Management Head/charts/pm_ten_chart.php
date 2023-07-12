@@ -1,31 +1,26 @@
 <?php
     require_once('building_head_connect.php');
 
-    if (isset($_POST['room_number'])) {
-        // Retrieve the selected room numbers
-        $selectedRoom = $_POST['room_number'];
+    $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
+        FROM aq_particulate_matter aqpm
+        JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id";
 
-        $_SESSION['selected_room'] = $selectedRoom;
+    $result_table = mysqli_query($con, $sqlten);
 
-        $sqlten = "SELECT aqpm.*, aqs.aq_sensor_room_num, aqs.aq_sensor_name
-            FROM aq_particulate_matter aqpm
-            JOIN aq_sensor aqs ON aqpm.pm_sensor = aqs.aq_sensor_id
-            WHERE aqs.aq_sensor_room_num IN ('$selectedRoom')";
-
-        $result_table = mysqli_query($con, $sqlten);
-
-        $pmTenData = array();
-        while ($row = mysqli_fetch_assoc($result_table)) {
-            $pmTenData[] = array(
-                'date' => $row['pm_date'],
-                'time' => $row['pm_time'],
-                'pm_ten' => $row['pm_ten']
-            );
-        }
+    $pmTenData = array();
+    while ($row = mysqli_fetch_assoc($result_table)) {
+        $pmTenData[] = array(
+            'date' => $row['pm_date'],
+            'time' => $row['pm_time'],
+            'pm_ten' => $row['pm_ten']
+        );
     }
 
-    // Fetch the past 24 hours data
-    $tenpast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS pm_datetime, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) GROUP BY pm_datetime";
+    // Fetch the past 24 hours data with a time interval of 1 hour
+    $tenpast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS pm_datetime, MAX(pm_ten) AS peak_pm_ten
+                        FROM aq_particulate_matter 
+                        WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) 
+                        GROUP BY pm_datetime";
     $tenpast24hoursResult = mysqli_query($con, $tenpast24hoursSql);
     $tenpast24hoursData = array();
     while ($row = mysqli_fetch_assoc($tenpast24hoursResult)) {
@@ -33,15 +28,22 @@
     }
 
     // Fetch the past 7 days data
-    $tenpast7DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY) GROUP BY pm_date";
+    $tenpast7DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) 
+                        AND pm_date < CURDATE() + INTERVAL 1 DAY 
+                        GROUP BY pm_date";
     $tenpast7DaysResult = mysqli_query($con, $tenpast7DaysSql);
     $tenpast7DaysData = array();
     while ($row = mysqli_fetch_assoc($tenpast7DaysResult)) {
         $tenpast7DaysData[] = $row;
     }
 
+
     // Fetch the past 30 days data
-    $tenpast30DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 30 DAY) GROUP BY pm_date";
+    $tenpast30DaysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS pm_date, MAX(pm_ten) AS peak_pm_ten 
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) 
+                        AND pm_date < CURDATE() + INTERVAL 1 DAY 
+                        GROUP BY pm_date";
     $tenpast30DaysResult = mysqli_query($con, $tenpast30DaysSql);
     $tenpast30DaysData = array();
     while ($row = mysqli_fetch_assoc($tenpast30DaysResult)) {
@@ -49,7 +51,9 @@
     }
 
     // Fetch the past 12 months data
-    $tenpast12MonthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS pm_month, MAX(pm_ten) AS peak_pm_ten FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) GROUP BY pm_month";
+    $tenpast12MonthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS pm_month, MAX(pm_ten) AS peak_pm_ten
+                        FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) 
+                        GROUP BY pm_month";
     $tenpast12MonthsResult = mysqli_query($con, $tenpast12MonthsSql);
     $tenpast12MonthsData = array();
     while ($row = mysqli_fetch_assoc($tenpast12MonthsResult)) {

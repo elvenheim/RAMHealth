@@ -76,16 +76,15 @@
                         </div>
                         <div class="chart-box-two">
                             <div class="chart-box-two-card">
+                            <div id="refreshBarOne" class="energy-consume-bar">
+                                    <?php include('../Building Management Head/charts/month_total_consume.php')?>
+                                </div>
+                            </div>
+                            <div class="chart-box-three-card">
                                 <div id="refreshPieOne" class="energy-consume-pie">
                                     <?php include('../Building Management Head/charts/energy_comparison.php')?>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="chart-box-three">
-                            <div class="chart-box-three-card">
-                                <div id="refreshBarOne" class="energy-consume-bar">
-                                    <?php include('../Building Management Head/charts/month_total_consume.php')?>
-                                </div>
+
                             </div>
                         </div>
                     </div>

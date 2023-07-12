@@ -17,7 +17,9 @@
     }
 
     // Fetch the past 24 hours data
-    $zeroonepast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS zero_one_datetime, MAX(pm_zero_one) AS peak_zero_one FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) GROUP BY zero_one_datetime";
+    $zeroonepast24hoursSql = "SELECT DATE_FORMAT(pm_time, '%H:00') AS zero_one_datetime, MAX(pm_zero_one) AS peak_zero_one 
+    FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 24 HOUR) 
+    GROUP BY zero_one_datetime";
     $zeroonepast24hoursResult = mysqli_query($con, $zeroonepast24hoursSql);
     $zeroonepast24hoursData = array();
     while ($row = mysqli_fetch_assoc($zeroonepast24hoursResult)) {
@@ -25,7 +27,10 @@
     }
 
     // Fetch the past 7 days data
-    $zeroonepast7daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS zero_one_date, MAX(pm_zero_one) AS peak_zero_one FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY) GROUP BY zero_one_date";
+    $zeroonepast7daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS zero_one_date, MAX(pm_zero_one) AS peak_zero_one 
+    FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    AND pm_date < CURDATE() + INTERVAL 1 DAY 
+    GROUP BY zero_one_date";
     $zeroonepast7daysResult = mysqli_query($con, $zeroonepast7daysSql);
     $zeroonepast7daysData = array();
     while ($row = mysqli_fetch_assoc($zeroonepast7daysResult)) {
@@ -33,7 +38,10 @@
     }
 
     // Fetch the past 30 days data
-    $zeroonepast30daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS zero_one_date, MAX(pm_zero_one) AS peak_zero_one FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 30 DAY) GROUP BY zero_one_date";
+    $zeroonepast30daysSql = "SELECT DATE_FORMAT(pm_date, '%m/%d') AS zero_one_date, MAX(pm_zero_one) AS peak_zero_one 
+    FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    AND pm_date < CURDATE() + INTERVAL 1 DAY 
+    GROUP BY zero_one_date";
     $zeroonepast30daysResult = mysqli_query($con, $zeroonepast30daysSql);
     $zeroonepast30daysData = array();
     while ($row = mysqli_fetch_assoc($zeroonepast30daysResult)) {
@@ -41,7 +49,9 @@
     }
 
     // Fetch the past 12 months data
-    $zeroonepast12monthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS zero_one_month, MAX(pm_zero_one) AS peak_zero_one FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) GROUP BY zero_one_month";
+    $zeroonepast12monthsSql = "SELECT DATE_FORMAT(pm_date, '%m/%Y') AS zero_one_month, MAX(pm_zero_one) AS peak_zero_one 
+    FROM aq_particulate_matter WHERE pm_date >= DATE_SUB(NOW(), INTERVAL 12 MONTH) 
+    GROUP BY zero_one_month";
     $zeroonepast12monthsResult = mysqli_query($con, $zeroonepast12monthsSql);
     $zeroonepast12monthsData = array();
     while ($row = mysqli_fetch_assoc($zeroonepast12monthsResult)) {

@@ -2,8 +2,8 @@
     // Generate randomized data for indoor_temp table
     $csvData = "ec_sensor_util_id,ec_util_date,ec_util_time,ec_util_current" . PHP_EOL; //you may change your table headers
 
-    $startDate = strtotime('2023-05-01');
-    $endDate = strtotime('2023-05-31');
+    $startDate = strtotime('2023-06-01');
+    $endDate = strtotime('2023-07-31');
 
     $counter = 1;
 

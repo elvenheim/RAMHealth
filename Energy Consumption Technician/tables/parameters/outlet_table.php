@@ -1,10 +1,10 @@
 <?php     
     require_once('energy_technician_connect.php');
     
-    if (isset($_POST['submit']) && isset($_POST['ec_sensor'])) {
-        $selectedSensors = $_POST['ec_sensor'];
+    if (isset($_POST['submit']) && isset($_POST['room_number'])) {
+        $selectedSensors = $_POST['room_number'];
 
-        $acuSensors = implode("','", $selectedSensors);
+        $outlSensors = implode("','", $selectedSensors);
 
         $rows_per_page = 10;
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -17,18 +17,18 @@
     
         $total_pages = ceil($total_rows / $rows_per_page);
     
-        $sql = "SELECT acu.*, eas.arduino_bldg_floor, eas.arduino_room_num, bf.bldg_floor_name
-                FROM ec_param_outlet_data acu
-                JOIN ec_arduino_sensors eas ON acu.ec_sensor_outlet_id = eas.ec_arduino_sensors_id
+        $sql = "SELECT outl.*, eas.arduino_bldg_floor, eas.arduino_room_num, bf.bldg_floor_name
+                FROM ec_param_outlet_data outl
+                JOIN ec_arduino_sensors eas ON outl.ec_sensor_outlet_id = eas.ec_arduino_sensors_id
                 LEFT JOIN room_number rn ON eas.arduino_room_num = rn.room_num
                 LEFT JOIN building_floor bf ON rn.bldg_floor = bf.building_floor
                 INNER JOIN (SELECT ec_sensor_outlet_id, MAX(CONCAT(ec_outlet_date, ' ', ec_outlet_time)) AS max_datetime
                         FROM ec_param_outlet_data
                         GROUP BY ec_sensor_outlet_id) AS latest 
-                        ON acu.ec_sensor_outlet_id = latest.ec_sensor_outlet_id 
-                AND CONCAT(acu.ec_outlet_date, ' ', acu.ec_outlet_time) = latest.max_datetime
-                WHERE eas.ec_arduino_sensors_id IN ('$acuSensors')
-                ORDER BY acu.ec_sensor_outlet_id ASC
+                        ON outl.ec_sensor_outlet_id = latest.ec_sensor_outlet_id 
+                AND CONCAT(outl.ec_outlet_date, ' ', outl.ec_outlet_time) = latest.max_datetime
+                WHERE eas.arduino_room_num IN ('$outlSensors')
+                ORDER BY outl.ec_sensor_outlet_id ASC
                 LIMIT $offset, $rows_per_page";
     
         $result_table = mysqli_query($con, $sql);
@@ -46,7 +46,7 @@
                 echo "<td>" . $row['ec_sensor_outlet_id'] . "</td>";
                 echo "<td>" . $row['ec_outlet_date'] . "</td>";
                 echo "<td>" . $row['ec_outlet_time'] . "</td>";
-                echo "<td>" . $row['ec_outlet_current']  . ' amperes' . "</td>";
+                echo "<td>" . $row['ec_outlet_current']  . ' amps' . "</td>";
                 echo "</tr>";
             }   
         }

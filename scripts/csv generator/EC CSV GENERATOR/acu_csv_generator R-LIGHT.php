@@ -1,6 +1,6 @@
 <?php
     // Generate randomized data for indoor_temp table
-    $csvData = "ec_sensor_acu_id,ec_acu_date,ec_acu_time,ec_acu_current" . PHP_EOL; //you may change your table headers
+    $csvData = "ec_sensor_lights_id,ec_lights_date,ec_lights_time,ec_lights_current" . PHP_EOL; //you may change your table headers
 
     $startDate = strtotime('2023-06-01');
     $endDate = strtotime('2023-07-31');
@@ -8,11 +8,11 @@
     $counter = 1;
 
     $startSensor = 1;
-    $endSensor = 8;
+    $endSensor = 3;
 
     for ($i = 1; $i <= 200; $i++) {
         $sensorNumber = mt_rand($startSensor, $endSensor);
-        $sensor = "R-ACU1-$sensorNumber"; // sensor name generator
+        $sensor = "R-LIGHT1-$sensorNumber"; // sensor name generator
         $data = mt_rand(0, 120); // data input randomizer, case for me is that 26 to 40 are the values
         $date = date('Y-m-d', mt_rand($startDate, $endDate)); // date randomizer
         $time = date('H:i:s', mt_rand(strtotime('07:00:00'), strtotime('19:00:00'))); // time randomizer
@@ -21,7 +21,7 @@
     }
 
     // Save the randomized data to a CSV file
-    $fileName = "acu_data.csv";
+    $fileName = "lights_data_lights2.csv";
     $file = fopen($fileName, 'w');
     fwrite($file, $csvData);
     fclose($file);

@@ -75,6 +75,12 @@
 
 .energy-pie-group{
     position: relative;
-    width: 550px;
-    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 60%;
+}
+
+.legend-row-start {
+    clear: left;
 }

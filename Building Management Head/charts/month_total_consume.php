@@ -52,21 +52,21 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <span class="tentenchart-title">Current Month Total Energy Consumption</span>
+    <span class="consume-title">Current Month Total Energy Consumption</span>
+    <br>
+    <br>
+    <div id="message" class="message"></div>
     <div class="pm-ten-tentenchart-group">
         <canvas id="pmTenTenChart" class="tentenchart"></canvas>
-        <div id="message" class="message"></div>
     </div>
 
     <script>
         var TenTenctx = document.getElementById('pmTenTenChart').getContext('2d');
         var tentenchart;
         var currentMonthData = <?php echo json_encode($currentMonthData); ?>;
+        var selectedRooms = <?php echo json_encode(isset($_SESSION['selected_rooms']) ? $_SESSION['selected_rooms'] : []); ?>;
 
         function updateChart() {
-            var selectedRooms = <?php echo json_encode(isset($_SESSION['selected_rooms']) ? 
-            $_SESSION['selected_rooms'] : []); ?>;
-
             var filteredData = currentMonthData.filter(function(record) {
                 return selectedRooms.includes(record.aq_sensor_room_num);
             });
@@ -93,15 +93,32 @@
                         labels: labels,
                         datasets: [{
                             data: values,
-                            backgroundColor: '#007BFF',
+                            backgroundColor: '#e7ae41',
                             borderWidth: 1
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: true,
                         plugins: {
                             legend: {
-                                display: false
+                                display: false,
+                                labels: {
+                                    generateLabels: function(chart) {
+                                        var data = chart.data;
+                                        if (data.labels.length && data.datasets.length) {
+                                            return data.labels.map(function(label, i) {
+                                                return {
+                                                    text: label,
+                                                    fillStyle: data.datasets[0].backgroundColor[i % data.datasets[0].backgroundColor.length],
+                                                    hidden: false,
+                                                    index: i
+                                                };
+                                            });
+                                        }
+                                        return [];
+                                    }
+                                }
                             }
                         },
                         scales: {

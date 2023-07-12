@@ -51,75 +51,170 @@
     <link rel="stylesheet" href="../Building Management Head/charts/charts.css">
     <link rel="stylesheet" href="../Building Management Head/BMH Design/building_head_energy_consume.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #pmTenChart{
+            margin-top: 10px;
+        }
+
+        .legend-container {
+            position: relative;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .legend-item span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    <span class="chart-title">Energy Consumption Last Week</span>
-    <div class="energy-pie-group">
-        <canvas id="pmTenChart" class="chart"></canvas>
-    </div>
-
+    <span class="consume-title">Energy Consumption Last Week</span>
     <?php if (!isset($_POST['room_number']) && !isset($_SESSION['selected_rooms'])) : ?>
+        <br>
+        <br>
         <span class="select-room">Please select rooms to show data</span>
     <?php endif; ?>
 
+    <div class="energy-pie-group">
+        <canvas id="pmTenChart" class="pie-chart"></canvas>
+    </div>
+
+    <div id="legendContainer" class="legend-container"></div>
+
     <script>
-        var ctx = document.getElementById('pmTenChart').getContext('2d');
-        var chart;
-        var lastWeekData = <?php echo json_encode($lastWeekData); ?>;
+    var ctx = document.getElementById('pmTenChart').getContext('2d');
+    var chart;
+    var lastWeekData = <?php echo json_encode($lastWeekData); ?>;
+    var legendItems = []; // Array to store the legend items
 
-        function updateChart() {
-            var selectedRooms = <?php echo json_encode(isset($_SESSION['selected_rooms']) ? $_SESSION['selected_rooms'] : []); ?>;
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
-            var filteredData = lastWeekData.filter(function(record) {
-                return selectedRooms.includes(record.aq_sensor_room_num);
-            });
+    function updateChart() {
+        var selectedRooms = <?php echo json_encode(isset($_SESSION['selected_rooms']) ? $_SESSION['selected_rooms'] : []); ?>;
 
-            var labels = filteredData.map(function(record) {
-                return record.aq_sensor_room_num;
-            });
-            var values = filteredData.map(function(record) {
-                return record.num_records;
-            });
+        var filteredData = lastWeekData.filter(function (record) {
+            return selectedRooms.includes(record.aq_sensor_room_num);
+        });
 
-            if (chart) {
-                chart.destroy();
-            }
+        var labels = filteredData.map(function (record) {
+            return record.aq_sensor_room_num;
+        });
+        var values = filteredData.map(function (record) {
+            return record.num_records;
+        });
 
-            chart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: values,
-                        backgroundColor: [
-                            '#E7AE41',
-                            '#007BFF',
-                            '#DC3545',
-                            '#28A745',
-                            '#FFC107',
-                            '#17A2B8',
-                            '#6610F2',
-                            '#6C757D',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            position: 'right', // Show legend on the left side
-                            align: 'start',
-                            labels: {
-                                font: {
-                                    size: 12
-                                }
+        if (chart) {
+            chart.destroy();
+        }
+
+        chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: values.map(function () {
+                        return getRandomColor(); // Generate random background colors
+                    }),
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                // Modify the title text
+                                return 'Room: ' + context[0].label;
                             },
-                        }
+                            label: function(context) {
+                                // Modify the label text
+                                return context.raw;
+                            }
+                        },
+                        titleFontSize: 16,
+                        bodyFontSize: 14
+                    },
+                    legend: {
+                        display: false // Hide the default Chart.js legend
                     }
                 }
+            }
+        });
+
+        // Create the HTML legend
+        var legendContainer = document.getElementById('legendContainer');
+        legendContainer.innerHTML = '';
+
+        labels.forEach(function (label, index) {
+            var legendItem = document.createElement('div');
+            legendItem.classList.add('legend-item');
+
+            var colorBox = document.createElement('span');
+            colorBox.style.backgroundColor = chart.data.datasets[0].backgroundColor[index];
+            legendItem.appendChild(colorBox);
+
+            var legendText = document.createElement('span');
+            legendText.textContent = label;
+            legendItem.appendChild(legendText);
+
+            legendContainer.appendChild(legendItem);
+
+            // Store the legend item for click event
+            legendItems.push(legendItem);
+
+            // Add click event listener to toggle data display
+            legendItem.addEventListener('click', function () {
+                var meta = chart.getDatasetMeta(0);
+                var metaIndex = meta.data.findIndex(function (element) {
+                    return element._model.label === label;
+                });
+
+                // Toggle visibility of the data point
+                meta.data[metaIndex].hidden = !meta.data[metaIndex].hidden;
+
+                // Update the legend item style
+                if (meta.data[metaIndex].hidden) {
+                    colorBox.style.opacity = 0.5;
+                    legendText.style.textDecoration = 'line-through';
+                } else {
+                    colorBox.style.opacity = 1;
+                    legendText.style.textDecoration = 'none';
+                }
+
+                chart.update();
             });
-        }
-        updateChart();
-    </script>
+        });
+    }
+
+    updateChart();
+</script>
+
 </body>
 </html>

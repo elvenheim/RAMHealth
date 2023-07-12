@@ -40,7 +40,7 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 100%; /* Set the width to 20% to accommodate 5 elements per row */
+    width: 101%; /* Set the width to 20% to accommodate 5 elements per row */
 }
 
 .gauge-container{
