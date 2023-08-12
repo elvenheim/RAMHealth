@@ -83,19 +83,18 @@
                     <table id = 'general-parameters-table' class = 'general-param-table'>
                         <thead>
                             <tr>
-                                <th><a href="#arrange-panel" onclick="sortECGeneralTable(0)">Panel Label<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-acu" onclick="sortECGeneralTable(1)">Air Conditioning Unit<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-outlet" onclick="sortECGeneralTable(2)">Convenience Outlets<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-utilities" onclick="sortECGeneralTable(3)">Utilities<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-lights" onclick="sortECGeneralTable(4)">Lights<span class="sort-indicator">&#x25BC;</span></a></th>
-                                <th><a href="#arrange-others" onclick="sortECGeneralTable(5)">Others<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-floor" onclick="sortECGeneralTable(0)">Building Floor<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-sensor" onclick="sortECGeneralTable(1)">Sensor ID<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-room" onclick="sortECGeneralTable(2)">Room Number<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-type" onclick="sortECGeneralTable(3)">Sensor Type<span class="sort-indicator">&#x25BC;</span></a></th>
+                                <th><a href="#arrange-consume" onclick="sortECGeneralTable(4)">Energy Consumption<span class="sort-indicator">&#x25BC;</span></a></th>
                             </tr>
                         </thead>
                         <tbody id = 'table-body'>
-                            <!-- <?php include '../Energy Consumption Technician/tables/parameters/ec_general_table.php'?> -->
+                            <?php include '../Energy Consumption Technician/tables/parameters/ec_general_table.php'?>
                         </tbody> 
                     </table>
-                    <!-- <?php include '../Energy Consumption Technician/EC Tech Design/Pagination/general_pagination.php'?> -->
+                    <?php include '../Energy Consumption Technician/EC Tech Design/Pagination/general_pagination.php'?>
                 </div>
             </div>
         </div>

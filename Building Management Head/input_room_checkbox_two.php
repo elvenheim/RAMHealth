@@ -117,6 +117,21 @@
         });
     }
 
+    function submitIntensityIndex(){
+        var selectedRooms = $('input[name="room_number[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+
+        $.ajax({
+            type: 'POST',
+            url: 'refresh_intensity_index.php',
+            data: { room_number: selectedRooms },
+            success: function(response) {
+                $('#refreshIntensityIndex').html(response);
+            }
+        });
+    }
+
     function submitAll() {
         var selectedRooms = $('input[name="room_number[]"]:checked').map(function() {
             return $(this).val();
@@ -126,6 +141,7 @@
             submitRoomNumbers();
             submitRoomNumbersBar();
             submitEnergyGauge();
+            submitIntensityIndex();
         } else {
             alert('You can only select up to 12 rooms.');
         }

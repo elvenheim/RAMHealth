@@ -66,7 +66,9 @@
                             <div class="chart-box-one-card">
                                 <div class="current-month-total-energy-consume">
                                 <span class="consume-title">Energy Intensity Index</span> <br>
-                                    <span class="consume-text">571.95 kWh</span>
+                                    <span id="refreshIntensityIndex" class="consume-text">
+                                        <?php include('../Building Management Head/gauges/energy_intensity_index.php')?>
+                                    </span>
                                 </div>
                                 <div class="current-month-power-demand">
                                 <span class="consume-title">Current Month Kilowatt Demand</span> <br>
