@@ -20,7 +20,7 @@
             <div class="d-flex justify-content-center">
                <h5>Login with <img id="o365logo" src="../images/office-365-logo.png" width="90"/>Account</h5>
             </div>
-         </div> 
+         </div>
          <!-- NOW CONNECTED TO DATABASE -->
          <form action="authentication.php" name="signin-form" method="POST" autocomplete="off">
             <?php

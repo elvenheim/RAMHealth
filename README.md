@@ -8,4 +8,4 @@ Members of the Team:
 
 Rich Diamond P. Custodio (literally the only one developing the website)
 
-Nicole G. Palenzuela (useless member)
+Nicole G. Palenzuela

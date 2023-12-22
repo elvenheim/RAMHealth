@@ -31,12 +31,15 @@ html{
     height: 100vh;
     justify-content: center;
 }
+
 .d-flex{
     display: flex !important;
 }
+
 .justify-content-center{
     justify-content: center !important;
 }
+
 h3{
     margin-top: 0;
     margin-bottom: 0.5rem;
